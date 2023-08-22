@@ -17,9 +17,9 @@ import 'swiper/css/pagination';
 import '@/styles/Loading.css';
 import '@/styles/spinner.css';
 import 'owl.carousel/dist/assets/owl.carousel.css';
-
-import App from './app.js';
-import BodyScripts from './BodyScripts';
+import 'react-toastify/dist/ReactToastify.css';
+import BodyScripts from '@/utils/BodyScripts.js';
+import App from '@/utils/app';
 
 const defaultDescription =
     '<p><strong>Clearance is the ecommerce version  and the online operational name of Master out';

@@ -1,42 +1,27 @@
 'use client';
 import { persistor, store } from '@/store/index';
-import { useEffect, useState, Suspense, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import i18n from '../../i18n';
-import {
-    useRouter,
-    usePathname,
-    useSearchParams,
-    useParams,
-} from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import 'react-toastify/dist/ReactToastify.css';
-import { Inter } from 'next/font/google';
-import Register from './_register';
 import { I18nextProvider } from 'react-i18next';
-import { Provider } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
-
 import { PersistGate } from 'redux-persist/integration/react';
-import errorMiddleware from './errorMiddleware';
-
-export const usePrevious = (value) => {
-    const ref = useRef();
-    useEffect(() => {
-        ref.current = value;
-    });
-    return ref.current;
-};
-
+import { Provider } from 'react-redux';
+import Register from './_register';
 export default function App({ children }) {
     const [sitting, setSitting] = useState(null);
     useEffect(() => {
-        const sitting = JSON.parse(localStorage.getItem('SITTING'));
+        const sitting = JSON.parse(localStorage.getItem('SITTING') || '');
         if (sitting) {
             setSitting(sitting?.sitting);
         } else {
             store.dispatch({ type: 'SETTING' });
         }
         const unsubscribe = store.subscribe(() => {
-            const updatedSitting = JSON.parse(localStorage.getItem('SITTING'));
+            const updatedSitting = JSON.parse(
+                localStorage.getItem('SITTING') || ''
+            );
             if (updatedSitting) {
                 setSitting(updatedSitting?.sitting);
             }
@@ -44,20 +29,6 @@ export default function App({ children }) {
 
         return () => {
             unsubscribe();
-        };
-    }, []);
-
-    useEffect(() => {
-        const handleError = (error) => {
-            console.error('حدث خطأ في التطبيق:', error);
-
-            errorMiddleware(error).then((r) => {});
-        };
-
-        window.addEventListener('error', handleError);
-
-        return () => {
-            window.removeEventListener('error', handleError);
         };
     }, []);
     const router = useRouter();
