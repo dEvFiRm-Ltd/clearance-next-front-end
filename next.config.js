@@ -1,17 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    eslint: {
-        ignoreDuringBuilds: true,
-    },
-    reactStrictMode: false,
-
-    // output: 'export',
-    trailingSlash: true,
-    experimental: {
-        appDir: true,
-        serverActions: true,
-        // runtime: "edge",
-    },
     webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
         config.plugins.push(
             new webpack.ProvidePlugin({
@@ -33,6 +21,4 @@ const nextConfig = {
     },
 };
 
-module.exports = {
-    ...nextConfig,
-};
+module.exports = nextConfig;
