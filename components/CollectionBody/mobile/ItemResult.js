@@ -161,7 +161,7 @@ const ItemResult = ({
                 : "hidden"
             } flex items-center justify-center w-full h-[120px]`}
           >
-            {/* <LoadingComponentDesktop /> */}
+            <LoadingComponentDesktop />
           </div>
           {Products?.products?.length > 0 && !paginationLoading && (
             <div className="pl-5 bg-gray-50  flex flex-col items-stretch gap-5 mb-5">

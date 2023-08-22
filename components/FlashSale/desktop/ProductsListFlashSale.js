@@ -74,7 +74,7 @@ const ProductsListFlashSale = ({ products }) => {
                     flashSaleLoading ? "" : "hidden"
                   } flex items-center justify-center w-full h-[120px]`}
                 >
-                  {/* <LoadingComponentDesktop /> */}
+                  <LoadingComponentDesktop />
                   ""
                 </div>
               ) : (

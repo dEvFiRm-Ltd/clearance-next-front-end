@@ -21,32 +21,32 @@ import App from './app.js';
 import BodyScripts from './BodyScripts';
 
 const defaultDescription =
-  '<p><strong>Clearance is the ecommerce version  and the online operational name of Master out';
+    '<p><strong>Clearance is the ecommerce version  and the online operational name of Master out';
 const defaultTitle = 'Welcome To Clearance';
-
 export const metadata = {
-  title: defaultTitle,
-  description: defaultDescription,
-  icons: {
-    icon: '/favicon.ico',
-  },
-  verification: {
-    google: 'w7Rg8tKsLoDqyDOlmhKNC87QeqiHY43bywUhQ-t9rnw',
-    other: {
-      'facebook-domain-verification': 'zoknztesouqjk3pz7fylptbpl98pt3',
-      'tiktok-pixel': 'tiktok-pixel-content',
-      'smart-look': 'Smart Look content',
-      'microsoft-clarity': 'Microsoft Clarity content',
+    title: defaultTitle,
+    description: defaultDescription,
+    icons: {
+        icon: '/favicon.ico',
     },
-  },
+    verification: {
+        google: 'w7Rg8tKsLoDqyDOlmhKNC87QeqiHY43bywUhQ-t9rnw',
+        other: {
+            'facebook-domain-verification': 'zoknztesouqjk3pz7fylptbpl98pt3',
+            'tiktok-pixel': 'tiktok-pixel-content',
+            'smart-look': 'Smart Look content',
+            'microsoft-clarity': 'Microsoft Clarity content',
+        },
+    },
 };
 export default function RootLayout({ Component, children }) {
-  return (
-    <html>
-      <body>
-        <App>{children}</App>
-        <BodyScripts />
-      </body>
-    </html>
-  );
+
+    return (
+        <html>
+            <body>
+                <App>{children}</App>
+                <BodyScripts />
+            </body>
+        </html>
+    );
 }

@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import React, { useEffect, useState } from 'react';
 import store from '../store';
 import { useRouter } from 'next/navigation';
+import { IoLogoWhatsapp } from 'react-icons/io';
 
 const Register = () => {
     const [user, setUser] = useState(null);
@@ -57,17 +58,37 @@ const Register = () => {
         }
         // }
     };
+    const [myCookieValue, setMyCookieValue] = useState(null);
+
     const getCookieAsync = async () => {
-        return cookieCutter.get('clearence_session');
+        console.log('getCookieAsync');
+        return new Promise((resolve) => {
+            const interval = setInterval(() => {
+                console.log('cookieCutter');
+                const cookieValue = cookieCutter.get('clearance_session');
+                if (cookieValue) {
+                    clearInterval(interval);
+                    setTimeout(() => {
+                        console.log('setTimeout');
+                        resolve(cookieValue);
+                    }, 5000); // Delay for 5000 milliseconds
+                }
+            }, 500);
+        });
     };
+
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const cookie = await getCookieAsync();
-                console.log(cookie, 'cookie1');
-                RegisterAsGuest(cookie);
+                if (cookie) {
+                    setMyCookieValue(cookie);
+                    console.log(cookie, 'trrry');
+                    RegisterAsGuest(cookie);
+                }
             } catch (error) {
-                // Handle error if getCookieAsync fails
+                console.log(error, 'error');
+                RegisterAsGuest(null);
             }
         };
 
@@ -92,6 +113,9 @@ const Register = () => {
         }
     }, [user]);
 
+    useEffect(() => {
+        console.log(myCookieValue, 'myCookieValue');
+    }, [myCookieValue]);
     return <></>;
 };
 
