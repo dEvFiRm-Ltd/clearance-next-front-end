@@ -4,18 +4,14 @@
 /node_modules
 /.pnp
 .pnp.js
+
 # testing
 /coverage
-/.idea
-**.idea/**
-/.idea/*
 
 # next.js
 /.next/
 /out/
-/yarn.lock
-/package-lock.json
-package-lock.json
+
 # production
 /build
 
@@ -29,6 +25,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
+.env*.local
 
 # vercel
 .vercel
