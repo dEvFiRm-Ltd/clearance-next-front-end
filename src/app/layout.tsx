@@ -48,7 +48,7 @@ export default function RootLayout({
     return (
         <html>
             <body>
-                <App>{children}</App>
+                {children}
                 <BodyScripts />
             </body>
         </html>
