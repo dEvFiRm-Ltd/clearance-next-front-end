@@ -3,45 +3,45 @@ import React from "react";
 import HoverComponent from "../common/HoverComponent";
 const BottomHeader = () => {
   return (
-    <div className="border-b mt-4 flex flex-col items-center justify-center">
-      <div className="flex flex-row items-center gap-x-10 text-lg leading-6 text-[#000000] font-bold uppercase">
-        <Link href="" className="pb-4 relative group">
+    <div className="border-b mt-4 flex flex-col items-center justify-center w-full">
+      <div className="flex flex-row items-center justify-center gap-x-10 text-lg leading-6 text-[#000000] font-bold uppercase w-full">
+        <div className="hover-link pb-4 relative group">
           clothing
-          <div className="absolute top-10 z-50 group-hover:block hidden w-screen">
+          <div className="absolute top-[41px] z-50 group-hover:block hidden w-screen">
             <HoverComponent />
           </div>
-        </Link>
-        <Link href="" className="pb-4">
+        </div>
+        <Link href="" className="hover-link pb-4">
           FW23
         </Link>
-        <Link href="" className="pb-4">
+        <Link href="" className="hover-link pb-4">
           new in
         </Link>
-        <Link href="" className="pb-4">
+        <Link href="" className="hover-link pb-4">
           tops
         </Link>
-        <Link href="" className="pb-4">
+        <Link href="" className="hover-link pb-4">
           dresses
         </Link>
-        <Link href="" className="pb-4">
+        <Link href="" className="hover-link pb-4">
           outerwear
         </Link>
-        <Link href="" className="pb-4">
+        <Link href="" className="hover-link pb-4">
           knitwear
         </Link>
-        <Link href="" className="pb-4">
+        <Link href="" className="hover-link pb-4">
           bottoms
         </Link>
-        <Link href="" className="pb-4">
+        <Link href="" className="hover-link pb-4">
           plus+curve
         </Link>
-        <Link href="" className="pb-4">
+        <Link href="" className="hover-link pb-4">
           shoes+accessories
         </Link>
-        <Link href="" className="pb-4">
+        <Link href="" className="hover-link pb-4">
           sale
         </Link>
-        <Link href="" className="pb-4">
+        <Link href="" className="hover-link pb-4">
           community
         </Link>
       </div>
