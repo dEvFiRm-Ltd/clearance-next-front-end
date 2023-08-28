@@ -16,8 +16,13 @@ const MiddleHeader = () => {
           </button>
         </div>
         <div className="flex flex-row items-center gap-x-8 text-2xl">
-          <button type="button">
+          <button type="button" className="group relative">
             <i className="fa-solid fa-globe"></i>
+            <div className="group-hover:block hidden absolute top-12 right-0 shadow-lg z-10 px-6 py-[18px] bg-white rounded-lg">
+              <p className="text-sm leading-5 font-normal text-[#000000] capitalize">
+                country/region
+              </p>
+            </div>
           </button>
           <button type="button">
             <i className="fa-regular fa-user"></i>
