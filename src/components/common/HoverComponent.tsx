@@ -3,50 +3,6 @@ import FooterPart from "./FooterPart";
 import Image from "next/image";
 
 const HoverComponent = () => {
-  // const itemArr = [
-  //   {
-  //     heading: "Shop By Category",
-  //     title: " All Dresses",
-  //     url: "",
-  //   },
-  //   {
-  //     heading: "",
-  //     title: "",
-  //     url: "",
-  //     titleClass: "",
-  //   },
-  //   {
-  //     heading: "",
-  //     title: "",
-  //     url: "",
-  //     titleClass: "",
-  //   },
-  //   {
-  //     heading: "",
-  //     title: "",
-  //     url: "",
-  //     titleClass: "",
-  //   },
-  //   {
-  //     heading: "",
-  //     title: "",
-  //     url: "",
-  //     titleClass: "",
-  //   },
-  //   {
-  //     heading: "",
-  //     title: "",
-  //     url: "",
-  //     titleClass: "",
-  //   },
-  //   {
-  //     heading: "",
-  //     title: "",
-  //     url: "",
-  //     titleClass: "",
-  //   },
-  // ];
-
   const hoverItems = [
     [
       {
@@ -138,22 +94,6 @@ const HoverComponent = () => {
   ];
 
   return (
-    // <div className="z-50 bg-white w-screen flex flex-row">
-    //   {itemArrTwo.map((item: any, j: number) => (
-    //     <div key={j} className="flex flex-col capitalize">
-    //       {itemArr.map((item: any, i: number) => (
-    //         <FooterPart
-    //           key={i}
-    //           heading={item.heading}
-    //           title={item.title}
-    //           url={item.url}
-    //           headingClass="!text-sm !leading-5 !capitalize mb-1"
-    //           titleClass={item.titleClass}
-    //         />
-    //       ))}
-    //     </div>
-    //   ))}
-    // </div>
     <div className="flex flex-col items-center justify-center pt-10 pb-[52px] z-50 bg-white w-screen">
       <div className=" flex flex-row gap-x-10">
         {hoverItems.map((itemArr: any[], j: number) => (
