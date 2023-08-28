@@ -47,7 +47,7 @@ const HoverComponent = () => {
   //   },
   // ];
 
-  const itemArrTwo = [
+  const hoverItems = [
     [
       {
         heading: "Shop By Category",
@@ -156,7 +156,7 @@ const HoverComponent = () => {
     // </div>
     <div className="flex flex-col items-center justify-center pt-10 pb-[52px] z-50 bg-white w-screen">
       <div className=" flex flex-row gap-x-10">
-        {itemArrTwo.map((itemArr: any[], j: number) => (
+        {hoverItems.map((itemArr: any[], j: number) => (
           <div key={j} className="flex flex-col capitalize">
             {itemArr.map((item: any, i: number) => (
               <FooterPart
