@@ -8,6 +8,16 @@ const nextConfig = {
         hostname: "images.pexels.com",
         port: "",
       },
+      {
+        protocol: "https",
+        hostname: "sstorage.clearance.ae",
+        port: "",
+      },
+      {
+        protocol: "https",
+        hostname: "backend-live.clearance.ae",
+        port: "",
+      },
     ],
   },
 };

@@ -6,7 +6,7 @@ import FlashSale from "@/components/home/FlashSale";
 import DenimShop from "@/components/home/DenimShop";
 import MiddleHeader from "@/components/home/MiddleHeader";
 import TopHeader from "@/components/home/TopHeader";
-import { dress, dressTwo, verticalImage } from "@/static";
+import { dress, dressTwo, verticalImage, verticalImageTwo } from "@/static";
 import VerticalImage from "@/components/common/VerticalImage";
 import RelatedSearches from "@/components/home/RelatedSearches";
 import Footer from "@/components/home/Footer";
@@ -46,7 +46,7 @@ export default function Home() {
         ))}
       </div>
       <div className="container mb-10 flex flex-row justify-between">
-        {verticalImage.map((item: any, i: number) => (
+        {verticalImageTwo.map((item: any, i: number) => (
           <VerticalImage key={i} img={item.img} className="!h-[273px]" />
         ))}
       </div>

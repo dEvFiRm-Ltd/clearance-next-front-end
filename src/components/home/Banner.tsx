@@ -10,7 +10,8 @@ const Banner = () => {
     >
       <Image
         src={
-          "https://images.pexels.com/photos/5926462/pexels-photo-5926462.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          // "https://images.pexels.com/photos/5926462/pexels-photo-5926462.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          "https://sstorage.clearance.ae/production/storage/banner/2023-08-29-64edb60d10a4e.png"
         }
         alt=""
         fill
