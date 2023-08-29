@@ -3,14 +3,11 @@ import React from "react";
 import HoverComponent from "../common/HoverComponent";
 const BottomHeader = () => {
   return (
-    <div className="border-b mt-4 flex flex-col items-center justify-center w-full">
+    <div className="border-b mt-4 flex flex-col items-center justify-center w-full relative group">
       <div className="flex flex-row items-center justify-center gap-x-10 text-lg leading-6 text-[#000000] font-bold uppercase w-full">
-        <div className="hover-link pb-4 relative group">
+        <Link href="" className="hover-link pb-4">
           clothing
-          <div className="absolute top-[41px] z-50 group-hover:block hidden w-screen">
-            <HoverComponent />
-          </div>
-        </div>
+        </Link>
         <Link href="" className="hover-link pb-4">
           FW23
         </Link>
@@ -44,6 +41,9 @@ const BottomHeader = () => {
         <Link href="" className="hover-link pb-4">
           community
         </Link>
+      </div>
+      <div className="absolute top-10 border-t z-50 group-hover:block hidden w-screen">
+        <HoverComponent />
       </div>
     </div>
   );

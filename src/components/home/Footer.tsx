@@ -156,9 +156,9 @@ const Footer = () => {
     },
   ];
   return (
-    <div className="bg-[#F2F2F3] py-10">
+    <div className="bg-[#F2F2F3] py-10 xl:px-5 px-3 3xl:px-0">
       <div className="container">
-        <div className=" flex flex-row justify-between">
+        <div className=" flex flex-row flex-wrap justify-between gap-y-5">
           <div className="flex flex-col">
             {footerOne.map((item: any, i: number) => (
               <FooterPart
@@ -210,7 +210,7 @@ const Footer = () => {
               </button>
             </div>
             {/* Icons are here  */}
-            <div className="flex flex-row gap-x-8 text-2xl text-[#000000] ">
+            <div className="flex flex-row flex-wrap gap-x-8 text-2xl text-[#000000] ">
               <i className="fa-brands fa-square-twitter hover:text-[#1DA1F2]"></i>
               <i className="fa-brands fa-facebook hover:text-[#1DA1F2]"></i>
               <i className="fa-brands fa-pinterest hover:text-[#1DA1F2]"></i>
