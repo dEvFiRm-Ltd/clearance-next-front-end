@@ -1,6 +1,20 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  images: { domains: ["www.stylewe.com"], formats: ["image/webp"] },
+  reactStrictMode: true,
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "sstorage.clearance.ae",
+        port: "",
+      },
+      {
+        protocol: "https",
+        hostname: "backend-live.clearance.ae",
+        port: "",
+      },
+    ],
+  },
 };
 
 module.exports = nextConfig;

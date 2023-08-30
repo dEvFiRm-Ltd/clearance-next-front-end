@@ -1,0 +1,189 @@
+import { flashSaleCardTypes } from "@/components/common/FlashSaleCard";
+
+export const dress = [
+  {
+    image:
+      "https://backend-live.clearance.ae/storage/category/2023-08-29-64edbb44c865c.png",
+    title: "Men (211)",
+  },
+  {
+    image:
+      "https://backend-live.clearance.ae/storage/category/2023-08-29-64edbb3f240cb.png",
+    title: "Women (144)",
+  },
+  {
+    image:
+      "https://backend-live.clearance.ae/storage/category/2023-08-29-64edbb33994a8.png",
+    title: "Girls (47)",
+  },
+  {
+    image:
+      "https://backend-live.clearance.ae/storage/category/2023-08-29-64edbb3870a9f.png",
+    title: "Boys (71)",
+  },
+  {
+    image:
+      "https://backend-live.clearance.ae/storage/category/2023-07-16-64b39505e7236.png",
+    title: "Pet lovers (51)",
+  },
+  {
+    image:
+      "https://backend-live.clearance.ae/storage/category/2023-08-29-64edbb50e3f41.png",
+    title: "Home Items (28)",
+  },
+];
+export const handPickedData: flashSaleCardTypes[] = [
+  {
+    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-08-26-64e9c94af01ea.png",
+    preSaleImgSticker: "",
+    discount: "20",
+    text: "Urban Abstract Graphic Long Sleeve T-Shirt With Scarf",
+    SalePrice: "42.55",
+  },
+  {
+    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-08-25-64e899e0cf485.png",
+    preSaleImgSticker: "",
+    discount: "20",
+    text: "Urban Abstract Graphic Long Sleeve T-Shirt With Scarf",
+    SalePrice: "42.55",
+  },
+  {
+    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-08-25-64e8925d19968.png",
+    preSaleImgSticker: "",
+    text: "Urban Abstract Graphic Long Sleeve T-Shirt With Scarf",
+    SalePrice: "42.55",
+  },
+  {
+    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-08-04-64ccaafb966f1.png",
+    preSaleImgSticker: "",
+    text: "Urban Abstract Graphic Long Sleeve T-Shirt With Scarf",
+    SalePrice: "42.55",
+  },
+  {
+    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-08-04-64ccd1ad8901c.png",
+    preSaleImgSticker: "",
+    discount: "20",
+    text: "Urban Abstract Graphic Long Sleeve T-Shirt With Scarf",
+    SalePrice: "42.55",
+    text2: "Pre-sale items will be shipped separately",
+  },
+  {
+    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-08-29-64ede7ac360a3.png",
+    preSaleImgSticker: "",
+    text: "Urban Abstract Graphic Long Sleeve T-Shirt With Scarf",
+    SalePrice: "42.55",
+  },
+  {
+    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-08-26-64e9b8aabe4eb.png",
+    preSaleImgSticker: "",
+    discount: "20",
+    text: "Urban Abstract Graphic Long Sleeve T-Shirt With Scarf",
+    SalePrice: "42.55",
+    text2: "Pre-sale items will be shipped separately",
+  },
+  {
+    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-08-25-64e89fdbe38f8.png",
+    preSaleImgSticker: "",
+    text: "Urban Abstract Graphic Long Sleeve T-Shirt With Scarf",
+    SalePrice: "42.55",
+  },
+  {
+    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-08-25-64e84a2c60ec4.png",
+    preSaleImgSticker: "",
+    discount: "20",
+    text: "Urban Abstract Graphic Long Sleeve T-Shirt With Scarf",
+    SalePrice: "42.55",
+  },
+  {
+    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-08-26-64ea0b2c0f150.png",
+    preSaleImgSticker: "",
+    text: "Urban Abstract Graphic Long Sleeve T-Shirt With Scarf",
+    SalePrice: "42.55",
+  },
+  {
+    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-08-26-64ea02be373f2.png",
+    preSaleImgSticker: "",
+    discount: "20",
+    text: "Urban Abstract Graphic Long Sleeve T-Shirt With Scarf",
+    SalePrice: "42.55",
+  },
+  {
+    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-08-18-64df1dac45bac.png",
+    preSaleImgSticker: "",
+    text: "Urban Abstract Graphic Long Sleeve T-Shirt With Scarf",
+    SalePrice: "42.55",
+  },
+];
+export const FlashSaleData: flashSaleCardTypes[] = [
+  {
+    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-05-647df9a609520.avif",
+    text: "Long sleeve crew neck loose leo....",
+    SalePrice: "71.38",
+    Price: "93.99",
+  },
+  {
+    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-05-647e055d5a6d0.avif",
+    text: "Long sleeve crew neck loose leo....",
+    SalePrice: "71.38",
+    Price: "93.99",
+  },
+  {
+    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e4e025a3b7.avif",
+    discount: "20",
+    text: "Long sleeve crew neck loose leo....",
+    SalePrice: "71.38",
+    Price: "93.99",
+  },
+  {
+    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e4e057337b.avif",
+    text: "Long sleeve crew neck loose leo....",
+    SalePrice: "71.38",
+    Price: "93.99",
+  },
+  {
+    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e58925291c.avif",
+    text: "Long sleeve crew neck loose leo....",
+    SalePrice: "71.38",
+    Price: "93.99",
+  },
+  {
+    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e5e6cdbe66.avif",
+    discount: "20",
+    text: "Long sleeve crew neck loose leo....",
+    SalePrice: "71.38",
+    Price: "93.99",
+  },
+];
+export const dressTwo = [
+  {
+    image:
+      "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-08-26-64e9f7a239f4d.png",
+    title2: "FW 2023 Trends",
+  },
+  {
+    image:
+      "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-08-25-64e8a595487f2.png",
+    title2: "Influence Recommendation",
+  },
+  {
+    image:
+      "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647ef2187e4fa.avif",
+    title2: "Spacial Events",
+  },
+];
+export const verticalImage = [
+  {
+    img: "https://sstorage.clearance.ae/production/storage/banner/2023-06-05-647dab8cce697.avif",
+  },
+  {
+    img: "https://sstorage.clearance.ae/production/storage/banner/2023-08-29-64edb55839c25.png",
+  },
+];
+export const verticalImageTwo = [
+  {
+    img: "https://sstorage.clearance.ae/production/storage/banner/2023-08-29-64edb50240a8f.png",
+  },
+  {
+    img: "https://sstorage.clearance.ae/production/storage/banner/2023-08-29-64edb52f31a48.png",
+  },
+];
