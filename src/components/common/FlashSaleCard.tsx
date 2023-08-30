@@ -28,7 +28,12 @@ const FlashSaleCard: FC<flashSaleCardProps> = ({
           <div
             className={`w-full h-[324px] overflow-hidden relative ${imgClass}`}
           >
-            <Image src={item.img} alt="img" fill />
+            <Image
+              src={item.img}
+              alt="img"
+              fill
+              className="group-hover:transform group-hover:scale-110 transition-transform duration-300"
+            />
             {item.discount && (
               <span className="absolute top-3 bg-[#DC2626] text-white px-1 py-0.5 text-base">
                 -{item.discount}%
