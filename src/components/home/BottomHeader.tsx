@@ -4,7 +4,7 @@ import HoverComponent from "../common/HoverComponent";
 const BottomHeader = () => {
   return (
     <div className="border-b mt-4 flex flex-col items-center justify-center w-full relative group">
-      <div className="flex flex-row items-center justify-center gap-x-10 text-lg leading-6 text-[#000000] font-bold uppercase w-full">
+      <div className="flex flex-row items-center justify-center gap-x-1 sm:gap-x-2.5 lg:gap-x-5 2xl:gap-x-10 text-[8px] md:text-[10px] lg:text-xs xl:text-sm 2xl:text-base 3xl:text-lg 3xl:leading-6 text-[#000000] font-bold uppercase w-full">
         <Link href="" className="hover-link pb-4">
           clothing
         </Link>

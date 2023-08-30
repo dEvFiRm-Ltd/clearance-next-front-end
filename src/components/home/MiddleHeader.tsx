@@ -2,16 +2,16 @@ import React from "react";
 
 const MiddleHeader = () => {
   return (
-    <div className="px-[60px] flex flex-row justify-between items-center py-5">
+    <div className="container flex flex-row justify-between items-center py-5 px-5 3xl:px-0">
       <div className="uppercase text-2xl">Stylewe</div>
-      <div className="flex flex-row items-center gap-x-8">
+      <div className="flex flex-row items-center gap-x-4 md:gap-x-8">
         <div className="">
           <input
             type="text"
             placeholder="Jacket"
-            className="w-[300px] pl-5 outline-none py-[15px] border rounded-l"
+            className="w-[200px] md:w-[300px] pl-5 outline-none py-2 md:py-[15px] border rounded-l"
           />
-          <button className="hover:bg-[#616368] bg-[#000000] px-10 py-4 rounded-r">
+          <button className="hover:bg-[#616368] bg-[#000000] px-7 md:px-10 py-2 md:py-4 rounded-r">
             <i className="fa-solid fa-magnifying-glass text-white"></i>
           </button>
         </div>

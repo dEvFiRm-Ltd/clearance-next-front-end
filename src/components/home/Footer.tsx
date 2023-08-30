@@ -189,7 +189,7 @@ const Footer = () => {
               />
             ))}
           </div>
-          <div className="w-[445px]">
+          <div className="w-[340px] sm:w-[445px]">
             <p className="text-lg leading-7 font-bold text-[#000000] capitalize mb-5">
               News letter
             </p>
@@ -210,12 +210,22 @@ const Footer = () => {
               </button>
             </div>
             {/* Icons are here  */}
-            <div className="flex flex-row flex-wrap gap-x-8 text-2xl text-[#000000] ">
-              <i className="fa-brands fa-square-twitter hover:text-[#1DA1F2]"></i>
-              <i className="fa-brands fa-facebook hover:text-[#1DA1F2]"></i>
-              <i className="fa-brands fa-pinterest hover:text-[#1DA1F2]"></i>
-              <i className="fa-brands fa-youtube hover:text-[#1DA1F2]"></i>
-              <i className="fa-brands fa-square-instagram hover:text-[#1DA1F2]"></i>
+            <div className="flex flex-row flex-wrap gap-x-8 text-2xl text-[#000000]">
+              <div>
+                <i className="fa-brands fa-square-twitter hover:text-[#1DA1F2]"></i>
+              </div>
+              <div>
+                <i className="fa-brands fa-facebook hover:text-[#1DA1F2]"></i>
+              </div>
+              <div>
+                <i className="fa-brands fa-pinterest hover:text-[#1DA1F2]"></i>
+              </div>
+              <div>
+                <i className="fa-brands fa-youtube hover:text-[#1DA1F2]"></i>
+              </div>
+              <div>
+                <i className="fa-brands fa-square-instagram hover:text-[#1DA1F2]"></i>
+              </div>
             </div>
             <div className="flex flex-row items-center gap-x-5 mt-[45px]">
               <div className="h-[105px] w-[105px] border-2 rounded-md overflow-hidden relative">
@@ -238,7 +248,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-row items-center justify-center gap-x-3 my-10">
+        <div className="flex flex-row items-center justify-center gap-x-3 my-5 md:my-8 lg:my-10">
           {iconCard.map((item: any, i: number) => (
             <Link key={i} href={item.url}>
               <i className={`text-3xl ${item.icon}`}></i>

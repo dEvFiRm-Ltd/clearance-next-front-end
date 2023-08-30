@@ -19,7 +19,7 @@ export default function Home() {
       <MiddleHeader />
       <BottomHeader />
       <Banner />
-      <div className="container flex flex-row justify-center gap-x-7 mt-[30px] ">
+      <div className="container flex flex-row flex-wrap justify-center gap-x-7 mt-[30px] ">
         {dress.map((item: any, i: number) => (
           <DressCard key={i} image={item.image} title={item.title} />
         ))}
@@ -47,7 +47,12 @@ export default function Home() {
       </div>
       <div className="container mb-10 flex flex-row justify-between">
         {verticalImageTwo.map((item: any, i: number) => (
-          <VerticalImage key={i} img={item.img} className="!h-[273px]" />
+          <VerticalImage
+            key={i}
+            img={item.img}
+            className="!h-[273px]"
+            objectClass="!object-cover"
+          />
         ))}
       </div>
       <HandPicked />
