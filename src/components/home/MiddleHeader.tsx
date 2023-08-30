@@ -1,10 +1,17 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 const MiddleHeader = () => {
   return (
     <div className="px-[60px] flex flex-row justify-between items-center py-5">
-      <div className="uppercase text-2xl">Stylewe</div>
+      <Link href={"/"} className="w-[200px] h-10 relative">
+        <Image
+          src="https://backend-live.clearance.ae/storage/company/2023-02-06-63e08deba2852.png"
+          fill
+          alt="logo"
+        />
+      </Link>
       <div className="flex flex-row items-center gap-x-8">
         <div className="">
           <input
