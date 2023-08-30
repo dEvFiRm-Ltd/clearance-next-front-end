@@ -6,7 +6,7 @@ const BestSeller = () => {
     <div className="container my-8 flex flex-row justify-center gap-x-2.5">
       <div className="md:w-[367px] lg:w-[995px] xl:w-[615px] 2xl:w-[743px] 3xl:w-[890px] md:h-[300px] lg:h-[450px] xl:h-[550px] 2xl:h-[670px] 3xl:h-[818px] relative flex flex-col items-center justify-center">
         <Image
-          src="https://images.pexels.com/photos/5409658/pexels-photo-5409658.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          src="https://sstorage.clearance.ae/production/storage/banner/2023-06-05-647dab8cce697.avif"
           alt="image"
           fill
           className="object-cover"
@@ -24,7 +24,7 @@ const BestSeller = () => {
       </div>
       <div className="md:w-[367px] lg:w-[995px] xl:w-[615px] 2xl:w-[743px] 3xl:w-[890px] md:h-[300px] lg:h-[450px] xl:h-[550px] 2xl:h-[670px] 3xl:h-[818px] relative flex flex-col items-center justify-center">
         <Image
-          src="https://images.pexels.com/photos/7552577/pexels-photo-7552577.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          src="https://sstorage.clearance.ae/production/storage/banner/2023-08-29-64edb55839c25.png"
           alt="image"
           fill
           className="object-cover"

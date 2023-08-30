@@ -4,7 +4,12 @@ import React from "react";
 const DenimShop = () => {
   return (
     <div className="container h-[594px] w-full relative px-[60px] mb-[35px]">
-      <Image src="/banner.jpg" alt="banner" fill className="object-container" />
+      <Image
+        src="https://sstorage.clearance.ae/production/storage/banner/2023-08-29-64edb50240a8f.png"
+        alt="banner"
+        fill
+        className="object-container"
+      />
       <h1 className="text-5xl leading-[50px] uppercase text-[#FFFFFF] font-bold z-10 absolute top-[250px] right-[150px]">
         the denim shop
       </h1>

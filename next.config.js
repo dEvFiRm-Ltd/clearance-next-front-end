@@ -5,11 +5,6 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "images.pexels.com",
-        port: "",
-      },
-      {
-        protocol: "https",
         hostname: "sstorage.clearance.ae",
         port: "",
       },
