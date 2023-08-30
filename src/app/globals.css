@@ -18,6 +18,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
+  overflow-x: hidden;
   background: linear-gradient(
       to bottom,
       transparent,
@@ -36,7 +37,7 @@ body {
 
 /* Styles for the link on hover */
 .hover-link::before {
-  content: "";
+  content: '';
   position: absolute;
   bottom: 0;
   left: 0;
@@ -56,3 +57,4 @@ body {
 .btnShadow {
   box-shadow: 0px 2px 12px rgb(0, 0, 0, 0.2);
 }
+
