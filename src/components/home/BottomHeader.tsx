@@ -1,49 +1,34 @@
 import Link from "next/link";
 import React from "react";
-import HoverComponent from "../common/HoverComponent";
+import { bottomHeaderItems, bottomHeaderLinkItems } from "@/static";
+import { footerProps, linkType } from "@/utils/type";
+import FooterPart from "../common/FooterPart";
+import Image from "next/image";
 const BottomHeader = () => {
   return (
-    <div className="border-b mt-4 flex flex-col items-center justify-center w-full relative group">
-      <div className="flex flex-row items-center justify-center gap-x-10 text-lg leading-6 text-[#000000] font-bold uppercase w-full">
-        <Link href="" className="hover-link pb-4">
-          clothing
+    <div className="border-b relative group flex flex-row items-center justify-center text-[#000000] font-bold uppercase w-fit mx-auto lg:gap-x-4 xl:gap-x-5 2xl:gap-x-8 3xl:gap-x-10 text-[13px] xl:text-sm 2xl:text-base 3xl:text-lg">
+      {bottomHeaderLinkItems.map((item: linkType, id: number) => (
+        <Link key={id} href={item.url} className="hover-link py-4 ">
+          {item.title}
         </Link>
-        <Link href="" className="hover-link pb-4">
-          FW23
-        </Link>
-        <Link href="" className="hover-link pb-4">
-          new in
-        </Link>
-        <Link href="" className="hover-link pb-4">
-          tops
-        </Link>
-        <Link href="" className="hover-link pb-4">
-          dresses
-        </Link>
-        <Link href="" className="hover-link pb-4">
-          outerwear
-        </Link>
-        <Link href="" className="hover-link pb-4">
-          knitwear
-        </Link>
-        <Link href="" className="hover-link pb-4">
-          bottoms
-        </Link>
-        <Link href="" className="hover-link pb-4">
-          plus+curve
-        </Link>
-        <Link href="" className="hover-link pb-4">
-          shoes+accessories
-        </Link>
-        <Link href="" className="hover-link pb-4">
-          sale
-        </Link>
-        <Link href="" className="hover-link pb-4">
-          community
-        </Link>
-      </div>
-      <div className="absolute top-10 border-t z-50 group-hover:block hidden w-screen">
-        <HoverComponent />
+      ))}
+      <div className="absolute top-full border-t group-hover:flex hidden transition-all flex-row justify-center items-start gap-x-10 pt-10 pb-[52px] z-50 bg-white w-screen">
+        {bottomHeaderItems.map((item: footerProps, id: number) => (
+          <FooterPart
+            key={id}
+            heading={item.heading}
+            itemArr={item.itemArr}
+            headingClass="!text-sm !capitalize !mb-4"
+          />
+        ))}
+        <div className="flex flex-row items-center lg:gap-x-4 2xl:gap-x-5">
+          <div className="lg:w-48 xl:w-60 2xl:w-72 3xl:w-80 lg:h-32 xl:h-40 2xl:h-48 3xl:h-52 relative overflow-hidden">
+            <Image src="/girl.jpg" alt="" fill className="object-cover" />
+          </div>
+          <div className="lg:w-48 xl:w-60 2xl:w-72 3xl:w-80 lg:h-32 xl:h-40 2xl:h-48 3xl:h-52 relative overflow-hidden">
+            <Image src="/girl2.jpg" alt="" fill className="object-cover" />
+          </div>
+        </div>
       </div>
     </div>
   );

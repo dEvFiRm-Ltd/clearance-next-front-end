@@ -1,4 +1,224 @@
 import { flashSaleCardTypes } from "@/components/common/FlashSaleCard";
+import { footerProps, linkType } from "@/utils/type";
+
+export const bottomHeaderLinkItems: linkType[] = [
+  {
+    title: "clothing",
+    url: "",
+  },
+  {
+    title: "FW23",
+    url: "",
+  },
+  {
+    title: "new in",
+    url: "",
+  },
+  {
+    title: "tops",
+    url: "",
+  },
+  {
+    title: "dresses",
+    url: "",
+  },
+  {
+    title: "outwear",
+    url: "",
+  },
+  {
+    title: "knitwear",
+    url: "",
+  },
+  {
+    title: "bottoms",
+    url: "",
+  },
+  {
+    title: "plus+curve",
+    url: "",
+  },
+  {
+    title: "shoes+accessories",
+    url: "",
+  },
+  {
+    title: "sale",
+    url: "",
+  },
+  {
+    title: "community",
+    url: "",
+  },
+];
+
+export const bottomHeaderItems: footerProps[] = [
+  {
+    heading: "Shop By Category",
+    itemArr: [
+      {
+        title: "All Dresses",
+        url: "",
+      },
+      {
+        title: "New Dresses",
+        url: "",
+      },
+      {
+        title: "Top-Rated Dresses",
+        url: "",
+      },
+      {
+        title: "Maxi Dresses",
+        url: "",
+      },
+      {
+        title: "Midi Dresses",
+        url: "",
+      },
+      {
+        title: "Mini Dresses",
+        url: "",
+      },
+      {
+        title: "Plus Dresses",
+        url: "",
+      },
+    ],
+  },
+  {
+    heading: "Featured Shops",
+    itemArr: [
+      {
+        title: "Best Sellers",
+        url: "",
+      },
+      {
+        title: "FW 2023",
+        url: "",
+      },
+      {
+        title: "Special Event",
+        url: "",
+      },
+      {
+        title: "Earth tone",
+        url: "",
+      },
+      {
+        title: "Intellectual Looks",
+        url: "",
+      },
+    ],
+  },
+  {
+    heading: "Stylewe Classic Look",
+    itemArr: [
+      {
+        title: "Item 1",
+        url: "",
+      },
+      {
+        title: "Designer Shop",
+        url: "",
+      },
+    ],
+  },
+];
+
+export const footerItems: footerProps[] = [
+  {
+    heading: "COMPANY INFO",
+    itemArr: [
+      {
+        title: "About Us",
+        url: "",
+      },
+      {
+        title: "Intellectual Property Rights",
+        url: "",
+      },
+      {
+        title: "Privacy Policy",
+        url: "",
+      },
+      {
+        title: "Terms",
+        url: "",
+      },
+      {
+        title: "Sitemap",
+        url: "",
+      },
+      {
+        title: "B2B Partners",
+        url: "",
+      },
+      {
+        title: "Sustainability",
+        url: "",
+      },
+    ],
+  },
+  {
+    heading: "HELP & SUPPORT",
+    itemArr: [
+      {
+        title: "Shipping & Delivery",
+        url: "",
+      },
+      {
+        title: "Return Policy",
+        url: "",
+      },
+      {
+        title: "Tracking Order",
+        url: "",
+      },
+      {
+        title: "Tracking Order",
+        url: "",
+      },
+      {
+        title: "Pre Order Guidance",
+        url: "",
+      },
+      {
+        title: "About Wallet",
+        url: "",
+      },
+      {
+        title: "Influencer Program",
+        url: "",
+      },
+      {
+        title: "Affiliate Program",
+        url: "",
+      },
+    ],
+  },
+  {
+    heading: "CUSTOMER SERVICE",
+    itemArr: [
+      {
+        title: "Customer Reviews",
+        url: "",
+      },
+      {
+        title: "Contact Us",
+        url: "",
+      },
+      {
+        title: "How To Choose Your Size",
+        url: "",
+      },
+      {
+        title: "FAQs",
+        url: "",
+      },
+    ],
+  },
+];
 
 export const dress = [
   {
