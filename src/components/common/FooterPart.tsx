@@ -4,7 +4,7 @@ import React, { FC } from "react";
 
 const FooterPart: FC<footerProps> = ({ itemArr, heading, headingClass }) => {
   return (
-    <div className="">
+    <div>
       <p
         className={`lg:text-base 2xl:text-lg font-bold text-black uppercase mb-5 ${headingClass}`}
       >
