@@ -34,9 +34,8 @@ export default function Home() {
             image={item.image}
             heading={item.heading}
             title={item.title}
-            titleClass="!my-0 text-base sm:text-sm lg:text-base xl:text-xl leading-6 sm:leading-5 lg:leading-6 xl:leading-8"
-            hightClass="h-[430px] sm:h-[380px] md:h-[350px] lg:h-[420px] xl:!h-[520px] 2xl:!h-[640px] 3xl:!h-[703px]"
-            withClass="w-[336px] sm:w-[302px] md:w-[240px] lg:w-[322.67px] xl:w-[405.33px] 2xl:w-[485.33px] 3xl:!w-[580px]"
+            hightClass="!h-[430px] sm:!h-[380px] md:!h-[350px] lg:!h-[420px] xl:!h-[520px] 2xl:!h-[640px] 3xl:!h-[703px]"
+            withClass="!w-[336px] sm:!w-[302px] md:!w-[240px] lg:!w-[322.67px] xl:!w-[405.33px] 2xl:!w-[485.33px] 3xl:!w-[580px]"
           />
         ))}
       </div>

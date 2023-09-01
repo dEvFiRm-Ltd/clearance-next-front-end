@@ -5,7 +5,6 @@ export type dressType = {
   image: string;
   title: string;
   heading?: string;
-  titleClass?: string;
   hightClass?: string;
   withClass?: string;
 };
@@ -13,7 +12,6 @@ export type dressType = {
 const DressCard: FC<dressType> = ({
   image,
   title,
-  titleClass,
   hightClass,
   withClass,
   heading,
@@ -28,13 +26,11 @@ const DressCard: FC<dressType> = ({
         <Image src={image} alt="image" fill className="object-cover" />
       </div>
       {heading && (
-        <p className=" text-base sm:text-sm lg:text-lg xl:text-2xl leading-6 sm:leading-4 lg:leading-7 xl:leading-10 font-medium text-black">
+        <p className="text-base md:text-sm lg:text-lg xl:text-xl 2xl:text-2xl 2xl:leading-10 font-semibold text-black">
           {heading}
         </p>
       )}
-      <p
-        className={`border-b text-xl leading-8 text-[#5C5C5C] border-[#B9B9B9] inline-block ${titleClass}`}
-      >
+      <p className="border-b text-[#5C5C5C] border-[#B9B9B9] text-sm lg:text-base xl:text-lg 3xl:text-xl xl:leading-8">
         {title}
       </p>
     </div>
