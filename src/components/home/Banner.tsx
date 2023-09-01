@@ -2,7 +2,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { FC } from "react";
-import Slider from "react-slick";
 
 const Banner: FC = () => {
   const settings = {
