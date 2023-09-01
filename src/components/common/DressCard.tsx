@@ -8,6 +8,7 @@ type dressType = {
   hightClass?: string;
   withClass?: string;
   title2?: string;
+  title2Class?: string;
 };
 
 const DressCard: FC<dressType> = ({
@@ -17,6 +18,7 @@ const DressCard: FC<dressType> = ({
   hightClass,
   withClass,
   title2,
+  title2Class,
 }) => {
   return (
     <div className="uppercase text-xl leading-8 text-[#5C5C5C]">
@@ -26,7 +28,9 @@ const DressCard: FC<dressType> = ({
         <div className={`relative h-[390px] w-full ${hightClass}`}>
           <Image src={image} alt="image" fill className="object-cover" />
         </div>
-        <p className="text-2xl leading-10 font-medium text-[#000000] mt-3">
+        <p
+          className={`text-2xl leading-10 font-medium text-[#000000] mt-3 ${title2Class}`}
+        >
           {title2}
         </p>
         <p

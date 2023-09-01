@@ -15,27 +15,28 @@ import HandPicked from "@/components/home/HandPicked";
 export default function Home() {
   return (
     <>
-      <TopHeader />
-      <MiddleHeader />
-      <BottomHeader />
+      {/* <TopHeader /> */}
+      {/* <MiddleHeader /> */}
+      {/* <BottomHeader /> */}
       <Banner />
       <div className="container flex flex-row flex-wrap justify-center gap-x-7 mt-[30px] ">
         {dress.map((item: any, i: number) => (
           <DressCard key={i} image={item.image} title={item.title} />
         ))}
       </div>
-      <BestSeller />
-      <FlashSale />
-      <DenimShop />
-      <div className="container flex flex-row justify-center gap-x-[23px] mt-[30px] ">
+      {/* <BestSeller /> */}
+      {/* <FlashSale /> */}
+      {/* <DenimShop /> */}
+      <div className="container flex flex-col items-center sm:flex-row sm:flex-wrap md:flex-nowrap justify-center gap-y-5 md:gap-y-0 sm:gap-x-3 lg:gap-x-4 2xl:gap-x-5 3xl:gap-x-[23px] mt-[30px] ">
         {dressTwo.map((item: any, i: number) => (
           <DressCard
             key={i}
             image={item.image}
             title="shop now"
-            titleClass="!my-0"
-            hightClass="!h-[703px]"
-            withClass="!w-[580px]"
+            titleClass="!my-0 text-base sm:text-sm lg:text-base xl:text-xl leading-6 sm:leading-5 lg:leading-6 xl:leading-8"
+            hightClass="h-[430px] sm:h-[380px] md:h-[350px] lg:h-[420px] xl:!h-[520px] 2xl:!h-[640px] 3xl:!h-[703px]"
+            withClass="w-[336px] sm:w-[302px] md:w-[240px] lg:w-[322.67px] xl:w-[405.33px] 2xl:w-[485.33px] 3xl:!w-[580px]"
+            title2Class="text-base sm:text-sm lg:text-lg xl:text-2xl leading-6 sm:leading-4 lg:leading-7 xl:leading-10"
             title2={item.title2}
           />
         ))}
@@ -56,8 +57,8 @@ export default function Home() {
         ))}
       </div>
       <HandPicked />
-      <RelatedSearches />
-      <Footer />
+      {/* <RelatedSearches /> */}
+      {/* <Footer /> */}
     </>
   );
 }
