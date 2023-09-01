@@ -41,17 +41,21 @@ export default function Home() {
           />
         ))}
       </div>
-      <div className="container mt-[60px] mb-10 flex flex-row justify-between">
+      <div className="container mt-[60px] xl:mb-5 3xl:mb-10 flex flex-row justify-center gap-x-5">
         {verticalImage.map((item: any, i: number) => (
-          <VerticalImage key={i} img={item.img} className="" />
+          <VerticalImage
+            key={i}
+            img={item.img}
+            className="xl:w-[614px] 2xl:w-[738px] 3xl:w-[880px] xl:h-[350px] 2xl:h-[380px] 3xl:h-[405px]"
+          />
         ))}
       </div>
-      <div className="container mb-10 flex flex-row justify-between">
+      <div className="container mb-10 flex flex-row justify-center gap-x-5">
         {verticalImageTwo.map((item: any, i: number) => (
           <VerticalImage
             key={i}
             img={item.img}
-            className="!h-[273px]"
+            className="w-[880px] h-[273px]"
             objectClass="!object-cover"
           />
         ))}
