@@ -1,44 +1,38 @@
 import Image from "next/image";
 import React, { FC } from "react";
 
-type dressType = {
+export type dressType = {
   image: string;
   title: string;
-  titleClass?: string;
+  heading?: string;
   hightClass?: string;
   withClass?: string;
-  title2?: string;
-  title2Class?: string;
 };
 
 const DressCard: FC<dressType> = ({
   image,
   title,
-  titleClass,
   hightClass,
   withClass,
-  title2,
-  title2Class,
+  heading,
 }) => {
   return (
-    <div className="uppercase text-xl leading-8 text-[#5C5C5C]">
+    <div
+      className={`w-40 lg:w-44 xl:w-48 2xl:w-[234px] 3xl:w-[272px] flex flex-col items-center justify-start gap-y-4 uppercase ${withClass}`}
+    >
       <div
-        className={`w-[272px] flex flex-col items-center justify-center ${withClass}`}
+        className={`relative h-56 lg:h-64 xl:h-72 2xl:h-[335px] 3xl:h-[390px] w-full ${hightClass}`}
       >
-        <div className={`relative h-[390px] w-full ${hightClass}`}>
-          <Image src={image} alt="image" fill className="object-cover" />
-        </div>
-        <p
-          className={`text-2xl leading-10 font-medium text-[#000000] mt-3 ${title2Class}`}
-        >
-          {title2}
-        </p>
-        <p
-          className={`border-b border-[#B9B9B9] inline-block my-4 ${titleClass}`}
-        >
-          {title}
-        </p>
+        <Image src={image} alt="image" fill className="object-cover" />
       </div>
+      {heading && (
+        <p className="text-base md:text-sm lg:text-lg xl:text-xl 2xl:text-2xl 2xl:leading-10 font-semibold text-black">
+          {heading}
+        </p>
+      )}
+      <p className="border-b text-[#5C5C5C] border-[#B9B9B9] text-sm lg:text-base xl:text-lg 3xl:text-xl xl:leading-8">
+        {title}
+      </p>
     </div>
   );
 };
