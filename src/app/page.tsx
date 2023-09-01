@@ -27,27 +27,36 @@ export default function Home() {
       <BestSeller />
       <FlashSale />
       <DenimShop />
-      <div className="container flex flex-row justify-center gap-x-[23px] mt-[30px] ">
+      <div className="container flex flex-col items-center sm:flex-row sm:flex-wrap md:flex-nowrap justify-center gap-y-5 md:gap-y-0 sm:gap-x-3 lg:gap-x-4 2xl:gap-x-5 3xl:gap-x-[23px] mt-[30px] ">
         {dressTwo.map((item: dressType, id: number) => (
           <DressCard
             key={id}
             image={item.image}
             heading={item.heading}
             title={item.title}
-            titleClass="!my-0"
-            hightClass="!h-[703px]"
-            withClass="!w-[580px]"
+            titleClass="!my-0 text-base sm:text-sm lg:text-base xl:text-xl leading-6 sm:leading-5 lg:leading-6 xl:leading-8"
+            hightClass="h-[430px] sm:h-[380px] md:h-[350px] lg:h-[420px] xl:!h-[520px] 2xl:!h-[640px] 3xl:!h-[703px]"
+            withClass="w-[336px] sm:w-[302px] md:w-[240px] lg:w-[322.67px] xl:w-[405.33px] 2xl:w-[485.33px] 3xl:!w-[580px]"
           />
         ))}
       </div>
-      <div className="container mt-[60px] mb-10 flex flex-row justify-between">
+      <div className="container mt-[60px] xl:mb-5 3xl:mb-10 flex flex-row justify-center gap-x-5">
         {verticalImage.map((item: any, i: number) => (
-          <VerticalImage key={i} img={item.img} className="" />
+          <VerticalImage
+            key={i}
+            img={item.img}
+            className="xl:w-[614px] 2xl:w-[738px] 3xl:w-[880px] xl:h-[350px] 2xl:h-[380px] 3xl:h-[405px]"
+          />
         ))}
       </div>
-      <div className="container mb-10 flex flex-row justify-between">
+      <div className="container mb-10 flex flex-row justify-center gap-x-5">
         {verticalImageTwo.map((item: any, i: number) => (
-          <VerticalImage key={i} img={item.img} className="!h-[273px]" />
+          <VerticalImage
+            key={i}
+            img={item.img}
+            className="w-[880px] h-[273px]"
+            objectClass="!object-cover"
+          />
         ))}
       </div>
       <HandPicked />

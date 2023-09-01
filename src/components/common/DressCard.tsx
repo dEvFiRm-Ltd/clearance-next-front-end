@@ -28,7 +28,7 @@ const DressCard: FC<dressType> = ({
         <Image src={image} alt="image" fill className="object-cover" />
       </div>
       {heading && (
-        <p className="text-2xl leading-10 font-medium text-[#000000]">
+        <p className=" text-base sm:text-sm lg:text-lg xl:text-2xl leading-6 sm:leading-4 lg:leading-7 xl:leading-10 font-medium text-black">
           {heading}
         </p>
       )}
