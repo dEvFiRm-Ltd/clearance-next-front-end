@@ -35,28 +35,27 @@ export default function Home() {
             title="shop now"
             titleClass="!my-0 text-base sm:text-sm lg:text-base xl:text-xl leading-6 sm:leading-5 lg:leading-6 xl:leading-8"
             hightClass="h-[430px] sm:h-[380px] md:h-[350px] lg:h-[420px] xl:!h-[520px] 2xl:!h-[640px] 3xl:!h-[703px]"
-            withClass="w-[336px] sm:w-[302px] md:w-[240px] lg:w-[322.67px] xl:w-[405.33px] 2xl:w-[485.33px] 3xl:!w-[580px]"
+            withClass="min-w-[336px] sm:w-[302px] md:w-[240px] lg:w-[322.67px] xl:w-[405.33px] 2xl:w-[485.33px] 3xl:!w-[580px]"
             title2Class="text-base sm:text-sm lg:text-lg xl:text-2xl leading-6 sm:leading-4 lg:leading-7 xl:leading-10"
             title2={item.title2}
           />
         ))}
       </div>
-      <div className="container mt-[60px] xl:mb-5 3xl:mb-10 flex flex-row justify-center gap-x-5">
+      <div className="container mt-[60px] flex flex-col gap-y-5 items-center lg:items-start lg:flex-row justify-center gap-x-5">
         {verticalImage.map((item: any, i: number) => (
           <VerticalImage
             key={i}
             img={item.img}
-            className="xl:w-[614px] 2xl:w-[738px] 3xl:w-[880px] xl:h-[350px] 2xl:h-[380px] 3xl:h-[405px]"
+            className="w-[336px] sm:w-[616px] md:w-[736px] lg:w-[490px] xl:w-[614px] 2xl:w-[738px] 3xl:w-[880px] h-[240px] sm:h-[320px] md:h-[400px] lg:h-[330px] xl:h-[350px] 2xl:h-[380px] 3xl:h-[405px]"
           />
         ))}
       </div>
-      <div className="container mb-10 flex flex-row justify-center gap-x-5">
+      <div className="container mb-10 flex flex-col gap-y-5 items-center lg:items-start lg:flex-row justify-center gap-x-5 mt-5">
         {verticalImageTwo.map((item: any, i: number) => (
           <VerticalImage
             key={i}
             img={item.img}
-            className="w-[880px] h-[273px]"
-            objectClass="!object-cover"
+            className="w-[336px] sm:w-[616px] md:w-[736px] lg:w-[490px] xl:w-[614px] 2xl:w-[738px] 3xl:w-[880px] h-[273px]"
           />
         ))}
       </div>
