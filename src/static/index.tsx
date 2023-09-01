@@ -1,3 +1,4 @@
+import { dressType } from "@/components/common/DressCard";
 import { flashSaleCardTypes } from "@/components/common/FlashSaleCard";
 import { footerProps, linkType } from "@/utils/type";
 
@@ -220,7 +221,7 @@ export const footerItems: footerProps[] = [
   },
 ];
 
-export const dress = [
+export const dress: dressType[] = [
   {
     image:
       "https://backend-live.clearance.ae/storage/category/2023-08-29-64edbb44c865c.png",
@@ -374,21 +375,24 @@ export const FlashSaleData: flashSaleCardTypes[] = [
     Price: "93.99",
   },
 ];
-export const dressTwo = [
+export const dressTwo: dressType[] = [
   {
     image:
       "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-08-26-64e9f7a239f4d.png",
-    title2: "FW 2023 Trends",
+    title: "shop now",
+    heading: "FW 2023 Trends",
   },
   {
     image:
       "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-08-25-64e8a595487f2.png",
-    title2: "Influence Recommendation",
+    title: "shop now",
+    heading: "Influence Recommendation",
   },
   {
     image:
       "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647ef2187e4fa.avif",
-    title2: "Spacial Events",
+    title: "shop now",
+    heading: "Spacial Events",
   },
 ];
 export const verticalImage = [

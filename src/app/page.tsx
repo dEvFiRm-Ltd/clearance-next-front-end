@@ -1,5 +1,5 @@
 import BestSeller from "@/components/home/BestSeller";
-import DressCard from "@/components/common/DressCard";
+import DressCard, { dressType } from "@/components/common/DressCard";
 import Banner from "@/components/home/Banner";
 import BottomHeader from "@/components/home/BottomHeader";
 import FlashSale from "@/components/home/FlashSale";
@@ -19,24 +19,24 @@ export default function Home() {
       <MiddleHeader />
       <BottomHeader />
       <Banner />
-      <div className="container flex flex-row justify-center gap-x-7 mt-[30px] ">
-        {dress.map((item: any, i: number) => (
-          <DressCard key={i} image={item.image} title={item.title} />
+      <div className="container flex flex-row justify-center mt-[30px] gap-4 md:gap-5 xl:gap-6 3xl:gap-7 flex-wrap">
+        {dress.map((item: dressType, id: number) => (
+          <DressCard key={id} image={item.image} title={item.title} />
         ))}
       </div>
       <BestSeller />
       <FlashSale />
       <DenimShop />
       <div className="container flex flex-row justify-center gap-x-[23px] mt-[30px] ">
-        {dressTwo.map((item: any, i: number) => (
+        {dressTwo.map((item: dressType, id: number) => (
           <DressCard
-            key={i}
+            key={id}
             image={item.image}
-            title="shop now"
+            heading={item.heading}
+            title={item.title}
             titleClass="!my-0"
             hightClass="!h-[703px]"
             withClass="!w-[580px]"
-            title2={item.title2}
           />
         ))}
       </div>
