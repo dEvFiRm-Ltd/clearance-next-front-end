@@ -15,18 +15,18 @@ import HandPicked from "@/components/home/HandPicked";
 export default function Home() {
   return (
     <>
-      {/* <TopHeader /> */}
-      {/* <MiddleHeader /> */}
-      {/* <BottomHeader /> */}
+      <TopHeader />
+      <MiddleHeader />
+      <BottomHeader />
       <Banner />
       <div className="container flex flex-row flex-wrap justify-center gap-x-7 mt-[30px] ">
         {dress.map((item: any, i: number) => (
           <DressCard key={i} image={item.image} title={item.title} />
         ))}
       </div>
-      {/* <BestSeller /> */}
-      {/* <FlashSale /> */}
-      {/* <DenimShop /> */}
+      <BestSeller />
+      <FlashSale />
+      <DenimShop />
       <div className="container flex flex-col items-center sm:flex-row sm:flex-wrap md:flex-nowrap justify-center gap-y-5 md:gap-y-0 sm:gap-x-3 lg:gap-x-4 2xl:gap-x-5 3xl:gap-x-[23px] mt-[30px] ">
         {dressTwo.map((item: any, i: number) => (
           <DressCard
@@ -61,8 +61,8 @@ export default function Home() {
         ))}
       </div>
       <HandPicked />
-      {/* <RelatedSearches /> */}
-      {/* <Footer /> */}
+      <RelatedSearches />
+      <Footer />
     </>
   );
 }
