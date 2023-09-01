@@ -1,34 +1,105 @@
+import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const MiddleHeader = () => {
   return (
-    <div className="container flex flex-row justify-between items-center py-5 px-5 3xl:px-0">
-      <div className="uppercase text-2xl">Stylewe</div>
-      <div className="flex flex-row items-center gap-x-4 md:gap-x-8">
+    <div className="flex flex-row justify-between items-center lg:py-4 2xl:py-5 lg:px-6 xl:px-8 2xl:px-12 3xl:px-[60px]">
+      <Link
+        href={"/"}
+        className="w-32 h-10 relative lg:w-40 2xl:w-44 3xl:w-[200px]"
+      >
+        <Image
+          src="https://backend-live.clearance.ae/storage/company/2023-02-06-63e08deba2852.png"
+          fill
+          alt="logo"
+        />
+      </Link>
+      <div className="flex flex-row items-center gap-x-5 xl:gap-x-6 3xl:gap-x-8">
         <div className="">
           <input
             type="text"
             placeholder="Jacket"
-            className="w-[200px] md:w-[300px] pl-5 outline-none py-2 md:py-[15px] border rounded-l"
+            className="w-48 pl-5 outline-none border rounded-l lg:w-56 xl:w-60 2xl:w-64 3xl:w-[300px] py-2 xl:py-2.5 2xl:py-3 3xl:py-4 text-sm 2xl:text-base"
           />
-          <button className="hover:bg-[#616368] bg-[#000000] px-7 md:px-10 py-2 md:py-4 rounded-r">
+          <button className="rounded-r hover:bg-[#616368] bg-[#31353c] px-5 xl:px-6 2xl:px-8 3xl:px-10 py-2 xl:py-2.5 2xl:py-3 3xl:py-4">
             <i className="fa-solid fa-magnifying-glass text-white"></i>
           </button>
         </div>
-        <div className="flex flex-row items-center gap-x-8 text-2xl">
-          <button type="button" className="group relative">
+        <div className="flex flex-row items-center gap-x-2 xl:gap-x-3.5 2xl:gap-x-4 3xl:gap-x-5 text-xl 2xl:text-2xl">
+          <button type="button" className="group relative p-2 2xl:p-3">
             <i className="fa-solid fa-globe"></i>
-            <div className="group-hover:block hidden absolute top-12 right-0 shadow-lg z-10 px-6 py-[18px] bg-white rounded-lg">
-              <p className="text-sm leading-5 font-normal text-[#000000] capitalize">
-                country/region
+            <div className="hidden w-80 group-hover:flex flex-col justify-start gap-y-5 absolute top-full right-0 z-50 px-4 pt-5 pb-2 bg-white cartShadow">
+              <p className="text-sm 2xl:text-base font-bold text-[#31353C] capitalize text-left">
+                Language
               </p>
+              <select className="w-full p-3 border text-sm 2xl:text-base text-[#5d626a] border-gray-300 hover:border-gray-500 focus-visible:outline-none">
+                <option value="english">English</option>
+                <option value="arabic">Arabic</option>
+              </select>
             </div>
           </button>
-          <button type="button">
+          <button type="button" className="group relative p-2 2xl:p-3">
             <i className="fa-regular fa-user"></i>
+            {/* hover dropdown */}
+            <div className="absolute right-[50%] translate-x-[50%] z-50 top-[115%] bg-white group-hover:flex min-w-[240px] rounded-md hidden cartShadow">
+              <div className="w-full flex flex-col justify-start items-center gap-4 relative p-4">
+                <button
+                  type="button"
+                  className="flex justify-center items-center overflow-hidden rounded hover:opacity-80 bg-[#31353C] group w-full px-3 py-2 text-white text-sm 2xl:text-base"
+                >
+                  Sign In / Register{" "}
+                </button>
+                <p className="text-sm font-normal text-black capitalize">
+                  or sign in:
+                </p>
+                <span className="flex justify-center items-center gap-x-10">
+                  <Link href="">
+                    <i className="fab fa-facebook text-blue-500"></i>
+                  </Link>
+                  <Link href="">
+                    <i className="fab fa-google text-red-400"></i>
+                  </Link>
+                </span>
+                <span className="h-px bg-slate-500 w-full" />
+                <Link
+                  href={""}
+                  className="w-full text-sm 2xl:text-base text-left text-[#5d626a] hover:font-bold capitalize"
+                >
+                  my order
+                </Link>
+                <Link
+                  href={""}
+                  className="w-full text-sm 2xl:text-base text-left text-[#5d626a] hover:font-bold capitalize"
+                >
+                  my coupons
+                </Link>
+                <Link
+                  href={""}
+                  className="w-full text-sm 2xl:text-base text-left text-[#5d626a] hover:font-bold capitalize"
+                >
+                  my wallet
+                </Link>
+                <span className="h-3 w-3 bg-white cartShadow rotate-45 absolute -z-50 -top-1.5 left-1/2 -translate-x-1/2" />
+              </div>
+            </div>
+            {/* hover dropdown ends */}
           </button>
-          <button type="button">
+          <button type="button" className="group relative p-2 2xl:p-3">
             <i className="fa-solid fa-bag-shopping"></i>
+            {/* hover dropdown */}
+            <div className="cartShadow group-hover:block hidden absolute top-full -right-1 z-50 bg-white rounded-md">
+              <div className="flex flex-col justify-center items-center w-[448px] relative gap-6 py-10">
+                <div className="h-32 w-32 rounded-full bg-slate-50 overflow-hidden flex justify-center items-end">
+                  <i className="fas fa-shopping-cart text-[80px] text-gray-300"></i>
+                </div>
+                <p className="font-normal capitalize lg:text-base 3xl:text-lg text-center text-[#5d626a]">
+                  Your Shopping Bag Is Empty
+                </p>
+                <span className="h-3 w-3 bg-white cartShadow rotate-45 absolute -z-50 -top-1.5 right-4" />
+              </div>
+            </div>
+            {/* hover dropdown ends */}
           </button>
         </div>
       </div>

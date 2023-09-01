@@ -1,122 +1,26 @@
 import React from "react";
 import FooterPart from "./FooterPart";
 import Image from "next/image";
+import { bottomHeaderItems } from "@/static";
+import { footerProps } from "@/utils/type";
 
 const HoverComponent = () => {
-  const hoverItems = [
-    [
-      {
-        heading: "Shop By Category",
-        title: "All Dresses",
-        url: "",
-      },
-      {
-        heading: "",
-        title: "New Dresses",
-        url: "",
-        titleClass: "",
-      },
-      {
-        heading: "",
-        title: "Top-Rated Dresses",
-        url: "",
-        titleClass: "",
-      },
-      {
-        heading: "",
-        title: "Maxi Dresses",
-        url: "",
-        titleClass: "",
-      },
-      {
-        heading: "",
-        title: "Midi Dresses",
-        url: "",
-        titleClass: "",
-      },
-      {
-        heading: "",
-        title: "Mini Dresses",
-        url: "",
-        titleClass: "",
-      },
-      {
-        heading: "",
-        title: "Plus Dresses",
-        url: "",
-        titleClass: "",
-      },
-    ],
-    [
-      {
-        heading: "Featured Shops",
-        title: "Best Sellers",
-        url: "",
-      },
-      {
-        heading: "",
-        title: "FW 2023",
-        url: "",
-        titleClass: "",
-      },
-      {
-        heading: "",
-        title: "Special Event",
-        url: "",
-        titleClass: "",
-      },
-      {
-        heading: "",
-        title: "Earth tone",
-        url: "",
-        titleClass: "",
-      },
-      {
-        heading: "",
-        title: "Intellectual Looks",
-        url: "",
-        titleClass: "",
-      },
-    ],
-    [
-      {
-        heading: "Stylewe Classic Look",
-        title: "Item 1",
-        url: "",
-      },
-      {
-        heading: "",
-        title: "Designer Shop",
-        url: "",
-        titleClass: "",
-      },
-    ],
-  ];
-
   return (
-    <div className="flex flex-row justify-center pt-10 pb-[52px] z-50 bg-white w-screen">
-      <div className=" flex flex-row items-start gap-x-10">
-        {hoverItems.map((itemArr: any[], j: number) => (
-          <div key={j} className="flex flex-col capitalize">
-            {itemArr.map((item: any, i: number) => (
-              <FooterPart
-                key={i}
-                heading={item.heading}
-                title={item.title}
-                url={item.url}
-                headingClass="!text-sm !leading-5 !capitalize !mb-1"
-                titleClass={`!text-xm ${item.titleClass}`}
-              />
-            ))}
-          </div>
-        ))}
-        <div className="flex flex-row items-center gap-x-5">
-          <div className="w-[322px] h-[202px] relative overflow-hidden">
-            <Image src="/girl.jpg" alt="" fill className="object-cover" />
-          </div>
-          <div className="w-[322px] h-[202px] relative overflow-hidden">
-            <Image src="/girl2.jpg" alt="" fill className="object-cover" />
-          </div>
+    <div className="flex flex-row justify-center items-start gap-x-10 pt-10 pb-[52px] z-50 bg-white w-screen">
+      {bottomHeaderItems.map((item: footerProps, id: number) => (
+        <FooterPart
+          key={id}
+          heading={item.heading}
+          itemArr={item.itemArr}
+          headingClass="!text-sm !capitalize !mb-4"
+        />
+      ))}
+      <div className="flex flex-row items-center lg:gap-x-4 2xl:gap-x-5">
+        <div className="lg:w-48 xl:w-60 2xl:w-72 3xl:w-80 lg:h-32 xl:h-40 2xl:h-48 3xl:h-52 relative overflow-hidden">
+          <Image src="/girl.jpg" alt="" fill className="object-cover" />
+        </div>
+        <div className="lg:w-48 xl:w-60 2xl:w-72 3xl:w-80 lg:h-32 xl:h-40 2xl:h-48 3xl:h-52 relative overflow-hidden">
+          <Image src="/girl2.jpg" alt="" fill className="object-cover" />
         </div>
       </div>
     </div>

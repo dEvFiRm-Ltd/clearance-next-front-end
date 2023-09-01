@@ -1,34 +1,26 @@
+import { footerProps, linkType } from "@/utils/type";
 import Link from "next/link";
 import React, { FC } from "react";
 
-type footerType = {
-  heading: string;
-  title: string;
-  url: string;
-  headingClass?: string;
-  titleClass?: string;
-};
-
-const FooterPart: FC<footerType> = ({
-  title,
-  url,
-  heading,
-  headingClass,
-  titleClass,
-}) => {
+const FooterPart: FC<footerProps> = ({ itemArr, heading, headingClass }) => {
   return (
-    <div className="">
+    <div>
       <p
-        className={`text-lg leading-7 font-bold text-[#000000] uppercase mb-5 ${headingClass}`}
+        className={`lg:text-base 2xl:text-lg font-bold text-black uppercase mb-5 ${headingClass}`}
       >
         {heading}
       </p>
-      <Link
-        href={url}
-        className={`text-sm text-[#000000] font-normal leading-5 ${titleClass}`}
-      >
-        {title}
-      </Link>
+      <div className="flex flex-col justify-start gap-y-3">
+        {itemArr.map((item: linkType, id: number) => (
+          <Link
+            key={id}
+            href={item.url}
+            className="text-[13px] 2xl:text-sm text-black font-normal leading-5"
+          >
+            {item.title}
+          </Link>
+        ))}
+      </div>
     </div>
   );
 };
