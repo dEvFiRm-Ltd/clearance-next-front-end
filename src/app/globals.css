@@ -37,7 +37,7 @@ body {
 
 /* Styles for the link on hover */
 .hover-link::before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -57,4 +57,6 @@ body {
 .btnShadow {
   box-shadow: 0px 2px 12px rgb(0, 0, 0, 0.2);
 }
-
+.cartShadow {
+  filter: drop-shadow(rgba(0, 0, 0, 0.1) 0 8px 24px);
+}

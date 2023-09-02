@@ -2,109 +2,10 @@ import Link from "next/link";
 import React, { FC } from "react";
 import FooterPart from "../common/FooterPart";
 import Image from "next/image";
+import { footerItems } from "@/static";
+import { footerProps } from "@/utils/type";
 
 const Footer = () => {
-  const footerOne = [
-    {
-      heading: "COMPANY INFO",
-      title: "About Us",
-      url: "",
-    },
-    {
-      heading: "",
-      title: "Intellectual Property Rights",
-      url: "",
-    },
-    {
-      heading: "",
-      title: "Privacy Policy",
-      url: "",
-    },
-    {
-      heading: "",
-      title: "Terms",
-      url: "",
-    },
-    {
-      heading: "",
-      title: "Sitemap",
-      url: "",
-    },
-    {
-      heading: "",
-      title: "B2B Partners",
-      url: "",
-    },
-    {
-      heading: "",
-      title: "Sustainability",
-      url: "",
-    },
-  ];
-  const footerTwo = [
-    {
-      heading: "HELP & SUPPORT",
-      title: "Shipping & Delivery",
-      url: "",
-    },
-    {
-      heading: "",
-      title: "Return Policy",
-      url: "",
-    },
-    {
-      heading: "",
-      title: "Tracking Order",
-      url: "",
-    },
-    {
-      heading: "",
-      title: "Tracking Order",
-      url: "",
-    },
-    {
-      heading: "",
-      title: "Pre Order Guidance",
-      url: "",
-    },
-    {
-      heading: "",
-      title: "About Wallet",
-      url: "",
-    },
-    {
-      heading: "",
-      title: "Influencer Program",
-      url: "",
-    },
-    {
-      heading: "",
-      title: "Affiliate Program",
-      url: "",
-    },
-  ];
-  const footerThree = [
-    {
-      heading: "CUSTOMER SERVICE",
-      title: "Customer Reviews",
-      url: "",
-    },
-    {
-      heading: "",
-      title: "Contact Us",
-      url: "",
-    },
-    {
-      heading: "",
-      title: "How To Choose Your Size",
-      url: "",
-    },
-    {
-      heading: "",
-      title: "FAQs",
-      url: "",
-    },
-  ];
   const iconCard = [
     {
       icon: "fa-brands fa-cc-paypal",
@@ -159,36 +60,9 @@ const Footer = () => {
     <div className="bg-[#F2F2F3] py-10 xl:px-5 px-3 3xl:px-0">
       <div className="container">
         <div className=" flex flex-row flex-wrap justify-between gap-y-5">
-          <div className="flex flex-col">
-            {footerOne.map((item: any, i: number) => (
-              <FooterPart
-                key={i}
-                heading={item.heading}
-                title={item.title}
-                url={item.url}
-              />
-            ))}
-          </div>
-          <div className="flex flex-col">
-            {footerTwo.map((item: any, i: number) => (
-              <FooterPart
-                key={i}
-                heading={item.heading}
-                title={item.title}
-                url={item.url}
-              />
-            ))}
-          </div>
-          <div className="flex flex-col">
-            {footerThree.map((item: any, i: number) => (
-              <FooterPart
-                key={i}
-                heading={item.heading}
-                title={item.title}
-                url={item.url}
-              />
-            ))}
-          </div>
+          {footerItems.map((item: footerProps, i: number) => (
+            <FooterPart key={i} heading={item.heading} itemArr={item.itemArr} />
+          ))}
           <div className="w-[445px]">
             <p className="text-lg leading-7 font-bold text-[#000000] capitalize mb-5">
               News letter
@@ -210,12 +84,22 @@ const Footer = () => {
               </button>
             </div>
             {/* Icons are here  */}
-            <div className="flex flex-row flex-wrap gap-x-8 text-2xl text-[#000000] ">
-              <i className="fa-brands fa-square-twitter hover:text-[#1DA1F2]"></i>
-              <i className="fa-brands fa-facebook hover:text-[#1DA1F2]"></i>
-              <i className="fa-brands fa-pinterest hover:text-[#1DA1F2]"></i>
-              <i className="fa-brands fa-youtube hover:text-[#1DA1F2]"></i>
-              <i className="fa-brands fa-square-instagram hover:text-[#1DA1F2]"></i>
+            <div className="flex flex-row flex-wrap gap-x-8 text-2xl text-[#000000]">
+              <div>
+                <i className="fa-brands fa-square-twitter hover:text-[#1DA1F2]"></i>
+              </div>
+              <div>
+                <i className="fa-brands fa-facebook hover:text-[#1DA1F2]"></i>
+              </div>
+              <div>
+                <i className="fa-brands fa-pinterest hover:text-[#1DA1F2]"></i>
+              </div>
+              <div>
+                <i className="fa-brands fa-youtube hover:text-[#1DA1F2]"></i>
+              </div>
+              <div>
+                <i className="fa-brands fa-square-instagram hover:text-[#1DA1F2]"></i>
+              </div>
             </div>
             <div className="flex flex-row items-center gap-x-5 mt-[45px]">
               <div className="h-[105px] w-[105px] border-2 rounded-md overflow-hidden relative">
@@ -238,7 +122,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-row items-center justify-center gap-x-3 my-10">
+        <div className="flex flex-row items-center justify-center gap-x-3 my-5 md:my-8 lg:my-10">
           {iconCard.map((item: any, i: number) => (
             <Link key={i} href={item.url}>
               <i className={`text-3xl ${item.icon}`}></i>

@@ -1,6 +1,227 @@
+import { dressType } from "@/components/common/DressCard";
 import { flashSaleCardTypes } from "@/components/common/FlashSaleCard";
+import { footerProps, linkType } from "@/utils/type";
 
-export const dress = [
+export const bottomHeaderLinkItems: linkType[] = [
+  {
+    title: "clothing",
+    url: "",
+  },
+  {
+    title: "FW23",
+    url: "",
+  },
+  {
+    title: "new in",
+    url: "",
+  },
+  {
+    title: "tops",
+    url: "",
+  },
+  {
+    title: "dresses",
+    url: "",
+  },
+  {
+    title: "outwear",
+    url: "",
+  },
+  {
+    title: "knitwear",
+    url: "",
+  },
+  {
+    title: "bottoms",
+    url: "",
+  },
+  {
+    title: "plus+curve",
+    url: "",
+  },
+  {
+    title: "shoes+accessories",
+    url: "",
+  },
+  {
+    title: "sale",
+    url: "",
+  },
+  {
+    title: "community",
+    url: "",
+  },
+];
+
+export const bottomHeaderItems: footerProps[] = [
+  {
+    heading: "Shop By Category",
+    itemArr: [
+      {
+        title: "All Dresses",
+        url: "",
+      },
+      {
+        title: "New Dresses",
+        url: "",
+      },
+      {
+        title: "Top-Rated Dresses",
+        url: "",
+      },
+      {
+        title: "Maxi Dresses",
+        url: "",
+      },
+      {
+        title: "Midi Dresses",
+        url: "",
+      },
+      {
+        title: "Mini Dresses",
+        url: "",
+      },
+      {
+        title: "Plus Dresses",
+        url: "",
+      },
+    ],
+  },
+  {
+    heading: "Featured Shops",
+    itemArr: [
+      {
+        title: "Best Sellers",
+        url: "",
+      },
+      {
+        title: "FW 2023",
+        url: "",
+      },
+      {
+        title: "Special Event",
+        url: "",
+      },
+      {
+        title: "Earth tone",
+        url: "",
+      },
+      {
+        title: "Intellectual Looks",
+        url: "",
+      },
+    ],
+  },
+  {
+    heading: "Stylewe Classic Look",
+    itemArr: [
+      {
+        title: "Item 1",
+        url: "",
+      },
+      {
+        title: "Designer Shop",
+        url: "",
+      },
+    ],
+  },
+];
+
+export const footerItems: footerProps[] = [
+  {
+    heading: "COMPANY INFO",
+    itemArr: [
+      {
+        title: "About Us",
+        url: "",
+      },
+      {
+        title: "Intellectual Property Rights",
+        url: "",
+      },
+      {
+        title: "Privacy Policy",
+        url: "",
+      },
+      {
+        title: "Terms",
+        url: "",
+      },
+      {
+        title: "Sitemap",
+        url: "",
+      },
+      {
+        title: "B2B Partners",
+        url: "",
+      },
+      {
+        title: "Sustainability",
+        url: "",
+      },
+    ],
+  },
+  {
+    heading: "HELP & SUPPORT",
+    itemArr: [
+      {
+        title: "Shipping & Delivery",
+        url: "",
+      },
+      {
+        title: "Return Policy",
+        url: "",
+      },
+      {
+        title: "Tracking Order",
+        url: "",
+      },
+      {
+        title: "Tracking Order",
+        url: "",
+      },
+      {
+        title: "Pre Order Guidance",
+        url: "",
+      },
+      {
+        title: "About Wallet",
+        url: "",
+      },
+      {
+        title: "Influencer Program",
+        url: "",
+      },
+      {
+        title: "Affiliate Program",
+        url: "",
+      },
+    ],
+  },
+  {
+    heading: "CUSTOMER SERVICE",
+    itemArr: [
+      {
+        title: "Customer Reviews",
+        url: "",
+      },
+      {
+        title: "Contact Us",
+        url: "",
+      },
+      {
+        title: "How To Choose Your Size",
+        url: "",
+      },
+      {
+        title: "FAQs",
+        url: "",
+      },
+    ],
+  },
+];
+
+export const dress: dressType[] = [
   {
     image:
       "https://backend-live.clearance.ae/storage/category/2023-08-29-64edbb44c865c.png",
@@ -154,21 +375,24 @@ export const FlashSaleData: flashSaleCardTypes[] = [
     Price: "93.99",
   },
 ];
-export const dressTwo = [
+export const dressTwo: dressType[] = [
   {
     image:
       "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-08-26-64e9f7a239f4d.png",
-    title2: "FW 2023 Trends",
+    title: "shop now",
+    heading: "FW 2023 Trends",
   },
   {
     image:
       "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-08-25-64e8a595487f2.png",
-    title2: "Influence Recommendation",
+    title: "shop now",
+    heading: "Influence Recommendation",
   },
   {
     image:
       "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647ef2187e4fa.avif",
-    title2: "Spacial Events",
+    title: "shop now",
+    heading: "Spacial Events",
   },
 ];
 export const verticalImage = [
