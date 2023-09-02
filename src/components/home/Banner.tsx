@@ -26,18 +26,14 @@ const Banner: FC = () => {
   return (
     <section className="relative group flex items-center">
       <Slider className="w-screen h-[745px]" ref={sliderRef} {...settings}>
-        {bannerImgArr.map((item:bannerProps, id:number)=>(
+        {bannerImgArr.map((item: bannerProps, id: number) => (
           <Link
-          key={id}
-          href={item.url}
-          className=" w-screen h-[745px] bg-center bg-no-repeat relative top-0 left-0 z-10  flex justify-center items-center"
-        >
-          <Image
-            src={item.img}
-            alt=""
-            fill
-          />
-        </Link>
+            key={id}
+            href={item.url}
+            className=" w-screen h-[745px] bg-center bg-no-repeat relative top-0 left-0 z-10  flex justify-center items-center"
+          >
+            <Image src={item.img} alt="" fill />
+          </Link>
         ))}
       </Slider>
       <div className="absolute z-30 w-full justify-between flex group-hover:opacity-100 opacity-0 transition-opacity duration-300 px-3 xl:px-5">

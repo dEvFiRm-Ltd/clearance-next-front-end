@@ -97,7 +97,7 @@ const FlashSale = () => {
         </div>
         <div className="p-3 flex flex-row justify-center items-center gap-2.5 md:gap-3.5 lg:gap-4 3xl:gap-6">
           <Slider
-            className="2xl:w-[95vw] 3xl:w-[88vw] flex flex-row justify-center "
+            className="w-[90vw] 2xl:w-[95vw] 3xl:w-[87vw] "
             ref={sliderRef}
             {...settings}
           >

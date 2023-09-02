@@ -39,7 +39,7 @@ const MiddleHeader = () => {
               </select>
             </div>
           </button>
-          <button type="button" className="group relative p-2 2xl:p-3">
+          <div className="group relative p-2 2xl:p-3">
             <i className="fa-regular fa-user"></i>
             {/* hover dropdown */}
             <div className="absolute right-[50%] translate-x-[50%] z-50 top-[115%] bg-white group-hover:flex min-w-[240px] rounded-md hidden cartShadow">
@@ -84,7 +84,7 @@ const MiddleHeader = () => {
               </div>
             </div>
             {/* hover dropdown ends */}
-          </button>
+          </div>
           <button type="button" className="group relative p-2 2xl:p-3">
             <i className="fa-solid fa-bag-shopping"></i>
             {/* hover dropdown */}
