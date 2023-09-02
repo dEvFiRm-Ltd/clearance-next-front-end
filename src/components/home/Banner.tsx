@@ -25,12 +25,12 @@ const Banner: FC = () => {
   };
   return (
     <section className="relative group flex items-center">
-      <Slider className="w-screen h-[745px]" ref={sliderRef} {...settings}>
+      <Slider className="w-screen " ref={sliderRef} {...settings}>
         {bannerImgArr.map((item: bannerProps, id: number) => (
           <Link
             key={id}
             href={item.url}
-            className=" w-screen h-[745px] bg-center bg-no-repeat relative top-0 left-0 z-10  flex justify-center items-center"
+            className=" w-screen h-52 md:h-80 lg:h-[428px] xl:h-[535px] 2xl:h-[642px] 3xl:h-[745px] bg-center bg-no-repeat relative top-0 left-0 z-10  flex justify-center items-center"
           >
             <Image src={item.img} alt="" fill />
           </Link>
