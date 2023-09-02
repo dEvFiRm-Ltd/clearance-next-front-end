@@ -1,23 +1,25 @@
 import BestSeller from "@/components/home/BestSeller";
 import DressCard, { dressType } from "@/components/common/DressCard";
 import Banner from "@/components/home/Banner";
-import BottomHeader from "@/components/home/BottomHeader";
+import BottomHeader from "@/components/header/BottomHeader";
 import FlashSale from "@/components/home/FlashSale";
 import DenimShop from "@/components/home/DenimShop";
-import MiddleHeader from "@/components/home/MiddleHeader";
-import TopHeader from "@/components/home/TopHeader";
+import MiddleHeader from "@/components/header/MiddleHeader";
+import TopHeader from "@/components/header/TopHeader";
 import { dress, dressTwo, verticalImage, verticalImageTwo } from "@/static";
 import VerticalImage from "@/components/common/VerticalImage";
 import RelatedSearches from "@/components/home/RelatedSearches";
 import Footer from "@/components/home/Footer";
 import HandPicked from "@/components/home/HandPicked";
+import MobileHeader from "@/components/header/MobileHeader";
 
 export default function Home() {
   return (
     <>
       <TopHeader />
-      <BottomHeader />
+      <MobileHeader />
       <MiddleHeader />
+      <BottomHeader />
       <Banner />
       <div className="container flex flex-row justify-center mt-[30px] gap-4 md:gap-5 xl:gap-6 3xl:gap-7 flex-wrap">
         {dress.map((item: dressType, id: number) => (
