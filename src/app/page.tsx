@@ -15,9 +15,9 @@ import HandPicked from "@/components/home/HandPicked";
 export default function Home() {
   return (
     <>
-      <TopHeader />
-      <MiddleHeader />
-      <BottomHeader />
+      {/* <TopHeader /> */}
+      {/* <MiddleHeader /> */}
+      {/* <BottomHeader /> */}
       <Banner />
       <div className="container flex flex-row justify-center mt-[30px] gap-4 md:gap-5 xl:gap-6 3xl:gap-7 flex-wrap">
         {dress.map((item: dressType, id: number) => (
@@ -39,28 +39,28 @@ export default function Home() {
           />
         ))}
       </div>
-      <div className="container mt-[60px] xl:mb-5 3xl:mb-10 flex flex-row justify-center gap-x-5">
+      <div className="container mt-[60px] mb-5 3xl:mb-10 flex flex-wrap flex-row justify-center gap-x-5 gap-y-3">
         {verticalImage.map((item: any, i: number) => (
           <VerticalImage
             key={i}
             img={item.img}
-            className="xl:w-[614px] 2xl:w-[738px] 3xl:w-[880px] xl:h-[350px] 2xl:h-[380px] 3xl:h-[405px]"
+            className="w-[336px] sm:w-[616px] md:w-[744px] lg:w-[1000px] xl:w-[614px] 2xl:w-[738px] 3xl:w-[880px] h-[200px] sm:h-[300px] md:h-[350px] lg:h-[405px] xl:h-[350px] 2xl:h-[380px] 3xl:h-[405px]"
           />
         ))}
       </div>
-      <div className="container mb-10 flex flex-row justify-center gap-x-5">
+      <div className="container mb-10 flex flex-row flex-wrap justify-center gap-x-5 gap-y-3">
         {verticalImageTwo.map((item: any, i: number) => (
           <VerticalImage
             key={i}
             img={item.img}
-            className="w-[880px] h-[273px]"
+            className="w-[336px] sm:w-[616px] md:w-[744px] lg:w-[1000px] xl:w-[614px] 2xl:w-[738px] 3xl:w-[880px] h-[170px] sm:h-[240px] md:h-[273px]"
             objectClass="!object-cover"
           />
         ))}
       </div>
       <HandPicked />
-      <RelatedSearches />
-      <Footer />
+      {/* <RelatedSearches />
+      <Footer /> */}
     </>
   );
 }
