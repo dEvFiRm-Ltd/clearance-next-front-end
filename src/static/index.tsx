@@ -1,23 +1,28 @@
 import { dressType } from "@/components/common/DressCard";
-import { bannerProps, flashSaleCardProps, footerProps, linkType } from "@/utils/type";
+import {
+  bannerProps,
+  flashSaleCardProps,
+  footerProps,
+  linkType,
+} from "@/utils/type";
 
 export const bannerImgArr: bannerProps[] = [
   {
     img: "https://sstorage.clearance.ae/production/storage/banner/2023-08-29-64edb60d10a4e.png",
     url: "/",
-  },  
+  },
   {
-    img:  "https://sstorage.clearance.ae/production/storage/banner/2023-08-29-64edb5c34f571.png",
+    img: "https://sstorage.clearance.ae/production/storage/banner/2023-08-29-64edb5c34f571.png",
     url: "/",
-  },  
+  },
   {
-    img:  "https://sstorage.clearance.ae/production/storage/banner/2023-08-29-64edb4d5c0755.png",
+    img: "https://sstorage.clearance.ae/production/storage/banner/2023-08-29-64edb4d5c0755.png",
     url: "/",
-  },  
+  },
   {
-    img:  "	https://sstorage.clearance.ae/production/storage/banner/2023-08-29-64edb3a384627.png",
+    img: "	https://sstorage.clearance.ae/production/storage/banner/2023-08-29-64edb3a384627.png",
     url: "/",
-  },  
+  },
 ];
 export const bottomHeaderLinkItems: linkType[] = [
   {
@@ -353,6 +358,44 @@ export const handPickedData: flashSaleCardProps[] = [
   },
 ];
 export const FlashSaleData: flashSaleCardProps[] = [
+  {
+    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-05-647df9a609520.avif",
+    text: "Long sleeve crew neck loose leo....",
+    SalePrice: "71.38",
+    Price: "93.99",
+  },
+  {
+    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-05-647e055d5a6d0.avif",
+    text: "Long sleeve crew neck loose leo....",
+    SalePrice: "71.38",
+    Price: "93.99",
+  },
+  {
+    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e4e025a3b7.avif",
+    discount: "20",
+    text: "Long sleeve crew neck loose leo....",
+    SalePrice: "71.38",
+    Price: "93.99",
+  },
+  {
+    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e4e057337b.avif",
+    text: "Long sleeve crew neck loose leo....",
+    SalePrice: "71.38",
+    Price: "93.99",
+  },
+  {
+    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e58925291c.avif",
+    text: "Long sleeve crew neck loose leo....",
+    SalePrice: "71.38",
+    Price: "93.99",
+  },
+  {
+    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e5e6cdbe66.avif",
+    discount: "20",
+    text: "Long sleeve crew neck loose leo....",
+    SalePrice: "71.38",
+    Price: "93.99",
+  },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-05-647df9a609520.avif",
     text: "Long sleeve crew neck loose leo....",
