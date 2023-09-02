@@ -1,7 +1,24 @@
 import { dressType } from "@/components/common/DressCard";
-import { flashSaleCardTypes } from "@/components/common/FlashSaleCard";
-import { footerProps, linkType } from "@/utils/type";
+import { bannerProps, flashSaleCardProps, footerProps, linkType } from "@/utils/type";
 
+export const bannerImgArr: bannerProps[] = [
+  {
+    img: "https://sstorage.clearance.ae/production/storage/banner/2023-08-29-64edb60d10a4e.png",
+    url: "/",
+  },  
+  {
+    img:  "https://sstorage.clearance.ae/production/storage/banner/2023-08-29-64edb5c34f571.png",
+    url: "/",
+  },  
+  {
+    img:  "https://sstorage.clearance.ae/production/storage/banner/2023-08-29-64edb4d5c0755.png",
+    url: "/",
+  },  
+  {
+    img:  "	https://sstorage.clearance.ae/production/storage/banner/2023-08-29-64edb3a384627.png",
+    url: "/",
+  },  
+];
 export const bottomHeaderLinkItems: linkType[] = [
   {
     title: "clothing",
@@ -253,7 +270,7 @@ export const dress: dressType[] = [
     title: "Home Items (28)",
   },
 ];
-export const handPickedData: flashSaleCardTypes[] = [
+export const handPickedData: flashSaleCardProps[] = [
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-08-26-64e9c94af01ea.png",
     preSaleImgSticker: "",
@@ -335,7 +352,7 @@ export const handPickedData: flashSaleCardTypes[] = [
     SalePrice: "42.55",
   },
 ];
-export const FlashSaleData: flashSaleCardTypes[] = [
+export const FlashSaleData: flashSaleCardProps[] = [
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-05-647df9a609520.avif",
     text: "Long sleeve crew neck loose leo....",

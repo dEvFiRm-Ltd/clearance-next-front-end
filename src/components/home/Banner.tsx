@@ -1,4 +1,6 @@
 "use client";
+import { bannerImgArr } from "@/static";
+import { bannerProps } from "@/utils/type";
 import Image from "next/image";
 import Link from "next/link";
 import React, { FC, createRef } from "react";
@@ -24,54 +26,19 @@ const Banner: FC = () => {
   return (
     <section className="relative group flex items-center">
       <Slider className="w-screen h-[745px]" ref={sliderRef} {...settings}>
-        <Link
-          href={"/"}
+        {bannerImgArr.map((item:bannerProps, id:number)=>(
+          <Link
+          key={id}
+          href={item.url}
           className=" w-screen h-[745px] bg-center bg-no-repeat relative top-0 left-0 z-10  flex justify-center items-center"
         >
           <Image
-            src={
-              "https://sstorage.clearance.ae/production/storage/banner/2023-08-29-64edb60d10a4e.png"
-            }
+            src={item.img}
             alt=""
             fill
           />
         </Link>
-        <Link
-          href={"/"}
-          className=" w-screen h-[745px] bg-center bg-no-repeat relative top-0 left-0 z-10  flex justify-center items-center"
-        >
-          <Image
-            src={
-              "https://sstorage.clearance.ae/production/storage/banner/2023-08-29-64edb5c34f571.png"
-            }
-            alt=""
-            fill
-          />
-        </Link>
-        <Link
-          href={"/"}
-          className=" w-screen h-[745px] bg-center bg-no-repeat relative top-0 left-0 z-10  flex justify-center items-center"
-        >
-          <Image
-            src={
-              "https://sstorage.clearance.ae/production/storage/banner/2023-08-29-64edb4d5c0755.png"
-            }
-            alt=""
-            fill
-          />
-        </Link>
-        <Link
-          href={"/"}
-          className=" w-screen h-[745px] bg-center bg-no-repeat relative top-0 left-0 z-10  flex justify-center items-center"
-        >
-          <Image
-            src={
-              "	https://sstorage.clearance.ae/production/storage/banner/2023-08-29-64edb3a384627.png"
-            }
-            alt=""
-            fill
-          />
-        </Link>
+        ))}
       </Slider>
       <div className="absolute z-30 w-full justify-between flex group-hover:opacity-100 opacity-0 transition-opacity duration-300 px-3 xl:px-5">
         <button
