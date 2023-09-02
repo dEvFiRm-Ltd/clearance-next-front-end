@@ -23,7 +23,12 @@ export default function Home() {
       <Banner />
       <div className="container flex flex-row justify-center mt-[30px] gap-4 md:gap-5 xl:gap-6 3xl:gap-7 flex-wrap">
         {dress.map((item: dressType, id: number) => (
-          <DressCard key={id} image={item.image} title={item.title} />
+          <DressCard
+            key={id}
+            image={item.image}
+            title={item.title}
+            url={item.url}
+          />
         ))}
       </div>
       <BestSeller />
@@ -33,6 +38,7 @@ export default function Home() {
         {dressTwo.map((item: dressType, id: number) => (
           <DressCard
             key={id}
+            url={item.url}
             image={item.image}
             heading={item.heading}
             title={item.title}
