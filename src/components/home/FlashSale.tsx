@@ -2,6 +2,7 @@ import React from "react";
 import Title from "../common/Title";
 import FlashSaleCard from "../common/FlashSaleCard";
 import { FlashSaleData } from "@/static";
+import { flashSaleCardProps } from "@/utils/type";
 
 const FlashSale = () => {
   return (
@@ -22,11 +23,19 @@ const FlashSale = () => {
             <i className="fas fa-chevron-right"></i>
           </button>
         </div>
-        <FlashSaleCard
-          flashSaleCardArr={FlashSaleData}
-          groupClass="gap-2.5 md:gap-3.5 lg:gap-4 3xl:gap-6"
-          childClass="w-40 md:w-52 lg:w-60 3xl:w-[260px] p-2"
-        />
+        <div className="p-3 flex flex-row justify-center items-center flex-wrap gap-2.5 md:gap-3.5 lg:gap-4 3xl:gap-6">
+        {FlashSaleData.map((item:flashSaleCardProps,id:number)=>(
+          <FlashSaleCard
+          key={id}
+            img={item.img}
+            text={item.text}
+            SalePrice={item.SalePrice}
+            Price={item.Price}
+            discount={item.discount}
+            groupClass="w-40 md:w-52 lg:w-60 3xl:w-[260px] p-2"
+          />
+        ))}
+        </div>
       </div>
     </section>
   );
