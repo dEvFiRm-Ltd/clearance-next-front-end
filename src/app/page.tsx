@@ -1,21 +1,23 @@
 import BestSeller from "@/components/home/BestSeller";
 import DressCard, { dressType } from "@/components/common/DressCard";
 import Banner from "@/components/home/Banner";
-import BottomHeader from "@/components/home/BottomHeader";
+import BottomHeader from "@/components/header/BottomHeader";
 import FlashSale from "@/components/home/FlashSale";
 import DenimShop from "@/components/home/DenimShop";
-import MiddleHeader from "@/components/home/MiddleHeader";
-import TopHeader from "@/components/home/TopHeader";
+import MiddleHeader from "@/components/header/MiddleHeader";
+import TopHeader from "@/components/header/TopHeader";
 import { dress, dressTwo, verticalImage, verticalImageTwo } from "@/static";
 import VerticalImage from "@/components/common/VerticalImage";
 import RelatedSearches from "@/components/home/RelatedSearches";
 import Footer from "@/components/home/Footer";
 import HandPicked from "@/components/home/HandPicked";
+import MobileHeader from "@/components/header/MobileHeader";
 
 export default function Home() {
   return (
     <>
       <TopHeader />
+      <MobileHeader />
       <MiddleHeader />
       <BottomHeader />
       <Banner />
