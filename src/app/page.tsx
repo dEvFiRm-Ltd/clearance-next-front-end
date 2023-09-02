@@ -39,22 +39,21 @@ export default function Home() {
           />
         ))}
       </div>
-      <div className="container mt-[60px] xl:mb-5 3xl:mb-10 flex flex-row justify-center gap-x-5">
+      <div className="container mt-[60px] flex flex-col gap-y-5 items-center lg:items-start lg:flex-row justify-center gap-x-5">
         {verticalImage.map((item: any, i: number) => (
           <VerticalImage
             key={i}
             img={item.img}
-            className="xl:w-[614px] 2xl:w-[738px] 3xl:w-[880px] xl:h-[350px] 2xl:h-[380px] 3xl:h-[405px]"
+            className="w-[336px] sm:w-[616px] md:w-[736px] lg:w-[490px] xl:w-[614px] 2xl:w-[738px] 3xl:w-[880px] h-[240px] sm:h-[320px] md:h-[400px] lg:h-[330px] xl:h-[350px] 2xl:h-[380px] 3xl:h-[405px]"
           />
         ))}
       </div>
-      <div className="container mb-10 flex flex-row justify-center gap-x-5">
+      <div className="container mb-10 flex flex-col gap-y-5 items-center lg:items-start lg:flex-row justify-center gap-x-5 mt-5">
         {verticalImageTwo.map((item: any, i: number) => (
           <VerticalImage
             key={i}
             img={item.img}
-            className="w-[880px] h-[273px]"
-            objectClass="!object-cover"
+            className="w-[336px] sm:w-[616px] md:w-[736px] lg:w-[490px] xl:w-[614px] 2xl:w-[738px] 3xl:w-[880px] h-[273px]"
           />
         ))}
       </div>

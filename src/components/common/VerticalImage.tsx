@@ -14,7 +14,7 @@ const VerticalImage: FC<imageType> = ({ img, className, objectClass }) => {
         src={img}
         alt="image"
         fill
-        className={`object-contain ${objectClass}`}
+        className={`object-cover ${objectClass}`}
       />
     </div>
   );
