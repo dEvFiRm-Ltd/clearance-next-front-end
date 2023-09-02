@@ -19,7 +19,7 @@ export default function Home() {
       <TopHeader />
       <MobileHeader />
       <MiddleHeader />
-      {/* <BottomHeader /> */}
+      <BottomHeader />
       <Banner />
       <div className="container flex flex-row justify-center mt-[30px] gap-4 md:gap-5 xl:gap-6 3xl:gap-7 flex-wrap">
         {dress.map((item: dressType, id: number) => (
