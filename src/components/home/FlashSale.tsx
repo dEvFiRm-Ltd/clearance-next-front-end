@@ -9,7 +9,6 @@ import Slider from "react-slick";
 const FlashSale = () => {
   const sliderRef = createRef<Slider>();
   const settings = {
-    dots: true,
     infinite: true,
     autoplay: true,
     speed: 300,
@@ -17,15 +16,6 @@ const FlashSale = () => {
     slidesToShow: 6,
     slidesToScroll: 2,
     responsive: [
-      {
-        breakpoint: 1780,
-        settings: {
-          slidesToShow: 6,
-          slidesToScroll: 2,
-          infinite: true,
-          dots: true,
-        },
-      },
       {
         breakpoint: 1536,
         settings: {
@@ -38,7 +28,7 @@ const FlashSale = () => {
       {
         breakpoint: 1280,
         settings: {
-          slidesToShow: 4,
+          slidesToShow: 5,
           slidesToScroll: 2,
           infinite: true,
           dots: true,
@@ -47,7 +37,7 @@ const FlashSale = () => {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 4,
           slidesToScroll: 2,
           infinite: true,
           dots: true,
@@ -65,7 +55,7 @@ const FlashSale = () => {
       {
         breakpoint: 640,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 3,
           slidesToScroll: 2,
           initialSlide: 2,
         },
@@ -73,7 +63,7 @@ const FlashSale = () => {
       {
         breakpoint: 360,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
           slidesToScroll: 1,
         },
       },
@@ -89,7 +79,7 @@ const FlashSale = () => {
     <section className="mx-auto container">
       <Title />
       <div className="md:px-4 lg:px-6 2xl:px-8 3xl:px-10 flex justify-center items-center pt-3 relative">
-        <div className="flex w-full absolute top-1/2 -translate-y-1/2 justify-between z-50">
+        <div className="flex w-full absolute top-1/2 -translate-y-1/2 justify-between z-50 px-1">
           <button
             type="button"
             onClick={previous}
@@ -105,8 +95,12 @@ const FlashSale = () => {
             <i className="fas fa-chevron-right"></i>
           </button>
         </div>
-        <div className="p-3 flex flex-row justify-center items-center flex-wrap gap-2.5 md:gap-3.5 lg:gap-4 3xl:gap-6">
-          <Slider className="w-[90vw] " ref={sliderRef} {...settings}>
+        <div className="p-3 flex flex-row justify-center items-center gap-2.5 md:gap-3.5 lg:gap-4 3xl:gap-6">
+          <Slider
+            className="2xl:w-[95vw] 3xl:w-[88vw] flex flex-row justify-center "
+            ref={sliderRef}
+            {...settings}
+          >
             {FlashSaleData.map((item: flashSaleCardProps, id: number) => (
               <FlashSaleCard
                 key={id}
