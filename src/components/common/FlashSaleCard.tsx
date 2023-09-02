@@ -5,9 +5,8 @@ import React, { FC } from "react";
 const FlashSaleCard: FC<flashSaleCardProps> = ({
   img,
   preSaleImgSticker,
-  discount,text,text2,SalePrice,Price,
-  groupClass,
-  
+  discount, text, text2, SalePrice, Price,
+  groupClass,  
   imgClass,
 }) => {
   return (
