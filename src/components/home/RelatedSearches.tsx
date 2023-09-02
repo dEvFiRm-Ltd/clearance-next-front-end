@@ -69,7 +69,10 @@ const RelatedSearches = () => {
           <Slider className="w-[93vw]" ref={sliderRef} {...settings}>
             {searches.map((item: any, i: number) => (
               <div key={i} className="py-4">
-                <Link href={item.url} className="p-4 rounded-full bg-[#F2F2F3]">
+                <Link
+                  href={item.url}
+                  className="p-4 rounded-full bg-[#F2F2F3] hover:bg-[#CED0D3]"
+                >
                   {item.title}
                 </Link>
               </div>
