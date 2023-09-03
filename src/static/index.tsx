@@ -3,6 +3,7 @@ import {
   bannerProps,
   flashSaleCardProps,
   footerProps,
+  linkImgType,
   linkType,
 } from "@/utils/type";
 
@@ -74,7 +75,149 @@ export const bottomHeaderLinkItems: linkType[] = [
     url: "",
   },
 ];
+export const productSubSliderData: linkImgType[] = [
+  {
+    img:
+      "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-08-11-64d5ef415c3ab.png",
+    title: "Travel bag",
+    url: "",
+  },
+  {
+    img:
+      "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-17-648dabc3eae43.png",
+    title: "Rollerblade",
+    url: "",
+  },
+  {
+    img:
+      "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-08-11-64d61bf56551d.png",
+    title: "camera",
+    url: "",
+  },
+  {
+    img:
+      "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-08-29-64edde13ede6b.png",
+    title: "Kids",
+    url: "",
+  },
+  {
+    img:
+      "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-27-649af57a2b524.png",
+    title: "Wireless Earbuds",
+    url: "",
+  },
+  {
+    img:
+      "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647ef2187e4fa.avif",
+    title: "pants",
+    url: "",
+  },
+  {
+    img:
+      "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e90d3e979d.avif",
+    title: "t-shirt",
+    url: "",
+  },
+  {
+    img:
+      "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-08-29-64ede7ac360a3.png",
+    title: "necklace",
+    url: "",
+  },
+];
 
+export const silderBottomHeaderData: linkType[] = [
+  {
+    title:'fas fa-home',
+    url: "",
+  },
+  {
+    title:'far fa-heart',
+    url: "",
+  },
+  {
+    title:'fas fa-headset',
+    url: "",
+  },
+  {
+    title:'far fa-user',
+    url: "",
+  }, 
+];
+
+export const mobileSilderData: footerProps[] = [
+  {
+    heading: "company info",
+    itemArr: [
+      {
+        title: "about us",
+        url: "",
+      },
+      {
+        title: "intellectual property rights",
+        url: "",
+      },
+      {
+        title: "terms",
+        url: "",
+      },
+      {
+        title: "site maps",
+        url: "",
+      },
+      {
+        title: "B2B partners",
+        url: "",
+      },
+      {
+        title: "sustainability",
+        url: "",
+      },      
+    ],
+  },
+  {
+    heading: "help & support",
+    itemArr: [
+      {
+        title: "Shipping&Delivery",
+        url: "",
+      },
+      {
+        title: "Return Policy",
+        url: "",
+      },
+      {
+        title: "Tracking Order",
+        url: "",
+      },
+      {
+        title: "Payment Methods",
+        url: "",
+      },
+      {
+        title: "Pre Order Guidance",
+        url: "",
+      },
+    ],
+  },
+  {
+    heading: "customer service",
+    itemArr: [
+      {
+        title: "Customer Reviews",
+        url: "",
+      },
+      {
+        title: "Contact Us",
+        url: "",
+      },
+      {
+        title: "FAQs",
+        url: "",
+      },
+    ],
+  },
+];
 export const bottomHeaderItems: footerProps[] = [
   {
     heading: "Shop By Category",

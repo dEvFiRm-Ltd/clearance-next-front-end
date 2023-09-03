@@ -8,7 +8,7 @@ const MobileHeader = () => {
   const [show, setShow] = useState(false);
   return (
     <>
-      <div className="lg:hidden flex flex-row justify-between items-center py-1.5 md:py-4 px-2 md:px-5">
+      <div className="lg:hidden flex flex-row justify-between items-center py-1.5 md:py-4 px-2 md:px-5 relative">
         <div className="flex flex-row items-center gap-3">
           <button
             type="button"
@@ -37,7 +37,7 @@ const MobileHeader = () => {
           </button>
         </div>
       </div>
-      {show && <SlideInOut />}
+      {show && <div className={`w-[80%] absolute transition duration-1000 ${show?'left-0':'-left-[80%]'} `}><SlideInOut /></div>}
     </>
   );
 };

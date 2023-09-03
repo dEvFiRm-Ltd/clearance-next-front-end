@@ -1,8 +1,12 @@
+'use client'
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 
 const MiddleHeader = () => {
+  // const [show, setShow] = useState(false)
+  const [user, setUser] = useState(false)
+  const [cart, setCart] = useState(false)
   return (
     <div className="hidden lg:flex flex-row justify-between items-center lg:py-4 2xl:py-5 lg:px-6 xl:px-8 2xl:px-12 3xl:px-[60px]">
       <Link
@@ -39,10 +43,10 @@ const MiddleHeader = () => {
               </select>
             </div>
           </button>
-          <div className="group relative p-2 2xl:p-3">
+          <button type="button" onClick={()=>setUser(!user)} className="relative p-2 2xl:p-3">
             <i className="fa-regular fa-user"></i>
             {/* hover dropdown */}
-            <div className="absolute right-[50%] translate-x-[50%] z-50 top-[115%] bg-white group-hover:flex min-w-[240px] rounded-md hidden cartShadow">
+            {user && <div className="absolute right-[50%] translate-x-[50%] z-50 top-[115%] bg-white flex min-w-[240px] rounded-md cartShadow">
               <div className="w-full flex flex-col justify-start items-center gap-4 relative p-4">
                 <button
                   type="button"
@@ -82,13 +86,13 @@ const MiddleHeader = () => {
                 </Link>
                 <span className="h-3 w-3 bg-white cartShadow rotate-45 absolute -z-50 -top-1.5 left-1/2 -translate-x-1/2" />
               </div>
-            </div>
+            </div>}
             {/* hover dropdown ends */}
-          </div>
-          <button type="button" className="group relative p-2 2xl:p-3">
+          </button>
+          <button type="button" onClick={()=>setCart(!cart)} className="relative p-2 2xl:p-3">
             <i className="fa-solid fa-bag-shopping"></i>
             {/* hover dropdown */}
-            <div className="cartShadow group-hover:block hidden absolute top-full -right-1 z-50 bg-white rounded-md">
+            {cart && <div className="cartShadow block absolute top-full -right-1 z-50 bg-white rounded-md">
               <div className="flex flex-col justify-center items-center w-[448px] relative gap-6 py-10">
                 <div className="h-32 w-32 rounded-full bg-slate-50 overflow-hidden flex justify-center items-end">
                   <i className="fas fa-shopping-cart text-[80px] text-gray-300"></i>
@@ -98,7 +102,7 @@ const MiddleHeader = () => {
                 </p>
                 <span className="h-3 w-3 bg-white cartShadow rotate-45 absolute -z-50 -top-1.5 right-4" />
               </div>
-            </div>
+            </div>}            
             {/* hover dropdown ends */}
           </button>
         </div>
