@@ -1,3 +1,4 @@
+import { recommendType } from "@/components/categoryListing/Recommend";
 import { dressType } from "@/components/common/DressCard";
 import {
   bannerProps,
@@ -478,5 +479,42 @@ export const verticalImageTwo = [
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/banner/2023-08-29-64edb52f31a48.png",
+  },
+];
+
+// Recommend components data
+export const recommendData: recommendType[] = [
+  {
+    title: "Maxi",
+  },
+  {
+    title: "Midi",
+  },
+  {
+    title: "Mini",
+  },
+  {
+    title: "Plus",
+  },
+  {
+    title: "Shirt Dresses",
+  },
+  {
+    title: "Floral Dresses",
+  },
+  {
+    title: "Vacation Dresses",
+  },
+  {
+    title: "Cocktail Dresses",
+  },
+  {
+    title: "Little White Dresses",
+  },
+  {
+    title: "Little Black Dresses",
+  },
+  {
+    title: "Dopamine Dresses",
   },
 ];
