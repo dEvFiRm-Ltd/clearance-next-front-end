@@ -1,49 +1,33 @@
+import { flashSaleCardProps } from "@/utils/type";
 import Image from "next/image";
 import React, { FC } from "react";
-export type flashSaleCardTypes = {
-  img: string;
-  preSaleImgSticker?: string;
-  discount?: string;
-  text: string;
-  SalePrice: string;
-  Price?: string;
-  text2?: string;
-};
-export type flashSaleCardProps = {
-  flashSaleCardArr: flashSaleCardTypes[];
-  groupClass?: string;
-  childClass?: string;
-  imgClass?: string;
-};
+
 const FlashSaleCard: FC<flashSaleCardProps> = ({
-  flashSaleCardArr,
-  groupClass,
-  childClass,
+  img,
+  preSaleImgSticker,
+  discount, text, text2, SalePrice, Price,
+  groupClass,  
   imgClass,
 }) => {
   return (
-    <div
-      className={`p-3 flex flex-row justify-center items-center flex-wrap ${groupClass}`}
-    >
-      {flashSaleCardArr.map((item: flashSaleCardTypes, id: number) => (
-        <div key={id} className={`boxShadow group ${childClass}`}>
+        <div className={`boxShadow group ${groupClass}`}>
           <div
             className={`w-full h-52 md:h-[278px] lg:h-80 3xl:h-[324px] overflow-hidden relative ${imgClass}`}
           >
             <Image
-              src={item.img}
+              src={img}
               alt="img"
               fill
               className="group-hover:transform group-hover:scale-110 transition-transform duration-300"
             />
-            {item.discount && (
+            {discount && (
               <span className="absolute top-3 bg-[#DC2626] text-white px-1 py-0.5 text-xs lg:text-sm 3xl:text-base">
-                -{item.discount}%
+                -{discount}%
               </span>
             )}
-            {item.preSaleImgSticker && (
+            {preSaleImgSticker && (
               <span className="h-10 w-8 lg:h-[52px] lg:w-[42px] absolute right-0">
-                <Image src={item.preSaleImgSticker} alt="" fill />
+                <Image src={preSaleImgSticker} alt="" fill />
               </span>
             )}
             <button
@@ -54,26 +38,25 @@ const FlashSaleCard: FC<flashSaleCardProps> = ({
             </button>
           </div>
           <div className="flex w-full flex-col justify-start items-start self-stretch flex-1 gap-1.5 bg-white py-1.5 px-1">
-            <p className="line-clamp-1 text-xs lg:text-sm">{item.text}</p>
+            <p className="line-clamp-1 text-xs lg:text-sm">{text}</p>
             <div className="flex flex-wrap justify-start items-center gap-2">
               <span className="text-sm md:text-base xl:text-lg 3xl:text-xl text-[#DC2626] font-bold">
-                ${item.SalePrice}
+                ${SalePrice}
               </span>
-              {item.Price && (
+              {Price && (
                 <span className="text-xs lg:text-sm font-normal text-[#868C93] line-through ">
-                  ${item.Price}
+                  ${Price}
                 </span>
               )}
             </div>
-            {item.text2 && (
+            {text2 && (
               <span className="px-1 rounded-sm text-[#DC2626] bg-[#FEF2F2] font-normal !font-[Helvetica] text-xs">
-                {item.text2}
+                {text2}
               </span>
             )}
           </div>
-        </div>
-      ))}
-    </div>
+        </div>   
+    
   );
 };
 

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React, { FC } from "react";
 
 export type dressType = {
@@ -7,6 +8,7 @@ export type dressType = {
   heading?: string;
   hightClass?: string;
   withClass?: string;
+  url: string;
 };
 
 const DressCard: FC<dressType> = ({
@@ -15,9 +17,11 @@ const DressCard: FC<dressType> = ({
   hightClass,
   withClass,
   heading,
+  url,
 }) => {
   return (
-    <div
+    <Link
+      href={`${url}`}
       className={`w-40 lg:w-44 xl:w-48 2xl:w-[234px] 3xl:w-[272px] flex flex-col items-center justify-start gap-y-4 uppercase ${withClass}`}
     >
       <div
@@ -33,7 +37,7 @@ const DressCard: FC<dressType> = ({
       <p className="border-b text-[#5C5C5C] border-[#B9B9B9] text-sm lg:text-base xl:text-lg 3xl:text-xl xl:leading-8">
         {title}
       </p>
-    </div>
+    </Link>
   );
 };
 

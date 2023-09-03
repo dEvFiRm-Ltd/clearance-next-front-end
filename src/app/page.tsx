@@ -1,27 +1,34 @@
 import BestSeller from "@/components/home/BestSeller";
 import DressCard, { dressType } from "@/components/common/DressCard";
 import Banner from "@/components/home/Banner";
-import BottomHeader from "@/components/home/BottomHeader";
+import BottomHeader from "@/components/header/BottomHeader";
 import FlashSale from "@/components/home/FlashSale";
 import DenimShop from "@/components/home/DenimShop";
-import MiddleHeader from "@/components/home/MiddleHeader";
-import TopHeader from "@/components/home/TopHeader";
+import MiddleHeader from "@/components/header/MiddleHeader";
+import TopHeader from "@/components/header/TopHeader";
 import { dress, dressTwo, verticalImage, verticalImageTwo } from "@/static";
 import VerticalImage from "@/components/common/VerticalImage";
 import RelatedSearches from "@/components/home/RelatedSearches";
 import Footer from "@/components/home/Footer";
 import HandPicked from "@/components/home/HandPicked";
+import MobileHeader from "@/components/header/MobileHeader";
 
 export default function Home() {
   return (
     <>
       <TopHeader />
+      <MobileHeader />
       <MiddleHeader />
       <BottomHeader />
       <Banner />
       <div className="container flex flex-row justify-center mt-[30px] gap-4 md:gap-5 xl:gap-6 3xl:gap-7 flex-wrap">
         {dress.map((item: dressType, id: number) => (
-          <DressCard key={id} image={item.image} title={item.title} />
+          <DressCard
+            key={id}
+            image={item.image}
+            title={item.title}
+            url={item.url}
+          />
         ))}
       </div>
       <BestSeller />
@@ -31,6 +38,7 @@ export default function Home() {
         {dressTwo.map((item: dressType, id: number) => (
           <DressCard
             key={id}
+            url={item.url}
             image={item.image}
             heading={item.heading}
             title={item.title}
@@ -39,21 +47,22 @@ export default function Home() {
           />
         ))}
       </div>
-      <div className="container mt-[60px] flex flex-col gap-y-5 items-center lg:items-start lg:flex-row justify-center gap-x-5">
+      <div className="container mt-[60px] mb-5 3xl:mb-10 flex flex-wrap flex-row justify-center gap-x-5 gap-y-3">
         {verticalImage.map((item: any, i: number) => (
           <VerticalImage
             key={i}
             img={item.img}
-            className="w-[336px] sm:w-[616px] md:w-[736px] lg:w-[490px] xl:w-[614px] 2xl:w-[738px] 3xl:w-[880px] h-[240px] sm:h-[320px] md:h-[400px] lg:h-[330px] xl:h-[350px] 2xl:h-[380px] 3xl:h-[405px]"
+            className="w-[336px] sm:w-[616px] md:w-[744px] lg:w-[1000px] xl:w-[614px] 2xl:w-[738px] 3xl:w-[880px] h-[200px] sm:h-[300px] md:h-[350px] lg:h-[405px] xl:h-[350px] 2xl:h-[380px] 3xl:h-[405px]"
           />
         ))}
       </div>
-      <div className="container mb-10 flex flex-col gap-y-5 items-center lg:items-start lg:flex-row justify-center gap-x-5 mt-5">
+      <div className="container mb-10 flex flex-row flex-wrap justify-center gap-x-5 gap-y-3">
         {verticalImageTwo.map((item: any, i: number) => (
           <VerticalImage
             key={i}
             img={item.img}
-            className="w-[336px] sm:w-[616px] md:w-[736px] lg:w-[490px] xl:w-[614px] 2xl:w-[738px] 3xl:w-[880px] h-[273px]"
+            className="w-[336px] sm:w-[616px] md:w-[744px] lg:w-[1000px] xl:w-[614px] 2xl:w-[738px] 3xl:w-[880px] h-[170px] sm:h-[240px] md:h-[273px]"
+            objectClass="!object-cover"
           />
         ))}
       </div>

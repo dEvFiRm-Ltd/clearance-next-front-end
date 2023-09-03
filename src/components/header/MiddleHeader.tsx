@@ -4,7 +4,7 @@ import React from "react";
 
 const MiddleHeader = () => {
   return (
-    <div className="flex flex-row justify-between items-center lg:py-4 2xl:py-5 lg:px-6 xl:px-8 2xl:px-12 3xl:px-[60px]">
+    <div className="hidden lg:flex flex-row justify-between items-center lg:py-4 2xl:py-5 lg:px-6 xl:px-8 2xl:px-12 3xl:px-[60px]">
       <Link
         href={"/"}
         className="w-32 h-10 relative lg:w-40 2xl:w-44 3xl:w-[200px]"
@@ -39,7 +39,7 @@ const MiddleHeader = () => {
               </select>
             </div>
           </button>
-          <button type="button" className="group relative p-2 2xl:p-3">
+          <div className="group relative p-2 2xl:p-3">
             <i className="fa-regular fa-user"></i>
             {/* hover dropdown */}
             <div className="absolute right-[50%] translate-x-[50%] z-50 top-[115%] bg-white group-hover:flex min-w-[240px] rounded-md hidden cartShadow">
@@ -84,7 +84,7 @@ const MiddleHeader = () => {
               </div>
             </div>
             {/* hover dropdown ends */}
-          </button>
+          </div>
           <button type="button" className="group relative p-2 2xl:p-3">
             <i className="fa-solid fa-bag-shopping"></i>
             {/* hover dropdown */}

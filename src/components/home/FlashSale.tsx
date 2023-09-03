@@ -1,32 +1,119 @@
-import React from "react";
+"use client";
+import React, { createRef } from "react";
 import Title from "../common/Title";
 import FlashSaleCard from "../common/FlashSaleCard";
 import { FlashSaleData } from "@/static";
+import { flashSaleCardProps } from "@/utils/type";
+import Slider from "react-slick";
 
 const FlashSale = () => {
+  const sliderRef = createRef<Slider>();
+  const settings = {
+    infinite: true,
+    autoplay: true,
+    speed: 300,
+    autoplaySpeed: 3000,
+    slidesToShow: 6,
+    slidesToScroll: 2,
+    responsive: [
+      {
+        breakpoint: 1536,
+        settings: {
+          slidesToShow: 5,
+          slidesToScroll: 2,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 1280,
+        settings: {
+          slidesToShow: 5,
+          slidesToScroll: 2,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 2,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 2,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 360,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+  const previous = () => {
+    sliderRef.current?.slickPrev();
+  };
+  const next = () => {
+    sliderRef.current?.slickNext();
+  };
   return (
     <section className="mx-auto container">
       <Title />
       <div className="md:px-4 lg:px-6 2xl:px-8 3xl:px-10 flex justify-center items-center pt-3 relative">
-        <div className="flex w-full absolute top-1/2 -translate-y-1/2 justify-between">
+        <div className="flex w-full absolute top-1/2 -translate-y-1/2 justify-between z-50 px-1">
           <button
             type="button"
+            onClick={previous}
             className="h-7 w-7 md:h-8 md:w-8 lg:h-9 lg:w-9 2xl:h-10 2xl:w-10 bg-white rounded-full flex justify-center items-center text-gray-800 btnShadow"
           >
             <i className="fas fa-chevron-left"></i>
           </button>
           <button
             type="button"
+            onClick={next}
             className="h-7 w-7 md:h-8 md:w-8 lg:h-9 lg:w-9 2xl:h-10 2xl:w-10 bg-white rounded-full flex justify-center items-center text-gray-800 btnShadow"
           >
             <i className="fas fa-chevron-right"></i>
           </button>
         </div>
-        <FlashSaleCard
-          flashSaleCardArr={FlashSaleData}
-          groupClass="gap-2.5 md:gap-3.5 lg:gap-4 3xl:gap-6"
-          childClass="w-40 md:w-52 lg:w-60 3xl:w-[260px] p-2"
-        />
+        <div className="p-3 flex flex-row justify-center items-center gap-2.5 md:gap-3.5 lg:gap-4 3xl:gap-6">
+          <Slider
+            className="w-[90vw] 2xl:w-[95vw] 3xl:w-[87vw] "
+            ref={sliderRef}
+            {...settings}
+          >
+            {FlashSaleData.map((item: flashSaleCardProps, id: number) => (
+              <FlashSaleCard
+                key={id}
+                img={item.img}
+                text={item.text}
+                SalePrice={item.SalePrice}
+                Price={item.Price}
+                discount={item.discount}
+                groupClass="w-40 md:w-52 lg:w-60 3xl:w-[260px] p-2"
+              />
+            ))}{" "}
+          </Slider>
+        </div>
       </div>
     </section>
   );
