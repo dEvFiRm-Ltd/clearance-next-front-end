@@ -12,16 +12,11 @@ import React from "react";
 const CategoryPage = () => {
   return (
     <>
-      <TopHeader />
-      <MobileHeader />
-      <MiddleHeader />
-      <BottomHeader />
       <Recommend recommendArr={recommendData} />
-      <div className="container flex flex-row">
+      <div className="container flex flex-row mt-[26px] mb-[83px]">
         <SideBar />
         <DressList />
       </div>
-      <Footer />
     </>
   );
 };

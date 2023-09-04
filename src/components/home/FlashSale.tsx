@@ -111,7 +111,7 @@ const FlashSale = () => {
                 discount={item.discount}
                 groupClass="w-40 md:w-52 lg:w-60 3xl:w-[260px] p-2"
               />
-            ))}{" "}
+            ))}
           </Slider>
         </div>
       </div>

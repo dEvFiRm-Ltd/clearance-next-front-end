@@ -7,6 +7,7 @@ import { dress, dressTwo, verticalImage, verticalImageTwo } from "@/static";
 import VerticalImage from "@/components/common/VerticalImage";
 import RelatedSearches from "@/components/home/RelatedSearches";
 import HandPicked from "@/components/home/HandPicked";
+import Footer from "@/components/home/Footer";
 
 export default function Home() {
   return (
@@ -58,7 +59,8 @@ export default function Home() {
         ))}
       </div>
       <HandPicked />
-      <RelatedSearches />      
+      <RelatedSearches /> 
+      <Footer/>    
     </>
   );
 }
