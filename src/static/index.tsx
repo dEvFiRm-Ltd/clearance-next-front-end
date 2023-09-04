@@ -145,79 +145,6 @@ export const silderBottomHeaderData: linkType[] = [
   }, 
 ];
 
-export const mobileSilderData: footerProps[] = [
-  {
-    heading: "company info",
-    itemArr: [
-      {
-        title: "about us",
-        url: "",
-      },
-      {
-        title: "intellectual property rights",
-        url: "",
-      },
-      {
-        title: "terms",
-        url: "",
-      },
-      {
-        title: "site maps",
-        url: "",
-      },
-      {
-        title: "B2B partners",
-        url: "",
-      },
-      {
-        title: "sustainability",
-        url: "",
-      },      
-    ],
-  },
-  {
-    heading: "help & support",
-    itemArr: [
-      {
-        title: "Shipping&Delivery",
-        url: "",
-      },
-      {
-        title: "Return Policy",
-        url: "",
-      },
-      {
-        title: "Tracking Order",
-        url: "",
-      },
-      {
-        title: "Payment Methods",
-        url: "",
-      },
-      {
-        title: "Pre Order Guidance",
-        url: "",
-      },
-    ],
-  },
-  {
-    heading: "customer service",
-    itemArr: [
-      {
-        title: "Customer Reviews",
-        url: "",
-      },
-      {
-        title: "Contact Us",
-        url: "",
-      },
-      {
-        title: "FAQs",
-        url: "",
-      },
-    ],
-  },
-];
 export const bottomHeaderItems: footerProps[] = [
   {
     heading: "Shop By Category",
@@ -292,6 +219,56 @@ export const bottomHeaderItems: footerProps[] = [
   },
 ];
 
+export const iconCard:linkType[] = [
+  {
+    title: "fa-brands fa-cc-paypal",
+    url: "",
+  },
+  {
+    title: "fa-brands fa-cc-visa text-[#232E75]",
+    url: "",
+  },
+  {
+    title: "fa-brands fa-cc-paypal",
+    url: "",
+  },
+  {
+    title: "fa-brands fa-cc-visa text-[#232E75]",
+    url: "",
+  },
+  {
+    title: "fa-brands fa-cc-paypal",
+    url: "",
+  },
+  {
+    title: "fa-brands fa-cc-visa text-[#232E75]",
+    url: "",
+  },
+  {
+    title: "fa-brands fa-cc-paypal",
+    url: "",
+  },
+  {
+    title: "fa-brands fa-cc-visa text-[#232E75]",
+    url: "",
+  },
+  {
+    title: "fa-brands fa-cc-paypal",
+    url: "",
+  },
+  {
+    title: "fa-brands fa-cc-visa text-[#232E75]",
+    url: "",
+  },
+  {
+    title: "fa-brands fa-cc-paypal",
+    url: "",
+  },
+  {
+    title: "fa-brands fa-cc-visa text-[#232E75]",
+    url: "",
+  },
+];
 export const footerItems: footerProps[] = [
   {
     heading: "COMPANY INFO",

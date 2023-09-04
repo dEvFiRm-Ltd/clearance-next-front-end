@@ -1,10 +1,10 @@
 "use client";
 import React, { useState } from "react";
-import SubSliderInOut from "./SubSliderInOut";
-import { mobileSilderData, silderBottomHeaderData } from "@/static";
+import { footerItems, iconCard, silderBottomHeaderData } from "@/static";
 import { footerProps, linkType } from "@/utils/type";
 import Link from "next/link";
 import ProductSubSlider from "./ProductSubSlider";
+import FooterPart from "./FooterPart";
 
 const SlideInOut = () => {
   const [view, setView] = useState(false);
@@ -50,8 +50,16 @@ const SlideInOut = () => {
         
       </div>
       <div className="px-4">
-      {mobileSilderData.map((item:footerProps, id:number)=>(<SubSliderInOut key={id} heading={item.heading} itemArr={item.itemArr}/>))}        
+      {footerItems.map((item:footerProps, id:number)=>(<FooterPart key={id} heading={item.heading} itemArr={item.itemArr}/>))}        
       </div>
+      <div className="flex flex-row flex-wrap items-center justify-center gap-x-5 gap-y-3 px-5 pt-1.5 pb-5">
+          {iconCard.map((item: linkType, i: number) => (
+            <Link key={i} href={item.url}>
+              <i className={`text-2xl ${item.title}`}></i>
+            </Link>
+          ))}
+        </div>
+      {/* slider header  */}
       <div className="w-full py-2.5 flex justify-between items-center gap-2.5 bg-white text-center absolute bottom-0">
         {silderBottomHeaderData.map((item:linkType, id:number)=>(
           <Link key={id} href={item.url} className="w-full" ><i className={`${item.title}`}></i></Link>

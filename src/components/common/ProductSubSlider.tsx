@@ -7,7 +7,7 @@ import React, { FC } from 'react'
 
 const ProductSubSlider:FC<commonSliderProps> = ({closeStateCb}) => {
   return (
-    <div className='w-full flex flex-col justify-start items-center gap-y-4 '>
+    <div className='w-full flex flex-col justify-start items-center gap-y-4'>
         <div className='w-full flex justify-start border-b py-4'>
           <button type='button' onClick={closeStateCb} className='px-4 font-normal text-xl'>
             <i className="fas fa-chevron-left text-[#31353c]"></i>
