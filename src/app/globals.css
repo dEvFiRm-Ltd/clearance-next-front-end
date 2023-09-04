@@ -60,3 +60,20 @@ body {
 .cartShadow {
   filter: drop-shadow(rgba(0, 0, 0, 0.1) 0 8px 24px);
 }
+
+.slideIn {
+  animation-duration: .3s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 0%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
