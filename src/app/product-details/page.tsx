@@ -1,40 +1,116 @@
+import StarList from '@/components/common/StarList'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
-
+const star={
+  review:'26 reviews',
+  icon:["fas fa-star","fas fa-star","fas fa-star","fas fa-star","fas fa-star"]
+}
+const img=[
+  'https://sstorage.clearance.ae/production/storage/product/2023-08-25-64e8a594edd22.png',
+  'https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-26-649983317be13.png',
+  'https://sstorage.clearance.ae/production/storage/product/2023-08-25-64e8a594edd22.png',
+  'https://sstorage.clearance.ae/production/storage/product/2023-08-25-64e8a594dae88.png',
+  'https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-26-649983317be13.png',
+]
 const ProductDetailsPage = () => {
   return (
     <>
     <section className="mx-auto container pt-6 flex flex-row justify-center gap-10">
-        <div className="flex flex-row justify-start gap-6">
-          <div className="flex flex-col justify-start gap-3">
-            <div className="h-[88px] w-[66px] relative overflow-hidden hover:ring-1 ring-black group">
-              <Image fill alt='image' className='group-hover:scale-90' src='https://sstorage.clearance.ae/production/storage/product/2023-08-25-64e89fdb8efab.png'/>
-            </div>
-            <div className="h-[88px] w-[66px] relative overflow-hidden hover:ring-1 ring-black group">
-              <Image fill alt='image' className='group-hover:scale-90' src='https://sstorage.clearance.ae/production/storage/product/2023-08-25-64e89fdbaec44.png'/>
-            </div>
-            <div className="h-[88px] w-[66px] relative overflow-hidden hover:ring-1 ring-black group">
-              <Image fill alt='image' className='group-hover:scale-90' src='https://sstorage.clearance.ae/production/storage/product/2023-08-25-64e89fdbc3fc3.png'/>
-            </div>
-            <div className="h-[88px] w-[66px] relative overflow-hidden hover:ring-1 ring-black group">
-              <Image fill alt='image' className='group-hover:scale-90' src='https://sstorage.clearance.ae/production/storage/product/2023-08-25-64e89fdbd65f8.png'/>
-            </div>
+      <div className="flex flex-row justify-start gap-6">
+        <div className="flex flex-col justify-start gap-3">
+          <div className="h-[88px] w-[66px] relative overflow-hidden hover:ring-1 ring-black group">
+            <Image fill alt='image' className='group-hover:scale-90' src='https://sstorage.clearance.ae/production/storage/product/2023-08-25-64e89fdb8efab.png'/>
           </div>
-          <div className="h-[744px] w-[558px] overflow-hidden relative">
-            <Image fill alt='image' src='https://sstorage.clearance.ae/production/storage/product/2023-08-25-64e89fdb8efab.png'/>
-              <button type='button' className='z-[1] bg-[#00000020] hover:bg-[#00000040] text-base lg:text-xl flex items-center justify-center absolute top-1/2 -translate-y-1/2 left-0 w-[52px] h-[104px] text-white'>
-                <i className="fas fa-chevron-left"></i>
-              </button>
-              <button type='button' className='z-[1] bg-[#00000020] hover:bg-[#00000040] text-base lg:text-xl flex items-center justify-center absolute top-1/2 -translate-y-1/2 right-0 w-[52px] h-[104px] text-white'>
-                <i className="fas fa-chevron-right"></i>
-              </button>
+          <div className="h-[88px] w-[66px] relative overflow-hidden hover:ring-1 ring-black group">
+            <Image fill alt='image' className='group-hover:scale-90' src='https://sstorage.clearance.ae/production/storage/product/2023-08-25-64e89fdbaec44.png'/>
+          </div>
+          <div className="h-[88px] w-[66px] relative overflow-hidden hover:ring-1 ring-black group">
+            <Image fill alt='image' className='group-hover:scale-90' src='https://sstorage.clearance.ae/production/storage/product/2023-08-25-64e89fdbc3fc3.png'/>
+          </div>
+          <div className="h-[88px] w-[66px] relative overflow-hidden hover:ring-1 ring-black group">
+            <Image fill alt='image' className='group-hover:scale-90' src='https://sstorage.clearance.ae/production/storage/product/2023-08-25-64e89fdbd65f8.png'/>
           </div>
         </div>
-        {/* image area ends  */}
-        <div className="flex flex-col justify-start items-start gap-4">
-          <div className=""></div>
-          <div className=""></div>
-          <div className=""></div>
+        <div className="w-[558px]">
+          <div className="h-[744px] w-full overflow-hidden relative">
+            <Image fill alt='image' src='https://sstorage.clearance.ae/production/storage/product/2023-08-25-64e89fdb8efab.png'/>
+            <button type='button' className='z-[1] bg-[#00000020] hover:bg-[#00000040] text-base lg:text-xl flex items-center justify-center absolute top-1/2 -translate-y-1/2 left-0 w-[52px] h-[104px] text-white'>
+              <i className="fas fa-chevron-left"></i>
+            </button>
+            <button type='button' className='z-[1] bg-[#00000020] hover:bg-[#00000040] text-base lg:text-xl flex items-center justify-center absolute top-1/2 -translate-y-1/2 right-0 w-[52px] h-[104px] text-white'>
+              <i className="fas fa-chevron-right"></i>
+            </button>
+          </div>
+          <div className="py-5 flex flex-row justify-center items-center gap-6">
+            <Link href={''} className='h-12 w-12 group' >
+              <span className='h-10 w-10 rounded-full flex justify-center items-center text-2xl text-white bg-black group-hover:bg-blue-400'>
+                <i className="fab fa-twitter"></i>
+              </span>
+            </Link>
+            <Link href={''} className='h-12 w-12 group' >
+              <span className='h-10 w-10 rounded-full flex justify-center items-center text-2xl text-white bg-black group-hover:bg-blue-400'>
+                <i className="fab fa-facebook-f"></i>
+              </span>
+            </Link>
+            <Link href={''} className='h-12 w-12 group' >
+              <span className='h-10 w-10 rounded-full flex justify-center items-center text-2xl text-white bg-black group-hover:bg-red-500' >
+                <i className="fab fa-pinterest-p"></i>
+              </span>
+            </Link>
+          </div>
+        </div>
+      </div>      
+        {/*product image ends  */}
+        {/* product details  */}
+        <div className="w-[512px] flex flex-col justify-start items-start gap-4">
+          <div className="w-[300px] h-[22px] relative overflow-hidden">
+            <Image alt='' fill src={''}/>
+          </div>
+          <div>
+            <h3 className="text-xl text-[#31353c] capitalize mb-1">Elegant Loosen Flat Collar Plain Outerwear</h3>
+            <StarList icon={star.icon} review={star.review}/>
+          </div>
+          {/* pricing  */}
+          <div className="flex flex-row justify-start items-center gap-x-2">
+              <i className="text-xl text-[#FFD54D] fas fa-bolt"></i>
+              <h5 className="text-[#dc2626] leading-[48px] text-3xl font-bold">$43.75</h5>
+              <p className="text-base line-through text-[#A1A5AB]">$50.99</p>
+              <span className="bg-black text-white text-xs py-px px-1 ml-1">-16%</span>
+          </div>
+          {/* flash sale */}
+          <div className="space-y-1">
+              <div className="flex flex-row justify-start items-center gap-x-4 capitalize text-sm">
+                <span className="w-fit px-1 rounded-sm text-[#DC2626] bg-[#FEF2F2] font-normal !font-[Helvetica]">flash sale</span>
+                <div className="flex flex-row justify-start items-center gap-x-1">
+                  <span className="text-base text-left text-[#5d626a]">ends in:</span>
+                  <p className="text-black font-bold">04D : 08H : 57M : 28S</p>
+                </div>
+              </div>
+              <h3 className="uppercase text-[22px] text-[#5d626a] font-medium">flash deals</h3>
+          </div>
+          {/* gifts  */}
+          <button type='button' className="w-full flex flex-row justify-between py-1">
+            <div className="flex justify-start items-center gap-x-2 ">
+              <span className="bg-red-400 h-5 w-5 rounded text-white"><i className="fas fa-gift"></i></span>
+              <span className="text-sm text-[#5d626a]">free gift on orders over $99</span>
+              {img.map((item:string ,id:number)=>(
+                <span key={id} className="h-7 w-7 overflow-hidden relative">
+                  <Image alt='' fill src={item}/>
+                </span>
+              ))}
+            </div>
+            <i className="fas fa-chevron-right"></i>
+          </button>
+          <div className="w-full p-3.5 border border-[#5d626a] flex flex-row justify-start items-center gap-x-3.5">
+            <span className="rounded w-[60px] h-[30px] relative overflow-hidden bg-red-300">
+              <Image fill alt='Logo' src={''}/>
+            </span>
+            <p className="text-sm text-[#17120f]">
+              4 interest-free payments of $10.83.
+              <Link href={''} className='underline pl-0.5'>Learn more</Link>
+            </p>
+          </div>
         </div>
     </section>
     </>

@@ -1,8 +1,10 @@
+import { recommendType } from "@/components/categoryListing/Recommend";
 import { dressType } from "@/components/common/DressCard";
 import {
   bannerProps,
   flashSaleCardProps,
   footerProps,
+  linkImgType,
   linkType,
 } from "@/utils/type";
 
@@ -73,6 +75,75 @@ export const bottomHeaderLinkItems: linkType[] = [
     title: "community",
     url: "",
   },
+];
+export const productSubSliderData: linkImgType[] = [
+  {
+    img:
+      "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-08-11-64d5ef415c3ab.png",
+    title: "Travel bag",
+    url: "",
+  },
+  {
+    img:
+      "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-17-648dabc3eae43.png",
+    title: "Rollerblade",
+    url: "",
+  },
+  {
+    img:
+      "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-08-11-64d61bf56551d.png",
+    title: "camera",
+    url: "",
+  },
+  {
+    img:
+      "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-08-29-64edde13ede6b.png",
+    title: "Kids",
+    url: "",
+  },
+  {
+    img:
+      "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-27-649af57a2b524.png",
+    title: "Wireless Earbuds",
+    url: "",
+  },
+  {
+    img:
+      "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647ef2187e4fa.avif",
+    title: "pants",
+    url: "",
+  },
+  {
+    img:
+      "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e90d3e979d.avif",
+    title: "t-shirt",
+    url: "",
+  },
+  {
+    img:
+      "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-08-29-64ede7ac360a3.png",
+    title: "necklace",
+    url: "",
+  },
+];
+
+export const silderBottomHeaderData: linkType[] = [
+  {
+    title:'fas fa-home',
+    url: "",
+  },
+  {
+    title:'far fa-heart',
+    url: "",
+  },
+  {
+    title:'fas fa-headset',
+    url: "",
+  },
+  {
+    title:'far fa-user',
+    url: "",
+  }, 
 ];
 
 export const bottomHeaderItems: footerProps[] = [
@@ -149,6 +220,56 @@ export const bottomHeaderItems: footerProps[] = [
   },
 ];
 
+export const iconCard:linkType[] = [
+  {
+    title: "fa-brands fa-cc-paypal",
+    url: "",
+  },
+  {
+    title: "fa-brands fa-cc-visa text-[#232E75]",
+    url: "",
+  },
+  {
+    title: "fa-brands fa-cc-paypal",
+    url: "",
+  },
+  {
+    title: "fa-brands fa-cc-visa text-[#232E75]",
+    url: "",
+  },
+  {
+    title: "fa-brands fa-cc-paypal",
+    url: "",
+  },
+  {
+    title: "fa-brands fa-cc-visa text-[#232E75]",
+    url: "",
+  },
+  {
+    title: "fa-brands fa-cc-paypal",
+    url: "",
+  },
+  {
+    title: "fa-brands fa-cc-visa text-[#232E75]",
+    url: "",
+  },
+  {
+    title: "fa-brands fa-cc-paypal",
+    url: "",
+  },
+  {
+    title: "fa-brands fa-cc-visa text-[#232E75]",
+    url: "",
+  },
+  {
+    title: "fa-brands fa-cc-paypal",
+    url: "",
+  },
+  {
+    title: "fa-brands fa-cc-visa text-[#232E75]",
+    url: "",
+  },
+];
 export const footerItems: footerProps[] = [
   {
     heading: "COMPANY INFO",
@@ -478,5 +599,42 @@ export const verticalImageTwo = [
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/banner/2023-08-29-64edb52f31a48.png",
+  },
+];
+
+// Recommend components data
+export const recommendData: recommendType[] = [
+  {
+    title: "Maxi",
+  },
+  {
+    title: "Midi",
+  },
+  {
+    title: "Mini",
+  },
+  {
+    title: "Plus",
+  },
+  {
+    title: "Shirt Dresses",
+  },
+  {
+    title: "Floral Dresses",
+  },
+  {
+    title: "Vacation Dresses",
+  },
+  {
+    title: "Cocktail Dresses",
+  },
+  {
+    title: "Little White Dresses",
+  },
+  {
+    title: "Little Black Dresses",
+  },
+  {
+    title: "Dopamine Dresses",
   },
 ];

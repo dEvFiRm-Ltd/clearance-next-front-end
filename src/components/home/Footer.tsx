@@ -2,68 +2,19 @@ import Link from "next/link";
 import React, { FC } from "react";
 import FooterPart from "../common/FooterPart";
 import Image from "next/image";
-import { footerItems } from "@/static";
-import { footerProps } from "@/utils/type";
+import { footerItems, iconCard } from "@/static";
+import { footerProps, linkType } from "@/utils/type";
 
 const Footer = () => {
-  const iconCard = [
-    {
-      icon: "fa-brands fa-cc-paypal",
-      url: "",
-    },
-    {
-      icon: "fa-brands fa-cc-visa text-[#232E75]",
-      url: "",
-    },
-    {
-      icon: "fa-brands fa-cc-paypal",
-      url: "",
-    },
-    {
-      icon: "fa-brands fa-cc-visa text-[#232E75]",
-      url: "",
-    },
-    {
-      icon: "fa-brands fa-cc-paypal",
-      url: "",
-    },
-    {
-      icon: "fa-brands fa-cc-visa text-[#232E75]",
-      url: "",
-    },
-    {
-      icon: "fa-brands fa-cc-paypal",
-      url: "",
-    },
-    {
-      icon: "fa-brands fa-cc-visa text-[#232E75]",
-      url: "",
-    },
-    {
-      icon: "fa-brands fa-cc-paypal",
-      url: "",
-    },
-    {
-      icon: "fa-brands fa-cc-visa text-[#232E75]",
-      url: "",
-    },
-    {
-      icon: "fa-brands fa-cc-paypal",
-      url: "",
-    },
-    {
-      icon: "fa-brands fa-cc-visa text-[#232E75]",
-      url: "",
-    },
-  ];
+  
   return (
     <div className="bg-[#F2F2F3] py-10 xl:px-5 px-3 3xl:px-0">
       <div className="container">
-        <div className=" flex flex-row flex-wrap justify-between gap-y-5">
+        <div className="flex flex-col lg:flex-row flex-wrap justify-between gap-x-5">
           {footerItems.map((item: footerProps, i: number) => (
-            <FooterPart key={i} heading={item.heading} itemArr={item.itemArr} />
+            <FooterPart key={i} heading={item.heading} itemArr={item.itemArr} headingClass="font-bold" />
           ))}
-          <div className="w-[445px]">
+          <div className="hidden lg:block w-[445px]">
             <p className="text-lg leading-7 font-bold text-[#000000] capitalize mb-5">
               News letter
             </p>
@@ -113,9 +64,9 @@ const Footer = () => {
           </div>
         </div>
         <div className="flex flex-row flex-wrap items-center justify-center gap-x-3 my-5 md:my-8 lg:my-10">
-          {iconCard.map((item: any, i: number) => (
+          {iconCard.map((item: linkType, i: number) => (
             <Link key={i} href={item.url}>
-              <i className={`text-3xl ${item.icon}`}></i>
+              <i className={`text-3xl ${item.title}`}></i>
             </Link>
           ))}
         </div>

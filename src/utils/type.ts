@@ -17,6 +17,16 @@ export type linkType = {
   title: string;
   url: string;
 };
+export type linkImgType = {
+  img:string;
+  title: string;
+  url: string;
+};
+export type commonSliderProps = {
+  closeStateCb: () => void
+  ref?: any
+  deleteBtnText?: string
+}
 export type footerProps = {
   itemArr: linkType[];
   heading: string;
