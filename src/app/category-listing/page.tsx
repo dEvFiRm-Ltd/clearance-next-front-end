@@ -13,7 +13,7 @@ const CategoryPage = () => {
   return (
     <>
       <Recommend recommendArr={recommendData} />
-      <div className="container flex flex-row mt-[26px] mb-[83px]">
+      <div className="container flex flex-col 3xl:flex-row mt-[26px] mb-[83px] px-3">
         <SideBar />
         <DressList />
       </div>
