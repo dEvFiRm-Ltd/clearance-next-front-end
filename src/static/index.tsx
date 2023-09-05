@@ -305,62 +305,38 @@ export const footerItems: footerProps[] = [
     ],
   },
   {
-    heading: "HELP & SUPPORT",
-    itemArr: [
+    heading: "contact us",
+    contactUsText:"Contact us everyday 9 Am -7 Pm",
+    contactUsArr:[
       {
-        title: "Shipping & Delivery",
-        url: "",
+        icon:'fas fa-phone-volume ',
+        title:'+97142553311',
+        url:''
       },
       {
-        title: "Return Policy",
-        url: "",
+        icon:'fas fa-envelope',
+        title:'care@clearance.ae',
+        url:''
+      }
+    ],    
+    socialArr:[
+      {
+        title:'fab fa-linkedin ',
+        url:''
       },
       {
-        title: "Tracking Order",
-        url: "",
+        title:'fab fa-instagram-square',
+        url:''
       },
       {
-        title: "Tracking Order",
-        url: "",
-      },
-      {
-        title: "Pre Order Guidance",
-        url: "",
-      },
-      {
-        title: "About Wallet",
-        url: "",
-      },
-      {
-        title: "Influencer Program",
-        url: "",
-      },
-      {
-        title: "Affiliate Program",
-        url: "",
-      },
-    ],
+        title:'fab fa-facebook-square',
+        url:''
+      }
+    ]    
   },
   {
-    heading: "CUSTOMER SERVICE",
-    itemArr: [
-      {
-        title: "Customer Reviews",
-        url: "",
-      },
-      {
-        title: "Contact Us",
-        url: "",
-      },
-      {
-        title: "How To Choose Your Size",
-        url: "",
-      },
-      {
-        title: "FAQs",
-        url: "",
-      },
-    ],
+    heading: "download our app",
+    hasBtn:true    
   },
 ];
 
