@@ -1,5 +1,5 @@
 "use client"
-import { FlashSaleData } from "@/static";
+import { FlashSaleData, dressListData } from "@/static";
 import { flashSaleCardProps } from "@/utils/type";
 import React, { useState } from "react";
 import FlashSaleCard from "../common/FlashSaleCard";
@@ -37,7 +37,7 @@ const DressList = () => {
     </div>
     </div>
     <div className="flex flex-row flex-wrap gap-5">
-      {FlashSaleData.map((item: flashSaleCardProps, id: number) => (
+      {dressListData.map((item: flashSaleCardProps, id: number) => (
         <FlashSaleCard
           key={id}
           img={item.img}
@@ -45,6 +45,8 @@ const DressList = () => {
           SalePrice={item.SalePrice}
           Price={item.Price}
           discount={item.discount}
+          star={true}
+          starCount={item.starCount}
           groupClass="!w-[290px] p-2"
           imgClass="!h-[385px]"
         />

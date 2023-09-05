@@ -11,7 +11,9 @@ export type flashSaleCardProps = {
   text: string;
   SalePrice: string;
   Price?: string;
-  text2?: string;  
+  text2?: string; 
+  star?:boolean; 
+  starCount?:string;
 };
 export type linkType = {
   icon?: string;
