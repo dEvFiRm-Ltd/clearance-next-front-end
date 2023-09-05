@@ -111,6 +111,15 @@ const ProductDetailsPage = () => {
               <Link href={''} className='underline pl-0.5'>Learn more</Link>
             </p>
           </div>
+          {/* colors */}
+          <div className="flex flex-col justify-start items-start gap-y-3">
+            <div className="flex justify-start gap-2 capitalize text-[#31353c] text-lg">
+              color: <span className="font-bold">Black</span>
+            </div>
+            <div className="flex justify-start">
+              <div className="h-9 w-9"></div>
+            </div>
+          </div>
         </div>
     </section>
     </>
