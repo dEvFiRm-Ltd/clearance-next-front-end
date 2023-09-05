@@ -14,6 +14,7 @@ export type flashSaleCardProps = {
   text2?: string;  
 };
 export type linkType = {
+  icon?: string;
   title: string;
   url: string;
 };
@@ -28,7 +29,11 @@ export type commonSliderProps = {
   deleteBtnText?: string
 }
 export type footerProps = {
-  itemArr: linkType[];
+  itemArr?: linkType[];
+  socialArr?: linkType[];
+  contactUsArr?: linkType[];
+  hasBtn?: boolean;
   heading: string;
+  contactUsText?: string;
   headingClass?: string;
 };
