@@ -219,56 +219,56 @@ export const bottomHeaderItems: footerProps[] = [
   },
 ];
 
-export const iconCard:linkType[] = [
-  {
-    title: "fa-brands fa-cc-paypal",
-    url: "",
-  },
-  {
-    title: "fa-brands fa-cc-visa text-[#232E75]",
-    url: "",
-  },
-  {
-    title: "fa-brands fa-cc-paypal",
-    url: "",
-  },
-  {
-    title: "fa-brands fa-cc-visa text-[#232E75]",
-    url: "",
-  },
-  {
-    title: "fa-brands fa-cc-paypal",
-    url: "",
-  },
-  {
-    title: "fa-brands fa-cc-visa text-[#232E75]",
-    url: "",
-  },
-  {
-    title: "fa-brands fa-cc-paypal",
-    url: "",
-  },
-  {
-    title: "fa-brands fa-cc-visa text-[#232E75]",
-    url: "",
-  },
-  {
-    title: "fa-brands fa-cc-paypal",
-    url: "",
-  },
-  {
-    title: "fa-brands fa-cc-visa text-[#232E75]",
-    url: "",
-  },
-  {
-    title: "fa-brands fa-cc-paypal",
-    url: "",
-  },
-  {
-    title: "fa-brands fa-cc-visa text-[#232E75]",
-    url: "",
-  },
-];
+// export const iconCard:linkType[] = [
+//   {
+//     title: "fa-brands fa-cc-paypal",
+//     url: "",
+//   },
+//   {
+//     title: "fa-brands fa-cc-visa text-[#232E75]",
+//     url: "",
+//   },
+//   {
+//     title: "fa-brands fa-cc-paypal",
+//     url: "",
+//   },
+//   {
+//     title: "fa-brands fa-cc-visa text-[#232E75]",
+//     url: "",
+//   },
+//   {
+//     title: "fa-brands fa-cc-paypal",
+//     url: "",
+//   },
+//   {
+//     title: "fa-brands fa-cc-visa text-[#232E75]",
+//     url: "",
+//   },
+//   {
+//     title: "fa-brands fa-cc-paypal",
+//     url: "",
+//   },
+//   {
+//     title: "fa-brands fa-cc-visa text-[#232E75]",
+//     url: "",
+//   },
+//   {
+//     title: "fa-brands fa-cc-paypal",
+//     url: "",
+//   },
+//   {
+//     title: "fa-brands fa-cc-visa text-[#232E75]",
+//     url: "",
+//   },
+//   {
+//     title: "fa-brands fa-cc-paypal",
+//     url: "",
+//   },
+//   {
+//     title: "fa-brands fa-cc-visa text-[#232E75]",
+//     url: "",
+//   },
+// ];
 export const footerItems: footerProps[] = [
   {
     heading: "COMPANY INFO",

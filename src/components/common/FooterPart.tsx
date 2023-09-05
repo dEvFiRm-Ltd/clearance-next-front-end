@@ -7,7 +7,7 @@ import GoogleBtn from "./GoogleButton";
 const FooterPart: FC<footerProps> = ({ itemArr, heading, headingClass, socialArr,contactUsText,contactUsArr,hasBtn }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   return (
-    <div className="w-[32%]">
+    <div className="lg:w-[32%]">
       <div className='lg:hidden w-full border-b '>
         <button
           type="button"
@@ -24,6 +24,42 @@ const FooterPart: FC<footerProps> = ({ itemArr, heading, headingClass, socialArr
           <Link key={id} href={item.url} className='py-2 text-sm text-[#5d626a]'>
             {item.title}
           </Link>))}
+          {isExpanded && contactUsText && <p className="text-sm font-bold text-black uppercase ">{contactUsText}</p>}
+        {isExpanded && contactUsArr && 
+        <div className="flex flex-col text-black text-sm gap-y-1">
+        {isExpanded && contactUsArr?.map((item:linkType,id:number)=>(
+          <Link key={id} href={item.url} className="text-xs" ><i className={`${item.icon} mr-1.5`}></i>{item.title}</Link>
+        ))}
+        </div>}        
+        {isExpanded && socialArr && 
+        <div className="flex gap-x-4 p-2">
+          {socialArr?.map((item:linkType,id:number)=>(
+            <Link key={id} href={item.url} className="text-2xl"><i className={`${item.title}`}></i></Link> 
+          ))}
+        </div>}
+        {isExpanded && hasBtn && <div className="flex flex-col justify-center items-start gap-3 ">
+           <GoogleBtn
+            groupClass="w-auto"
+            actionCb={() => {}}
+            btnText="Download on the"
+            btnText2="app store"
+            prefixIcon="fab fa-apple"
+          />
+          <GoogleBtn
+            groupClass="w-auto"
+            actionCb={() => {}}
+            btnText="Download on the"
+            btnText2="app store"
+            prefixIcon="fab fa-apple"
+          />
+          {/* <GoogleBtn
+            groupClass="w-auto"
+            actionCb={() => {}}
+            btnText="GET IT ON"
+            btnText2="play store"
+            prefixIcon="fab fa-google-play"
+          /> */}
+        </div>}
         </div>        
       </div>
       {/* mobile & tab only */}
