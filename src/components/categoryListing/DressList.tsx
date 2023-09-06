@@ -1,55 +1,25 @@
 "use client"
 import { dressListData, filterData, recommendData } from "@/static";
 import { flashSaleCardProps } from "@/utils/type";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import FlashSaleCard from "../common/FlashSaleCard";
 import Button from "../base/Button";
 import Recommend, { recommendType } from "./Recommend";
-import SelectField from "../base/SelectField";
 
 const DressList = () => {
-  const [show, setShow] = useState<boolean>(false);
-  const [open, setOpen] = useState<boolean>(false);
-  const [itemShow, setItemShow] = useState(false);
-
-
+    const [show, setShow] = useState<boolean>(false)
+    const [itemShow, setItemShow] = useState(false)
+    const [selectedOption, setSelectedOption] = useState('');
+    const options = ['Item1', 'Item2', 'Item3'];
+    const handleSelectChange = (e:any) => {
+      setSelectedOption(e.target.value);
+    };
   return (
   <div className="w-full 3xl:w-[calc(100%-216px-24px)] relative">
     <div className="flex flex-row items-center justify-between gap-x-2 capitalize mb-3.5 px-3">
     <p className="text-lg leading-none text-black-primary font-bold">Dresses <span className="text-sm font-normal text-center">566</span> <span className="text-sm font-normal text-center">Results</span>
     </p>
-
-
-    <div className="relative">
-        <SelectField
-          title={"select"}
-          btnClass={open === true ? "rotate-180" : ""}
-          actionCb={() => setOpen(!open)}
-        />
-        {open && (
-          <div className="flex flex-col gap-y-3 absolute px-5 py-4 bg-green-700 rounded-lg shadow-sm z-50">
-            kabir
-          </div>
-        )}
-      </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    {/* <div className="3xl:flex flex-row items-center gap-x-2 capitalize hidden">
+    <div className="3xl:flex flex-row items-center gap-x-2 capitalize hidden">
       <p className="text-base text-black-primary font-normal">Sort By</p>
       <select
         id="selectField"
@@ -63,7 +33,7 @@ const DressList = () => {
           </option>
         ))}
       </select>
-    </div> */}
+    </div>
     </div>
     {/* buttons are here  */}
     {/* <Recommend recommendArr={recommendData} heading="" btnClass=""/> */}
