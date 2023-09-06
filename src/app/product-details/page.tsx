@@ -119,6 +119,7 @@ const ProductDetailsPage = () => {
           </div>
           {/* colors */}
           <div className="flex flex-col justify-start items-start gap-y-3">
+
             <div className="flex justify-start gap-2 capitalize text-black-primary text-lg">
               color: <span className="font-bold">Black</span>
             </div>
@@ -152,6 +153,7 @@ const ProductDetailsPage = () => {
                 plus
               </button>
               {/* Add more buttons here */}
+
             </div>
           </div>
         </div>

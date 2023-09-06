@@ -7,7 +7,9 @@ import GoogleBtn from "./GoogleButton";
 const FooterPart: FC<footerProps> = ({ itemArr, heading, headingClass, socialArr,contactUsText,contactUsArr,hasBtn }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   return (
+
     <div className="lg:w-[32%]">
+
       <div className='lg:hidden w-full border-b '>
         <button
           type="button"
@@ -21,7 +23,9 @@ const FooterPart: FC<footerProps> = ({ itemArr, heading, headingClass, socialArr
         </button>
         <div className="pl-4 flex flex-col justify-start gap-y-1">
         {isExpanded && itemArr?.map((item:linkType, id:number)=>(
+
           <Link key={id} href={item.url} className='py-2 text-sm text-gray'>
+
             {item.title}
           </Link>))}
           {isExpanded && contactUsText && <p className="text-sm font-bold text-black uppercase ">{contactUsText}</p>}
