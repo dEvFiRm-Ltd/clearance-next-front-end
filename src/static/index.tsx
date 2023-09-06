@@ -271,14 +271,19 @@ export const bottomHeaderItems: footerProps[] = [
 //     url: "",
 //   },
 // ];
+export const languageDropDown: dropDowns[] = [
+  { title: 'uk'},
+  { title: 'us'},
+  { title: 'fr'},
+  { title: 'de'},
+  { title: 'au'},
+  { title: 'es'},
+  { title: 'eur'},
+]
 export const sizeDropDown: dropDowns[] = [
-  { title: 'uk',},
-  { title: 'us',},
-  { title: 'fr',},
-  { title: 'de',},
-  { title: 'au',},
-  { title: 'es',},
-  { title: 'eur',},
+  { title: 'english'},
+  { title: 'arabic'}
+  
 ]
 export const footerItems: footerProps[] = [
   {

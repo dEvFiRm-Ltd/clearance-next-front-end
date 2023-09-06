@@ -1,12 +1,48 @@
 'use client'
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const MiddleHeader = () => {
   // const [show, setShow] = useState(false)
-  const [user, setUser] = useState(false)
-  const [cart, setCart] = useState(false)
+  const [language, setLanguage] = useState(false);
+  const [user, setUser] = useState(false);
+  const [cart, setCart] = useState(false);
+  const languageButtonRef = useRef<HTMLButtonElement>(null);
+  const userButtonRef = useRef<HTMLButtonElement>(null);
+  const cartButtonRef = useRef<HTMLButtonElement>(null);
+
+  // Add a click event listener to close the dropdowns when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        languageButtonRef.current &&
+        !languageButtonRef.current.contains(event.target as Node)
+      ) {
+        setLanguage(false);
+      }
+      if (
+        userButtonRef.current &&
+        !userButtonRef.current.contains(event.target as Node)
+      ) {
+        setUser(false);
+      }
+
+      if (
+        cartButtonRef.current &&
+        !cartButtonRef.current.contains(event.target as Node)
+      ) {
+        setCart(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
     <div className="hidden lg:flex flex-row justify-between items-center lg:py-4 2xl:py-5 lg:px-6 xl:px-8 2xl:px-12 3xl:px-[60px]">
       <Link
@@ -31,19 +67,21 @@ const MiddleHeader = () => {
           </button>
         </div>
         <div className="flex flex-row items-center gap-x-2 xl:gap-x-3.5 2xl:gap-x-4 3xl:gap-x-5 text-xl 2xl:text-2xl">
-          <button type="button" className="group relative p-2 2xl:p-3">
+          <button type="button" onClick={()=>setLanguage(!language)}  ref={languageButtonRef} className="relative p-2 2xl:p-3">
             <i className="fa-solid fa-globe"></i>
-            <div className="hidden w-80 group-hover:flex flex-col justify-start gap-y-5 absolute top-full right-0 z-50 px-4 pt-5 pb-2 bg-white cartShadow">
+            {/* hover dropdown */}
+            {language && <div className="w-80 flex flex-col justify-start gap-y-5 absolute top-full right-0 z-50 px-4 pt-5 pb-2 bg-white cartShadow">
               <p className="text-sm 2xl:text-base font-bold text-black-primary capitalize text-left">
                 Language
               </p>
-              <select className="w-full p-3 border text-sm 2xl:text-base text-gray border-gray-300 hover:border-gray-500 focus-visible:outline-none">
+              <select className="w-full p-3 border text-sm 2xl:text-base text-gray border-gray hover:border-black-primary focus-visible:outline-none">
                 <option value="english">English</option>
                 <option value="arabic">Arabic</option>
               </select>
-            </div>
+            </div>}            
+             {/* hover dropdown ends */}
           </button>
-          <button type="button" onClick={()=>setUser(!user)} className="relative p-2 2xl:p-3">
+          <button type="button" onClick={()=>setUser(!user)}  ref={userButtonRef} className="relative p-2 2xl:p-3">
             <i className="fa-regular fa-user"></i>
             {/* hover dropdown */}
             {user && <div className="absolute right-[50%] translate-x-[50%] z-50 top-[115%] bg-white flex min-w-[240px] rounded-md cartShadow">
@@ -89,7 +127,7 @@ const MiddleHeader = () => {
             </div>}
             {/* hover dropdown ends */}
           </button>
-          <button type="button" onClick={()=>setCart(!cart)} className="relative p-2 2xl:p-3">
+          <button type="button" onClick={()=>setCart(!cart)} ref={cartButtonRef} className="relative p-2 2xl:p-3">
             <i className="fa-solid fa-bag-shopping"></i>
             {/* hover dropdown */}
             {cart && <div className="cartShadow block absolute top-full -right-1 z-50 bg-white rounded-md">
