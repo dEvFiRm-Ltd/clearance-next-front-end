@@ -703,3 +703,38 @@ export const recommendData: recommendType[] = [
     title: "Dopamine Dresses",
   },
 ];
+export const filterData: recommendType[] = [
+  {
+    title: "Maxi",
+  },
+  {
+    title: "Midi",
+  },
+  {
+    title: "Mini",
+  },
+  {
+    title: "Plus",
+  },
+  {
+    title: "Shirt Dresses",
+  },
+  {
+    title: "Floral Dresses",
+  },
+  {
+    title: "Vacation Dresses",
+  },
+  {
+    title: "Cocktail Dresses",
+  },
+  {
+    title: "Little White Dresses",
+  },
+  {
+    title: "Little Black Dresses",
+  },
+  {
+    title: "Dopamine Dresses",
+  },
+];
