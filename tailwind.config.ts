@@ -24,7 +24,7 @@ const config: Config = {
       colors: {
         transparent: 'transparent',
         gray: '#5d626a',
-        black: { primary: '#31353C', secondary: '' },
+        black: { primary: '#31353C', secondary: '' },        
         ash: '#eae7e4',
         red: {
           400: '#dc2626',          

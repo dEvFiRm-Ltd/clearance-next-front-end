@@ -19,7 +19,7 @@ const GoogleBtn: FC<buttonProps> = ({
   return (
     <div
       onClick={actionCb}
-      className={`cursor-default flex justify-center items-center bg-black text-white rounded-md text-[10px] lg:text-sm py-1 px-2 font-normal ${
+      className={`cursor-default flex justify-center items-center bg-black-primary text-white rounded-md text-[10px] lg:text-sm py-1 px-2 font-normal ${
         prefixIcon ? "flex gap-x-2 lg:gap-x-4" : ""
       } ${groupClass}`}
     >
