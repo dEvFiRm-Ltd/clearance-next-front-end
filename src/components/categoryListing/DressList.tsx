@@ -17,10 +17,10 @@ const DressList = () => {
     };
   return (
   <div className="w-full 3xl:w-[calc(100%-216px-24px)]">
-    <div className="flex-row items-center justify-between mb-3.5 hidden 3xl:flex">
-    <p className="text-lg leading-none text-[#31353C]">Dresses <span className="text-sm font-normal text-center">566</span> <span className="text-sm font-normal text-center">Results</span>
+    <div className="flex flex-row items-center justify-between mb-3.5">
+    <p className="text-lg  leading-none text-[#31353C]">Dresses <span className="text-sm font-normal text-center">566</span> <span className="text-sm font-normal text-center">Results</span>
     </p>
-    <div className="flex flex-row items-center gap-x-2 capitalize">
+    <div className="3xl:flex flex-row items-center gap-x-2 capitalize hidden">
       <p className="text-base text-[#31353C] font-normal">Sort By</p>
       <select
         id="selectField"
