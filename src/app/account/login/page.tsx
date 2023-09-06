@@ -1,7 +1,5 @@
 import { AuthSm } from "@/components/auth/AuthSm";
 import { AuthXl } from "@/components/auth/AuthXl";
-import { Login } from "@/components/auth/Login";
-import { Signup } from "@/components/auth/Signup";
 import React from "react";
 
 const page = () => {
