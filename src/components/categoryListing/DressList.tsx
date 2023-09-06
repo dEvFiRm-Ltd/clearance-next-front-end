@@ -49,7 +49,7 @@ const DressList = () => {
         ))}
     </div>
 
-      <div className="flex flex-row items-center justify-between px-3">
+      <div className="flex flex-row items-center justify-between px-3 3xl:hidden">
         <div><Button btnText="New" actionCb={()=>{}} variant="naked"/></div> 
         <div><Button btnText="Best Sale" actionCb={()=>{}} variant="naked"/></div>
         <div className="flex flex-row items-center gap-x-1">
