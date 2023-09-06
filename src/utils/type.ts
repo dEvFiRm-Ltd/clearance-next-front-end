@@ -14,6 +14,7 @@ export type flashSaleCardProps = {
   text2?: string; 
   star?:boolean; 
   starCount?:string;
+  actionCb:()=>void
 };
 export type linkType = {
   icon?: string;
@@ -45,4 +46,13 @@ export type dropDownType ={
   title:string;
   btnClass:string;
   actionCb: () => void;
+}
+
+// for modals 
+export type commonModalProps = {
+  viewState: boolean
+  closeStateCb: () => void
+  ref?: any
+  deleteBtnText?: string
+  data?:any
 }

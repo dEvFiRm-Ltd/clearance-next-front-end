@@ -7,7 +7,7 @@ type modalBodyProps = {
 const ModalBody: FC<modalBodyProps> = ({ children, modalBodyClass }) => {
   return (
     <div
-      className={`flex w-full flex-row px-[60px] py-10 gap-y-5 border-y border-ash ${modalBodyClass}`}
+      className={`w-full px-[50px] py-4 border-ash ${modalBodyClass}`}
     >
       {children}
     </div>
