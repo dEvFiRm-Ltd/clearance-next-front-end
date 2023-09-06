@@ -14,7 +14,7 @@ const config: Config = {
       screens: {
         xl: "1280px",
         "2xl": "1536px",
-        "3xl": "1780px",
+        "3xl": "1780px"
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

@@ -3,10 +3,10 @@ import React from "react";
 
 export const Login = () => {
   return (
-    <section className="w-[400px] w flex flex-col space-y-4">
+    <section className="w-[350px] sm:w-[400px] flex flex-col space-y-4">
       <div className="flex flex-col space-y-2 md:space-y-4 text-center text-[#5c5c5c] text-2xl">
-        <h1>Login</h1>
-        <p className="text-[#999999] text-sm">
+        <h1 className="hidden xl:block">Login</h1>
+        <p className="text-[#999999] text-sm text-left xl:text-center">
           Please enter your e-mail and password:
         </p>
       </div>
