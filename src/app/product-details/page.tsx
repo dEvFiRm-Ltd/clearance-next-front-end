@@ -1,7 +1,9 @@
 'use client'
-import SelectField from '@/components/base/SelectField'
+import Button from '@/components/base/Button'
+import SelectField, { dropDowns } from '@/components/base/SelectField'
 import Tab from '@/components/base/Tab'
 import StarList from '@/components/common/StarList'
+import { sizeDropDown } from '@/static'
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
@@ -18,6 +20,9 @@ const img=[
 ]
 const ProductDetailsPage = () => {
   const [activeTab, setActiveTab] = useState('regular');
+  const [selectedSize, setSelectedSize] = useState<dropDowns>(
+    sizeDropDown[0]
+  )
 
   const handleTabClick = (tab:any) => {
     setActiveTab(tab);
@@ -131,6 +136,7 @@ const ProductDetailsPage = () => {
                   <Image alt='' fill src={'https://sstorage.clearance.ae/production/storage/product/2023-08-04-64ccaafb5233f.png'}/>
                 </span>
             </div>
+            {/* fits */}
             <div className="text-black-primary text-lg capitalize">
               fit:
             </div>
@@ -155,16 +161,29 @@ const ProductDetailsPage = () => {
               >
                 plus
               </button>
-              {/* Add more buttons here */}
             </div>
-            <div className="flex justify-start items-center gap-x-3">
-              <p className="text-gray text-lg capitalize">
-                size:
-              </p>
-              <SelectField />              
+            {/* sizes area  */}
+            <div className="w-full flex justify-between items-center">
+              <div className="flex justify-start items-center gap-x-3">
+                <p className="text-gray text-lg capitalize">
+                  size:
+                </p>
+                <SelectField 
+                  dropdownItems={sizeDropDown}                
+                  currentItem={selectedSize.title}
+                  onChangeCb={(item: dropDowns) => {
+                    setSelectedSize(item)
+                  }}/>
+              </div>
+              <Button actionCb={()=>{}} btnText='Size Gide' variant='link' prefixIcon='fas fa-ruler-horizontal rotate-180 ' btnClass='!w-auto'/>
             </div>
             <Tab/>
+            {/* sizes area ends  */}
           </div>
+           <div className="flex flex-row justify-start gap-x-4 w-full">
+              <Button actionCb={()=>{}} btnText='Add to cart' variant='primary' btnClass='!text-lg !font-bold !w-3/4 rounded'/>
+              <Button actionCb={()=>{}} btnText='Buy it now' variant='outlined' btnClass='!w-auto !px-3 rounded !text-base font-semibold'/>
+           </div>
         </div>
     </section>
     </>

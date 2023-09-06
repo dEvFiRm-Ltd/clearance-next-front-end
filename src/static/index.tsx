@@ -1,3 +1,4 @@
+import { dropDowns } from "@/components/base/SelectField";
 import { recommendType } from "@/components/categoryListing/Recommend";
 import { dressType } from "@/components/common/DressCard";
 import {
@@ -270,6 +271,15 @@ export const bottomHeaderItems: footerProps[] = [
 //     url: "",
 //   },
 // ];
+export const sizeDropDown: dropDowns[] = [
+  { title: 'uk',},
+  { title: 'us',},
+  { title: 'fr',},
+  { title: 'de',},
+  { title: 'au',},
+  { title: 'es',},
+  { title: 'eur',},
+]
 export const footerItems: footerProps[] = [
   {
     heading: "COMPANY INFO",
