@@ -10,7 +10,7 @@ export type recommendProps = {
 
 const Recommend: FC<recommendProps> = ({ recommendArr }) => {
   return (
-    <div className="container my-10 flex flex-row items-center gap-x-3 lg:bg-[#F2F2F3] px-6 py-7">
+    <div className="hidden container my-10 3xl:flex flex-row items-center gap-x-3 lg:bg-[#F2F2F3] px-6 py-7">
       <p className="text-base capitalize text-[#222]">Recommend</p>
       <div className="flex flex-row flex-wrap items-center gap-3">
         {recommendArr.map((item: recommendType, i: number) => (
