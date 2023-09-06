@@ -39,3 +39,10 @@ export type footerProps = {
   contactUsText?: string;
   headingClass?: string;
 };
+
+
+export type dropDownType ={
+  title:string;
+  btnClass:string;
+  actionCb: () => void;
+}
