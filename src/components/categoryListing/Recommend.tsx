@@ -17,7 +17,7 @@ const Recommend: FC<recommendProps> = ({ recommendArr }) => {
           <Button
             key={i}
             btnText={`${item.title}`}
-            btnClass="text-sm leading-4 px-3 py-2 bg-white text-[#5D626A] hover:bg-[#111] hover:text-white"
+            btnClass="text-sm leading-4 px-3 py-2 bg-white text-gray hover:bg-[#111] hover:text-white"
           />
         ))}
       </div>
