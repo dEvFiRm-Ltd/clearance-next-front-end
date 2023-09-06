@@ -1,5 +1,5 @@
 "use client"
-import { FlashSaleData } from "@/static";
+import { FlashSaleData, dressListData } from "@/static";
 import { flashSaleCardProps } from "@/utils/type";
 import React, { useState } from "react";
 import FlashSaleCard from "../common/FlashSaleCard";
@@ -16,15 +16,15 @@ const DressList = () => {
       setSelectedOption(e.target.value);
     };
   return (
-  <div className="w-[calc(100%-216px-24px)]">
-    <div className="flex flex-row items-center justify-between mb-3.5">
-    <p className="text-lg leading-none text-[#31353C]">Dresses <span className="text-sm font-normal text-center">566</span> <span className="text-sm font-normal text-center">Results</span>
+  <div className="w-full 3xl:w-[calc(100%-216px-24px)]">
+    <div className="3xl:flex flex-row items-center justify-between gap-x-2 capitalize hidden mb-3.5">
+    <p className="text-lg leading-none text-black-primary">Dresses <span className="text-sm font-normal text-center">566</span> <span className="text-sm font-normal text-center">Results</span>
     </p>
     <div className="flex flex-row items-center gap-x-2 capitalize">
-      <p className="text-base text-[#31353C] font-normal">Sort By</p>
+      <p className="text-base text-black-primary font-normal">Sort By</p>
       <select
         id="selectField"
-        className="block w-64 px-4 py-2 bg-white border border-gray-300 shadow-sm focus:outline-none"
+        className="w-64 px-4 py-2 bg-white border border-gray-300 shadow-sm focus:outline-none"
         value={selectedOption}
         onChange={handleSelectChange}
       >
@@ -36,8 +36,8 @@ const DressList = () => {
       </select>
     </div>
     </div>
-    <div className="flex flex-row flex-wrap gap-5">
-      {FlashSaleData.map((item: flashSaleCardProps, id: number) => (
+    <div className="w-full flex flex-row flex-wrap gap-x-4 gap-y-5">
+      {dressListData.map((item: flashSaleCardProps, id: number) => (
         <FlashSaleCard
           key={id}
           img={item.img}
@@ -45,8 +45,10 @@ const DressList = () => {
           SalePrice={item.SalePrice}
           Price={item.Price}
           discount={item.discount}
-          groupClass="!w-[290px] p-2"
-          imgClass="!h-[385px]"
+          star={true}
+          starCount={item.starCount}
+          groupClass="!w-[162px] sm:!w-[302px] md:!w-[366px] lg:!w-[494px] xl:!w-[622px] 2xl:!w-[750px] 3xl:!w-[290px] p-2"
+          imgClass="!h-[215px] sm:!h-[402px] md:!h-[487px] lg:!h-[657px] xl:!h-[827px] 2xl:!h-[997.5px] 3xl:!h-[385px]"
         />
       ))}
     </div>

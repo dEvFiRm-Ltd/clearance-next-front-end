@@ -1,7 +1,8 @@
+'use client'
 import StarList from '@/components/common/StarList'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import React, { useState } from 'react'
 const star={
   review:'26 reviews',
   icon:["fas fa-star","fas fa-star","fas fa-star","fas fa-star","fas fa-star"]
@@ -14,6 +15,11 @@ const img=[
   'https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-26-649983317be13.png',
 ]
 const ProductDetailsPage = () => {
+  const [activeTab, setActiveTab] = useState('regular');
+
+  const handleTabClick = (tab:any) => {
+    setActiveTab(tab);
+  };
   return (
     <>
     <section className="mx-auto container pt-6 flex flex-row justify-center gap-10">
@@ -68,32 +74,32 @@ const ProductDetailsPage = () => {
             <Image alt='' fill src={''}/>
           </div>
           <div>
-            <h3 className="text-xl text-[#31353c] capitalize mb-1">Elegant Loosen Flat Collar Plain Outerwear</h3>
+            <h3 className="text-xl text-black-primary capitalize mb-1">Elegant Loosen Flat Collar Plain Outerwear</h3>
             <StarList icon={star.icon} review={star.review}/>
           </div>
           {/* pricing  */}
           <div className="flex flex-row justify-start items-center gap-x-2">
-              <i className="text-xl text-[#FFD54D] fas fa-bolt"></i>
-              <h5 className="text-[#dc2626] leading-[48px] text-3xl font-bold">$43.75</h5>
+              <i className="text-xl text-yellow-400 fas fa-bolt"></i>
+              <h5 className="text-red-400 leading-[48px] text-3xl font-bold">$43.75</h5>
               <p className="text-base line-through text-[#A1A5AB]">$50.99</p>
               <span className="bg-black text-white text-xs py-px px-1 ml-1">-16%</span>
           </div>
           {/* flash sale */}
           <div className="space-y-1">
               <div className="flex flex-row justify-start items-center gap-x-4 capitalize text-sm">
-                <span className="w-fit px-1 rounded-sm text-[#DC2626] bg-[#FEF2F2] font-normal !font-[Helvetica]">flash sale</span>
+                <span className="w-fit px-1 rounded-sm text-red-400 bg-[#FEF2F2] font-normal !font-[Helvetica]">flash sale</span>
                 <div className="flex flex-row justify-start items-center gap-x-1">
-                  <span className="text-base text-left text-[#5d626a]">ends in:</span>
+                  <span className="text-base text-left text-gray">ends in:</span>
                   <p className="text-black font-bold">04D : 08H : 57M : 28S</p>
                 </div>
               </div>
-              <h3 className="uppercase text-[22px] text-[#5d626a] font-medium">flash deals</h3>
+              <h3 className="uppercase text-[22px] text-gray font-medium">flash deals</h3>
           </div>
           {/* gifts  */}
           <button type='button' className="w-full flex flex-row justify-between py-1">
             <div className="flex justify-start items-center gap-x-2 ">
               <span className="bg-red-400 h-5 w-5 rounded text-white"><i className="fas fa-gift"></i></span>
-              <span className="text-sm text-[#5d626a]">free gift on orders over $99</span>
+              <span className="text-sm text-gray">free gift on orders over $99</span>
               {img.map((item:string ,id:number)=>(
                 <span key={id} className="h-7 w-7 overflow-hidden relative">
                   <Image alt='' fill src={item}/>
@@ -102,7 +108,7 @@ const ProductDetailsPage = () => {
             </div>
             <i className="fas fa-chevron-right"></i>
           </button>
-          <div className="w-full p-3.5 border border-[#5d626a] flex flex-row justify-start items-center gap-x-3.5">
+          <div className="w-full p-3.5 border border-ash flex flex-row justify-start items-center gap-x-3.5">
             <span className="rounded w-[60px] h-[30px] relative overflow-hidden bg-red-300">
               <Image fill alt='Logo' src={''}/>
             </span>
@@ -113,11 +119,41 @@ const ProductDetailsPage = () => {
           </div>
           {/* colors */}
           <div className="flex flex-col justify-start items-start gap-y-3">
-            <div className="flex justify-start gap-2 capitalize text-[#31353c] text-lg">
+
+            <div className="flex justify-start gap-2 capitalize text-black-primary text-lg">
               color: <span className="font-bold">Black</span>
             </div>
-            <div className="flex justify-start">
-              <div className="h-9 w-9"></div>
+            <div className="h-9 w-9 flex justify-center items-center border border-black rounded-full bg-white">
+                <span className="h-7 w-7 rounded-full overflow-hidden relative">
+                  <Image alt='' fill src={'https://sstorage.clearance.ae/production/storage/product/2023-08-04-64ccaafb5233f.png'}/>
+                </span>
+            </div>
+            <div className="text-black-primary text-lg capitalize">
+              fit:
+            </div>
+            <div className="flex justify-start items-center gap-x-3">
+              <button
+                className={`p-2 border text-sm uppercase w-fit border-black-primary ${
+                  activeTab === 'regular'
+                    ? 'bg-black-primary text-white'
+                    : 'bg-white text-black-primary'
+                }`}
+                onClick={() => handleTabClick('regular')}
+              >
+                regular
+              </button>
+              <button
+                className={`p-2 border text-sm uppercase w-fit border-black-primary ${
+                  activeTab === 'plus'
+                    ? 'bg-black-primary text-white'
+                    : 'bg-white text-black-primary'
+                }`}
+                onClick={() => handleTabClick('plus')}
+              >
+                plus
+              </button>
+              {/* Add more buttons here */}
+
             </div>
           </div>
         </div>
