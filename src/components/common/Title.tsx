@@ -7,47 +7,47 @@ const Title = () => {
         flash sale{" "}
       </h3>
       <div className="flex justify-center items-center gap-0.5 lg:gap-1.5">
-        <span className="text-sm lg:text-base xl:text-lg 2xl:text-xl 3xl:text-2xl lg:font-bold text-[#31353c] mr-1.5 capitalize">
+        <span className="text-sm lg:text-base xl:text-lg 2xl:text-xl 3xl:text-2xl lg:font-bold text-black-primary mr-1.5 capitalize">
           ends in
         </span>
         <span className="inline-flex gap-0.5 lg:gap-1.5">
-          <span className="rounded-[4px] lg:rounded-md px-[7px] py-1.5 font-black decoration-slate-900 line-through text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl 3xl:text-2xl decoration-1 xl:decoration-2 text-white bg-[#31353c]">
+          <span className="rounded-[4px] lg:rounded-md px-[7px] py-1.5 font-black decoration-slate-900 line-through text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl 3xl:text-2xl decoration-1 xl:decoration-2 text-white bg-black-primary">
             0
           </span>
-          <span className="rounded-[4px] lg:rounded-md px-[7px] py-1.5 font-black decoration-slate-900 line-through text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl 3xl:text-2xl decoration-1 xl:decoration-2 text-white bg-[#31353c]">
+          <span className="rounded-[4px] lg:rounded-md px-[7px] py-1.5 font-black decoration-slate-900 line-through text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl 3xl:text-2xl decoration-1 xl:decoration-2 text-white bg-black-primary">
             7
           </span>
         </span>
-        <span className="text-base lg:text-xl 2xl:text-2xl 3xl:text-3xl font-bold text-[#31353c]">
+        <span className="text-base lg:text-xl 2xl:text-2xl 3xl:text-3xl font-bold text-black-primary">
           :
         </span>
         <span className="inline-flex gap-0.5 lg:gap-1.5">
-          <span className="rounded-[4px] lg:rounded-md px-[7px] py-1.5 font-black decoration-slate-900 line-through text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl 3xl:text-2xl decoration-1 xl:decoration-2 text-white bg-[#31353c]">
+          <span className="rounded-[4px] lg:rounded-md px-[7px] py-1.5 font-black decoration-slate-900 line-through text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl 3xl:text-2xl decoration-1 xl:decoration-2 text-white bg-black-primary">
             0
           </span>
-          <span className="rounded-[4px] lg:rounded-md px-[7px] py-1.5 font-black decoration-slate-900 line-through text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl 3xl:text-2xl decoration-1 xl:decoration-2 text-white bg-[#31353c]">
+          <span className="rounded-[4px] lg:rounded-md px-[7px] py-1.5 font-black decoration-slate-900 line-through text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl 3xl:text-2xl decoration-1 xl:decoration-2 text-white bg-black-primary">
             7
           </span>
         </span>
-        <span className="text-base lg:text-xl 2xl:text-2xl 3xl:text-3xl font-bold text-[#31353c]">
+        <span className="text-base lg:text-xl 2xl:text-2xl 3xl:text-3xl font-bold text-black-primary">
           :
         </span>
         <span className="inline-flex gap-0.5 lg:gap-1.5">
-          <span className="rounded-[4px] lg:rounded-md px-[7px] py-1.5 font-black decoration-slate-900 line-through text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl 3xl:text-2xl decoration-1 xl:decoration-2 text-white bg-[#31353c]">
+          <span className="rounded-[4px] lg:rounded-md px-[7px] py-1.5 font-black decoration-slate-900 line-through text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl 3xl:text-2xl decoration-1 xl:decoration-2 text-white bg-black-primary">
             1
           </span>
-          <span className="rounded-[4px] lg:rounded-md px-[7px] py-1.5 font-black decoration-slate-900 line-through text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl 3xl:text-2xl decoration-1 xl:decoration-2 text-white bg-[#31353c]">
+          <span className="rounded-[4px] lg:rounded-md px-[7px] py-1.5 font-black decoration-slate-900 line-through text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl 3xl:text-2xl decoration-1 xl:decoration-2 text-white bg-black-primary">
             3
           </span>
         </span>
-        <span className="text-base lg:text-xl 2xl:text-2xl 3xl:text-3xl font-bold text-[#31353c]">
+        <span className="text-base lg:text-xl 2xl:text-2xl 3xl:text-3xl font-bold text-black-primary">
           :
         </span>
         <span className="inline-flex gap-0.5 lg:gap-1.5">
-          <span className="rounded-[4px] lg:rounded-md px-[7px] py-1.5 font-black decoration-slate-900 line-through text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl 3xl:text-2xl decoration-1 xl:decoration-2 text-white bg-[#31353c]">
+          <span className="rounded-[4px] lg:rounded-md px-[7px] py-1.5 font-black decoration-slate-900 line-through text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl 3xl:text-2xl decoration-1 xl:decoration-2 text-white bg-black-primary">
             4
           </span>
-          <span className="rounded-[4px] lg:rounded-md px-[7px] py-1.5 font-black decoration-slate-900 line-through text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl 3xl:text-2xl decoration-1 xl:decoration-2 text-white bg-[#31353c]">
+          <span className="rounded-[4px] lg:rounded-md px-[7px] py-1.5 font-black decoration-slate-900 line-through text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl 3xl:text-2xl decoration-1 xl:decoration-2 text-white bg-black-primary">
             2
           </span>
         </span>
