@@ -3,10 +3,12 @@ import { bannerImgArr } from "@/static";
 import { bannerProps } from "@/utils/type";
 import Image from "next/image";
 import Link from "next/link";
-import React, { FC, createRef } from "react";
+import React, { FC, createRef, useEffect, useState } from "react";
 import Slider from "react-slick";
 
 const Banner: FC = () => {
+  const [bannerImgArr2, setBannerImgArr] = useState([])
+
   const sliderRef = createRef<Slider>();
   const settings = {
     dots: true,
@@ -23,6 +25,14 @@ const Banner: FC = () => {
   const next = () => {
     sliderRef.current?.slickNext();
   };
+
+  // ###### fetching api for banner images 
+  useEffect(() => {
+    fetch("https://staging.clearance.ae/api/v11/main-banner")
+    .then(response=>response.json())
+    .then(json => console.log(setBannerImgArr(json.data.main_banners)))
+  }, [])
+
   return (
     <section className="relative group flex items-center">
       <Slider className="w-screen " ref={sliderRef} {...settings}>
