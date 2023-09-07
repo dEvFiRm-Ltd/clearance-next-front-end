@@ -1,14 +1,10 @@
 "use client";
-import React, { ChangeEvent, FC, useRef, useState } from "react";
+import React, { FC } from "react";
 import Modal from "../base/Modal";
 import ModalBody from "../common/ModalBody";
 import { commonModalProps } from "@/utils/type";
 import Image from "next/image";
-import Link from "next/link";
-import SelectField, { dropDowns } from "../base/SelectField";
 import Button from "../base/Button";
-import { sizeDropDown } from "@/static";
-import Tab from "../base/Tab";
 
 const GetMyDiscount: FC<commonModalProps> = ({ closeStateCb, viewState }) => {
   return (
