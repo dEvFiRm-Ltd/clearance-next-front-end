@@ -37,7 +37,7 @@ const MobileHeader = () => {
           </button>
         </div>
       </div>
-      {show && <div className={`w-[80%] absolute transition duration-1000 ${show?'left-0':'-left-[80%]'} `}><SlideInOut /></div>}
+     <div className={`w-[80%] absolute transition duration-1000 ${show?'left-0':'-left-[80%]'} `}><SlideInOut /></div>
     </>
   );
 };

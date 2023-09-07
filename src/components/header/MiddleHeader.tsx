@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
+import CartSideBar from "../common/CartSideBar";
 
 const MiddleHeader = () => {
   // const [show, setShow] = useState(false)
@@ -130,7 +131,7 @@ const MiddleHeader = () => {
           <button type="button" onClick={()=>setCart(!cart)} ref={cartButtonRef} className="relative p-2 2xl:p-3">
             <i className="fa-solid fa-bag-shopping"></i>
             {/* hover dropdown */}
-            {cart && <div className="cartShadow block absolute top-full -right-1 z-50 bg-white rounded-md">
+            {/* {cart && <div className="cartShadow block absolute top-full -right-1 z-50 bg-white rounded-md">
               <div className="flex flex-col justify-center items-center w-[448px] relative gap-6 py-10">
                 <div className="h-32 w-32 rounded-full bg-slate-50 overflow-hidden flex justify-center items-end">
                   <i className="fas fa-shopping-cart text-[80px] text-gray-300"></i>
@@ -140,11 +141,12 @@ const MiddleHeader = () => {
                 </p>
                 <span className="h-3 w-3 bg-white cartShadow rotate-45 absolute -z-50 -top-1.5 right-4" />
               </div>
-            </div>}            
+            </div>}             */}
             {/* hover dropdown ends */}
           </button>
         </div>
       </div>
+      <CartSideBar closeCb={()=>setCart(!cart)} value={cart}/> 
     </div>
   );
 };

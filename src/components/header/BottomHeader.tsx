@@ -12,7 +12,7 @@ const BottomHeader = () => {
           {item.title}
         </Link>
       ))}
-      <div className="absolute top-full border-t group-hover:flex hidden transition-all flex-row justify-center items-start gap-x-10 pt-10 pb-[52px] z-50 bg-white w-screen">
+      <div className="absolute top-full border-t group-hover:flex hidden transition-all flex-row justify-center items-start gap-x-10 pt-10 pb-[52px] z-40 bg-white w-screen">
         {bottomHeaderItems.map((item: footerProps, id: number) => (
           <FooterPart
             key={id}
