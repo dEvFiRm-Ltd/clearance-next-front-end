@@ -1,8 +1,6 @@
-import Link from "next/link";
 import React, { FC } from "react";
 import FooterPart from "../common/FooterPart";
-import Image from "next/image";
-import { footerItems, iconCard } from "@/static";
+import { footerItems} from "@/static";
 import { footerProps, linkType } from "@/utils/type";
 
 const Footer = () => {

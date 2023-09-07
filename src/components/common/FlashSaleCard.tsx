@@ -5,7 +5,7 @@ import React, { FC } from "react";
 const FlashSaleCard: FC<flashSaleCardProps> = ({
   img,
   preSaleImgSticker,
-  discount, text, text2, SalePrice, Price,
+  discount, text, text2, SalePrice, Price, star="false",starCount,
   groupClass,  
   imgClass,
 }) => {
@@ -54,6 +54,18 @@ const FlashSaleCard: FC<flashSaleCardProps> = ({
                 {text2}
               </span>
             )}
+            {star && 
+            <div className="flex flex-row items-center gap-x-2">
+            <div className="text-[#F59E09] flex flex-row items-center gap-x-1">
+              <i className="fa-solid fa-star"></i>
+              <i className="fa-solid fa-star"></i>
+              <i className="fa-solid fa-star"></i>
+              <i className="fa-solid fa-star"></i>
+              <i className="fa-solid fa-star"></i>
+            </div>
+            <div className="">({starCount})</div>
+            </div>
+            }
           </div>
         </div>   
     

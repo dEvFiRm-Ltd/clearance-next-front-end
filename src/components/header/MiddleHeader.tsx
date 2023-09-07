@@ -26,7 +26,7 @@ const MiddleHeader = () => {
             placeholder="Jacket"
             className="w-48 pl-5 outline-none border rounded-l lg:w-56 xl:w-60 2xl:w-64 3xl:w-[300px] py-2 xl:py-2.5 2xl:py-3 3xl:py-4 text-sm 2xl:text-base"
           />
-          <button className="rounded-r hover:bg-[#616368] bg-[#31353c] px-5 xl:px-6 2xl:px-8 3xl:px-10 py-2 xl:py-2.5 2xl:py-3 3xl:py-4">
+          <button className="rounded-r hover:bg-[#616368] bg-black-primary px-5 xl:px-6 2xl:px-8 3xl:px-10 py-2 xl:py-2.5 2xl:py-3 3xl:py-4">
             <i className="fa-solid fa-magnifying-glass text-white"></i>
           </button>
         </div>
@@ -34,10 +34,10 @@ const MiddleHeader = () => {
           <button type="button" className="group relative p-2 2xl:p-3">
             <i className="fa-solid fa-globe"></i>
             <div className="hidden w-80 group-hover:flex flex-col justify-start gap-y-5 absolute top-full right-0 z-50 px-4 pt-5 pb-2 bg-white cartShadow">
-              <p className="text-sm 2xl:text-base font-bold text-[#31353C] capitalize text-left">
+              <p className="text-sm 2xl:text-base font-bold text-black-primary capitalize text-left">
                 Language
               </p>
-              <select className="w-full p-3 border text-sm 2xl:text-base text-[#5d626a] border-gray-300 hover:border-gray-500 focus-visible:outline-none">
+              <select className="w-full p-3 border text-sm 2xl:text-base text-gray border-gray-300 hover:border-gray-500 focus-visible:outline-none">
                 <option value="english">English</option>
                 <option value="arabic">Arabic</option>
               </select>
@@ -50,7 +50,7 @@ const MiddleHeader = () => {
               <div className="w-full flex flex-col justify-start items-center gap-4 relative p-4">
                 <button
                   type="button"
-                  className="flex justify-center items-center overflow-hidden rounded hover:opacity-80 bg-[#31353C] group w-full px-3 py-2 text-white text-sm 2xl:text-base"
+                  className="flex justify-center items-center overflow-hidden rounded hover:opacity-80 bg-black-primary group w-full px-3 py-2 text-white text-sm 2xl:text-base"
                 >
                   Sign In / Register{" "}
                 </button>
@@ -68,19 +68,19 @@ const MiddleHeader = () => {
                 <span className="h-px bg-slate-500 w-full" />
                 <Link
                   href={""}
-                  className="w-full text-sm 2xl:text-base text-left text-[#5d626a] hover:font-bold capitalize"
+                  className="w-full text-sm 2xl:text-base text-left text-gray hover:font-bold capitalize"
                 >
                   my order
                 </Link>
                 <Link
                   href={""}
-                  className="w-full text-sm 2xl:text-base text-left text-[#5d626a] hover:font-bold capitalize"
+                  className="w-full text-sm 2xl:text-base text-left text-gray hover:font-bold capitalize"
                 >
                   my coupons
                 </Link>
                 <Link
                   href={""}
-                  className="w-full text-sm 2xl:text-base text-left text-[#5d626a] hover:font-bold capitalize"
+                  className="w-full text-sm 2xl:text-base text-left text-gray hover:font-bold capitalize"
                 >
                   my wallet
                 </Link>
@@ -97,7 +97,7 @@ const MiddleHeader = () => {
                 <div className="h-32 w-32 rounded-full bg-slate-50 overflow-hidden flex justify-center items-end">
                   <i className="fas fa-shopping-cart text-[80px] text-gray-300"></i>
                 </div>
-                <p className="font-normal capitalize lg:text-base 3xl:text-lg text-center text-[#5d626a]">
+                <p className="font-normal capitalize lg:text-base 3xl:text-lg text-center text-gray">
                   Your Shopping Bag Is Empty
                 </p>
                 <span className="h-3 w-3 bg-white cartShadow rotate-45 absolute -z-50 -top-1.5 right-4" />
