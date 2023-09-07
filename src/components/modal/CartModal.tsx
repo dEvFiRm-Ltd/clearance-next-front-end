@@ -73,13 +73,13 @@ const CartModal: FC<commonModalProps> = ({ closeStateCb, viewState }) => {
               actionCb={() => {}}
               variant="primary"
               icon="fas fa-chevron-left !text-base lg:!text-xl"
-              btnClass="!bg-[#00000020] hover:!bg-[#00000040] flex items-center justify-center !absolute top-1/2 -translate-y-1/2 left-0 !w-[52px] !h-[104px] text-white"
+              btnClass="!bg-[#00000020] hover:!bg-[#00000040] flex items-center justify-center !absolute top-1/2 -translate-y-1/2 left-0 !w-9 !h-16  2xl:!w-[52px] 2xl:!h-[104px] text-white"
             />
             <Button
               actionCb={() => {}}
               variant="primary"
               icon="fas fa-chevron-right !text-base lg:!text-xl"
-              btnClass="!bg-[#00000020] hover:!bg-[#00000040] flex items-center justify-center !absolute top-1/2 -translate-y-1/2 right-0 !w-[52px] !h-[104px] text-white"
+              btnClass="!bg-[#00000020] hover:!bg-[#00000040] flex items-center justify-center !absolute top-1/2 -translate-y-1/2 right-0 !w-9 !h-16  2xl:!w-[52px] 2xl:!h-[104px] text-white"
             />
           </div>
           <div className="w-[362px] 2xl:w-[458px] pl-2">
