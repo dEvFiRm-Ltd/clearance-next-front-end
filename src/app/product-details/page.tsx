@@ -1,5 +1,9 @@
 'use client'
+import Button from '@/components/base/Button'
+import SelectField, { dropDowns } from '@/components/base/SelectField'
+import Tab from '@/components/base/Tab'
 import StarList from '@/components/common/StarList'
+import { sizeDropDown } from '@/static'
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
@@ -16,6 +20,9 @@ const img=[
 ]
 const ProductDetailsPage = () => {
   const [activeTab, setActiveTab] = useState('regular');
+  const [selectedSize, setSelectedSize] = useState<dropDowns>(
+    sizeDropDown[0]
+  )
 
   const handleTabClick = (tab:any) => {
     setActiveTab(tab);
@@ -48,23 +55,25 @@ const ProductDetailsPage = () => {
               <i className="fas fa-chevron-right"></i>
             </button>
           </div>
+          {/* social links  */}
           <div className="py-5 flex flex-row justify-center items-center gap-6">
             <Link href={''} className='h-12 w-12 group' >
-              <span className='h-10 w-10 rounded-full flex justify-center items-center text-2xl text-white bg-black group-hover:bg-blue-400'>
+              <span className='h-10 w-10 rounded-full flex justify-center items-center text-2xl text-white bg-black-primary group-hover:bg-blue-400'>
                 <i className="fab fa-twitter"></i>
               </span>
             </Link>
             <Link href={''} className='h-12 w-12 group' >
-              <span className='h-10 w-10 rounded-full flex justify-center items-center text-2xl text-white bg-black group-hover:bg-blue-400'>
+              <span className='h-10 w-10 rounded-full flex justify-center items-center text-2xl text-white bg-black-primary group-hover:bg-blue-400'>
                 <i className="fab fa-facebook-f"></i>
               </span>
             </Link>
             <Link href={''} className='h-12 w-12 group' >
-              <span className='h-10 w-10 rounded-full flex justify-center items-center text-2xl text-white bg-black group-hover:bg-red-500' >
+              <span className='h-10 w-10 rounded-full flex justify-center items-center text-2xl text-white bg-black-primary group-hover:bg-red-500' >
                 <i className="fab fa-pinterest-p"></i>
               </span>
             </Link>
           </div>
+          {/* social link  */}
         </div>
       </div>      
         {/*product image ends  */}
@@ -82,7 +91,7 @@ const ProductDetailsPage = () => {
               <i className="text-xl text-yellow-400 fas fa-bolt"></i>
               <h5 className="text-red-400 leading-[48px] text-3xl font-bold">$43.75</h5>
               <p className="text-base line-through text-[#A1A5AB]">$50.99</p>
-              <span className="bg-black text-white text-xs py-px px-1 ml-1">-16%</span>
+              <span className="bg-black-primary text-white text-xs py-px px-1 ml-1">-16%</span>
           </div>
           {/* flash sale */}
           <div className="space-y-1">
@@ -119,7 +128,6 @@ const ProductDetailsPage = () => {
           </div>
           {/* colors */}
           <div className="flex flex-col justify-start items-start gap-y-3">
-
             <div className="flex justify-start gap-2 capitalize text-black-primary text-lg">
               color: <span className="font-bold">Black</span>
             </div>
@@ -128,6 +136,7 @@ const ProductDetailsPage = () => {
                   <Image alt='' fill src={'https://sstorage.clearance.ae/production/storage/product/2023-08-04-64ccaafb5233f.png'}/>
                 </span>
             </div>
+            {/* fits */}
             <div className="text-black-primary text-lg capitalize">
               fit:
             </div>
@@ -155,7 +164,28 @@ const ProductDetailsPage = () => {
               {/* Add more buttons here */}
 
             </div>
+            {/* sizes area  */}
+            <div className="w-full flex justify-between items-center">
+              <div className="flex justify-start items-center gap-x-3">
+                <p className="text-gray text-lg capitalize">
+                  size:
+                </p>
+                <SelectField 
+                  dropdownItems={sizeDropDown}                
+                  currentItem={selectedSize.title}
+                  onChangeCb={(item: dropDowns) => {
+                    setSelectedSize(item)
+                  }}/>
+              </div>
+              <Button actionCb={()=>{}} btnText='Size Gide' variant='link' prefixIcon='fas fa-ruler-horizontal rotate-180 ' btnClass='!w-auto'/>
+            </div>
+            <Tab/>
+            {/* sizes area ends  */}
           </div>
+           <div className="flex flex-row justify-start gap-x-4 w-full">
+              <Button actionCb={()=>{}} btnText='Add to cart' variant='primary' btnClass='!text-lg !font-bold !w-3/4 rounded'/>
+              <Button actionCb={()=>{}} btnText='Buy it now' variant='outlined' btnClass='!w-auto !px-3 rounded !text-base font-semibold'/>
+           </div>
         </div>
     </section>
     </>

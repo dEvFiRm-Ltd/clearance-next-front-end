@@ -51,10 +51,10 @@ const Button: FC<buttonProps> = ({
           : ''
       } ${btnClass}`}
     >
-      {prefixIcon && <i className={`text-base ${prefixIcon}`}></i>}
-      {icon && <i className={`text-base ${icon}`}></i>}
+      {prefixIcon && <i className={`text-sm ${prefixIcon}`}></i>}
+      {icon && <i className={`text-sm ${icon}`}></i>}
       {btnText}
-      {suffixIcon && <i className={`text-base ${suffixIcon}`}></i>}
+      {suffixIcon && <i className={`text-sm ${suffixIcon}`}></i>}
     </button>
   )
 }

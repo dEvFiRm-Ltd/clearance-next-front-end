@@ -1,3 +1,4 @@
+import { dropDowns } from "@/components/base/SelectField";
 import { recommendType } from "@/components/categoryListing/Recommend";
 import { dressType } from "@/components/common/DressCard";
 import {
@@ -270,6 +271,20 @@ export const bottomHeaderItems: footerProps[] = [
 //     url: "",
 //   },
 // ];
+export const languageDropDown: dropDowns[] = [
+  { title: 'uk'},
+  { title: 'us'},
+  { title: 'fr'},
+  { title: 'de'},
+  { title: 'au'},
+  { title: 'es'},
+  { title: 'eur'},
+]
+export const sizeDropDown: dropDowns[] = [
+  { title: 'english'},
+  { title: 'arabic'}
+  
+]
 export const footerItems: footerProps[] = [
   {
     heading: "COMPANY INFO",
@@ -669,6 +684,41 @@ export const verticalImageTwo = [
 
 // Recommend components data
 export const recommendData: recommendType[] = [
+  {
+    title: "Maxi",
+  },
+  {
+    title: "Midi",
+  },
+  {
+    title: "Mini",
+  },
+  {
+    title: "Plus",
+  },
+  {
+    title: "Shirt Dresses",
+  },
+  {
+    title: "Floral Dresses",
+  },
+  {
+    title: "Vacation Dresses",
+  },
+  {
+    title: "Cocktail Dresses",
+  },
+  {
+    title: "Little White Dresses",
+  },
+  {
+    title: "Little Black Dresses",
+  },
+  {
+    title: "Dopamine Dresses",
+  },
+];
+export const filterData: recommendType[] = [
   {
     title: "Maxi",
   },

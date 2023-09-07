@@ -1,6 +1,8 @@
+"use client"
 import { flashSaleCardProps } from "@/utils/type";
 import Image from "next/image";
 import React, { FC } from "react";
+import Button from "../base/Button";
 
 const FlashSaleCard: FC<flashSaleCardProps> = ({
   img,
@@ -8,6 +10,7 @@ const FlashSaleCard: FC<flashSaleCardProps> = ({
   discount, text, text2, SalePrice, Price, star="false",starCount,
   groupClass,  
   imgClass,
+  actionCb,
 }) => {
   return (
         <div className={`boxShadow group ${groupClass}`}>
@@ -30,8 +33,15 @@ const FlashSaleCard: FC<flashSaleCardProps> = ({
                 <Image src={preSaleImgSticker} alt="" fill />
               </span>
             )}
+            {/* <Button 
+              btnText="add to bag"
+              variant="primary"
+              actionCb={()=>{}} 
+              btnClass="group-hover:opacity-100 opacity-0 text-center py-2.5 lg:py-3.5 min-w-[130px] md:min-w-[140px] lg:min-w-[160px] 2xl:min-w-[220px] px-3 absolute left-1/2 -translate-x-1/2 bottom-12 rounded-full !bg-white/90 !uppercase"
+            /> */}
             <button
               type="button"
+              onClick={actionCb}
               className="group-hover:opacity-100 opacity-0 text-center py-2.5 lg:py-3.5 min-w-[130px] md:min-w-[140px] lg:min-w-[160px] 2xl:min-w-[220px] px-3 absolute left-1/2 -translate-x-1/2 bottom-12 rounded-full bg-white/90 uppercase"
             >
               add to bag
