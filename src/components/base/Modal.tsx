@@ -41,7 +41,7 @@ const Modal: FC<modalProps> = ({
     >
       <div
         ref={modalBody}
-        className={`max-w-[1012px] max-h-screen overflow-y-auto rounded-md flex flex-col bg-white transition-all duration-300 delay-100 ${
+        className={`max-w-[740px] lg:max-w-[980px] 2xl:max-w-[1012px] max-h-screen overflow-y-auto rounded-md flex flex-col bg-white transition-all duration-300 delay-100 ${
           visible ? "opacity-100" : "opacity-0"
         } ${modalClass} `}
       >
