@@ -35,17 +35,17 @@ const Modal: FC<modalProps> = ({
   }, [modalBody, closeCb]);
   return (
     <section
-      className={`w-screen h-screen fixed inset-0 z-[9999] flex justify-center items-center transition bg-[#000000]/30 duration-300 delay-150 ${
-        visible ? "scale-100 " : "scale-0"
+      className={`w-screen h-screen inset-0 flex justify-center items-center transition bg-[#000000]/30 duration-300 delay-150 ${
+        visible ? "opacity-100 z-[9999] fixed" : "hidden opacity-0"
       } `}
     >
       <div
         ref={modalBody}
-        className={`max-w-[740px] lg:max-w-[980px] 2xl:max-w-[1012px] max-h-screen overflow-y-auto rounded-md flex flex-col bg-white transition-all duration-300 delay-100 ${
+        className={`lg:w-[800px] 2xl:w-[1012px] h-[612px] overflow-y-auto rounded-md flex flex-col bg-white transition-all duration-300 delay-100 ${
           visible ? "opacity-100" : "opacity-0"
         } ${modalClass} `}
       >
-        <div className="w-full flex flex-row justify-between px-4 items-center pt-2">
+        <div className="w-full sticky top-0 flex flex-row justify-between px-4 items-center pt-3">
           <div className="capitalize text-black-primary text-lg font-semibold leading-[22px] ">
             {title}
           </div>

@@ -29,7 +29,7 @@ const Tab = () => {
         {tabs.map((tab, index) => (
           <div
             key={index}
-            className={`border text-center border-black-primary p-2 rounded-sm cursor-pointer ${
+            className={`text-sm border text-center border-black-primary p-1.5 2xl:p-2 rounded-sm cursor-pointer ${
               index === activeTab ? "bg-black-primary text-white" : "bg-white text-black-primary"
             }`}
             onClick={() => setActiveTab(index)}
