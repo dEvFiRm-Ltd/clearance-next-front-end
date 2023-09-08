@@ -7,7 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import SelectField, { dropDowns } from "../base/SelectField";
 import Button from "../base/Button";
-import { sizeDropDown } from "@/static";
+import { measurementContent, sizeDropDown } from "@/static";
 import Tab from "../base/Tab";
 import GetMyDiscount from "./GetMyDiscount";
 
@@ -19,7 +19,7 @@ const CartModal: FC<commonModalProps> = ({ closeStateCb, viewState }) => {
     setActiveTab(tab);
   };
   return (
-    <Modal visible={viewState} closeCb={closeStateCb} title="">
+    <Modal visible={viewState} closeCb={closeStateCb} title="" modalClass="md:w-[720px] lg:w-[800px] 2xl:w-[1012px] h-[480px] lg:h-[620px]">
       <form method="post">
         <ModalBody modalBodyClass="flex flex-row gap-x-3">
           {/* small image are here  */}
@@ -73,13 +73,13 @@ const CartModal: FC<commonModalProps> = ({ closeStateCb, viewState }) => {
               actionCb={() => {}}
               variant="primary"
               icon="fas fa-chevron-left !text-base lg:!text-xl"
-              btnClass="!bg-[#00000020] hover:!bg-[#00000040] flex items-center justify-center !absolute top-1/2 -translate-y-1/2 left-0 !w-9 !h-16  2xl:!w-[52px] 2xl:!h-[104px] text-white"
+              btnClass="!bg-[#00000020] hover:!bg-[#00000040] flex items-center justify-center !absolute top-1/2 -translate-y-1/2 left-0 !w-9 !h-16 2xl:!w-[52px] 2xl:!h-[104px] text-white"
             />
             <Button
               actionCb={() => {}}
               variant="primary"
               icon="fas fa-chevron-right !text-base lg:!text-xl"
-              btnClass="!bg-[#00000020] hover:!bg-[#00000040] flex items-center justify-center !absolute top-1/2 -translate-y-1/2 right-0 !w-9 !h-16  2xl:!w-[52px] 2xl:!h-[104px] text-white"
+              btnClass="!bg-[#00000020] hover:!bg-[#00000040] flex items-center justify-center !absolute top-1/2 -translate-y-1/2 right-0 !w-9 !h-16 2xl:!w-[52px] 2xl:!h-[104px] text-white"
             />
           </div>
           <div className="w-[362px] 2xl:w-[458px] pl-2">
@@ -156,14 +156,14 @@ const CartModal: FC<commonModalProps> = ({ closeStateCb, viewState }) => {
                   }}
                 />
               </div>
-              <Tab />
+              <Tab tabArr={measurementContent}/>
               {/* sizes area ends  */}
               <div className="flex flex-row justify-between gap-x-2.5 2xl:gap-x-4 w-full">
                 <Button
                   actionCb={() => setModal(!modal)}
                   btnText="Add to cart"
                   variant="primary"
-                  btnClass="hover:!opacity-90 !text-base 2xl:!text-lg !font-bold !w-[72%] rounded"
+                  btnClass="hover:!opacity-90 !text-base 2xl:!text-lg !font-bold !w-[65%] lg:!w-[72%] rounded"
                 />
                 <Button
                   actionCb={() => {}}

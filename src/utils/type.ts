@@ -11,9 +11,8 @@ export type flashSaleCardProps = {
   text: string;
   SalePrice: string;
   Price?: string;
-  text2?: string; 
-  star?:boolean; 
-  starCount?:string;
+  text2?: string;  
+  review?:string;
   actionCb?:()=>void
 };
 export type linkType = {
