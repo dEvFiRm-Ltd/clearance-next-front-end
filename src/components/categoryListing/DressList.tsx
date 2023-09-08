@@ -72,11 +72,9 @@ const DressList = () => {
           key={id}
           img={item.img}
           text={item.text}
-          SalePrice={item.SalePrice}
-          Price={item.Price}
+          salePrice={item.salePrice}
+          price={item.price}
           discount={item.discount}
-          star={true}
-          starCount={item.starCount}
           groupClass="!w-[162px] sm:!w-[302px] md:!w-[366px] lg:!w-[494px] xl:!w-[622px] 2xl:!w-[750px] 3xl:!w-[290px] p-2"
           imgClass="!h-[215px] sm:!h-[402px] md:!h-[487px] lg:!h-[657px] xl:!h-[827px] 2xl:!h-[997.5px] 3xl:!h-[385px]"
         />

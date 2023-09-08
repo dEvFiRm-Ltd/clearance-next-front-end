@@ -1,39 +1,41 @@
-'use client'
+"use client";
+import { tabs } from "@/static";
 import React, { FC, ReactNode, useState } from "react";
 
-export type tabTypes={
-    shoulder: string;
-      bust: string;
-      sleeveLength:string;
-      length: string;
-      hemWidth: string;
-    
-}
-export type tabProps={   
-    tabArr:tabTypes[]
-}
+export type tabTypes = {
+  shoulder: string;
+  bust: string;
+  sleeveLength: string;
+  length: string;
+  hemWidth: string;
+};
+export type tabProps = {
+  tabArr: tabTypes[];
+};
 
-const Tab:FC<tabProps> = ({tabArr}) => {
+const Tab: FC<tabProps> = ({ tabArr }) => {
   const [activeTab, setActiveTab] = useState(0);
-  const tabs = ["S(6-8)", "M(10)", "L(12)","XL(14)","XXL(16)"];   
   const renderMeasurementContent = (index: number) => {
     const measurement = tabArr[index];
     return (
       <div className="flex gap-x-1 flex-wrap text-base">
         <span className="flex text-black-primary">
-          Shoulder: <span className="ml-1 text-gray">{measurement.shoulder}</span>,
+          Shoulder:{" "}
+          <span className="ml-1 text-gray">{measurement.shoulder}</span>,
         </span>
         <span className="flex text-black-primary">
           Bust: <span className="ml-1 text-gray">{measurement.bust}</span>,
         </span>
         <span className="flex text-black-primary">
-          Sleeve Length: <span className="ml-1 text-gray">{measurement.sleeveLength}</span>,
+          Sleeve Length:{" "}
+          <span className="ml-1 text-gray">{measurement.sleeveLength}</span>,
         </span>
         <span className="flex text-black-primary">
           Length: <span className="ml-1 text-gray">{measurement.length}</span>,
         </span>
         <span className="flex text-black-primary">
-          Hem Width: <span className="ml-1 text-gray">{measurement.hemWidth}(inch)</span>,
+          Hem Width:{" "}
+          <span className="ml-1 text-gray">{measurement.hemWidth}(inch)</span>,
         </span>
       </div>
     );
@@ -46,7 +48,9 @@ const Tab:FC<tabProps> = ({tabArr}) => {
           <div
             key={index}
             className={`text-sm border text-center border-black-primary p-1.5 2xl:p-2 rounded-sm cursor-pointer ${
-              index === activeTab ? "bg-black-primary text-white" : "bg-white text-black-primary"
+              index === activeTab
+                ? "bg-black-primary text-white"
+                : "bg-white text-black-primary"
             }`}
             onClick={() => setActiveTab(index)}
           >
@@ -55,9 +59,9 @@ const Tab:FC<tabProps> = ({tabArr}) => {
         ))}
       </div>
       <div className="mt-1 p-2 bg-[#fafafa] w-full">
-        <h6 className="text-gray capitalize text-sm">product measurement</h6>        
-            {renderMeasurementContent(activeTab)}
-        </div>
+        <h6 className="text-gray capitalize text-sm">product measurement</h6>
+        {renderMeasurementContent(activeTab)}
+      </div>
     </div>
   );
 };
