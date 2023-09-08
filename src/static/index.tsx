@@ -272,6 +272,11 @@ export const bottomHeaderItems: footerProps[] = [
 //   },
 // ];
 export const languageDropDown: dropDowns[] = [
+  { title: 'english'},
+  { title: 'arabic'}
+  
+]
+export const sizeDropDown: dropDowns[] = [
   { title: 'uk'},
   { title: 'us'},
   { title: 'fr'},
@@ -279,11 +284,6 @@ export const languageDropDown: dropDowns[] = [
   { title: 'au'},
   { title: 'es'},
   { title: 'eur'},
-]
-export const sizeDropDown: dropDowns[] = [
-  { title: 'english'},
-  { title: 'arabic'}
-  
 ]
 export const footerItems: footerProps[] = [
   {

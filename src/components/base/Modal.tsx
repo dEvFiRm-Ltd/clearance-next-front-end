@@ -35,24 +35,24 @@ const Modal: FC<modalProps> = ({
   }, [modalBody, closeCb]);
   return (
     <section
-      className={`w-screen h-screen fixed inset-0 z-[9999] flex justify-center items-center transition bg-[#000000]/30 duration-300 delay-150 ${
-        visible ? "scale-100 " : "scale-0"
+      className={`w-screen h-screen inset-0 flex justify-center items-center transition bg-[#000000]/30 duration-300 delay-150 ${
+        visible ? "opacity-100 z-[9999] fixed" : "hidden opacity-0"
       } `}
     >
       <div
         ref={modalBody}
-        className={`w-[1012px] max-h-screen overflow-y-auto rounded-md flex flex-col bg-white transition-all duration-300 delay-100 ${
+        className={`overflow-y-auto rounded-md flex flex-col bg-white transition-all duration-300 delay-100 ${
           visible ? "opacity-100" : "opacity-0"
         } ${modalClass} `}
       >
-        <div className="w-full flex flex-row justify-between px-6 items-center py-5">
-          <div className="capitalize text-gray-500 text-lg font-semibold leading-[22px] ">
+        <div className="w-full sticky bg-white z-10 top-0 flex flex-row justify-between px-4 items-center pt-3">
+          <div className="capitalize text-black-primary text-lg font-semibold leading-[22px] ">
             {title}
           </div>
           <div className="">
             <Button
-              icon="fa-solid fa-circle-xmark !text-[30px] !text-center !text-gray-500"
-              btnClass="!w-[30px] !h-[30px] !rounded-full !flex !justify-center !items-center"
+              icon="fas fa-times !text-xl lg:!text-2xl !text-center !text-black-primary"
+              btnClass="!w-7 !h-7 !rounded-full !flex !justify-center !items-center"
               actionCb={closeCb}
               variant="naked"
               btnType="button"

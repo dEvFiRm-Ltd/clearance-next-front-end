@@ -14,7 +14,7 @@ export type flashSaleCardProps = {
   text2?: string; 
   star?:boolean; 
   starCount?:string;
-  actionCb:()=>void
+  actionCb?:()=>void
 };
 export type linkType = {
   icon?: string;
