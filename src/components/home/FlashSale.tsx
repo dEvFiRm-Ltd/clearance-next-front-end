@@ -85,14 +85,14 @@ const FlashSale = () => {
           <button
             type="button"
             onClick={previous}
-            className="h-7 w-7 md:h-8 md:w-8 lg:h-9 lg:w-9 2xl:h-10 2xl:w-10 bg-white rounded-full flex justify-center items-center text-gray-800 btnShadow"
+            className="h-7 w-7 md:h-8 md:w-8 lg:h-9 lg:w-9 2xl:h-10 2xl:w-10 bg-white rounded-full flex justify-center items-center text-gray btnShadow"
           >
             <i className="fas fa-chevron-left"></i>
           </button>
           <button
             type="button"
             onClick={next}
-            className="h-7 w-7 md:h-8 md:w-8 lg:h-9 lg:w-9 2xl:h-10 2xl:w-10 bg-white rounded-full flex justify-center items-center text-gray-800 btnShadow"
+            className="h-7 w-7 md:h-8 md:w-8 lg:h-9 lg:w-9 2xl:h-10 2xl:w-10 bg-white rounded-full flex justify-center items-center text-gray btnShadow"
           >
             <i className="fas fa-chevron-right"></i>
           </button>
@@ -110,7 +110,7 @@ const FlashSale = () => {
                 text={item.text}
                 SalePrice={item.SalePrice}
                 Price={item.Price}
-                discount={item.discount}
+                discount={item.discount}                
                 actionCb={()=>setModal(!modal)}
                 groupClass="w-40 md:w-52 lg:w-60 3xl:w-[260px] p-2"
               />

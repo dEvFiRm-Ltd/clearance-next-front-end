@@ -7,7 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import SelectField, { dropDowns } from "../base/SelectField";
 import Button from "../base/Button";
-import { sizeDropDown } from "@/static";
+import { measurementContent, sizeDropDown } from "@/static";
 import Tab from "../base/Tab";
 import GetMyDiscount from "./GetMyDiscount";
 
@@ -156,7 +156,7 @@ const CartModal: FC<commonModalProps> = ({ closeStateCb, viewState }) => {
                   }}
                 />
               </div>
-              <Tab />
+              <Tab tabArr={measurementContent}/>
               {/* sizes area ends  */}
               <div className="flex flex-row justify-between gap-x-2.5 2xl:gap-x-4 w-full">
                 <Button
