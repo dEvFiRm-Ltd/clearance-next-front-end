@@ -4,9 +4,10 @@ import Image from "next/image";
 import React, { FC } from "react";
 import Button from "../base/Button";
 
-const FlashSaleCard: FC<flashSaleCardProps> = ({
+const FlashSaleCard: FC<flashSaleCardProps|any> = ({
   img,
   preSaleImgSticker,
+  sendModalData,
   discount, text, text2, SalePrice, Price, star="false",starCount,
   groupClass,  
   imgClass,

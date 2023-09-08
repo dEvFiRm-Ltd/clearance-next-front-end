@@ -11,7 +11,8 @@ export type tabProps={
     tabArr:tabTypes[]
 }
 
-const Tab = () => {
+const Tab = ({tabb}:any) => {
+  console.log("tabs data",tabb)
   const [activeTab, setActiveTab] = useState(0);
   const tabs = ["S(6-8)", "M(10)", "L(12)","XL(14)","XXL(16)"];  
   const measurementContent = [
@@ -47,7 +48,7 @@ const Tab = () => {
   return (
     <div className="flex flex-col justify-start items-start gap-2 w-full">
       <div className="flex justify-start gap-3">
-        {tabs.map((tab, index) => (
+        {tabb.map((tab:string, index:number) => (
           <div
             key={index}
             className={`text-sm border text-center border-black-primary p-1.5 2xl:p-2 rounded-sm cursor-pointer ${

@@ -11,6 +11,7 @@ export type flashSaleCardProps = {
   text: string;
   SalePrice: string;
   Price?: string;
+  variant?: object[];
   text2?: string; 
   star?:boolean; 
   starCount?:string;

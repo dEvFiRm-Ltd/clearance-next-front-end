@@ -9,6 +9,7 @@ import CartModal from "../modal/CartModal";
 
 const FlashSale = () => {
   const [modal, setModal] = useState(false)
+  const [modalData, setModalData] = useState<any>();
   const sliderRef = createRef<Slider>();
   const settings = {
     infinite: true,
@@ -111,7 +112,8 @@ const FlashSale = () => {
                 SalePrice={item.SalePrice}
                 Price={item.Price}
                 discount={item.discount}
-                actionCb={()=>setModal(!modal)}
+                actionCb={()=>{setModalData(item);setModal(!modal);}}
+                sendModalData={()=>setModalData(item)}
                 groupClass="w-40 md:w-52 lg:w-60 3xl:w-[260px] p-2"
               />
             ))}
@@ -121,6 +123,7 @@ const FlashSale = () => {
       <CartModal
         closeStateCb={() => setModal(false)}
         viewState={modal}
+        data={modalData}
       />
     </section>
   );

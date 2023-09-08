@@ -11,7 +11,8 @@ import { sizeDropDown } from "@/static";
 import Tab from "../base/Tab";
 import GetMyDiscount from "./GetMyDiscount";
 
-const CartModal: FC<commonModalProps> = ({ closeStateCb, viewState }) => {
+const CartModal: FC<commonModalProps> = ({ closeStateCb, viewState, data }) => {
+  console.log("modalData", data);
   const [modal, setModal] = useState(false);
   const [activeTab, setActiveTab] = useState("regular");
   const [selectedSize, setSelectedSize] = useState<dropDowns>(sizeDropDown[0]);
@@ -19,7 +20,12 @@ const CartModal: FC<commonModalProps> = ({ closeStateCb, viewState }) => {
     setActiveTab(tab);
   };
   return (
-    <Modal visible={viewState} closeCb={closeStateCb} title="" modalClass="md:w-[720px] lg:w-[800px] 2xl:w-[1012px] h-[480px] lg:h-[620px]">
+    <Modal
+      visible={viewState}
+      closeCb={closeStateCb}
+      title=""
+      modalClass="md:w-[720px] lg:w-[800px] 2xl:w-[1012px] h-[480px] lg:h-[620px]"
+    >
       <form method="post">
         <ModalBody modalBodyClass="flex flex-row gap-x-3">
           {/* small image are here  */}
@@ -63,12 +69,7 @@ const CartModal: FC<commonModalProps> = ({ closeStateCb, viewState }) => {
           </div>
           {/* big image  */}
           <div className="w-[300px] h-[400px] 2xl:w-[372px] 2xl:h-[496px] relative">
-            <Image
-              src={`https://sstorage.clearance.ae/production/storage/product/2023-08-25-64e89fdb8efab.png`}
-              alt="image"
-              fill
-              className="object-cover"
-            />
+            <Image src={data?.img} alt="image" fill className="object-cover" />
             <Button
               actionCb={() => {}}
               variant="primary"
@@ -84,15 +85,15 @@ const CartModal: FC<commonModalProps> = ({ closeStateCb, viewState }) => {
           </div>
           <div className="w-[362px] 2xl:w-[458px] pl-2">
             <p className="text-lg 2xl:text-xl leading-6 line-clamp-2 capitalize text-black-primary font-medium">
-              Regular Fit Geometric Shirt Collar Long Sleeve Elegant Maxi Dress
+              {data?.text}
             </p>
             <div className="flex flex-row justify-between items-center">
               <div className="flex flex-row items-center gap-3 mt-4">
                 <p className="text-sm md:text-base xl:text-lg 3xl:text-3xl text-[#DC2626] font-bold">
-                  $40.47
+                  ${data?.SalePrice}
                 </p>
                 <p className="text-xs lg:text-sm xl:text-base font-normal text-[#868C93] line-through ">
-                  $45.99
+                  ${data?.Price}
                 </p>
                 <p className="bg-black-primary text-xs text-white px-0.5">
                   -13%
@@ -102,7 +103,9 @@ const CartModal: FC<commonModalProps> = ({ closeStateCb, viewState }) => {
                 href={`/product-details`}
                 className="flex flex-row gap-x-2 items-center"
               >
-                <p className="text-sm 2xl:text-base text-black-primary">Details</p>
+                <p className="text-sm 2xl:text-base text-black-primary">
+                  Details
+                </p>
                 <i className="fa-solid fa-chevron-right text-xs 2xl:text-sm"></i>
               </Link>
             </div>
@@ -111,20 +114,40 @@ const CartModal: FC<commonModalProps> = ({ closeStateCb, viewState }) => {
               <div className="flex justify-start gap-2 capitalize text-black-primary text-base 2xl:text-lg">
                 color: <span className="font-bold">Black</span>
               </div>
-              <div className="h-8 w-8 2xl:h-9 2xl:w-9 flex justify-center items-center border border-black rounded-full bg-white">
-                <span className="h-6 w-6 2xl:h-7 2xl:w-7 rounded-full overflow-hidden relative">
-                  <Image
-                    alt=""
-                    fill
-                    src={
-                      "https://sstorage.clearance.ae/production/storage/product/2023-08-04-64ccaafb5233f.png"
-                    }
-                  />
-                </span>
+              <div className="flex items-center space-x-2">
+                {data?.variant?.map((clr: string, index: number) => (
+                  <div
+                    key={index}
+                    className="h-8 w-8 2xl:h-9 2xl:w-9 flex justify-center items-center border border-black rounded-full bg-white"
+                  >
+                    <span className="h-6 w-6 2xl:h-7 2xl:w-7 rounded-full overflow-hidden relative">
+                      <Image
+                        alt=""
+                        fill
+                        src={
+                          "https://sstorage.clearance.ae/production/storage/product/2023-08-04-64ccaafb5233f.png"
+                        }
+                      />
+                    </span>
+                  </div>
+                ))}
               </div>
               <div className="text-black-primary text-lg capitalize">fit:</div>
               <div className="flex justify-start items-center gap-x-3">
-                <button
+                {data?.variant[1]?.fit?.map((fit: string, i: number) => (
+                  <button
+                    key={i}
+                    className={`p-1.5 2xl:p-2 border text-xs 2xl:text-sm uppercase w-fit border-black-primary ${
+                      activeTab === fit
+                        ? "bg-black-primary text-white"
+                        : "bg-white text-black-primary"
+                    }`}
+                    onClick={() => handleTabClick(fit)}
+                  >
+                    {fit}
+                  </button>
+                ))}
+                {/* <button
                   className={`p-1.5 2xl:p-2 border text-xs 2xl:text-sm uppercase w-fit border-black-primary ${
                     activeTab === "regular"
                       ? "bg-black-primary text-white"
@@ -143,7 +166,7 @@ const CartModal: FC<commonModalProps> = ({ closeStateCb, viewState }) => {
                   onClick={() => handleTabClick("plus")}
                 >
                   plus
-                </button>
+                </button> */}
               </div>
               {/* sizes area  */}
               <div className="flex justify-start items-center gap-x-3">
@@ -156,7 +179,7 @@ const CartModal: FC<commonModalProps> = ({ closeStateCb, viewState }) => {
                   }}
                 />
               </div>
-              <Tab />
+              <Tab tabb={data?.variant[0]?.size} />
               {/* sizes area ends  */}
               <div className="flex flex-row justify-between gap-x-2.5 2xl:gap-x-4 w-full">
                 <Button
