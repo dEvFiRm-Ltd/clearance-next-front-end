@@ -35,6 +35,23 @@ const CartSideBar: FC<cartSideBarProps> = ({ value, setCart }) => {
     };
   }, [setCart]);
 
+
+  // Function to increment the quantity
+  const incrementQty = () => {
+    setQty(qty + 1);
+  };
+  const decrementQty = () => {
+    if (qty > 0) {
+      setQty(qty - 1);
+    }
+  };
+  const handleQtyChange = (event:any) => {
+    const newQty = parseInt(event.target.value);
+    if (!isNaN(newQty)) {
+      setQty(newQty);
+    }
+  };
+
   return (
     <div
       className={`h-screen bg-black-primary/60 w-full flex justify-end absolute z-50 transition-all duration-500 top-0 ${
@@ -186,9 +203,7 @@ const CartSideBar: FC<cartSideBarProps> = ({ value, setCart }) => {
                     <div className="flex items-center justify-between border rounded-lg divide-x-2">
                       <button
                         className="w-[35px]"
-                        onClick={() => {
-                          qty > 0 && setQty(qty--);
-                        }}
+                        onClick={decrementQty}
                       >
                         -
                       </button>
@@ -196,10 +211,11 @@ const CartSideBar: FC<cartSideBarProps> = ({ value, setCart }) => {
                         className="bg-transparent w-[45px] text-center pl-2"
                         type="number"
                         value={qty}
+                        onChange={handleQtyChange}
                       />
                       <button
                         className="w-[35px]"
-                        onClick={() => setQty(qty++)}
+                        onClick={incrementQty}
                       >
                         +
                       </button>
