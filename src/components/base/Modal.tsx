@@ -41,17 +41,17 @@ const Modal: FC<modalProps> = ({
     >
       <div
         ref={modalBody}
-        className={`lg:w-[800px] 2xl:w-[1012px] h-[612px] overflow-y-auto rounded-md flex flex-col bg-white transition-all duration-300 delay-100 ${
+        className={`overflow-y-auto rounded-md flex flex-col bg-white transition-all duration-300 delay-100 ${
           visible ? "opacity-100" : "opacity-0"
         } ${modalClass} `}
       >
-        <div className="w-full sticky top-0 flex flex-row justify-between px-4 items-center pt-3">
+        <div className="w-full sticky bg-white z-10 top-0 flex flex-row justify-between px-4 items-center pt-3">
           <div className="capitalize text-black-primary text-lg font-semibold leading-[22px] ">
             {title}
           </div>
           <div className="">
             <Button
-              icon="fas fa-times !text-2xl !text-center !text-black-primary"
+              icon="fas fa-times !text-xl lg:!text-2xl !text-center !text-black-primary"
               btnClass="!w-7 !h-7 !rounded-full !flex !justify-center !items-center"
               actionCb={closeCb}
               variant="naked"
