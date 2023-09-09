@@ -73,6 +73,20 @@ body {
   animation-name: slidein;
 }
 
+.coupon_before::before, .coupon_before::after{
+  background: rgb(255, 255, 255);
+    border: 1px solid rgb(243, 31, 40);
+    border-radius: 50%;
+    content: "";
+    display: block;
+    height: 13px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 13px;
+    z-index: 1;
+}
+
 @keyframes slidein {
   from {
     margin-left: 100%;
