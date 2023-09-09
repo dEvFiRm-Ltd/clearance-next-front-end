@@ -41,7 +41,7 @@ export default async function Home() {
         {categoryArr.map((item: any) => (
           <DressCard
             key={item.id}
-            image={ 'https://sstorage.clearance.ae/production/storage/category/'+ item.icon}
+            image={item.icon}
             title={item.name}            
           />
         ))}

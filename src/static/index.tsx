@@ -352,38 +352,32 @@ export const dress: dressType[] = [
   {
     image:
       "https://backend-live.clearance.ae/storage/category/2023-08-29-64edbb44c865c.png",
-    title: "Men (211)",
-    url: "",
+    title: "Men (211)",   
   },
   {
     image:
       "https://backend-live.clearance.ae/storage/category/2023-08-29-64edbb3f240cb.png",
-    title: "Women (144)",
-    url: "",
+    title: "Women (144)",   
   },
   {
     image:
       "https://backend-live.clearance.ae/storage/category/2023-08-29-64edbb33994a8.png",
-    title: "Girls (47)",
-    url: "",
+    title: "Girls (47)",   
   },
   {
     image:
       "https://backend-live.clearance.ae/storage/category/2023-08-29-64edbb3870a9f.png",
-    title: "Boys (71)",
-    url: "",
+    title: "Boys (71)",   
   },
   {
     image:
       "https://backend-live.clearance.ae/storage/category/2023-07-16-64b39505e7236.png",
-    title: "Pet lovers (51)",
-    url: "",
+    title: "Pet lovers (51)",   
   },
   {
     image:
       "https://backend-live.clearance.ae/storage/category/2023-08-29-64edbb50e3f41.png",
-    title: "Home Items (28)",
-    url: "",
+    title: "Home Items (28)",   
   },
 ];
 export const handPickedData: flashSaleCardProps[] = [
@@ -848,22 +842,19 @@ export const dressTwo: dressType[] = [
     image:
       "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-08-26-64e9f7a239f4d.png",
     title: "shop now",
-    heading: "FW 2023 Trends",
-    url: "",
+    heading: "FW 2023 Trends",   
   },
   {
     image:
       "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-08-25-64e8a595487f2.png",
     title: "shop now",
-    heading: "Influence Recommendation",
-    url: "",
+    heading: "Influence Recommendation",   
   },
   {
     image:
       "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647ef2187e4fa.avif",
     title: "shop now",
-    heading: "Spacial Events",
-    url: "",
+    heading: "Spacial Events",   
   },
 ];
 export const verticalImage = [

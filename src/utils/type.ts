@@ -20,6 +20,7 @@ export type flashSaleCardProps = {
   actionCb?:()=>void
 };
 export type linkType = {
+  icon?: string;
   url: string;
   title: string;
 };
@@ -41,6 +42,7 @@ export type footerProps = {
   heading: string;
   contactUsText?: string;
   headingClass?: string;
+  groupClass?: string;
 };
 
 
