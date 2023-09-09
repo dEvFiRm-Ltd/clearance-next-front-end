@@ -82,7 +82,6 @@ export default async function Home() {
       </div>
       <HandPicked />
       <RelatedSearches />
-      <Footer />
     </>
   );
 }
