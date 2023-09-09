@@ -10,14 +10,14 @@ const HandPicked = () => {
         <h3 className="text-base lg:text-lg 2xl:text-xl font-bold text-center text-black-primary uppercase">
           handpicked for you
         </h3>
-        <div className="flex flex-row justify-center gap-2.5 md:gap-4 lg:gap-5 xl:gap-6 flex-wrap !p-0 !items-start">
+        <div className="flex flex-row justify-center gap-2.5 md:gap-4 lg:gap-5 xl:gap-6 flex-wrap !items-start">
           {handPickedData.map((item: flashSaleCardProps, id: number) => (
             <FlashSaleCard
               key={id}
               img={item.img}
               preSaleImgSticker={item.preSaleImgSticker}
-              SalePrice={item.SalePrice}
-              Price={item.Price}
+              salePrice={item.salePrice}
+              price={item.price}
               text={item.text}
               text2={item.text2}
               discount={item.discount}

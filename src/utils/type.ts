@@ -5,21 +5,22 @@ export type bannerProps={
 export type flashSaleCardProps = {
   groupClass?: string;  
   imgClass?: string;
+  btnClass?: string;
+  check?: boolean;
   img: string;
   preSaleImgSticker?: string;
   discount?: string;
   text: string;
-  SalePrice: string;
-  Price?: string;
-  text2?: string; 
-  star?:boolean; 
-  starCount?:string;
+  salePrice: string;
+  price?: string;
+  text2?: string;  
+  review?:string;
+  btnText?:string;
   actionCb?:()=>void
 };
 export type linkType = {
   icon?: string;
   title: string;
-  url: string;
 };
 export type linkImgType = {
   img:string;

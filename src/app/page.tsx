@@ -19,7 +19,6 @@ export default function Home() {
             key={id}
             image={item.image}
             title={item.title}
-            url={item.url}
           />
         ))}
       </div>
@@ -30,7 +29,6 @@ export default function Home() {
         {dressTwo.map((item: dressType, id: number) => (
           <DressCard
             key={id}
-            url={item.url}
             image={item.image}
             heading={item.heading}
             title={item.title}
@@ -60,7 +58,7 @@ export default function Home() {
       </div>
       <HandPicked />
       <RelatedSearches /> 
-      <Footer/>    
+      {/* <Footer/>     */}
     </>
   );
 }

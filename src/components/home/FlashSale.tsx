@@ -80,24 +80,24 @@ const FlashSale = () => {
   return (
     <section className="mx-auto container">
       <Title />
-      <div className="md:px-4 lg:px-6 2xl:px-8 3xl:px-10 flex justify-center items-center pt-3 relative">
+      <div className="w-full md:px-4 lg:px-6 2xl:px-8 3xl:px-10 flex justify-center items-center pt-3 relative">
         <div className="flex w-full absolute top-1/2 -translate-y-1/2 justify-between z-50 px-1">
           <button
             type="button"
             onClick={previous}
-            className="h-7 w-7 md:h-8 md:w-8 lg:h-9 lg:w-9 2xl:h-10 2xl:w-10 bg-white rounded-full flex justify-center items-center text-gray-800 btnShadow"
+            className="h-7 w-7 md:h-8 md:w-8 lg:h-9 lg:w-9 2xl:h-10 2xl:w-10 bg-white rounded-full flex justify-center items-center text-gray btnShadow"
           >
             <i className="fas fa-chevron-left"></i>
           </button>
           <button
             type="button"
             onClick={next}
-            className="h-7 w-7 md:h-8 md:w-8 lg:h-9 lg:w-9 2xl:h-10 2xl:w-10 bg-white rounded-full flex justify-center items-center text-gray-800 btnShadow"
+            className="h-7 w-7 md:h-8 md:w-8 lg:h-9 lg:w-9 2xl:h-10 2xl:w-10 bg-white rounded-full flex justify-center items-center text-gray btnShadow"
           >
             <i className="fas fa-chevron-right"></i>
           </button>
         </div>
-        <div className="p-3 flex flex-row justify-center items-center gap-2.5 md:gap-3.5 lg:gap-4 3xl:gap-6">
+        <div className="p-3 flex flex-row justify-center items-center ">
           <Slider
             className="w-[90vw] 2xl:w-[95vw] 3xl:w-[87vw] "
             ref={sliderRef}
@@ -108,9 +108,9 @@ const FlashSale = () => {
                 key={id}
                 img={item.img}
                 text={item.text}
-                SalePrice={item.SalePrice}
-                Price={item.Price}
-                discount={item.discount}
+                salePrice={item.salePrice}
+                price={item.price}
+                discount={item.discount}                
                 actionCb={()=>setModal(!modal)}
                 groupClass="w-40 md:w-52 lg:w-60 3xl:w-[260px] p-2"
               />
