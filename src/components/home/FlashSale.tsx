@@ -1,16 +1,18 @@
 "use client";
-import React, { createRef } from "react";
+import React, { createRef, useState } from "react";
 import Title from "../common/Title";
 import FlashSaleCard from "../common/FlashSaleCard";
 import { FlashSaleData } from "@/static";
 import { flashSaleCardProps } from "@/utils/type";
 import Slider from "react-slick";
+import CartModal from "../modal/CartModal";
 
 const FlashSale = () => {
+  const [modal, setModal] = useState(false)
   const sliderRef = createRef<Slider>();
   const settings = {
     infinite: true,
-    autoplay: true,
+    autoplay: false,
     speed: 300,
     autoplaySpeed: 3000,
     slidesToShow: 6,
@@ -109,12 +111,17 @@ const FlashSale = () => {
                 SalePrice={item.SalePrice}
                 Price={item.Price}
                 discount={item.discount}
+                actionCb={()=>setModal(!modal)}
                 groupClass="w-40 md:w-52 lg:w-60 3xl:w-[260px] p-2"
               />
-            ))}{" "}
+            ))}
           </Slider>
         </div>
       </div>
+      <CartModal
+        closeStateCb={() => setModal(false)}
+        viewState={modal}
+      />
     </section>
   );
 };

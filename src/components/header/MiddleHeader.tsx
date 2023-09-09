@@ -1,12 +1,49 @@
 'use client'
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import CartSideBar from "../common/CartSideBar";
 
 const MiddleHeader = () => {
   // const [show, setShow] = useState(false)
-  const [user, setUser] = useState(false)
-  const [cart, setCart] = useState(false)
+  const [language, setLanguage] = useState(false);
+  const [user, setUser] = useState(false);
+  const [cart, setCart] = useState(false);
+  const languageButtonRef = useRef<HTMLButtonElement>(null);
+  const userButtonRef = useRef<HTMLButtonElement>(null);
+  const cartButtonRef = useRef<HTMLButtonElement>(null);
+
+  // Add a click event listener to close the dropdowns when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        languageButtonRef.current &&
+        !languageButtonRef.current.contains(event.target as Node)
+      ) {
+        setLanguage(false);
+      }
+      if (
+        userButtonRef.current &&
+        !userButtonRef.current.contains(event.target as Node)
+      ) {
+        setUser(false);
+      }
+
+      if (
+        cartButtonRef.current &&
+        !cartButtonRef.current.contains(event.target as Node)
+      ) {
+        setCart(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
     <div className="hidden lg:flex flex-row justify-between items-center lg:py-4 2xl:py-5 lg:px-6 xl:px-8 2xl:px-12 3xl:px-[60px]">
       <Link
@@ -26,31 +63,33 @@ const MiddleHeader = () => {
             placeholder="Jacket"
             className="w-48 pl-5 outline-none border rounded-l lg:w-56 xl:w-60 2xl:w-64 3xl:w-[300px] py-2 xl:py-2.5 2xl:py-3 3xl:py-4 text-sm 2xl:text-base"
           />
-          <button className="rounded-r hover:bg-[#616368] bg-[#31353c] px-5 xl:px-6 2xl:px-8 3xl:px-10 py-2 xl:py-2.5 2xl:py-3 3xl:py-4">
+          <button className="rounded-r hover:bg-[#616368] bg-black-primary px-5 xl:px-6 2xl:px-8 3xl:px-10 py-2 xl:py-2.5 2xl:py-3 3xl:py-4">
             <i className="fa-solid fa-magnifying-glass text-white"></i>
           </button>
         </div>
         <div className="flex flex-row items-center gap-x-2 xl:gap-x-3.5 2xl:gap-x-4 3xl:gap-x-5 text-xl 2xl:text-2xl">
-          <button type="button" className="group relative p-2 2xl:p-3">
+          <button type="button" onClick={()=>setLanguage(!language)}  ref={languageButtonRef} className="relative p-2 2xl:p-3">
             <i className="fa-solid fa-globe"></i>
-            <div className="hidden w-80 group-hover:flex flex-col justify-start gap-y-5 absolute top-full right-0 z-50 px-4 pt-5 pb-2 bg-white cartShadow">
-              <p className="text-sm 2xl:text-base font-bold text-[#31353C] capitalize text-left">
+            {/* hover dropdown */}
+            {language && <div className="w-80 flex flex-col justify-start gap-y-5 absolute top-full right-0 z-50 px-4 pt-5 pb-2 bg-white cartShadow">
+              <p className="text-sm 2xl:text-base font-bold text-black-primary capitalize text-left">
                 Language
               </p>
-              <select className="w-full p-3 border text-sm 2xl:text-base text-[#5d626a] border-gray-300 hover:border-gray-500 focus-visible:outline-none">
+              <select className="w-full p-3 border text-sm 2xl:text-base text-gray border-gray hover:border-black-primary focus-visible:outline-none">
                 <option value="english">English</option>
                 <option value="arabic">Arabic</option>
               </select>
-            </div>
+            </div>}            
+             {/* hover dropdown ends */}
           </button>
-          <button type="button" onClick={()=>setUser(!user)} className="relative p-2 2xl:p-3">
+          <button type="button" onClick={()=>setUser(!user)}  ref={userButtonRef} className="relative p-2 2xl:p-3">
             <i className="fa-regular fa-user"></i>
             {/* hover dropdown */}
             {user && <div className="absolute right-[50%] translate-x-[50%] z-50 top-[115%] bg-white flex min-w-[240px] rounded-md cartShadow">
               <div className="w-full flex flex-col justify-start items-center gap-4 relative p-4">
                 <button
                   type="button"
-                  className="flex justify-center items-center overflow-hidden rounded hover:opacity-80 bg-[#31353C] group w-full px-3 py-2 text-white text-sm 2xl:text-base"
+                  className="flex justify-center items-center overflow-hidden rounded hover:opacity-80 bg-black-primary group w-full px-3 py-2 text-white text-sm 2xl:text-base"
                 >
                   Sign In / Register{" "}
                 </button>
@@ -68,19 +107,19 @@ const MiddleHeader = () => {
                 <span className="h-px bg-slate-500 w-full" />
                 <Link
                   href={""}
-                  className="w-full text-sm 2xl:text-base text-left text-[#5d626a] hover:font-bold capitalize"
+                  className="w-full text-sm 2xl:text-base text-left text-gray hover:font-bold capitalize"
                 >
                   my order
                 </Link>
                 <Link
                   href={""}
-                  className="w-full text-sm 2xl:text-base text-left text-[#5d626a] hover:font-bold capitalize"
+                  className="w-full text-sm 2xl:text-base text-left text-gray hover:font-bold capitalize"
                 >
                   my coupons
                 </Link>
                 <Link
                   href={""}
-                  className="w-full text-sm 2xl:text-base text-left text-[#5d626a] hover:font-bold capitalize"
+                  className="w-full text-sm 2xl:text-base text-left text-gray hover:font-bold capitalize"
                 >
                   my wallet
                 </Link>
@@ -89,24 +128,12 @@ const MiddleHeader = () => {
             </div>}
             {/* hover dropdown ends */}
           </button>
-          <button type="button" onClick={()=>setCart(!cart)} className="relative p-2 2xl:p-3">
+          <button type="button" onClick={()=>setCart(!cart)} ref={cartButtonRef} className="relative p-2 2xl:p-3">
             <i className="fa-solid fa-bag-shopping"></i>
-            {/* hover dropdown */}
-            {cart && <div className="cartShadow block absolute top-full -right-1 z-50 bg-white rounded-md">
-              <div className="flex flex-col justify-center items-center w-[448px] relative gap-6 py-10">
-                <div className="h-32 w-32 rounded-full bg-slate-50 overflow-hidden flex justify-center items-end">
-                  <i className="fas fa-shopping-cart text-[80px] text-gray-300"></i>
-                </div>
-                <p className="font-normal capitalize lg:text-base 3xl:text-lg text-center text-[#5d626a]">
-                  Your Shopping Bag Is Empty
-                </p>
-                <span className="h-3 w-3 bg-white cartShadow rotate-45 absolute -z-50 -top-1.5 right-4" />
-              </div>
-            </div>}            
-            {/* hover dropdown ends */}
           </button>
         </div>
       </div>
+      <CartSideBar closeCb={()=>setCart(!cart)} value={cart}/> 
     </div>
   );
 };

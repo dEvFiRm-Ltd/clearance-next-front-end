@@ -1,3 +1,4 @@
+import { dropDowns } from "@/components/base/SelectField";
 import { recommendType } from "@/components/categoryListing/Recommend";
 import { dressType } from "@/components/common/DressCard";
 import {
@@ -220,56 +221,70 @@ export const bottomHeaderItems: footerProps[] = [
   },
 ];
 
-export const iconCard:linkType[] = [
-  {
-    title: "fa-brands fa-cc-paypal",
-    url: "",
-  },
-  {
-    title: "fa-brands fa-cc-visa text-[#232E75]",
-    url: "",
-  },
-  {
-    title: "fa-brands fa-cc-paypal",
-    url: "",
-  },
-  {
-    title: "fa-brands fa-cc-visa text-[#232E75]",
-    url: "",
-  },
-  {
-    title: "fa-brands fa-cc-paypal",
-    url: "",
-  },
-  {
-    title: "fa-brands fa-cc-visa text-[#232E75]",
-    url: "",
-  },
-  {
-    title: "fa-brands fa-cc-paypal",
-    url: "",
-  },
-  {
-    title: "fa-brands fa-cc-visa text-[#232E75]",
-    url: "",
-  },
-  {
-    title: "fa-brands fa-cc-paypal",
-    url: "",
-  },
-  {
-    title: "fa-brands fa-cc-visa text-[#232E75]",
-    url: "",
-  },
-  {
-    title: "fa-brands fa-cc-paypal",
-    url: "",
-  },
-  {
-    title: "fa-brands fa-cc-visa text-[#232E75]",
-    url: "",
-  },
-];
+// export const iconCard:linkType[] = [
+//   {
+//     title: "fa-brands fa-cc-paypal",
+//     url: "",
+//   },
+//   {
+//     title: "fa-brands fa-cc-visa text-[#232E75]",
+//     url: "",
+//   },
+//   {
+//     title: "fa-brands fa-cc-paypal",
+//     url: "",
+//   },
+//   {
+//     title: "fa-brands fa-cc-visa text-[#232E75]",
+//     url: "",
+//   },
+//   {
+//     title: "fa-brands fa-cc-paypal",
+//     url: "",
+//   },
+//   {
+//     title: "fa-brands fa-cc-visa text-[#232E75]",
+//     url: "",
+//   },
+//   {
+//     title: "fa-brands fa-cc-paypal",
+//     url: "",
+//   },
+//   {
+//     title: "fa-brands fa-cc-visa text-[#232E75]",
+//     url: "",
+//   },
+//   {
+//     title: "fa-brands fa-cc-paypal",
+//     url: "",
+//   },
+//   {
+//     title: "fa-brands fa-cc-visa text-[#232E75]",
+//     url: "",
+//   },
+//   {
+//     title: "fa-brands fa-cc-paypal",
+//     url: "",
+//   },
+//   {
+//     title: "fa-brands fa-cc-visa text-[#232E75]",
+//     url: "",
+//   },
+// ];
+export const languageDropDown: dropDowns[] = [
+  { title: 'english'},
+  { title: 'arabic'}
+  
+]
+export const sizeDropDown: dropDowns[] = [
+  { title: 'uk'},
+  { title: 'us'},
+  { title: 'fr'},
+  { title: 'de'},
+  { title: 'au'},
+  { title: 'es'},
+  { title: 'eur'},
+]
 export const footerItems: footerProps[] = [
   {
     heading: "COMPANY INFO",
@@ -305,62 +320,38 @@ export const footerItems: footerProps[] = [
     ],
   },
   {
-    heading: "HELP & SUPPORT",
-    itemArr: [
+    heading: "contact us",
+    contactUsText:"Contact us everyday 9 Am -7 Pm",
+    contactUsArr:[
       {
-        title: "Shipping & Delivery",
-        url: "",
+        icon:'fas fa-phone-volume ',
+        title:'+97142553311',
+        url:''
       },
       {
-        title: "Return Policy",
-        url: "",
+        icon:'fas fa-envelope',
+        title:'care@clearance.ae',
+        url:''
+      }
+    ],    
+    socialArr:[
+      {
+        title:'fab fa-linkedin ',
+        url:''
       },
       {
-        title: "Tracking Order",
-        url: "",
+        title:'fab fa-instagram-square',
+        url:''
       },
       {
-        title: "Tracking Order",
-        url: "",
-      },
-      {
-        title: "Pre Order Guidance",
-        url: "",
-      },
-      {
-        title: "About Wallet",
-        url: "",
-      },
-      {
-        title: "Influencer Program",
-        url: "",
-      },
-      {
-        title: "Affiliate Program",
-        url: "",
-      },
-    ],
+        title:'fab fa-facebook-square',
+        url:''
+      }
+    ]    
   },
   {
-    heading: "CUSTOMER SERVICE",
-    itemArr: [
-      {
-        title: "Customer Reviews",
-        url: "",
-      },
-      {
-        title: "Contact Us",
-        url: "",
-      },
-      {
-        title: "How To Choose Your Size",
-        url: "",
-      },
-      {
-        title: "FAQs",
-        url: "",
-      },
-    ],
+    heading: "download our app",
+    hasBtn:true    
   },
 ];
 
@@ -562,6 +553,95 @@ export const FlashSaleData: flashSaleCardProps[] = [
     Price: "93.99",
   },
 ];
+export const dressListData: flashSaleCardProps[] = [
+  {
+    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-05-647df9a609520.avif",
+    text: "Long sleeve crew neck loose leo....",
+    SalePrice: "71.38",
+    Price: "93.99",
+    starCount:"10",
+  },
+  {
+    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-05-647e055d5a6d0.avif",
+    text: "Long sleeve crew neck loose leo....",
+    SalePrice: "71.38",
+    Price: "93.99",
+    starCount:"10",
+  },
+  {
+    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e4e025a3b7.avif",
+    discount: "20",
+    text: "Long sleeve crew neck loose leo....",
+    SalePrice: "71.38",
+    Price: "93.99",
+    starCount:"10",
+  },
+  {
+    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e4e057337b.avif",
+    text: "Long sleeve crew neck loose leo....",
+    SalePrice: "71.38",
+    Price: "93.99",
+    starCount:"10",
+  },
+  {
+    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e58925291c.avif",
+    text: "Long sleeve crew neck loose leo....",
+    SalePrice: "71.38",
+    Price: "93.99",
+    starCount:"10",
+  },
+  {
+    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e5e6cdbe66.avif",
+    discount: "20",
+    text: "Long sleeve crew neck loose leo....",
+    SalePrice: "71.38",
+    Price: "93.99",
+    starCount:"10",
+  },
+  {
+    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-05-647df9a609520.avif",
+    text: "Long sleeve crew neck loose leo....",
+    SalePrice: "71.38",
+    Price: "93.99",
+    starCount:"10",
+  },
+  {
+    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-05-647e055d5a6d0.avif",
+    text: "Long sleeve crew neck loose leo....",
+    SalePrice: "71.38",
+    Price: "93.99",
+    starCount:"10",
+  },
+  {
+    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e4e025a3b7.avif",
+    discount: "20",
+    text: "Long sleeve crew neck loose leo....",
+    SalePrice: "71.38",
+    Price: "93.99",
+    starCount:"10",
+  },
+  {
+    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e4e057337b.avif",
+    text: "Long sleeve crew neck loose leo....",
+    SalePrice: "71.38",
+    Price: "93.99",
+  },
+  {
+    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e58925291c.avif",
+    text: "Long sleeve crew neck loose leo....",
+    SalePrice: "71.38",
+    Price: "93.99",
+    starCount:"10",
+  },
+  {
+    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e5e6cdbe66.avif",
+    discount: "20",
+    text: "Long sleeve crew neck loose leo....",
+    SalePrice: "71.38",
+    Price: "93.99",
+    starCount:"10",
+  },
+];
 export const dressTwo: dressType[] = [
   {
     image:
@@ -604,6 +684,41 @@ export const verticalImageTwo = [
 
 // Recommend components data
 export const recommendData: recommendType[] = [
+  {
+    title: "Maxi",
+  },
+  {
+    title: "Midi",
+  },
+  {
+    title: "Mini",
+  },
+  {
+    title: "Plus",
+  },
+  {
+    title: "Shirt Dresses",
+  },
+  {
+    title: "Floral Dresses",
+  },
+  {
+    title: "Vacation Dresses",
+  },
+  {
+    title: "Cocktail Dresses",
+  },
+  {
+    title: "Little White Dresses",
+  },
+  {
+    title: "Little Black Dresses",
+  },
+  {
+    title: "Dopamine Dresses",
+  },
+];
+export const filterData: recommendType[] = [
   {
     title: "Maxi",
   },

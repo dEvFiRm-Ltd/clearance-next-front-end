@@ -10,7 +10,7 @@ const ProductSubSlider:FC<commonSliderProps> = ({closeStateCb}) => {
     <div className='w-full flex flex-col justify-start items-center gap-y-4'>
         <div className='w-full flex justify-start border-b py-4'>
           <button type='button' onClick={closeStateCb} className='px-4 font-normal text-xl'>
-            <i className="fas fa-chevron-left text-[#31353c]"></i>
+            <i className="fas fa-chevron-left text-black-primary"></i>
           </button>          
           <span className="font-semibold text-lg uppercase">Cothing</span>
         </div>
@@ -19,7 +19,7 @@ const ProductSubSlider:FC<commonSliderProps> = ({closeStateCb}) => {
             <Image fill src={'https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-08-29-64ede7ac360a3.png'} alt='image'/>
           </Link>
           <div className="flex flex-col justify-start gap-y-2 border-b">
-            <Link href={''} className="font-normal flex justify-between items-center text-xs text-[#5d626a] capitalize">
+            <Link href={''} className="font-normal flex justify-between items-center text-xs text-gray capitalize">
               <span className="font-semibold">Shop by category</span>
               <div >All <i className="fas fa-chevron-right "></i></div>                
             </Link>
@@ -29,7 +29,7 @@ const ProductSubSlider:FC<commonSliderProps> = ({closeStateCb}) => {
                 <div className="w-full h-16 md:h-[174px] overflow-hidden relative">
                   <Image alt='Image' fill src={item.img}/>
                 </div>
-                <span className="my-2 text-xs text-[#31353c] capitalize">{item.title}</span>
+                <span className="my-2 text-xs text-black-primary capitalize">{item.title}</span>
               </Link>
               ))}
             </div>

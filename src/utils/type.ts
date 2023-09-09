@@ -11,9 +11,13 @@ export type flashSaleCardProps = {
   text: string;
   SalePrice: string;
   Price?: string;
-  text2?: string;  
+  text2?: string; 
+  star?:boolean; 
+  starCount?:string;
+  actionCb?:()=>void
 };
 export type linkType = {
+  icon?: string;
   title: string;
   url: string;
 };
@@ -28,7 +32,27 @@ export type commonSliderProps = {
   deleteBtnText?: string
 }
 export type footerProps = {
-  itemArr: linkType[];
+  itemArr?: linkType[];
+  socialArr?: linkType[];
+  contactUsArr?: linkType[];
+  hasBtn?: boolean;
   heading: string;
+  contactUsText?: string;
   headingClass?: string;
 };
+
+
+export type dropDownType ={
+  title:string;
+  btnClass:string;
+  actionCb: () => void;
+}
+
+// for modals 
+export type commonModalProps = {
+  viewState: boolean
+  closeStateCb: () => void
+  ref?: any
+  deleteBtnText?: string
+  data?:any
+}
