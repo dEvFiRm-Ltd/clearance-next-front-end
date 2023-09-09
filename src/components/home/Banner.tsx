@@ -1,16 +1,14 @@
 "use client";
-import { bannerImgArr } from "@/static";
-import { bannerProps } from "@/utils/type";
 import Image from "next/image";
 import Link from "next/link";
 import React, { FC, createRef } from "react";
 import Slider from "react-slick";
 
-type BannerPropsType={
+type bannerPropsType={
   imgArr: Array<any>
 }
 
-const Banner: FC<BannerPropsType> = ({imgArr}) => {
+const Banner: FC<bannerPropsType> = ({imgArr}) => {
   const sliderRef = createRef<Slider>();
   const settings = {
     dots: true,

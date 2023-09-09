@@ -24,6 +24,14 @@ export default async function Home() {
   const categoryArr: Array<any> = categoryResponse.data.categories || [];
 
 
+  const footerBannerApiCall = await fetch(process.env.BASE_URL + "footer-banner", {
+    next: { revalidate: 10 },
+  });
+  const footerBannerResponse = await footerBannerApiCall.json();
+  const footerBannerArr: Array<any> = footerBannerResponse.data.footer_banners || [];
+  console.log(" footerBannerArr:", footerBannerArr)
+
+
   return (
     <>
       <Banner imgArr={bannerArr} />
@@ -37,7 +45,7 @@ export default async function Home() {
           />
         ))}
       </div>
-      <BestSeller />
+      <BestSeller imgArr={footerBannerArr} />
       <FlashSale />
       <DenimShop />
       <div className="container flex flex-col items-center sm:flex-row sm:flex-wrap md:flex-nowrap justify-center gap-y-5 md:gap-y-0 sm:gap-x-3 lg:gap-x-4 2xl:gap-x-5 3xl:gap-x-[23px] mt-[30px] ">
