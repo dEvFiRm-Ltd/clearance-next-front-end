@@ -8,11 +8,11 @@ const BottomHeader = () => {
   return (
     <div className="hidden border-b relative group lg:flex flex-row items-center justify-center text-[#000000] font-bold uppercase w-fit mx-auto lg:gap-x-4 xl:gap-x-5 2xl:gap-x-8 3xl:gap-x-10 text-[13px] xl:text-sm 2xl:text-base 3xl:text-lg">
       {bottomHeaderLinkItems.map((item: linkType, id: number) => (
-        <Link key={id} href={item.url} className="hover-link py-4 ">
+        <Link key={id} href={`/category-listing`} className="hover-link py-4 ">
           {item.title}
         </Link>
       ))}
-      <div className="absolute top-full border-t group-hover:flex hidden transition-all flex-row justify-center items-start gap-x-10 pt-10 pb-[52px] z-50 bg-white w-screen">
+      <div className="absolute top-full border-t group-hover:flex hidden transition-all flex-row justify-center items-start gap-x-10 pt-10 pb-[52px] z-40 bg-white w-screen">
         {bottomHeaderItems.map((item: footerProps, id: number) => (
           <FooterPart
             key={id}
