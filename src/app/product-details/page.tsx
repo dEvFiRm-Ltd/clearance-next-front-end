@@ -5,6 +5,7 @@ import Tab from "@/components/base/Tab";
 import StarList from "@/components/common/StarList";
 import FrequentlyBuy from "@/components/product-details-page/FrequentlyBuy";
 import RecentlyViewed from "@/components/product-details-page/RecentlyViewed";
+import RelatedProduct from "@/components/product-details-page/RelatedProduct";
 import { measurementContent, sizeDropDown } from "@/static";
 import Image from "next/image";
 import Link from "next/link";
@@ -254,6 +255,7 @@ const ProductDetailsPage = () => {
       </section>
       <FrequentlyBuy/>
       <RecentlyViewed/>
+      <RelatedProduct/>
     </>
   );
 };
