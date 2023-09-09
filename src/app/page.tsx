@@ -8,23 +8,25 @@ import VerticalImage from "@/components/common/VerticalImage";
 import RelatedSearches from "@/components/home/RelatedSearches";
 import HandPicked from "@/components/home/HandPicked";
 import Footer from "@/components/home/Footer";
+import { env } from 'node:process';
 
 export default async function Home() {
-  const bannerApiCall = await fetch(process.env.BASE_URL + "main-banner", {
+  const bannerApiCall = await fetch(env.BASE_URL + "api/v10/web/home/main-banner", {
     next: { revalidate: 10 },
   });
   const bannerResponse = await bannerApiCall.json();
   const bannerArr: Array<any> = bannerResponse.data.main_banners || [];
+  console.log("Home ~ bannerArr:", bannerArr)
 
 
-  const categoryApiCall = await fetch(process.env.BASE_URL + "categories", {
+  const categoryApiCall = await fetch(env.BASE_URL + "api/v10/web/home/categories", {
     next: { revalidate: 10 },
   });
   const categoryResponse = await categoryApiCall.json();
   const categoryArr: Array<any> = categoryResponse.data.categories || [];
 
 
-  const footerBannerApiCall = await fetch(process.env.BASE_URL + "footer-banner", {
+  const footerBannerApiCall = await fetch(env.BASE_URL + "api/v10/web/home/footer-banner", {
     next: { revalidate: 10 },
   });
   const footerBannerResponse = await footerBannerApiCall.json();

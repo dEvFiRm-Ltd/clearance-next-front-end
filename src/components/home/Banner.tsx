@@ -34,7 +34,7 @@ const Banner: FC<bannerPropsType> = ({imgArr}) => {
             href={item.url}
             className=" w-screen h-52 md:h-80 lg:h-[428px] xl:h-[535px] 2xl:h-[642px] 3xl:h-[745px] bg-center bg-no-repeat relative top-0 left-0 z-10  flex justify-center items-center"
           >
-            <Image src={'https://sstorage.clearance.ae/production/storage/banner/'+item.photo} alt="" fill />
+            <Image src={item.photo} alt="" fill />
           </Link>
         )
         )}

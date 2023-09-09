@@ -184,7 +184,8 @@ const ProductDetailsPage = () => {
                   alt=""
                   fill
                   src={
-                    "https://sstorage.clearance.ae/production/storage/product/2023-08-04-64ccaafb5233f.png"
+                    // "https://sstorage.clearance.ae/production/storage/product/2023-08-04-64ccaafb5233f.png"
+                    "https://sstorage.clearance.ae/stagingproducts/storage/category/2022-07-25-62dea1f44a013.png"
                   }
                 />
               </span>
