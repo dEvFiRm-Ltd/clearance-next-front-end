@@ -16,7 +16,7 @@ export default async function Home() {
   });
   const bannerResponse = await bannerApiCall.json();
   const bannerArr: Array<any> = bannerResponse.data.main_banners || [];
-  console.log("Home ~ bannerArr:", bannerArr)
+
 
 
   const categoryApiCall = await fetch(env.BASE_URL + "api/v10/web/home/categories", {
@@ -31,7 +31,7 @@ export default async function Home() {
   });
   const footerBannerResponse = await footerBannerApiCall.json();
   const footerBannerArr: Array<any> = footerBannerResponse.data.footer_banners || [];
-  console.log(" footerBannerArr:", footerBannerArr)
+
 
 
   return (
