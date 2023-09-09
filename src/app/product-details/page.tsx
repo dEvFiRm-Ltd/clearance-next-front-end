@@ -28,7 +28,7 @@ const ProductDetailsPage = () => {
       <section className="mx-auto container pt-6 flex flex-row justify-center gap-10 pb-20">
         <div className="flex flex-row justify-start gap-6">
           <div className="flex flex-col justify-start gap-3">
-            <div className="h-[88px] w-[66px] relative overflow-hidden hover:ring-1 ring-black group">
+            <div className="h-[88px] w-[66px] relative overflow-hidden hover:ring-1 ring-black-primary group">
               <Image
                 fill
                 alt="image"
@@ -36,7 +36,7 @@ const ProductDetailsPage = () => {
                 src="https://sstorage.clearance.ae/production/storage/product/2023-08-25-64e89fdb8efab.png"
               />
             </div>
-            <div className="h-[88px] w-[66px] relative overflow-hidden hover:ring-1 ring-black group">
+            <div className="h-[88px] w-[66px] relative overflow-hidden hover:ring-1 ring-black-primary group">
               <Image
                 fill
                 alt="image"
@@ -44,7 +44,7 @@ const ProductDetailsPage = () => {
                 src="https://sstorage.clearance.ae/production/storage/product/2023-08-25-64e89fdbaec44.png"
               />
             </div>
-            <div className="h-[88px] w-[66px] relative overflow-hidden hover:ring-1 ring-black group">
+            <div className="h-[88px] w-[66px] relative overflow-hidden hover:ring-1 ring-black-primary group">
               <Image
                 fill
                 alt="image"
@@ -52,7 +52,7 @@ const ProductDetailsPage = () => {
                 src="https://sstorage.clearance.ae/production/storage/product/2023-08-25-64e89fdbc3fc3.png"
               />
             </div>
-            <div className="h-[88px] w-[66px] relative overflow-hidden hover:ring-1 ring-black group">
+            <div className="h-[88px] w-[66px] relative overflow-hidden hover:ring-1 ring-black-primary group">
               <Image
                 fill
                 alt="image"
