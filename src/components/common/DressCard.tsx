@@ -8,7 +8,6 @@ export type dressType = {
   heading?: string;
   hightClass?: string;
   withClass?: string;
-  url: string;
 };
 
 const DressCard: FC<dressType> = ({
@@ -17,11 +16,10 @@ const DressCard: FC<dressType> = ({
   hightClass,
   withClass,
   heading,
-  url,
 }) => {
   return (
     <Link
-      href={`${url}`}
+      href={`/category-listing`}
       className={`w-40 lg:w-44 xl:w-48 2xl:w-[234px] 3xl:w-[272px] flex flex-col items-center justify-start gap-y-4 uppercase ${withClass}`}
     >
       <div

@@ -42,8 +42,7 @@ export default async function Home() {
           <DressCard
             key={item.id}
             image={ 'https://sstorage.clearance.ae/production/storage/category/'+ item.icon}
-            title={item.name}
-            url={item.slug}
+            title={item.name}            
           />
         ))}
       </div>
@@ -54,7 +53,6 @@ export default async function Home() {
         {dressTwo.map((item: dressType, id: number) => (
           <DressCard
             key={id}
-            url={item.url}
             image={item.image}
             heading={item.heading}
             title={item.title}
