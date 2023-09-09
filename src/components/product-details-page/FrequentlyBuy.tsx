@@ -1,7 +1,7 @@
 import React, { createRef, useState } from "react";
 import FlashSaleCard from "../common/FlashSaleCard";
 import CartModal from "../modal/CartModal";
-import { productDetailsData } from "@/static";
+import { frequentlyBuyData } from "@/static";
 import { flashSaleCardProps } from "@/utils/type";
 import Button from "../base/Button";
 import Slider from "react-slick";
@@ -78,7 +78,7 @@ const FrequentlyBuy = () => {
   };
   return (
     <section className="py-10 bg-[#F2F2F3]">
-      <div className="container mx-auto">
+      <div className="w-[1200px] mx-auto">
         <h3 className="text-xl font-bold text-black-primary text-center">
           Frequently bought together{" "}
         </h3>
@@ -113,8 +113,7 @@ const FrequentlyBuy = () => {
               btnClass="!bg-[#00000020] hover:!bg-[#00000040] flex items-center justify-center !absolute top-1/2 -translate-y-1/2 right-0 !w-10 !h-[104px] text-white z-10"
             />
             <Slider className="w-[33vw] " ref={sliderRef} {...settings}>
-              {productDetailsData.map(
-                (item: flashSaleCardProps, id: number) => (
+              {frequentlyBuyData.map((item: flashSaleCardProps, id: number) => (
                   <FlashSaleCard
                     key={id}
                     img={item.img}
@@ -133,7 +132,7 @@ const FrequentlyBuy = () => {
               )}
             </Slider>
           </div>
-          <div className="flex flex-col justify-center items-center gap-10 h-[372px] w-60 overflow-hidden px-4 bg-white ml-10">
+          <div className="flex flex-col justify-center items-center gap-10 h-[340px] w-60 overflow-hidden px-4 bg-white ml-10">
             <div className="flex flex-col justify-start items-center gap-4">
               <p className="flex text-base text-black-primary text-center">
                 Prix total ( <span className="text-red-400 pr-1.5">11</span>{" "}
@@ -160,8 +159,8 @@ const FrequentlyBuy = () => {
             </div>
           </div>
         </div>
-      </div>
       <CartModal closeStateCb={() => setModal(false)} viewState={modal} />
+      </div>
     </section>
   );
 };

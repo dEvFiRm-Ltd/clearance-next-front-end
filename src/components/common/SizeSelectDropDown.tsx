@@ -11,7 +11,7 @@ const SizeSelectDropDown = () => {
       <div className="capitalize text-black-primary text-base font-bold">
         color:
       </div>
-      <div className="h-7 w-7 flex justify-center items-center border border-black rounded-full bg-white">
+      <div className="h-7 w-7 flex justify-center items-center border border-black-primary rounded-full bg-white">
         <span className="h-[22px] w-[22px] rounded-full overflow-hidden relative">
           <Image
             alt=""

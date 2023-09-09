@@ -4,6 +4,7 @@ import SelectField, { dropDowns } from "@/components/base/SelectField";
 import Tab from "@/components/base/Tab";
 import StarList from "@/components/common/StarList";
 import FrequentlyBuy from "@/components/product-details-page/FrequentlyBuy";
+import RecentlyViewed from "@/components/product-details-page/RecentlyViewed";
 import { measurementContent, sizeDropDown } from "@/static";
 import Image from "next/image";
 import Link from "next/link";
@@ -25,7 +26,7 @@ const ProductDetailsPage = () => {
   };
   return (
     <>
-      <section className="mx-auto container pt-6 flex flex-row justify-center gap-10 pb-20">
+      <section className="mx-auto w-[1200px] pt-6 flex flex-row justify-center gap-10 pb-20">
         <div className="flex flex-row justify-start gap-6">
           <div className="flex flex-col justify-start gap-3">
             <div className="h-[88px] w-[66px] relative overflow-hidden hover:ring-1 ring-black-primary group">
@@ -252,6 +253,7 @@ const ProductDetailsPage = () => {
         </div>
       </section>
       <FrequentlyBuy/>
+      <RecentlyViewed/>
     </>
   );
 };
