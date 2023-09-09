@@ -18,7 +18,6 @@ export type flashSaleCardProps = {
 export type linkType = {
   icon?: string;
   title: string;
-  url: string;
 };
 export type linkImgType = {
   img:string;
