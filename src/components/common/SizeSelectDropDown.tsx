@@ -6,7 +6,7 @@ import Button from "../base/Button";
 const SizeSelectDropDown = () => {
     const [activeTab, setActiveTab] = useState(0);  
   return (
-    <div className="bg-white w-52 absolute bottom-[130%] left-1/2 -translate-x-1/2 ">
+    <div className="cartShadow bg-white w-52 absolute bottom-[130%] left-1/2 -translate-x-1/2 ">
     <div className="flex flex-col justify-start items-start gap-y-3 p-3 pb-2 border-b border-ash">
       <div className="capitalize text-black-primary text-base font-bold">
         color:

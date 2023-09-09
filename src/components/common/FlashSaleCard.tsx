@@ -14,18 +14,18 @@ const FlashSaleCard: FC<flashSaleCardProps> = ({
   salePrice,
   price,
   review,
-  check = false,
   btnText,
   groupClass,
   imgClass,
   btnClass,
   actionCb,
+  check = false,
 }) => {
   const [selectSize, setSelectSize] = useState(false);
   return (
-    <div className={`boxShadow group relative ${groupClass}`}>
+    <div className={`boxShadow relative ${groupClass}`}>
       <div
-        className={`w-full h-52 md:h-[278px] lg:h-80 3xl:h-[324px] overflow-hidden relative ${imgClass}`}
+        className={`w-full h-52 md:h-[278px] lg:h-80 3xl:h-[324px] overflow-hidden relative group ${imgClass}`}
       >
         <Image
           src={img}
@@ -81,7 +81,7 @@ const FlashSaleCard: FC<flashSaleCardProps> = ({
           onClick={() => {
             setSelectSize(!selectSize);
           }}
-          className="w-full text-sm ring-1 ring-ash bg-white py-1 px-2 text-[#5d626a] relative"
+          className="w-full text-sm ring-1 ring-ash bg-white py-1 px-2 text-gray relative capitalize"
         >
           {btnText}
           <i className="fa-solid fa-chevron-down text-xs ml-1"></i>

@@ -651,6 +651,7 @@ export const productDetailsData: flashSaleCardProps[] = [
     salePrice: "71.38",
     price: "93.99",
     review:"10",
+    btnText:'black,s',
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-05-647e055d5a6d0.avif",
@@ -658,6 +659,7 @@ export const productDetailsData: flashSaleCardProps[] = [
     salePrice: "71.38",
     price: "93.99",
     review:"10",
+    btnText:'as picture,s',
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e4e025a3b7.avif",
@@ -666,6 +668,7 @@ export const productDetailsData: flashSaleCardProps[] = [
     salePrice: "71.38",
     price: "93.99",
     review:"10",
+    btnText:'rose red,s',
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e4e057337b.avif",
@@ -673,6 +676,7 @@ export const productDetailsData: flashSaleCardProps[] = [
     salePrice: "71.38",
     price: "93.99",
     review:"10",
+    btnText:'blue,s',
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e58925291c.avif",
@@ -680,6 +684,7 @@ export const productDetailsData: flashSaleCardProps[] = [
     salePrice: "71.38",
     price: "93.99",
     review:"10",
+    btnText:'brown,s',
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e5e6cdbe66.avif",
@@ -688,6 +693,7 @@ export const productDetailsData: flashSaleCardProps[] = [
     salePrice: "71.38",
     price: "93.99",
     review:"10",
+    btnText:'red,s',
   },  
 ];
 export const dressTwo: dressType[] = [
