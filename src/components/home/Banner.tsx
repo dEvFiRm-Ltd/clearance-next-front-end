@@ -6,7 +6,11 @@ import Link from "next/link";
 import React, { FC, createRef } from "react";
 import Slider from "react-slick";
 
-const Banner: FC = () => {
+type BannerPropsType={
+  imgArr: Array<any>
+}
+
+const Banner: FC<BannerPropsType> = ({imgArr}) => {
   const sliderRef = createRef<Slider>();
   const settings = {
     dots: true,
@@ -26,15 +30,16 @@ const Banner: FC = () => {
   return (
     <section className="relative group flex items-center">
       <Slider className="w-screen " ref={sliderRef} {...settings}>
-        {bannerImgArr.map((item: bannerProps, id: number) => (
+        {imgArr.map((item: any) => (
           <Link
-            key={id}
+            key={item.id}
             href={item.url}
             className=" w-screen h-52 md:h-80 lg:h-[428px] xl:h-[535px] 2xl:h-[642px] 3xl:h-[745px] bg-center bg-no-repeat relative top-0 left-0 z-10  flex justify-center items-center"
           >
-            <Image src={item.img} alt="" fill />
+            <Image src={'https://sstorage.clearance.ae/production/storage/banner/'+item.photo} alt="" fill />
           </Link>
-        ))}
+        )
+        )}
       </Slider>
       <div className="absolute z-30 w-full justify-between flex group-hover:opacity-100 opacity-0 transition-opacity duration-300 px-3 xl:px-5">
         <button

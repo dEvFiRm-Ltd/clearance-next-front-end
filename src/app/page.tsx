@@ -9,17 +9,31 @@ import RelatedSearches from "@/components/home/RelatedSearches";
 import HandPicked from "@/components/home/HandPicked";
 import Footer from "@/components/home/Footer";
 
-export default function Home() {
+export default async function Home() {
+  const bannerApiCall = await fetch(process.env.BASE_URL + "main-banner", {
+    next: { revalidate: 10 },
+  });
+  const bannerResponse = await bannerApiCall.json();
+  const bannerArr: Array<any> = bannerResponse.data.main_banners || [];
+
+
+  const categoryApiCall = await fetch(process.env.BASE_URL + "categories", {
+    next: { revalidate: 10 },
+  });
+  const categoryResponse = await categoryApiCall.json();
+  const categoryArr: Array<any> = categoryResponse.data.categories || [];
+
+
   return (
-    <>    
-      <Banner />
+    <>
+      <Banner imgArr={bannerArr} />
       <div className="container flex flex-row justify-center mt-[30px] gap-4 md:gap-5 xl:gap-6 3xl:gap-7 flex-wrap">
-        {dress.map((item: dressType, id: number) => (
+        {categoryArr.map((item: any) => (
           <DressCard
-            key={id}
-            image={item.image}
-            title={item.title}
-            url={item.url}
+            key={item.id}
+            image={ 'https://sstorage.clearance.ae/production/storage/category/'+ item.icon}
+            title={item.name}
+            url={item.slug}
           />
         ))}
       </div>
@@ -59,8 +73,8 @@ export default function Home() {
         ))}
       </div>
       <HandPicked />
-      <RelatedSearches /> 
-      <Footer/>    
+      <RelatedSearches />
+      <Footer />
     </>
   );
 }
