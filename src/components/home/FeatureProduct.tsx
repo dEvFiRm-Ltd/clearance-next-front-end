@@ -1,26 +1,32 @@
-import React from "react";
+'use client'
+import React, { FC, useState } from "react";
 import FlashSaleCard from "../common/FlashSaleCard";
-import { handPickedData } from "@/static";
-import { flashSaleCardProps } from "@/utils/type";
-
-const HandPicked = () => {
+import CartModal from "../modal/CartModal";
+type featureProductProps={
+  featureProductArr:any
+  title:string
+}
+const FeatureProduct:FC<featureProductProps> = ({featureProductArr,title}) => {
+  const [modals, setModals] = useState(false)
+  const [modalData, setModalData] = useState<any>();
   return (
     <section className="py-7">
       <div className="container flex flex-col justify-start items-center gap-y-6">
         <h3 className="text-base lg:text-lg 2xl:text-xl font-bold text-center text-black-primary uppercase">
-          handpicked for you
+           {title}
         </h3>
         <div className="flex flex-row justify-center gap-2.5 md:gap-4 lg:gap-5 xl:gap-6 flex-wrap !items-start">
-          {handPickedData.map((item: flashSaleCardProps, id: number) => (
+          {featureProductArr.map((item:any, id: number) => (
             <FlashSaleCard
               key={id}
-              img={item.img}
+              img={item.thumbnail}
               preSaleImgSticker={item.preSaleImgSticker}
-              salePrice={item.salePrice}
-              price={item.price}
-              text={item.text}
+              salePrice={item.price_formatted}
+              price={item.offer_price_formatted}
+              text={item.name}
               text2={item.text2}
               discount={item.discount}
+              actionCb={()=>{setModalData(item);setModals(!modals);}}
               groupClass="w-40 sm:w-52 md:w-60 lg:w-80 xl:w-[390px] 2xl:w-[427px]"
               imgClass="!h-52 sm:!h-[278px] md:!h-80 lg:!h-[400px] xl:!h-[480px] 2xl:!h-[570px]"
             />
@@ -30,8 +36,13 @@ const HandPicked = () => {
           view more
         </button>
       </div>
+      <CartModal
+        closeStateCb={() => {setModals(false)}}
+        viewState={modals}
+        data={modalData}
+      />
     </section>
   );
 };
 
-export default HandPicked;
+export default FeatureProduct;

@@ -5,10 +5,10 @@ import FlashSale from "@/components/home/FlashSale";
 import DenimShop from "@/components/home/DenimShop";
 import { dress, dressTwo, verticalImage, verticalImageTwo } from "@/static";
 import VerticalImage from "@/components/common/VerticalImage";
-import RelatedSearches from "@/components/home/RelatedSearches";
-import HandPicked from "@/components/home/HandPicked";
+import HandPicked from "@/components/home/FeatureProduct";
 import Footer from "@/components/home/Footer";
 import { env } from 'node:process';
+import FeatureProduct from "@/components/home/FeatureProduct";
 
 export default async function Home() {
   const bannerApiCall = await fetch(env.BASE_URL + "api/v10/web/home/main-banner", {
@@ -16,7 +16,6 @@ export default async function Home() {
   });
   const bannerResponse = await bannerApiCall.json();
   const bannerArr: Array<any> = bannerResponse.data.main_banners || [];
-
 
 
   const categoryApiCall = await fetch(env.BASE_URL + "api/v10/web/home/categories", {
@@ -33,6 +32,69 @@ export default async function Home() {
   const footerBannerArr: Array<any> = footerBannerResponse.data.footer_banners || [];
 
 
+  const flashDealsApiCall = await fetch(env.BASE_URL + "api/v10/web/home/flashDeals", {
+    next: { revalidate: 10 },
+  });
+  const flashDealsResponse = await flashDealsApiCall.json();
+  const flashDealsArr: Array<any> = flashDealsResponse.data.flash_deals_products || [];
+
+
+  const featureProductApiCall = await fetch(env.BASE_URL + "api/v10/web/home/feature-product", {
+    next: { revalidate: 10 },
+  });
+  const featureProductResponse = await featureProductApiCall.json();
+  const featureProductArr: Array<any> = featureProductResponse.data.featured_products || [];
+
+
+  const supermarketDealsApiCall = await fetch(env.BASE_URL + "api/v10/web/home/products?category_slug=Supermarket-Deals_43&offset=1&limit=7", {
+    next: { revalidate: 10 },
+  });
+  const supermarketDealsResponse = await supermarketDealsApiCall.json();
+  const supermarketDealsArr: Array<any> = supermarketDealsResponse.data.products || [];
+
+
+  const womenApiCall = await fetch(env.BASE_URL + "api/v10/web/home/products?category_slug=women_1&offset=1&limit=7", {
+    next: { revalidate: 10 },
+  });
+  const womenResponse = await womenApiCall.json();
+  const womenArr: Array<any> = womenResponse.data.products || [];
+
+
+  const menApiCall = await fetch(env.BASE_URL + "api/v10/web/home/products?category_slug=Men_36&offset=1&limit=7", {
+    next: { revalidate: 10 },
+  });
+  const menResponse = await menApiCall.json();
+  const menArr: Array<any> = menResponse.data.products || [];
+
+
+  const girlApiCall = await fetch(env.BASE_URL + "api/v10/web/home/products?category_slug=Girls_164&offset=1&limit=7", {
+    next: { revalidate: 10 },
+  });
+  const girlResponse = await girlApiCall.json();
+  const girlArr: Array<any> = girlResponse.data.products || [];
+
+
+  const boysApiCall = await fetch(env.BASE_URL + "api/v10/web/home/products?category_slug=Boys_165&offset=1&limit=7", {
+    next: { revalidate: 10 },
+  });
+  const boysResponse = await boysApiCall.json();
+  const boysArr: Array<any> = boysResponse.data.products || [];
+
+
+  const sportsOutdoorsApiCall = await fetch(env.BASE_URL + "api/v10/web/home/products?category_slug=Sports-Outdoors_299&offset=1&limit=7", {
+    next: { revalidate: 10 },
+  });
+  const sportsOutdoorsResponse = await sportsOutdoorsApiCall.json();
+  const sportsOutdoorsArr: Array<any> = sportsOutdoorsResponse.data.products || [];
+
+
+  const wholeSaleApiCall = await fetch(env.BASE_URL + "api/v10/web/home/products?category_slug=wholesale_323&offset=1&limit=7", {
+    next: { revalidate: 10 },
+  });
+  const wholeSaleResponse = await wholeSaleApiCall.json();
+  const wholeSaleArr: Array<any> = wholeSaleResponse.data.products || [];
+
+
 
   return (
     <>
@@ -42,13 +104,14 @@ export default async function Home() {
           <DressCard
             key={item.id}
             image={item.icon}
-            title={item.name}            
+            title={item.name}
+            totalProduct={item.total_product}            
           />
         ))}
       </div>
-      <BestSeller imgArr={footerBannerArr} />
-      <FlashSale />
-      <DenimShop />
+      {/* <BestSeller imgArr={footerBannerArr} /> */}
+      <FlashSale flashSaleArr={flashDealsArr}/>
+      {/* <DenimShop />
       <div className="container flex flex-col items-center sm:flex-row sm:flex-wrap md:flex-nowrap justify-center gap-y-5 md:gap-y-0 sm:gap-x-3 lg:gap-x-4 2xl:gap-x-5 3xl:gap-x-[23px] mt-[30px] ">
         {dressTwo.map((item: dressType, id: number) => (
           <DressCard
@@ -60,28 +123,34 @@ export default async function Home() {
             withClass="!w-[336px] sm:!w-[302px] md:!w-[240px] lg:!w-[322.67px] xl:!w-[405.33px] 2xl:!w-[485.33px] 3xl:!w-[580px]"
           />
         ))}
-      </div>
+      </div> */}
       <div className="container mt-[60px] mb-5 3xl:mb-10 flex flex-wrap flex-row justify-center gap-x-5 gap-y-3">
-        {verticalImage.map((item: any, i: number) => (
+        {footerBannerArr.splice(0,2).map((item: any) => (
           <VerticalImage
-            key={i}
-            img={item.img}
+            key={item.id}
+            img={item.photo}
             className="w-[336px] sm:w-[616px] md:w-[744px] lg:w-[1000px] xl:w-[614px] 2xl:w-[738px] 3xl:w-[880px] h-[200px] sm:h-[300px] md:h-[350px] lg:h-[405px] xl:h-[350px] 2xl:h-[380px] 3xl:h-[405px]"
           />
         ))}
       </div>
       <div className="container mb-10 flex flex-row flex-wrap justify-center gap-x-5 gap-y-3">
-        {verticalImageTwo.map((item: any, i: number) => (
+        {footerBannerArr.splice(0,2).map((item: any) => (
           <VerticalImage
-            key={i}
-            img={item.img}
+            key={item.id}
+            img={item.photo}
             className="w-[336px] sm:w-[616px] md:w-[744px] lg:w-[1000px] xl:w-[614px] 2xl:w-[738px] 3xl:w-[880px] h-[170px] sm:h-[240px] md:h-[273px]"
             objectClass="!object-cover"
           />
         ))}
       </div>
-      <HandPicked />
-      <RelatedSearches />
+      <FeatureProduct featureProductArr={featureProductArr} title="Feature Product" />
+      <FeatureProduct featureProductArr={supermarketDealsArr} title="Supermarket Deals" />
+      <FeatureProduct featureProductArr={womenArr} title="Women" />
+      <FeatureProduct featureProductArr={menArr} title="Man" />
+      <FeatureProduct featureProductArr={girlArr} title="Girls" />
+      <FeatureProduct featureProductArr={boysArr} title="Boys" />
+      <FeatureProduct featureProductArr={sportsOutdoorsArr} title="Sports outdoors" />
+      <FeatureProduct featureProductArr={wholeSaleArr} title="wholesale" />
     </>
   );
 }

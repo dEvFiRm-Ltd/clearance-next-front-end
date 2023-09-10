@@ -8,6 +8,7 @@ export type dressType = {
   heading?: string;
   hightClass?: string;
   withClass?: string;
+  totalProduct?:number
 };
 
 const DressCard: FC<dressType> = ({
@@ -16,6 +17,7 @@ const DressCard: FC<dressType> = ({
   hightClass,
   withClass,
   heading,
+  totalProduct
 }) => {
   return (
     <Link
@@ -32,8 +34,8 @@ const DressCard: FC<dressType> = ({
           {heading}
         </p>
       )}
-      <p className="border-b text-[#5C5C5C] border-[#B9B9B9] text-sm lg:text-base xl:text-lg 3xl:text-xl xl:leading-8">
-        {title}
+      <p className="border-b text-gray border-[#B9B9B9] text-sm lg:text-base xl:text-lg 3xl:text-xl xl:leading-8">
+        {title} ({totalProduct})
       </p>
     </Link>
   );
