@@ -5,7 +5,7 @@ import React, { FC, useEffect, useRef, useState } from "react";
 import StarList from "./StarList";
 import SizeSelectDropDown from "./SizeSelectDropDown";
 
-const FlashSaleCard: FC<flashSaleCardProps> = ({
+const FlashSaleCard: FC<flashSaleCardProps|any> = ({
   img,
   preSaleImgSticker,
   discount,

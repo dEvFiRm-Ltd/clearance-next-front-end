@@ -17,7 +17,8 @@ export type flashSaleCardProps = {
   review?:string;
   btnText?:string;
   colorImg?:string[];
-  actionCb?:()=>void
+  actionCb?:()=>void;
+  variant?: object[];
 };
 export type linkType = {
   icon?: string;

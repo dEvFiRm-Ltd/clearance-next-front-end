@@ -11,7 +11,8 @@ type flashSaleProps={
 }
 
 const FlashSale:FC<flashSaleProps> = ({flashSaleArr}) => {
-  const [modal, setModal] = useState(false)
+  const [modals, setModals] = useState(false)
+  const [modalData, setModalData] = useState<any>();
   const sliderRef = createRef<Slider>();
   const settings = {
     infinite: true,
@@ -114,7 +115,7 @@ const FlashSale:FC<flashSaleProps> = ({flashSaleArr}) => {
                 salePrice={item.offer_price_formatted}
                 price={item.price_formatted}
                 discount={item.discount}                
-                actionCb={()=>setModal(!modal)}
+                actionCb={()=>{setModalData(item);setModals(!modals);}}
                 groupClass="w-40 md:w-52 lg:w-60 3xl:w-[260px] p-2"
               />
             ))}
@@ -122,8 +123,9 @@ const FlashSale:FC<flashSaleProps> = ({flashSaleArr}) => {
         </div>
       </div>
       <CartModal
-        closeStateCb={() => setModal(false)}
-        viewState={modal}
+        closeStateCb={() => {setModals(false); console.log("closeStateCb")}}
+        viewState={modals}
+        data={modalData}
       />
     </section>
   );

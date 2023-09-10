@@ -1,4 +1,5 @@
 import React from "react";
+import { TimeCountdown } from "./TimeCountdown";
 
 const Title = () => {
   return (
@@ -6,7 +7,7 @@ const Title = () => {
       <h3 className="font-bold text-base lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-[28px] capitalize">
         flash sale{" "}
       </h3>
-      <div className="flex justify-center items-center gap-0.5 lg:gap-1.5">
+      {/* <div className="flex justify-center items-center gap-0.5 lg:gap-1.5">
         <span className="text-sm lg:text-base xl:text-lg 2xl:text-xl 3xl:text-2xl lg:font-bold text-black-primary mr-1.5 capitalize">
           ends in
         </span>
@@ -57,7 +58,8 @@ const Title = () => {
         >
           <i className="fas fa-chevron-right"></i>
         </button>
-      </div>
+      </div> */}
+      <TimeCountdown date={"2023-10-08T15:27:32.635Z"}/>
     </div>
   );
 };

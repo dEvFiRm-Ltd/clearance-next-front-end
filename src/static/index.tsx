@@ -466,52 +466,92 @@ export const FlashSaleData: flashSaleCardProps[] = [
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-05-647df9a609520.avif",
     text: "Long sleeve crew neck loose leo....",
-    salePrice: "71.38",
+    salePrice: "41.38",
     price: "93.99",
+     variant: [
+    { size: ["S(38-40)", "M(42-44)", "L(44-46)"] },
+    { fit: ["plus", "regular"] },
+    { color: ["red", "black", "green"] },
+  ],
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-05-647e055d5a6d0.avif",
     text: "Long sleeve crew neck loose leo....",
-    salePrice: "71.38",
+    salePrice: "91.38",
     price: "93.99",
+     variant: [
+    { size: ["S(38-40)", "M(42-44)", "L(44-46)"] },
+    { fit: ["plus", "regular"] },
+    { color: ["red", "black", "green"] },
+  ],
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e4e025a3b7.avif",
     discount: "20",
     text: "Long sleeve crew neck loose leo....",
-    salePrice: "71.38",
+    salePrice: "11.38",
     price: "93.99",
+     variant: [
+    { size: ["S(38-40)", "M(42-44)", "L(44-46)"] },
+    { fit: ["plus", "regular"] },
+    { color: ["red", "black", "green"] },
+  ],
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e4e057337b.avif",
     text: "Long sleeve crew neck loose leo....",
-    salePrice: "71.38",
+    salePrice: "31.38",
     price: "93.99",
+     variant: [
+    { size: ["S(38-40)", "M(42-44)", "L(44-46)"] },
+    { fit: ["plus", "regular"] },
+    { color: ["red", "black", "green"] },
+  ],
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e58925291c.avif",
     text: "Long sleeve crew neck loose leo....",
-    salePrice: "71.38",
-    price: "93.99",
+    salePrice: "45.38",
+    price: "91.99",
+     variant: [
+    { size: ["S(38-40)", "M(42-44)", "L(44-46)"] },
+    { fit: ["plus", "regular"] },
+    { color: ["red", "black", "green"] },
+  ],
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e5e6cdbe66.avif",
     discount: "20",
     text: "Long sleeve crew neck loose leo....",
-    salePrice: "71.38",
+    salePrice: "82.38",
     price: "93.99",
+     variant: [
+    { size: ["S(38-40)", "M(42-44)", "L(44-46)"] },
+    { fit: ["plus", "regular"] },
+    { color: ["red", "black", "green"] },
+  ],
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-05-647df9a609520.avif",
     text: "Long sleeve crew neck loose leo....",
-    salePrice: "71.38",
+    salePrice: "32.38",
     price: "93.99",
+     variant: [
+    { size: ["S(38-40)", "M(42-44)", "L(44-46)"] },
+    { fit: ["plus", "regular"] },
+    { color: ["red", "black", "green"] },
+  ],
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-05-647e055d5a6d0.avif",
     text: "Long sleeve crew neck loose leo....",
     salePrice: "71.38",
     price: "93.99",
+     variant: [
+    { size: ["S(38-40)", "M(42-44)", "L(44-46)"] },
+    { fit: ["plus", "regular"] },
+    { color: ["red", "black", "green"] },
+  ],
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e4e025a3b7.avif",
@@ -519,25 +559,45 @@ export const FlashSaleData: flashSaleCardProps[] = [
     text: "Long sleeve crew neck loose leo....",
     salePrice: "71.38",
     price: "93.99",
+     variant: [
+    { size: ["S(38-40)", "M(42-44)", "L(44-46)"] },
+    { fit: ["plus", "regular"] },
+    { color: ["red", "black", "green"] },
+  ],
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e4e057337b.avif",
     text: "Long sleeve crew neck loose leo....",
     salePrice: "71.38",
-    price: "93.99",
+    price: "4.99",
+     variant: [
+    { size: ["S(38-40)", "M(42-44)", "L(44-46)"] },
+    { fit: ["plus", "regular"] },
+    { color: ["red", "black", "green"] },
+  ],
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e58925291c.avif",
     text: "Long sleeve crew neck loose leo....",
     salePrice: "71.38",
-    price: "93.99",
+    price: "4.99",
+     variant: [
+    { size: ["S(38-40)", "M(42-44)", "L(44-46)"] },
+    { fit: ["plus", "regular"] },
+    { color: ["red", "black", "green"] },
+  ],
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e5e6cdbe66.avif",
     discount: "20",
     text: "Long sleeve crew neck loose leo....",
     salePrice: "71.38",
-    price: "93.99",
+    price: "7.99",
+     variant: [
+    { size: ["S(38-40)", "M(42-44)", "L(44-46)"] },
+    { fit: ["plus", "regular"] },
+    { color: ["red", "black", "green"] },
+  ],
   },
 ];
 export const dressListData: flashSaleCardProps[] = [
@@ -545,7 +605,7 @@ export const dressListData: flashSaleCardProps[] = [
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-05-647df9a609520.avif",
     text: "Long sleeve crew neck loose leo....",
     salePrice: "71.38",
-    price: "93.99",
+    price: "112.99",
     review: "10",
   },
   {
@@ -628,6 +688,7 @@ export const dressListData: flashSaleCardProps[] = [
     price: "93.99",
     review: "10",
   },
+ 
 ];
 export const frequentlyBuyData: flashSaleCardProps[] = [
   {
@@ -947,40 +1008,10 @@ export const filterData: recommendType[] = [
   },
 ];
 
-export const measurementContent: tabTypes[] = [
-  {
-    shoulder: "16.9",
-    bust: "40.2",
-    sleeveLength: "24",
-    length: "21.1",
-    hemWidth: "29.9",
-  },
-  {
-    shoulder: "18.9",
-    bust: "41.2",
-    sleeveLength: "25",
-    length: "22.1",
-    hemWidth: "30.9",
-  },
-  {
-    shoulder: "19.9",
-    bust: "42.2",
-    sleeveLength: "26",
-    length: "23.1",
-    hemWidth: "31.9",
-  },
-  {
-    shoulder: "20.9",
-    bust: "43.2",
-    sleeveLength: "27",
-    length: "24.1",
-    hemWidth: "32.9",
-  },
-  {
-    shoulder: "21.9",
-    bust: "44.2",
-    sleeveLength: "28",
-    length: "25.1",
-    hemWidth: "33.9",
-  },
-];
+export const measurementContent = [
+  {shoulder:'16.9',bust:'40.2',sleeveLength:'24',length:'21.1',hemWidth:'29.9'},
+  {shoulder:'18.9',bust:'41.2',sleeveLength:'25',length:'22.1',hemWidth:'30.9'},
+  {shoulder:'19.9',bust:'42.2',sleeveLength:'26',length:'23.1',hemWidth:'31.9'},
+  {shoulder:'20.9',bust:'43.2',sleeveLength:'27',length:'24.1',hemWidth:'32.9'},
+  {shoulder:'21.9',bust:'44.2',sleeveLength:'28',length:'25.1',hemWidth:'33.9'},
+]; 
