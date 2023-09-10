@@ -3,16 +3,16 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import CartSideBar from "../common/CartSideBar";
+import { useCart } from "@/context/CartContext";
 
 const MiddleHeader = () => {
   // const [show, setShow] = useState(false)
   const [language, setLanguage] = useState(false);
   const [user, setUser] = useState(false);
-  const [cart, setCart] = useState(false);
+  // const [cart, setCart] = useState(false);
+  const {isCartOpen, setIsCartOpen} = useCart();
   const languageButtonRef = useRef<HTMLButtonElement>(null);
   const userButtonRef = useRef<HTMLButtonElement>(null);
-
-
 
   return (
     <div className="hidden lg:flex flex-row justify-between items-center lg:py-4 2xl:py-5 lg:px-6 xl:px-8 2xl:px-12 3xl:px-[60px]">
@@ -98,12 +98,12 @@ const MiddleHeader = () => {
             </div>}
             {/* hover dropdown ends */}
           </button>
-          <button type="button" onClick={()=>setCart(true)} className="relative p-2 2xl:p-3">
+          <button type="button" onClick={()=>setIsCartOpen(true)} className="relative p-2 2xl:p-3">
             <i className="fa-solid fa-bag-shopping"></i>
           </button>
         </div>
       </div>
-      <CartSideBar closeCb={()=>setCart(!cart)} value={cart} setCart={setCart}/> 
+      <CartSideBar closeCb={()=>setIsCartOpen(!isCartOpen)} value={isCartOpen} setCart={setIsCartOpen}/> 
     </div>
   );
 };

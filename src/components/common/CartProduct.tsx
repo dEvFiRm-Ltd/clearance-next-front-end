@@ -3,34 +3,42 @@ import { Popover } from "@headlessui/react";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
+import { useCart } from "@/context/CartContext";
 
-export const CartProduct = () => {
-  let [qty, setQty] = useState(1);
+export const CartProduct = ({data, index}:any) => {
+  const { removeFromCart, increaseQuantity, decreaseQuantity } = useCart();
+  let [qty, setQty] = useState(data.qty);
   const [activeTab, setActiveTab] = useState(0);
   const tabs = ["S(6-8)", "M(10)", "L(12)", "XL(14)", "XXL(16)"];
   // Function to quantity
   const incrementQty = () => {
     setQty(qty + 1);
+    data.qty = qty+1; // +1 for advance deaclaration in useState (qty)
   };
   const decrementQty = () => {
     if (qty > 0) {
       setQty(qty - 1);
+      data.qty = qty-1;
+    }
+    else{
+      alert("Quantity already 0")
     }
   };
   const handleQtyChange = (event:any) => {
     const newQty = parseInt(event.target.value);
     if (!isNaN(newQty)) {
       setQty(newQty);
+      data.qty=newQty;
     }
   };
 
   return (
-    <div className="flex justify-between max-w-[448px] px-4">
+    <div className="flex justify-between max-w-[448px] px-4 mt-2">
       <input className="checked:bg-black-primary" type="checkbox" />
       <div className="flex items-start space-x-3">
         {/* image  */}
         <div className="w-[102px] h-[136px] relative">
-          <Image src="" alt="" fill className="" />
+          <Image src={data?.img}alt="" fill className="" />
         </div>
         {/* product details  */}
         <div>
@@ -41,10 +49,10 @@ export const CartProduct = () => {
                 href={"#"}
               >
                 <span className="flex-grow text-[14px] font-normal leading-[20px] truncate text-left text-[#31353C] max-w-[245px]">
-                  Products name goes here and long text will be truncate
+                {data?.text}
                 </span>
               </Link>
-              <button className="p-0">
+              <button className="p-0" onClick={()=>removeFromCart(index)}>
                 <i className="fa-regular fa-trash-can" />
               </button>
             </div>
@@ -52,10 +60,10 @@ export const CartProduct = () => {
 
           <div className="flex justify-start items-center flex-grow-0 flex-shrink-0 relative gap-2 notranslate my-2">
             <p className="flex-grow-0 flex-shrink-0 text-base leading-[24px] font-bold text-left text-[#31353C]">
-              $43.34
+            {data?.salePrice}
             </p>
             <p className="flex-grow-0 flex-shrink-0 text-[14px] leading-[19px] line-through text-left text-[#a1a5ab]">
-              $50.99
+            {data?.price}
             </p>
           </div>
 
@@ -74,9 +82,7 @@ export const CartProduct = () => {
                     <Image
                       alt=""
                       fill
-                      src={
-                        "https://sstorage.clearance.ae/production/storage/product/2023-08-04-64ccaafb5233f.png"
-                      }
+                      src={data?.img}
                     />
                   </span>
                 </div>
@@ -113,23 +119,23 @@ export const CartProduct = () => {
 
           <div className="flex items-center justify-between mt-2">
             <div className="flex items-center justify-between border rounded-lg divide-x-2">
-              <button className="w-[35px]" onClick={decrementQty}>
+              <button className="w-[35px]" onClick={()=>decreaseQuantity(index)}>
                 -
               </button>
               <input
                 className="bg-transparent w-[45px] text-center pl-2"
                 type="number"
-                value={qty}
+                value={data.qty}
                 onChange={handleQtyChange}
               />
-              <button className="w-[35px]" onClick={incrementQty}>
+              <button className="w-[35px]" onClick={()=>increaseQuantity(index)}>
                 +
               </button>
             </div>
 
             <div>
               Total:{" "}
-              <strong className="text-[16px] leading-[18px]">$86.68</strong>
+              <strong className="text-[16px] leading-[18px]">${data?.salePrice ? (data?.salePrice * data.qty).toFixed(2) : (data?.price*data.qty).toFixed(2)}</strong>
             </div>
           </div>
         </div>

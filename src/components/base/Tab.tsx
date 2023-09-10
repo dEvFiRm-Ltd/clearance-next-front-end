@@ -12,7 +12,6 @@ export type tabProps={
 }
 
 const Tab = ({tabb}:any) => {
-  console.log("tabs data",tabb)
   const [activeTab, setActiveTab] = useState(0);
   const tabs = ["S(6-8)", "M(10)", "L(12)","XL(14)","XXL(16)"];  
   const measurementContent = [

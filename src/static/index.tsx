@@ -466,7 +466,7 @@ export const FlashSaleData: flashSaleCardProps[] = [
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-05-647df9a609520.avif",
     text: "Long sleeve crew neck loose leo....",
-    salePrice: "71.38",
+    salePrice: "41.38",
     price: "93.99",
      variant: [
     { size: ["S(38-40)", "M(42-44)", "L(44-46)"] },
@@ -477,7 +477,7 @@ export const FlashSaleData: flashSaleCardProps[] = [
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-05-647e055d5a6d0.avif",
     text: "Long sleeve crew neck loose leo....",
-    salePrice: "71.38",
+    salePrice: "91.38",
     price: "93.99",
      variant: [
     { size: ["S(38-40)", "M(42-44)", "L(44-46)"] },
@@ -489,7 +489,7 @@ export const FlashSaleData: flashSaleCardProps[] = [
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e4e025a3b7.avif",
     discount: "20",
     text: "Long sleeve crew neck loose leo....",
-    salePrice: "71.38",
+    salePrice: "11.38",
     price: "93.99",
      variant: [
     { size: ["S(38-40)", "M(42-44)", "L(44-46)"] },
@@ -500,7 +500,7 @@ export const FlashSaleData: flashSaleCardProps[] = [
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e4e057337b.avif",
     text: "Long sleeve crew neck loose leo....",
-    salePrice: "71.38",
+    salePrice: "31.38",
     price: "93.99",
      variant: [
     { size: ["S(38-40)", "M(42-44)", "L(44-46)"] },
@@ -511,8 +511,8 @@ export const FlashSaleData: flashSaleCardProps[] = [
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e58925291c.avif",
     text: "Long sleeve crew neck loose leo....",
-    salePrice: "71.38",
-    price: "93.99",
+    salePrice: "45.38",
+    price: "91.99",
      variant: [
     { size: ["S(38-40)", "M(42-44)", "L(44-46)"] },
     { fit: ["plus", "regular"] },
@@ -523,7 +523,7 @@ export const FlashSaleData: flashSaleCardProps[] = [
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e5e6cdbe66.avif",
     discount: "20",
     text: "Long sleeve crew neck loose leo....",
-    salePrice: "71.38",
+    salePrice: "82.38",
     price: "93.99",
      variant: [
     { size: ["S(38-40)", "M(42-44)", "L(44-46)"] },
@@ -534,7 +534,7 @@ export const FlashSaleData: flashSaleCardProps[] = [
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-05-647df9a609520.avif",
     text: "Long sleeve crew neck loose leo....",
-    salePrice: "71.38",
+    salePrice: "32.38",
     price: "93.99",
      variant: [
     { size: ["S(38-40)", "M(42-44)", "L(44-46)"] },
@@ -569,7 +569,7 @@ export const FlashSaleData: flashSaleCardProps[] = [
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e4e057337b.avif",
     text: "Long sleeve crew neck loose leo....",
     salePrice: "71.38",
-    price: "93.99",
+    price: "4.99",
      variant: [
     { size: ["S(38-40)", "M(42-44)", "L(44-46)"] },
     { fit: ["plus", "regular"] },
@@ -580,7 +580,7 @@ export const FlashSaleData: flashSaleCardProps[] = [
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e58925291c.avif",
     text: "Long sleeve crew neck loose leo....",
     salePrice: "71.38",
-    price: "93.99",
+    price: "4.99",
      variant: [
     { size: ["S(38-40)", "M(42-44)", "L(44-46)"] },
     { fit: ["plus", "regular"] },
@@ -592,7 +592,7 @@ export const FlashSaleData: flashSaleCardProps[] = [
     discount: "20",
     text: "Long sleeve crew neck loose leo....",
     salePrice: "71.38",
-    price: "93.99",
+    price: "7.99",
      variant: [
     { size: ["S(38-40)", "M(42-44)", "L(44-46)"] },
     { fit: ["plus", "regular"] },
@@ -605,7 +605,7 @@ export const dressListData: flashSaleCardProps[] = [
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-05-647df9a609520.avif",
     text: "Long sleeve crew neck loose leo....",
     salePrice: "71.38",
-    price: "93.99",
+    price: "112.99",
     review: "10",
   },
   {

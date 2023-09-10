@@ -8,7 +8,7 @@ import Slider from "react-slick";
 import CartModal from "../modal/CartModal";
 
 const FlashSale = () => {
-  const [modal, setModal] = useState(false)
+  const [modals, setModals] = useState(false)
   const [modalData, setModalData] = useState<any>();
   const sliderRef = createRef<Slider>();
   const settings = {
@@ -112,7 +112,7 @@ const FlashSale = () => {
                 salePrice={item.salePrice}
                 price={item.price}
                 discount={item.discount}                
-                actionCb={()=>{setModalData(item);setModal(!modal);}}
+                actionCb={()=>{setModalData(item);setModals(!modals);}}
                 groupClass="w-40 md:w-52 lg:w-60 3xl:w-[260px] p-2"
               />
             ))}
@@ -120,8 +120,8 @@ const FlashSale = () => {
         </div>
       </div>
       <CartModal
-        closeStateCb={() => setModal(false)}
-        viewState={modal}
+        closeStateCb={() => {setModals(false); console.log("closeStateCb")}}
+        viewState={modals}
         data={modalData}
       />
     </section>
