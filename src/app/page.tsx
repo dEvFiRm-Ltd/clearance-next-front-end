@@ -33,6 +33,13 @@ export default async function Home() {
   const footerBannerArr: Array<any> = footerBannerResponse.data.footer_banners || [];
 
 
+  const flashDealsApiCall = await fetch(env.BASE_URL + "api/v10/web/home/flashDeals", {
+    next: { revalidate: 10 },
+  });
+  const flashDealsResponse = await flashDealsApiCall.json();
+  const flashDealsArr: Array<any> = flashDealsResponse.data.flash_deals_products || [];
+
+
 
   return (
     <>
@@ -47,7 +54,7 @@ export default async function Home() {
         ))}
       </div>
       <BestSeller imgArr={footerBannerArr} />
-      <FlashSale />
+      <FlashSale flashSaleArr={flashDealsArr}/>
       <DenimShop />
       <div className="container flex flex-col items-center sm:flex-row sm:flex-wrap md:flex-nowrap justify-center gap-y-5 md:gap-y-0 sm:gap-x-3 lg:gap-x-4 2xl:gap-x-5 3xl:gap-x-[23px] mt-[30px] ">
         {dressTwo.map((item: dressType, id: number) => (

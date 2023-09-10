@@ -1,13 +1,16 @@
 "use client";
-import React, { createRef, useState } from "react";
+import React, { FC, createRef, useState } from "react";
 import Title from "../common/Title";
 import FlashSaleCard from "../common/FlashSaleCard";
 import { FlashSaleData } from "@/static";
 import { flashSaleCardProps } from "@/utils/type";
 import Slider from "react-slick";
 import CartModal from "../modal/CartModal";
+type flashSaleProps={
+  flashSaleArr:any
+}
 
-const FlashSale = () => {
+const FlashSale:FC<flashSaleProps> = ({flashSaleArr}) => {
   const [modal, setModal] = useState(false)
   const sliderRef = createRef<Slider>();
   const settings = {
@@ -103,13 +106,13 @@ const FlashSale = () => {
             ref={sliderRef}
             {...settings}
           >
-            {FlashSaleData.map((item: flashSaleCardProps, id: number) => (
+            {flashSaleArr.map((item:any, id: number) => (
               <FlashSaleCard
-                key={id}
-                img={item.img}
-                text={item.text}
-                salePrice={item.salePrice}
-                price={item.price}
+                key={item.id}
+                img={item.thumbnail}
+                text={item.name}
+                salePrice={item.offer_price_formatted}
+                price={item.price_formatted}
                 discount={item.discount}                
                 actionCb={()=>setModal(!modal)}
                 groupClass="w-40 md:w-52 lg:w-60 3xl:w-[260px] p-2"

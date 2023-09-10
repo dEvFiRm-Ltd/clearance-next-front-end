@@ -755,6 +755,7 @@ export const relatedProductData: flashSaleCardProps[] = [
     salePrice: "71.38",
     price: "93.99",
     review: "10",
+    text2:'Limited offer'
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e4e025a3b7.avif",

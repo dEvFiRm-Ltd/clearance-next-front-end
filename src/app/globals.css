@@ -40,7 +40,9 @@ body {
 .slick-prev {
   display: none !important;
 }
-
+.slick-track{
+  padding: 10px 0px;
+}
 /* Styles for the link on hover */
 .hover-link::before {
   content: "";

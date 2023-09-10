@@ -6,12 +6,12 @@ type bestSellerPropsType = {
 const BestSeller: FC<bestSellerPropsType> = ({ imgArr }) => {
   return (
     <div className="md:container my-8 flex flex-row justify-center gap-x-2.5">
-      {imgArr.map((item: any) => (
+      {imgArr.slice(0,2).map((item: any) => (
         <div
           key={item.id}
           className="w-[48%] h-48 md:h-[300px] lg:h-[450px] xl:h-[550px] 2xl:h-[670px] 3xl:h-[818px] relative flex flex-col items-center justify-center"
         >
-          <Image src={'https://sstorage.clearance.ae/production/storage/footer-banners/'+item.photo} alt="image" fill className="object-cover" />
+          <Image src={item.photo} alt="image" fill className="object-cover" />
           <h1 className="text-xl md:text-2xl lg:text-3xl 2xl:text-4xl 3xl:text-5xl font-bold text-white mb-4 2xl:mb-8 3xl:mb-10 z-10 uppercase">
             Best Seller
           </h1>
