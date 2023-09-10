@@ -18,7 +18,6 @@ export default async function Home() {
   const bannerArr: Array<any> = bannerResponse.data.main_banners || [];
 
 
-
   const categoryApiCall = await fetch(env.BASE_URL + "api/v10/web/home/categories", {
     next: { revalidate: 10 },
   });
