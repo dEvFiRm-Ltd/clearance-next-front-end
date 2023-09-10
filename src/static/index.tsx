@@ -362,37 +362,31 @@ export const dress: dressType[] = [
     image:
       "https://backend-live.clearance.ae/storage/category/2023-08-29-64edbb44c865c.png",
     title: "Men (211)",
-    url: "",
   },
   {
     image:
       "https://backend-live.clearance.ae/storage/category/2023-08-29-64edbb3f240cb.png",
     title: "Women (144)",
-    url: "",
   },
   {
     image:
       "https://backend-live.clearance.ae/storage/category/2023-08-29-64edbb33994a8.png",
     title: "Girls (47)",
-    url: "",
   },
   {
     image:
       "https://backend-live.clearance.ae/storage/category/2023-08-29-64edbb3870a9f.png",
     title: "Boys (71)",
-    url: "",
   },
   {
     image:
       "https://backend-live.clearance.ae/storage/category/2023-07-16-64b39505e7236.png",
     title: "Pet lovers (51)",
-    url: "",
   },
   {
     image:
       "https://backend-live.clearance.ae/storage/category/2023-08-29-64edbb50e3f41.png",
     title: "Home Items (28)",
-    url: "",
   },
 ];
 export const handPickedData: flashSaleCardProps[] = [
@@ -481,198 +475,138 @@ export const FlashSaleData: flashSaleCardProps[] = [
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-05-647df9a609520.avif",
     text: "Long sleeve crew neck loose leo....",
-<<<<<<< HEAD
-    SalePrice: "71.38",
-    Price: "93.99",
-    variant: [
-      { size: ["S(38-40)", "M(42-44)", "L(44-46)"] },
-      { fit: ["plus", "regular"] },
-      { color: ["red", "black", "green"] },
-    ],
-=======
     salePrice: "71.38",
     price: "93.99",
->>>>>>> 04ed93f3016a1d8ea49c92f4e0d8b54ffb0c3288
+     variant: [
+    { size: ["S(38-40)", "M(42-44)", "L(44-46)"] },
+    { fit: ["plus", "regular"] },
+    { color: ["red", "black", "green"] },
+  ],
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-05-647e055d5a6d0.avif",
     text: "Long sleeve crew neck loose leo....",
-<<<<<<< HEAD
-    SalePrice: "71.38",
-    Price: "93.99",
-    variant: [
-      { size: ["S(38-40)", "M(42-44)", "L(44-46)"] },
-      { fit: ["plus", "regular"] },
-      { color: ["red", "black", "green"] },
-    ],
-=======
     salePrice: "71.38",
     price: "93.99",
->>>>>>> 04ed93f3016a1d8ea49c92f4e0d8b54ffb0c3288
+     variant: [
+    { size: ["S(38-40)", "M(42-44)", "L(44-46)"] },
+    { fit: ["plus", "regular"] },
+    { color: ["red", "black", "green"] },
+  ],
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e4e025a3b7.avif",
     discount: "20",
     text: "Long sleeve crew neck loose leo....",
-<<<<<<< HEAD
-    SalePrice: "71.38",
-    Price: "93.99",
-    variant: [
-      { size: ["S(38-40)", "M(42-44)", "L(44-46)"] },
-      { fit: ["plus", "regular"] },
-      { color: ["red", "black", "green"] },
-    ],
-=======
     salePrice: "71.38",
     price: "93.99",
->>>>>>> 04ed93f3016a1d8ea49c92f4e0d8b54ffb0c3288
+     variant: [
+    { size: ["S(38-40)", "M(42-44)", "L(44-46)"] },
+    { fit: ["plus", "regular"] },
+    { color: ["red", "black", "green"] },
+  ],
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e4e057337b.avif",
     text: "Long sleeve crew neck loose leo....",
-<<<<<<< HEAD
-    SalePrice: "71.38",
-    Price: "93.99",
-    variant: [
-      { size: ["S(38-40)", "M(42-44)", "L(44-46)"] },
-      { fit: ["plus", "regular"] },
-      { color: ["red", "black", "green"] },
-    ],
-=======
     salePrice: "71.38",
     price: "93.99",
->>>>>>> 04ed93f3016a1d8ea49c92f4e0d8b54ffb0c3288
+     variant: [
+    { size: ["S(38-40)", "M(42-44)", "L(44-46)"] },
+    { fit: ["plus", "regular"] },
+    { color: ["red", "black", "green"] },
+  ],
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e58925291c.avif",
     text: "Long sleeve crew neck loose leo....",
-<<<<<<< HEAD
-    SalePrice: "71.38",
-    Price: "93.99",
-    variant: [
-      { size: ["S(38-40)", "M(42-44)", "L(44-46)"] },
-      { fit: ["plus", "regular"] },
-      { color: ["red", "black", "green"] },
-    ],
-=======
     salePrice: "71.38",
     price: "93.99",
->>>>>>> 04ed93f3016a1d8ea49c92f4e0d8b54ffb0c3288
+     variant: [
+    { size: ["S(38-40)", "M(42-44)", "L(44-46)"] },
+    { fit: ["plus", "regular"] },
+    { color: ["red", "black", "green"] },
+  ],
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e5e6cdbe66.avif",
     discount: "20",
     text: "Long sleeve crew neck loose leo....",
-<<<<<<< HEAD
-    SalePrice: "71.38",
-    Price: "93.99",
-    variant: [
-      { size: ["S(38-40)", "M(42-44)", "L(44-46)"] },
-      { fit: ["plus", "regular"] },
-      { color: ["red", "black", "green"] },
-    ],
-=======
     salePrice: "71.38",
     price: "93.99",
->>>>>>> 04ed93f3016a1d8ea49c92f4e0d8b54ffb0c3288
+     variant: [
+    { size: ["S(38-40)", "M(42-44)", "L(44-46)"] },
+    { fit: ["plus", "regular"] },
+    { color: ["red", "black", "green"] },
+  ],
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-05-647df9a609520.avif",
     text: "Long sleeve crew neck loose leo....",
-<<<<<<< HEAD
-    SalePrice: "71.38",
-    Price: "93.99",
-    variant: [
-      { size: ["S(38-40)", "M(42-44)", "L(44-46)"] },
-      { fit: ["plus", "regular"] },
-      { color: ["red", "black", "green"] },
-    ],
-=======
     salePrice: "71.38",
     price: "93.99",
->>>>>>> 04ed93f3016a1d8ea49c92f4e0d8b54ffb0c3288
+     variant: [
+    { size: ["S(38-40)", "M(42-44)", "L(44-46)"] },
+    { fit: ["plus", "regular"] },
+    { color: ["red", "black", "green"] },
+  ],
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-05-647e055d5a6d0.avif",
     text: "Long sleeve crew neck loose leo....",
-<<<<<<< HEAD
-    SalePrice: "71.38",
-    Price: "93.99",
-    variant: [
-      { size: ["S(38-40)", "M(42-44)", "L(44-46)"] },
-      { fit: ["plus", "regular"] },
-      { color: ["red", "black", "green"] },
-    ],
-=======
     salePrice: "71.38",
     price: "93.99",
->>>>>>> 04ed93f3016a1d8ea49c92f4e0d8b54ffb0c3288
+     variant: [
+    { size: ["S(38-40)", "M(42-44)", "L(44-46)"] },
+    { fit: ["plus", "regular"] },
+    { color: ["red", "black", "green"] },
+  ],
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e4e025a3b7.avif",
     discount: "20",
     text: "Long sleeve crew neck loose leo....",
-<<<<<<< HEAD
-    SalePrice: "71.38",
-    Price: "93.99",
-    variant: [
-      { size: ["S(38-40)", "M(42-44)", "L(44-46)"] },
-      { fit: ["plus", "regular"] },
-      { color: ["red", "black", "green"] },
-    ],
-=======
     salePrice: "71.38",
     price: "93.99",
->>>>>>> 04ed93f3016a1d8ea49c92f4e0d8b54ffb0c3288
+     variant: [
+    { size: ["S(38-40)", "M(42-44)", "L(44-46)"] },
+    { fit: ["plus", "regular"] },
+    { color: ["red", "black", "green"] },
+  ],
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e4e057337b.avif",
     text: "Long sleeve crew neck loose leo....",
-<<<<<<< HEAD
-    SalePrice: "71.38",
-    Price: "93.99",
-    variant: [
-      { size: ["S(38-40)", "M(42-44)", "L(44-46)"] },
-      { fit: ["plus", "regular"] },
-      { color: ["red", "black", "green"] },
-    ],
-=======
     salePrice: "71.38",
     price: "93.99",
->>>>>>> 04ed93f3016a1d8ea49c92f4e0d8b54ffb0c3288
+     variant: [
+    { size: ["S(38-40)", "M(42-44)", "L(44-46)"] },
+    { fit: ["plus", "regular"] },
+    { color: ["red", "black", "green"] },
+  ],
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e58925291c.avif",
     text: "Long sleeve crew neck loose leo....",
-<<<<<<< HEAD
-    SalePrice: "71.38",
-    Price: "93.99",
-    variant: [
-      { size: ["S(38-40)", "M(42-44)", "L(44-46)"] },
-      { fit: ["plus", "regular"] },
-      { color: ["red", "black", "green"] },
-    ],
-=======
     salePrice: "71.38",
     price: "93.99",
->>>>>>> 04ed93f3016a1d8ea49c92f4e0d8b54ffb0c3288
+     variant: [
+    { size: ["S(38-40)", "M(42-44)", "L(44-46)"] },
+    { fit: ["plus", "regular"] },
+    { color: ["red", "black", "green"] },
+  ],
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e5e6cdbe66.avif",
     discount: "20",
     text: "Long sleeve crew neck loose leo....",
-<<<<<<< HEAD
-    SalePrice: "71.38",
-    Price: "93.99",
-    variant: [
-      { size: ["S(38-40)", "M(42-44)", "L(44-46)"] },
-      { fit: ["plus", "regular"] },
-      { color: ["red", "black", "green"] },
-    ],
-=======
     salePrice: "71.38",
     price: "93.99",
->>>>>>> 04ed93f3016a1d8ea49c92f4e0d8b54ffb0c3288
+     variant: [
+    { size: ["S(38-40)", "M(42-44)", "L(44-46)"] },
+    { fit: ["plus", "regular"] },
+    { color: ["red", "black", "green"] },
+  ],
   },
 ];
 export const dressListData: flashSaleCardProps[] = [
@@ -763,6 +697,7 @@ export const dressListData: flashSaleCardProps[] = [
     price: "93.99",
     review:"10",
   },
+ 
 ];
 export const productDetailsData: flashSaleCardProps[] = [
   {
@@ -822,21 +757,18 @@ export const dressTwo: dressType[] = [
       "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-08-26-64e9f7a239f4d.png",
     title: "shop now",
     heading: "FW 2023 Trends",
-    url: "",
   },
   {
     image:
       "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-08-25-64e8a595487f2.png",
     title: "shop now",
     heading: "Influence Recommendation",
-    url: "",
   },
   {
     image:
       "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647ef2187e4fa.avif",
     title: "shop now",
     heading: "Spacial Events",
-    url: "",
   },
 ];
 export const verticalImage = [
@@ -928,7 +860,7 @@ export const filterData: recommendType[] = [
   },
 ];
 
-export const measurementContent:tabTypes[] = [
+export const measurementContent = [
   {shoulder:'16.9',bust:'40.2',sleeveLength:'24',length:'21.1',hemWidth:'29.9'},
   {shoulder:'18.9',bust:'41.2',sleeveLength:'25',length:'22.1',hemWidth:'30.9'},
   {shoulder:'19.9',bust:'42.2',sleeveLength:'26',length:'23.1',hemWidth:'31.9'},
