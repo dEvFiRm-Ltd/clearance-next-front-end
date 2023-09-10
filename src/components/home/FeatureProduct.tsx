@@ -1,10 +1,14 @@
-import React, { FC } from "react";
+'use client'
+import React, { FC, useState } from "react";
 import FlashSaleCard from "../common/FlashSaleCard";
+import CartModal from "../modal/CartModal";
 type featureProductProps={
   featureProductArr:any
   title:string
 }
 const FeatureProduct:FC<featureProductProps> = ({featureProductArr,title}) => {
+  const [modals, setModals] = useState(false)
+  const [modalData, setModalData] = useState<any>();
   return (
     <section className="py-7">
       <div className="container flex flex-col justify-start items-center gap-y-6">
@@ -22,6 +26,7 @@ const FeatureProduct:FC<featureProductProps> = ({featureProductArr,title}) => {
               text={item.name}
               text2={item.text2}
               discount={item.discount}
+              actionCb={()=>{setModalData(item);setModals(!modals);}}
               groupClass="w-40 sm:w-52 md:w-60 lg:w-80 xl:w-[390px] 2xl:w-[427px]"
               imgClass="!h-52 sm:!h-[278px] md:!h-80 lg:!h-[400px] xl:!h-[480px] 2xl:!h-[570px]"
             />
@@ -31,6 +36,11 @@ const FeatureProduct:FC<featureProductProps> = ({featureProductArr,title}) => {
           view more
         </button>
       </div>
+      <CartModal
+        closeStateCb={() => {setModals(false)}}
+        viewState={modals}
+        data={modalData}
+      />
     </section>
   );
 };

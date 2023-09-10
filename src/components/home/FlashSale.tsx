@@ -123,7 +123,7 @@ const FlashSale:FC<flashSaleProps> = ({flashSaleArr}) => {
         </div>
       </div>
       <CartModal
-        closeStateCb={() => {setModals(false); console.log("closeStateCb")}}
+        closeStateCb={() => {setModals(false)}}
         viewState={modals}
         data={modalData}
       />

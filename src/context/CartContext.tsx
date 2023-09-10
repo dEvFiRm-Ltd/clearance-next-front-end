@@ -1,5 +1,5 @@
 "use client";
-import React, { SetStateAction, createContext, useContext, useEffect, useState } from "react";
+import React, { FC, ReactNode, SetStateAction, createContext, useContext, useEffect, useState } from "react";
 
 type Product = {
   img: string;
@@ -45,7 +45,9 @@ export const useCart = () => {
   return useContext(CartContext);
 };
 
-export const CartProvider: React.FC = ({ children }: any) => {
+type CartProviderProps={children:ReactNode}
+
+export const CartProvider:FC<CartProviderProps> = ({ children } ) => {
   const [cartItem, setCartItem] = useState<Product[]>([]);
   const [totalPrice, setTotalPrice] = useState<number>(0);
   const [isCartOpen, setIsCartOpen] = useState<boolean>(false);
