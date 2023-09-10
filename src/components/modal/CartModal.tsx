@@ -7,7 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import SelectField, { dropDowns } from "../base/SelectField";
 import Button from "../base/Button";
-import { sizeDropDown } from "@/static";
+import { measurementContent, sizeDropDown } from "@/static";
 import Tab from "../base/Tab";
 import GetMyDiscount from "./GetMyDiscount";
 

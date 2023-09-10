@@ -1,4 +1,5 @@
 import { dropDowns } from "@/components/base/SelectField";
+import { tabTypes } from "@/components/base/Tab";
 import { recommendType } from "@/components/categoryListing/Recommend";
 import { dressType } from "@/components/common/DressCard";
 import {
@@ -285,6 +286,7 @@ export const sizeDropDown: dropDowns[] = [
   { title: 'es'},
   { title: 'eur'},
 ]
+export const tabs = ["S(6-8)", "M(10)", "L(12)","XL(14)","XXL(16)"]; 
 export const footerItems: footerProps[] = [
   {
     heading: "COMPANY INFO",
@@ -399,86 +401,87 @@ export const handPickedData: flashSaleCardProps[] = [
     preSaleImgSticker: "",
     discount: "20",
     text: "Urban Abstract Graphic Long Sleeve T-Shirt With Scarf",
-    SalePrice: "42.55",
+    salePrice: "42.55",
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-08-25-64e899e0cf485.png",
     preSaleImgSticker: "",
     discount: "20",
     text: "Urban Abstract Graphic Long Sleeve T-Shirt With Scarf",
-    SalePrice: "42.55",
+    salePrice: "42.55",
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-08-25-64e8925d19968.png",
     preSaleImgSticker: "",
     text: "Urban Abstract Graphic Long Sleeve T-Shirt With Scarf",
-    SalePrice: "42.55",
+    salePrice: "42.55",
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-08-04-64ccaafb966f1.png",
     preSaleImgSticker: "",
     text: "Urban Abstract Graphic Long Sleeve T-Shirt With Scarf",
-    SalePrice: "42.55",
+    salePrice: "42.55",
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-08-04-64ccd1ad8901c.png",
     preSaleImgSticker: "",
     discount: "20",
     text: "Urban Abstract Graphic Long Sleeve T-Shirt With Scarf",
-    SalePrice: "42.55",
+    salePrice: "42.55",
     text2: "Pre-sale items will be shipped separately",
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-08-29-64ede7ac360a3.png",
     preSaleImgSticker: "",
     text: "Urban Abstract Graphic Long Sleeve T-Shirt With Scarf",
-    SalePrice: "42.55",
+    salePrice: "42.55",
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-08-26-64e9b8aabe4eb.png",
     preSaleImgSticker: "",
     discount: "20",
     text: "Urban Abstract Graphic Long Sleeve T-Shirt With Scarf",
-    SalePrice: "42.55",
+    salePrice: "42.55",
     text2: "Pre-sale items will be shipped separately",
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-08-25-64e89fdbe38f8.png",
     preSaleImgSticker: "",
     text: "Urban Abstract Graphic Long Sleeve T-Shirt With Scarf",
-    SalePrice: "42.55",
+    salePrice: "42.55",
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-08-25-64e84a2c60ec4.png",
     preSaleImgSticker: "",
     discount: "20",
     text: "Urban Abstract Graphic Long Sleeve T-Shirt With Scarf",
-    SalePrice: "42.55",
+    salePrice: "42.55",
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-08-26-64ea0b2c0f150.png",
     preSaleImgSticker: "",
     text: "Urban Abstract Graphic Long Sleeve T-Shirt With Scarf",
-    SalePrice: "42.55",
+    salePrice: "42.55",
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-08-26-64ea02be373f2.png",
     preSaleImgSticker: "",
     discount: "20",
     text: "Urban Abstract Graphic Long Sleeve T-Shirt With Scarf",
-    SalePrice: "42.55",
+    salePrice: "42.55",
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-08-18-64df1dac45bac.png",
     preSaleImgSticker: "",
     text: "Urban Abstract Graphic Long Sleeve T-Shirt With Scarf",
-    SalePrice: "42.55",
+    salePrice: "42.55",
   },
 ];
 export const FlashSaleData: flashSaleCardProps[] = [
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-05-647df9a609520.avif",
     text: "Long sleeve crew neck loose leo....",
+<<<<<<< HEAD
     SalePrice: "71.38",
     Price: "93.99",
     variant: [
@@ -486,10 +489,15 @@ export const FlashSaleData: flashSaleCardProps[] = [
       { fit: ["plus", "regular"] },
       { color: ["red", "black", "green"] },
     ],
+=======
+    salePrice: "71.38",
+    price: "93.99",
+>>>>>>> 04ed93f3016a1d8ea49c92f4e0d8b54ffb0c3288
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-05-647e055d5a6d0.avif",
     text: "Long sleeve crew neck loose leo....",
+<<<<<<< HEAD
     SalePrice: "71.38",
     Price: "93.99",
     variant: [
@@ -497,11 +505,16 @@ export const FlashSaleData: flashSaleCardProps[] = [
       { fit: ["plus", "regular"] },
       { color: ["red", "black", "green"] },
     ],
+=======
+    salePrice: "71.38",
+    price: "93.99",
+>>>>>>> 04ed93f3016a1d8ea49c92f4e0d8b54ffb0c3288
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e4e025a3b7.avif",
     discount: "20",
     text: "Long sleeve crew neck loose leo....",
+<<<<<<< HEAD
     SalePrice: "71.38",
     Price: "93.99",
     variant: [
@@ -509,10 +522,15 @@ export const FlashSaleData: flashSaleCardProps[] = [
       { fit: ["plus", "regular"] },
       { color: ["red", "black", "green"] },
     ],
+=======
+    salePrice: "71.38",
+    price: "93.99",
+>>>>>>> 04ed93f3016a1d8ea49c92f4e0d8b54ffb0c3288
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e4e057337b.avif",
     text: "Long sleeve crew neck loose leo....",
+<<<<<<< HEAD
     SalePrice: "71.38",
     Price: "93.99",
     variant: [
@@ -520,10 +538,15 @@ export const FlashSaleData: flashSaleCardProps[] = [
       { fit: ["plus", "regular"] },
       { color: ["red", "black", "green"] },
     ],
+=======
+    salePrice: "71.38",
+    price: "93.99",
+>>>>>>> 04ed93f3016a1d8ea49c92f4e0d8b54ffb0c3288
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e58925291c.avif",
     text: "Long sleeve crew neck loose leo....",
+<<<<<<< HEAD
     SalePrice: "71.38",
     Price: "93.99",
     variant: [
@@ -531,11 +554,16 @@ export const FlashSaleData: flashSaleCardProps[] = [
       { fit: ["plus", "regular"] },
       { color: ["red", "black", "green"] },
     ],
+=======
+    salePrice: "71.38",
+    price: "93.99",
+>>>>>>> 04ed93f3016a1d8ea49c92f4e0d8b54ffb0c3288
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e5e6cdbe66.avif",
     discount: "20",
     text: "Long sleeve crew neck loose leo....",
+<<<<<<< HEAD
     SalePrice: "71.38",
     Price: "93.99",
     variant: [
@@ -543,10 +571,15 @@ export const FlashSaleData: flashSaleCardProps[] = [
       { fit: ["plus", "regular"] },
       { color: ["red", "black", "green"] },
     ],
+=======
+    salePrice: "71.38",
+    price: "93.99",
+>>>>>>> 04ed93f3016a1d8ea49c92f4e0d8b54ffb0c3288
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-05-647df9a609520.avif",
     text: "Long sleeve crew neck loose leo....",
+<<<<<<< HEAD
     SalePrice: "71.38",
     Price: "93.99",
     variant: [
@@ -554,10 +587,15 @@ export const FlashSaleData: flashSaleCardProps[] = [
       { fit: ["plus", "regular"] },
       { color: ["red", "black", "green"] },
     ],
+=======
+    salePrice: "71.38",
+    price: "93.99",
+>>>>>>> 04ed93f3016a1d8ea49c92f4e0d8b54ffb0c3288
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-05-647e055d5a6d0.avif",
     text: "Long sleeve crew neck loose leo....",
+<<<<<<< HEAD
     SalePrice: "71.38",
     Price: "93.99",
     variant: [
@@ -565,11 +603,16 @@ export const FlashSaleData: flashSaleCardProps[] = [
       { fit: ["plus", "regular"] },
       { color: ["red", "black", "green"] },
     ],
+=======
+    salePrice: "71.38",
+    price: "93.99",
+>>>>>>> 04ed93f3016a1d8ea49c92f4e0d8b54ffb0c3288
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e4e025a3b7.avif",
     discount: "20",
     text: "Long sleeve crew neck loose leo....",
+<<<<<<< HEAD
     SalePrice: "71.38",
     Price: "93.99",
     variant: [
@@ -577,10 +620,15 @@ export const FlashSaleData: flashSaleCardProps[] = [
       { fit: ["plus", "regular"] },
       { color: ["red", "black", "green"] },
     ],
+=======
+    salePrice: "71.38",
+    price: "93.99",
+>>>>>>> 04ed93f3016a1d8ea49c92f4e0d8b54ffb0c3288
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e4e057337b.avif",
     text: "Long sleeve crew neck loose leo....",
+<<<<<<< HEAD
     SalePrice: "71.38",
     Price: "93.99",
     variant: [
@@ -588,10 +636,15 @@ export const FlashSaleData: flashSaleCardProps[] = [
       { fit: ["plus", "regular"] },
       { color: ["red", "black", "green"] },
     ],
+=======
+    salePrice: "71.38",
+    price: "93.99",
+>>>>>>> 04ed93f3016a1d8ea49c92f4e0d8b54ffb0c3288
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e58925291c.avif",
     text: "Long sleeve crew neck loose leo....",
+<<<<<<< HEAD
     SalePrice: "71.38",
     Price: "93.99",
     variant: [
@@ -599,11 +652,16 @@ export const FlashSaleData: flashSaleCardProps[] = [
       { fit: ["plus", "regular"] },
       { color: ["red", "black", "green"] },
     ],
+=======
+    salePrice: "71.38",
+    price: "93.99",
+>>>>>>> 04ed93f3016a1d8ea49c92f4e0d8b54ffb0c3288
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e5e6cdbe66.avif",
     discount: "20",
     text: "Long sleeve crew neck loose leo....",
+<<<<<<< HEAD
     SalePrice: "71.38",
     Price: "93.99",
     variant: [
@@ -611,96 +669,152 @@ export const FlashSaleData: flashSaleCardProps[] = [
       { fit: ["plus", "regular"] },
       { color: ["red", "black", "green"] },
     ],
+=======
+    salePrice: "71.38",
+    price: "93.99",
+>>>>>>> 04ed93f3016a1d8ea49c92f4e0d8b54ffb0c3288
   },
 ];
 export const dressListData: flashSaleCardProps[] = [
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-05-647df9a609520.avif",
     text: "Long sleeve crew neck loose leo....",
-    SalePrice: "71.38",
-    Price: "93.99",
-    starCount:"10",
+    salePrice: "71.38",
+    price: "93.99",
+    review:"10",
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-05-647e055d5a6d0.avif",
     text: "Long sleeve crew neck loose leo....",
-    SalePrice: "71.38",
-    Price: "93.99",
-    starCount:"10",
+    salePrice: "71.38",
+    price: "93.99",
+    review:"10",
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e4e025a3b7.avif",
     discount: "20",
     text: "Long sleeve crew neck loose leo....",
-    SalePrice: "71.38",
-    Price: "93.99",
-    starCount:"10",
+    salePrice: "71.38",
+    price: "93.99",
+    review:"10",
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e4e057337b.avif",
     text: "Long sleeve crew neck loose leo....",
-    SalePrice: "71.38",
-    Price: "93.99",
-    starCount:"10",
+    salePrice: "71.38",
+    price: "93.99",
+    review:"10",
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e58925291c.avif",
     text: "Long sleeve crew neck loose leo....",
-    SalePrice: "71.38",
-    Price: "93.99",
-    starCount:"10",
+    salePrice: "71.38",
+    price: "93.99",
+    review:"10",
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e5e6cdbe66.avif",
     discount: "20",
     text: "Long sleeve crew neck loose leo....",
-    SalePrice: "71.38",
-    Price: "93.99",
-    starCount:"10",
+    salePrice: "71.38",
+    price: "93.99",
+    review:"10",
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-05-647df9a609520.avif",
     text: "Long sleeve crew neck loose leo....",
-    SalePrice: "71.38",
-    Price: "93.99",
-    starCount:"10",
+    salePrice: "71.38",
+    price: "93.99",
+    review:"10",
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-05-647e055d5a6d0.avif",
     text: "Long sleeve crew neck loose leo....",
-    SalePrice: "71.38",
-    Price: "93.99",
-    starCount:"10",
+    salePrice: "71.38",
+    price: "93.99",
+    review:"10",
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e4e025a3b7.avif",
     discount: "20",
     text: "Long sleeve crew neck loose leo....",
-    SalePrice: "71.38",
-    Price: "93.99",
-    starCount:"10",
+    salePrice: "71.38",
+    price: "93.99",
+    review:"10",
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e4e057337b.avif",
     text: "Long sleeve crew neck loose leo....",
-    SalePrice: "71.38",
-    Price: "93.99",
+    salePrice: "71.38",
+    price: "93.99",
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e58925291c.avif",
     text: "Long sleeve crew neck loose leo....",
-    SalePrice: "71.38",
-    Price: "93.99",
-    starCount:"10",
+    salePrice: "71.38",
+    price: "93.99",
+    review:"10",
   },
   {
     img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e5e6cdbe66.avif",
     discount: "20",
     text: "Long sleeve crew neck loose leo....",
-    SalePrice: "71.38",
-    Price: "93.99",
-    starCount:"10",
+    salePrice: "71.38",
+    price: "93.99",
+    review:"10",
   },
+];
+export const productDetailsData: flashSaleCardProps[] = [
+  {
+    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-05-647df9a609520.avif",
+    text: "Long sleeve crew neck loose leo....",
+    salePrice: "71.38",
+    price: "93.99",
+    review:"10",
+    btnText:'black,s',
+  },
+  {
+    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-05-647e055d5a6d0.avif",
+    text: "Long sleeve crew neck loose leo....",
+    salePrice: "71.38",
+    price: "93.99",
+    review:"10",
+    btnText:'as picture,s',
+  },
+  {
+    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e4e025a3b7.avif",
+    discount: "20",
+    text: "Long sleeve crew neck loose leo....",
+    salePrice: "71.38",
+    price: "93.99",
+    review:"10",
+    btnText:'rose red,s',
+  },
+  {
+    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e4e057337b.avif",
+    text: "Long sleeve crew neck loose leo....",
+    salePrice: "71.38",
+    price: "93.99",
+    review:"10",
+    btnText:'blue,s',
+  },
+  {
+    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e58925291c.avif",
+    text: "Long sleeve crew neck loose leo....",
+    salePrice: "71.38",
+    price: "93.99",
+    review:"10",
+    btnText:'brown,s',
+  },
+  {
+    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e5e6cdbe66.avif",
+    discount: "20",
+    text: "Long sleeve crew neck loose leo....",
+    salePrice: "71.38",
+    price: "93.99",
+    review:"10",
+    btnText:'red,s',
+  },  
 ];
 export const dressTwo: dressType[] = [
   {
@@ -813,3 +927,11 @@ export const filterData: recommendType[] = [
     title: "Dopamine Dresses",
   },
 ];
+
+export const measurementContent:tabTypes[] = [
+  {shoulder:'16.9',bust:'40.2',sleeveLength:'24',length:'21.1',hemWidth:'29.9'},
+  {shoulder:'18.9',bust:'41.2',sleeveLength:'25',length:'22.1',hemWidth:'30.9'},
+  {shoulder:'19.9',bust:'42.2',sleeveLength:'26',length:'23.1',hemWidth:'31.9'},
+  {shoulder:'20.9',bust:'43.2',sleeveLength:'27',length:'24.1',hemWidth:'32.9'},
+  {shoulder:'21.9',bust:'44.2',sleeveLength:'28',length:'25.1',hemWidth:'33.9'},
+]; 

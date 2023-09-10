@@ -3,20 +3,12 @@ import Button from "@/components/base/Button";
 import SelectField, { dropDowns } from "@/components/base/SelectField";
 import Tab from "@/components/base/Tab";
 import StarList from "@/components/common/StarList";
-import { sizeDropDown } from "@/static";
+import FrequentlyBuy from "@/components/product-details-page/FrequentlyBuy";
+import { measurementContent, sizeDropDown } from "@/static";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
-const star = {
-  review: "26 reviews",
-  icon: [
-    "fas fa-star",
-    "fas fa-star",
-    "fas fa-star",
-    "fas fa-star",
-    "fas fa-star",
-  ],
-};
+
 const img = [
   "https://sstorage.clearance.ae/production/storage/product/2023-08-25-64e8a594edd22.png",
   "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-26-649983317be13.png",
@@ -33,10 +25,10 @@ const ProductDetailsPage = () => {
   };
   return (
     <>
-      <section className="mx-auto container pt-6 flex flex-row justify-center gap-10">
+      <section className="mx-auto container pt-6 flex flex-row justify-center gap-10 pb-20">
         <div className="flex flex-row justify-start gap-6">
           <div className="flex flex-col justify-start gap-3">
-            <div className="h-[88px] w-[66px] relative overflow-hidden hover:ring-1 ring-black group">
+            <div className="h-[88px] w-[66px] relative overflow-hidden hover:ring-1 ring-black-primary group">
               <Image
                 fill
                 alt="image"
@@ -44,7 +36,7 @@ const ProductDetailsPage = () => {
                 src="https://sstorage.clearance.ae/production/storage/product/2023-08-25-64e89fdb8efab.png"
               />
             </div>
-            <div className="h-[88px] w-[66px] relative overflow-hidden hover:ring-1 ring-black group">
+            <div className="h-[88px] w-[66px] relative overflow-hidden hover:ring-1 ring-black-primary group">
               <Image
                 fill
                 alt="image"
@@ -52,7 +44,7 @@ const ProductDetailsPage = () => {
                 src="https://sstorage.clearance.ae/production/storage/product/2023-08-25-64e89fdbaec44.png"
               />
             </div>
-            <div className="h-[88px] w-[66px] relative overflow-hidden hover:ring-1 ring-black group">
+            <div className="h-[88px] w-[66px] relative overflow-hidden hover:ring-1 ring-black-primary group">
               <Image
                 fill
                 alt="image"
@@ -60,7 +52,7 @@ const ProductDetailsPage = () => {
                 src="https://sstorage.clearance.ae/production/storage/product/2023-08-25-64e89fdbc3fc3.png"
               />
             </div>
-            <div className="h-[88px] w-[66px] relative overflow-hidden hover:ring-1 ring-black group">
+            <div className="h-[88px] w-[66px] relative overflow-hidden hover:ring-1 ring-black-primary group">
               <Image
                 fill
                 alt="image"
@@ -120,7 +112,7 @@ const ProductDetailsPage = () => {
             <h3 className="text-xl text-black-primary capitalize mb-1">
               Elegant Loosen Flat Collar Plain Outerwear
             </h3>
-            <StarList icon={star.icon} review={star.review} />
+            <StarList review={'26 reviews'} />
           </div>
           {/* pricing  */}
           <div className="flex flex-row justify-start items-center gap-x-2">
@@ -240,7 +232,7 @@ const ProductDetailsPage = () => {
                 btnClass="!w-auto"
               />
             </div>
-            <Tab />
+            <Tab tabArr={measurementContent} />
             {/* sizes area ends  */}
           </div>
           <div className="flex flex-row justify-start gap-x-4 w-full">
@@ -259,6 +251,7 @@ const ProductDetailsPage = () => {
           </div>
         </div>
       </section>
+      <FrequentlyBuy/>
     </>
   );
 };
