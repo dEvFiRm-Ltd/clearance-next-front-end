@@ -9,7 +9,7 @@ type TemplateProps = {
     children: React.ReactNode;
   };
   const Template: React.FC<TemplateProps> = ({ children }) => {
-    console.log("Template");
+
     return (
       <div className="w-full">
         <TopHeader />

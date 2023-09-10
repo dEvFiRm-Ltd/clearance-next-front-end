@@ -8,21 +8,45 @@ import VerticalImage from "@/components/common/VerticalImage";
 import RelatedSearches from "@/components/home/RelatedSearches";
 import HandPicked from "@/components/home/HandPicked";
 import Footer from "@/components/home/Footer";
+import { env } from 'node:process';
 
-export default function Home() {
+export default async function Home() {
+  const bannerApiCall = await fetch(env.BASE_URL + "api/v10/web/home/main-banner", {
+    next: { revalidate: 10 },
+  });
+  const bannerResponse = await bannerApiCall.json();
+  const bannerArr: Array<any> = bannerResponse.data.main_banners || [];
+
+
+
+  const categoryApiCall = await fetch(env.BASE_URL + "api/v10/web/home/categories", {
+    next: { revalidate: 10 },
+  });
+  const categoryResponse = await categoryApiCall.json();
+  const categoryArr: Array<any> = categoryResponse.data.categories || [];
+
+
+  const footerBannerApiCall = await fetch(env.BASE_URL + "api/v10/web/home/footer-banner", {
+    next: { revalidate: 10 },
+  });
+  const footerBannerResponse = await footerBannerApiCall.json();
+  const footerBannerArr: Array<any> = footerBannerResponse.data.footer_banners || [];
+
+
+
   return (
-    <>    
-      <Banner />
+    <>
+      <Banner imgArr={bannerArr} />
       <div className="container flex flex-row justify-center mt-[30px] gap-4 md:gap-5 xl:gap-6 3xl:gap-7 flex-wrap">
-        {dress.map((item: dressType, id: number) => (
+        {categoryArr.map((item: any) => (
           <DressCard
-            key={id}
-            image={item.image}
-            title={item.title}
+            key={item.id}
+            image={item.icon}
+            title={item.name}            
           />
         ))}
       </div>
-      <BestSeller />
+      <BestSeller imgArr={footerBannerArr} />
       <FlashSale />
       <DenimShop />
       <div className="container flex flex-col items-center sm:flex-row sm:flex-wrap md:flex-nowrap justify-center gap-y-5 md:gap-y-0 sm:gap-x-3 lg:gap-x-4 2xl:gap-x-5 3xl:gap-x-[23px] mt-[30px] ">
@@ -57,8 +81,7 @@ export default function Home() {
         ))}
       </div>
       <HandPicked />
-      <RelatedSearches /> 
-      {/* <Footer/>     */}
+      <RelatedSearches />
     </>
   );
 }

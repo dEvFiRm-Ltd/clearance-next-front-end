@@ -4,11 +4,11 @@ import Link from "next/link";
 import React, { FC, useState } from "react";
 import GoogleBtn from "./GoogleButton";
 
-const FooterPart: FC<footerProps> = ({ itemArr, heading, headingClass, socialArr,contactUsText,contactUsArr,hasBtn }) => {
+const FooterPart: FC<footerProps> = ({ itemArr, heading, headingClass, socialArr,contactUsText,contactUsArr,hasBtn ,groupClass=''}) => {
   const [isExpanded, setIsExpanded] = useState(false);
   return (
 
-    <div className="lg:w-[32%]">
+    <div className={groupClass}>
 
       <div className='lg:hidden w-full border-b '>
         <button

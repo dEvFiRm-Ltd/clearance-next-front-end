@@ -18,17 +18,20 @@ const FlashSaleCard: FC<flashSaleCardProps|any> = ({
   groupClass,
   imgClass,
   btnClass,
+  colorImg,
   actionCb,
   check = false,
 }) => {
   const [selectSize, setSelectSize] = useState(false);
+  const [selectedColorIndex, setSelectedColorIndex] = useState<number | null>(0);
+  const selectedImg = colorImg && selectedColorIndex !== null ? colorImg[selectedColorIndex] : img;
   return (
     <div className={`boxShadow relative ${groupClass}`}>
       <div
         className={`w-full h-52 md:h-[278px] lg:h-80 3xl:h-[324px] overflow-hidden relative group ${imgClass}`}
       >
         <Image
-          src={img}
+          src={selectedImg}
           alt="img"
           fill
           className="group-hover:transform group-hover:scale-110 transition-transform duration-300"
@@ -72,6 +75,25 @@ const FlashSaleCard: FC<flashSaleCardProps|any> = ({
           <span className="px-1 rounded-sm text-red-400 bg-[#FEF2F2] font-normal !font-[Helvetica] text-xs">
             {text2}
           </span>
+        )}
+        {colorImg && (
+          <div className="flex justify-start gap-x-1">
+            {colorImg.map((item: string, id: number) => (
+              <div
+                key={id}
+                className={`h-6 w-6 flex justify-center items-center border  rounded-full bg-white ${
+                  id === selectedColorIndex
+                    ? "border-black-primary"
+                    : "border-transparent"
+                }`}
+                onClick={() => setSelectedColorIndex(id)}
+              >
+                <span className="h-[18px] w-[18px] rounded-full overflow-hidden relative">
+                  <Image alt="" fill src={item} />
+                </span>
+              </div>
+            ))}
+          </div>
         )}
         {review && <StarList review={review} />}
       </div>
