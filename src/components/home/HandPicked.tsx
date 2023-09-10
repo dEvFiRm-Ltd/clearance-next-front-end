@@ -1,9 +1,11 @@
-import React from "react";
+import React, { FC } from "react";
 import FlashSaleCard from "../common/FlashSaleCard";
 import { handPickedData } from "@/static";
 import { flashSaleCardProps } from "@/utils/type";
-
-const HandPicked = () => {
+type handPickedProps={
+  handPickedArr:any
+}
+const HandPicked:FC<handPickedProps> = ({handPickedArr}) => {
   return (
     <section className="py-7">
       <div className="container flex flex-col justify-start items-center gap-y-6">
@@ -11,14 +13,14 @@ const HandPicked = () => {
           handpicked for you
         </h3>
         <div className="flex flex-row justify-center gap-2.5 md:gap-4 lg:gap-5 xl:gap-6 flex-wrap !items-start">
-          {handPickedData.map((item: flashSaleCardProps, id: number) => (
+          {handPickedArr.map((item:any, id: number) => (
             <FlashSaleCard
               key={id}
-              img={item.img}
+              img={item.thumbnail}
               preSaleImgSticker={item.preSaleImgSticker}
-              salePrice={item.salePrice}
-              price={item.price}
-              text={item.text}
+              salePrice={item.price_formatted}
+              price={item.offer_price_formatted}
+              text={item.name}
               text2={item.text2}
               discount={item.discount}
               groupClass="w-40 sm:w-52 md:w-60 lg:w-80 xl:w-[390px] 2xl:w-[427px]"

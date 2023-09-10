@@ -40,6 +40,14 @@ export default async function Home() {
   const flashDealsArr: Array<any> = flashDealsResponse.data.flash_deals_products || [];
 
 
+  const featureProductApiCall = await fetch(env.BASE_URL + "api/v10/web/home/feature-product", {
+    next: { revalidate: 10 },
+  });
+  const featureProductResponse = await featureProductApiCall.json();
+  const featureProductArr: Array<any> = featureProductResponse.data.featured_products || [];
+  console.log(" featureProductArr:", featureProductArr)
+
+
 
   return (
     <>
@@ -87,7 +95,7 @@ export default async function Home() {
           />
         ))}
       </div>
-      <HandPicked />
+      <HandPicked handPickedArr={featureProductArr} />
       <RelatedSearches />
     </>
   );
