@@ -46,6 +46,55 @@ export default async function Home() {
   const featureProductArr: Array<any> = featureProductResponse.data.featured_products || [];
 
 
+  const supermarketDealsApiCall = await fetch(env.BASE_URL + "api/v10/web/home/products?category_slug=Supermarket-Deals_43&offset=1&limit=4", {
+    next: { revalidate: 10 },
+  });
+  const supermarketDealsResponse = await supermarketDealsApiCall.json();
+  const supermarketDealsArr: Array<any> = supermarketDealsResponse.data.products || [];
+
+
+  const womenApiCall = await fetch(env.BASE_URL + "api/v10/web/home/products?category_slug=women_1&offset=1&limit=4", {
+    next: { revalidate: 10 },
+  });
+  const womenResponse = await womenApiCall.json();
+  const womenArr: Array<any> = womenResponse.data.products || [];
+
+
+  const menApiCall = await fetch(env.BASE_URL + "api/v10/web/home/products?category_slug=Men_36&offset=1&limit=4", {
+    next: { revalidate: 10 },
+  });
+  const menResponse = await menApiCall.json();
+  const menArr: Array<any> = menResponse.data.products || [];
+
+
+  const girlApiCall = await fetch(env.BASE_URL + "api/v10/web/home/products?category_slug=Girls_164&offset=1&limit=4", {
+    next: { revalidate: 10 },
+  });
+  const girlResponse = await girlApiCall.json();
+  const girlArr: Array<any> = girlResponse.data.products || [];
+
+
+  const boysApiCall = await fetch(env.BASE_URL + "api/v10/web/home/products?category_slug=Boys_165&offset=1&limit=4", {
+    next: { revalidate: 10 },
+  });
+  const boysResponse = await boysApiCall.json();
+  const boysArr: Array<any> = boysResponse.data.products || [];
+
+
+  const sportsOutdoorsApiCall = await fetch(env.BASE_URL + "api/v10/web/home/products?category_slug=Sports-Outdoors_299&offset=1&limit=4", {
+    next: { revalidate: 10 },
+  });
+  const sportsOutdoorsResponse = await sportsOutdoorsApiCall.json();
+  const sportsOutdoorsArr: Array<any> = sportsOutdoorsResponse.data.products || [];
+
+
+  const wholeSaleApiCall = await fetch(env.BASE_URL + "api/v10/web/home/products?category_slug=wholesale_323&offset=1&limit=4", {
+    next: { revalidate: 10 },
+  });
+  const wholeSaleResponse = await wholeSaleApiCall.json();
+  const wholeSaleArr: Array<any> = wholeSaleResponse.data.products || [];
+
+
 
   return (
     <>
@@ -55,7 +104,8 @@ export default async function Home() {
           <DressCard
             key={item.id}
             image={item.icon}
-            title={item.name}            
+            title={item.name}
+            totalProduct={item.total_product}            
           />
         ))}
       </div>
@@ -93,7 +143,14 @@ export default async function Home() {
           />
         ))}
       </div>
-      <FeatureProduct featureProductArr={featureProductArr} />
+      <FeatureProduct featureProductArr={featureProductArr} title="Feature Product" />
+      <FeatureProduct featureProductArr={supermarketDealsArr} title="Supermarket Deals" />
+      <FeatureProduct featureProductArr={womenArr} title="Women" />
+      <FeatureProduct featureProductArr={menArr} title="Man" />
+      <FeatureProduct featureProductArr={girlArr} title="Girls" />
+      <FeatureProduct featureProductArr={boysArr} title="Boys" />
+      <FeatureProduct featureProductArr={sportsOutdoorsArr} title="Sports outdoors" />
+      <FeatureProduct featureProductArr={wholeSaleArr} title="wholesale" />
     </>
   );
 }

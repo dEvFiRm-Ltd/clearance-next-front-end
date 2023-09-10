@@ -2,13 +2,14 @@ import React, { FC } from "react";
 import FlashSaleCard from "../common/FlashSaleCard";
 type featureProductProps={
   featureProductArr:any
+  title:string
 }
-const FeatureProduct:FC<featureProductProps> = ({featureProductArr}) => {
+const FeatureProduct:FC<featureProductProps> = ({featureProductArr,title}) => {
   return (
     <section className="py-7">
       <div className="container flex flex-col justify-start items-center gap-y-6">
         <h3 className="text-base lg:text-lg 2xl:text-xl font-bold text-center text-black-primary uppercase">
-          Feature Product 
+           {title}
         </h3>
         <div className="flex flex-row justify-center gap-2.5 md:gap-4 lg:gap-5 xl:gap-6 flex-wrap !items-start">
           {featureProductArr.map((item:any, id: number) => (
