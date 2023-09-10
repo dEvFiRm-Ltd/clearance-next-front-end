@@ -1,7 +1,7 @@
 "use client";
 import { flashSaleCardProps } from "@/utils/type";
 import Image from "next/image";
-import React, { FC, useState } from "react";
+import React, { FC, useEffect, useRef, useState } from "react";
 import StarList from "./StarList";
 import SizeSelectDropDown from "./SizeSelectDropDown";
 
@@ -25,6 +25,21 @@ const FlashSaleCard: FC<flashSaleCardProps> = ({
   const [selectSize, setSelectSize] = useState(false);
   const [selectedColorIndex, setSelectedColorIndex] = useState<number | null>(0);
   const selectedImg = colorImg && selectedColorIndex !== null ? colorImg[selectedColorIndex] : img;
+  const sizeSelectRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event:MouseEvent) => {
+      if (sizeSelectRef.current && !sizeSelectRef.current.contains(event.target as Node)) {
+        setSelectSize(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
   return (
     <div className={`boxShadow relative ${groupClass}`}>
       <div
@@ -98,17 +113,24 @@ const FlashSaleCard: FC<flashSaleCardProps> = ({
         {review && <StarList review={review} />}
       </div>
       {btnText && (
-        <button
-          type="button"
-          onClick={() => {
-            setSelectSize(!selectSize);
-          }}
-          className="w-full text-sm ring-1 ring-ash bg-white py-1 px-2 text-gray relative capitalize"
+        <div
+          className="relative"
+          ref={sizeSelectRef}
         >
-          {btnText}
-          <i className="fa-solid fa-chevron-down text-xs ml-1"></i>
-          {selectSize && <SizeSelectDropDown />}
-        </button>
+          <button
+            type="button"
+            onClick={() => {
+              setSelectSize(!selectSize);
+            }}
+            className="w-full text-sm ring-1 ring-ash bg-white py-1 px-2 text-gray capitalize"
+          >
+            {btnText}
+            <i className="fa-solid fa-chevron-down text-xs ml-1"></i>
+          </button>
+          {selectSize && (
+            <SizeSelectDropDown />
+          )}
+        </div>
       )}
     </div>
   );
