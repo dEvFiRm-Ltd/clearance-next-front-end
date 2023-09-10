@@ -48,7 +48,7 @@ const Tab = ({tabb}:any) => {
   return (
     <div className="flex flex-col justify-start items-start gap-2 w-full">
       <div className="flex justify-start gap-3">
-        {tabb.map((tab:string, index:number) => (
+        {tabb?.map((tab:string, index:number) => (
           <div
             key={index}
             className={`text-sm border text-center border-black-primary p-1.5 2xl:p-2 rounded-sm cursor-pointer ${
