@@ -16,10 +16,13 @@ export type flashSaleCardProps = {
   text2?: string;  
   review?:string;
   btnText?:string;
-  actionCb?:()=>void
+  colorImg?:string[];
+  actionCb?:()=>void;
+  variant?: object[];
 };
 export type linkType = {
   icon?: string;
+  url: string;
   title: string;
 };
 export type linkImgType = {
@@ -40,6 +43,7 @@ export type footerProps = {
   heading: string;
   contactUsText?: string;
   headingClass?: string;
+  groupClass?: string;
 };
 
 

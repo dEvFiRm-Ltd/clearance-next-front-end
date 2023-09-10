@@ -10,6 +10,11 @@ const nextConfig = {
       },
       {
         protocol: "https",
+        hostname: "www.clearance.ae",
+        port: "",
+      },
+      {
+        protocol: "https",
         hostname: "backend-live.clearance.ae",
         port: "",
       },

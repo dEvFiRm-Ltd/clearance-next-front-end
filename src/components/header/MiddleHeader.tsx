@@ -3,46 +3,16 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import CartSideBar from "../common/CartSideBar";
+import { useCart } from "@/context/CartContext";
 
 const MiddleHeader = () => {
   // const [show, setShow] = useState(false)
   const [language, setLanguage] = useState(false);
   const [user, setUser] = useState(false);
-  const [cart, setCart] = useState(false);
+  // const [cart, setCart] = useState(false);
+  const {isCartOpen, setIsCartOpen} = useCart();
   const languageButtonRef = useRef<HTMLButtonElement>(null);
   const userButtonRef = useRef<HTMLButtonElement>(null);
-  const cartButtonRef = useRef<HTMLButtonElement>(null);
-
-  // Add a click event listener to close the dropdowns when clicking outside
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (
-        languageButtonRef.current &&
-        !languageButtonRef.current.contains(event.target as Node)
-      ) {
-        setLanguage(false);
-      }
-      if (
-        userButtonRef.current &&
-        !userButtonRef.current.contains(event.target as Node)
-      ) {
-        setUser(false);
-      }
-
-      if (
-        cartButtonRef.current &&
-        !cartButtonRef.current.contains(event.target as Node)
-      ) {
-        setCart(false);
-      }
-    }
-
-    document.addEventListener("mousedown", handleClickOutside);
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
 
   return (
     <div className="hidden lg:flex flex-row justify-between items-center lg:py-4 2xl:py-5 lg:px-6 xl:px-8 2xl:px-12 3xl:px-[60px]">
@@ -128,12 +98,12 @@ const MiddleHeader = () => {
             </div>}
             {/* hover dropdown ends */}
           </button>
-          <button type="button" onClick={()=>setCart(!cart)} ref={cartButtonRef} className="relative p-2 2xl:p-3">
+          <button type="button" onClick={()=>setIsCartOpen(true)} className="relative p-2 2xl:p-3">
             <i className="fa-solid fa-bag-shopping"></i>
           </button>
         </div>
       </div>
-      <CartSideBar closeCb={()=>setCart(!cart)} value={cart}/> 
+      <CartSideBar closeCb={()=>setIsCartOpen(!isCartOpen)} value={isCartOpen} setCart={setIsCartOpen}/> 
     </div>
   );
 };
