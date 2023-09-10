@@ -5,10 +5,10 @@ import FlashSale from "@/components/home/FlashSale";
 import DenimShop from "@/components/home/DenimShop";
 import { dress, dressTwo, verticalImage, verticalImageTwo } from "@/static";
 import VerticalImage from "@/components/common/VerticalImage";
-import RelatedSearches from "@/components/home/RelatedSearches";
-import HandPicked from "@/components/home/HandPicked";
+import HandPicked from "@/components/home/FeatureProduct";
 import Footer from "@/components/home/Footer";
 import { env } from 'node:process';
+import FeatureProduct from "@/components/home/FeatureProduct";
 
 export default async function Home() {
   const bannerApiCall = await fetch(env.BASE_URL + "api/v10/web/home/main-banner", {
@@ -44,7 +44,6 @@ export default async function Home() {
   });
   const featureProductResponse = await featureProductApiCall.json();
   const featureProductArr: Array<any> = featureProductResponse.data.featured_products || [];
-  console.log(" featureProductArr:", featureProductArr)
 
 
 
@@ -60,9 +59,9 @@ export default async function Home() {
           />
         ))}
       </div>
-      <BestSeller imgArr={footerBannerArr} />
+      {/* <BestSeller imgArr={footerBannerArr} /> */}
       <FlashSale flashSaleArr={flashDealsArr}/>
-      <DenimShop />
+      {/* <DenimShop />
       <div className="container flex flex-col items-center sm:flex-row sm:flex-wrap md:flex-nowrap justify-center gap-y-5 md:gap-y-0 sm:gap-x-3 lg:gap-x-4 2xl:gap-x-5 3xl:gap-x-[23px] mt-[30px] ">
         {dressTwo.map((item: dressType, id: number) => (
           <DressCard
@@ -74,28 +73,27 @@ export default async function Home() {
             withClass="!w-[336px] sm:!w-[302px] md:!w-[240px] lg:!w-[322.67px] xl:!w-[405.33px] 2xl:!w-[485.33px] 3xl:!w-[580px]"
           />
         ))}
-      </div>
+      </div> */}
       <div className="container mt-[60px] mb-5 3xl:mb-10 flex flex-wrap flex-row justify-center gap-x-5 gap-y-3">
-        {verticalImage.map((item: any, i: number) => (
+        {footerBannerArr.splice(0,2).map((item: any) => (
           <VerticalImage
-            key={i}
-            img={item.img}
+            key={item.id}
+            img={item.photo}
             className="w-[336px] sm:w-[616px] md:w-[744px] lg:w-[1000px] xl:w-[614px] 2xl:w-[738px] 3xl:w-[880px] h-[200px] sm:h-[300px] md:h-[350px] lg:h-[405px] xl:h-[350px] 2xl:h-[380px] 3xl:h-[405px]"
           />
         ))}
       </div>
       <div className="container mb-10 flex flex-row flex-wrap justify-center gap-x-5 gap-y-3">
-        {verticalImageTwo.map((item: any, i: number) => (
+        {footerBannerArr.splice(0,2).map((item: any) => (
           <VerticalImage
-            key={i}
-            img={item.img}
+            key={item.id}
+            img={item.photo}
             className="w-[336px] sm:w-[616px] md:w-[744px] lg:w-[1000px] xl:w-[614px] 2xl:w-[738px] 3xl:w-[880px] h-[170px] sm:h-[240px] md:h-[273px]"
             objectClass="!object-cover"
           />
         ))}
       </div>
-      <HandPicked handPickedArr={featureProductArr} />
-      <RelatedSearches />
+      <FeatureProduct featureProductArr={featureProductArr} />
     </>
   );
 }
