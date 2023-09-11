@@ -42,9 +42,8 @@ const CartModal: FC<commonModalProps> = ({ closeStateCb, viewState, data }) => {
   };
 
   const handleAddToCart = () => {
-    console.log("add to card clicked");
-    setIsCartOpen(true);
     setModal(true);
+    setIsCartOpen(true);
     addToCart(data);
     closeStateCb();
   };
@@ -249,7 +248,11 @@ const CartModal: FC<commonModalProps> = ({ closeStateCb, viewState, data }) => {
         </form>
       </Modal>
       {/* gift modal  */}
-      <GetMyDiscount closeStateCb={() => setModal(false)} viewState={modal} />
+      <GetMyDiscount
+        closeStateCb={() => setModal(false)}
+        viewState={modal}
+        data={data}
+      />
     </>
   );
 };

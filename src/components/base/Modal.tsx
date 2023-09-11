@@ -36,7 +36,7 @@ const Modal: FC<modalProps> = ({
   return (
     <section
       className={`w-screen h-screen inset-0 flex justify-center items-center transition bg-[#000000]/30 duration-300 delay-150 ${
-        visible ? "opacity-100 z-[9999] fixed" : "hidden opacity-0"
+        visible ? "opacity-100 z-50 fixed" : "hidden opacity-0"
       } `}
     >
       <div

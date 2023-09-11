@@ -1,10 +1,18 @@
 "use client";
-import React, {  FC, ReactNode, SetStateAction, createContext, useContext, useEffect, useState } from "react";
+import React, {
+  FC,
+  ReactNode,
+  SetStateAction,
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 
 type Product = {
-  img: string;
-  text: string;
-  salePrice: string;
+  thumbnail: string;
+  name: string;
+  offer_price: string;
   price: string;
   qty: number;
   variant: [
@@ -27,7 +35,7 @@ type CartContextValue = {
   totalPrice: number;
   increaseQuantity: (index: number) => void;
   decreaseQuantity: (index: number) => void;
-  isCartOpen?: boolean|any;
+  isCartOpen?: boolean | any;
   setIsCartOpen?: any;
 };
 
@@ -45,21 +53,20 @@ export const useCart = () => {
   return useContext(CartContext);
 };
 
-type CartProviderProps={children:ReactNode}
+type CartProviderProps = { children: ReactNode };
 
-export const CartProvider:FC<CartProviderProps> = ({ children } ) => {
+export const CartProvider: FC<CartProviderProps> = ({ children }) => {
   const [cartItem, setCartItem] = useState<Product[]>([]);
   const [totalPrice, setTotalPrice] = useState<number>(0);
   const [isCartOpen, setIsCartOpen] = useState<boolean>(false);
 
   const addToCart = (product: Product) => {
-    console.log("context addToCart", product);
     const existingProduct = cartItem.find(
       (p) =>
-        p.img === product.img &&
-        p.text === product.text &&
-        p.price === product.price
-        // p.salePrice === product.salePrice &&
+        p.thumbnail === product.thumbnail &&
+        p.name === product.name &&
+        p.price === product.price &&
+        p.offer_price === product.offer_price
       // p.variant[0].size === product.variant[0].size &&
       // p.variant[1].fit === product.variant[1].fit &&
       // p.variant[2].color === product.variant[2].color
@@ -78,14 +85,17 @@ export const CartProvider:FC<CartProviderProps> = ({ children } ) => {
     const newCart = cartItem.filter((product, i) => i !== index);
     setCartItem(newCart);
   };
-  
+
   useEffect(() => {
-  const totalPrc = cartItem.reduce(
-    (total, product) => (total + Number(product.salePrice ? product.salePrice : product.price) * product.qty),
-    0
-  );
-  setTotalPrice(totalPrc);
-  },[cartItem])
+    const totalPrc = cartItem.reduce(
+      (total, product) =>
+        total +
+        Number(product.offer_price ? product.offer_price : product.price) *
+          product.qty,
+      0
+    );
+    setTotalPrice(totalPrc);
+  }, [cartItem]);
 
   const increaseQuantity = (index: number) => {
     const product = cartItem[index];
@@ -106,9 +116,19 @@ export const CartProvider:FC<CartProviderProps> = ({ children } ) => {
     }
   };
 
-
   return (
-    <CartContext.Provider value={{ cartItem, addToCart, removeFromCart, totalPrice, increaseQuantity, decreaseQuantity, isCartOpen, setIsCartOpen }}>
+    <CartContext.Provider
+      value={{
+        cartItem,
+        addToCart,
+        removeFromCart,
+        totalPrice,
+        increaseQuantity,
+        decreaseQuantity,
+        isCartOpen,
+        setIsCartOpen,
+      }}
+    >
       {children}
     </CartContext.Provider>
   );
