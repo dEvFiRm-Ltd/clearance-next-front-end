@@ -107,14 +107,15 @@ const FlashSale:FC<flashSaleProps> = ({flashSaleArr}) => {
             ref={sliderRef}
             {...settings}
           >
-            {flashSaleArr.map((item:any, id: number) => (
+            {flashSaleArr.map((item:any) => (
               <FlashSaleCard
                 key={item.id}
                 img={item.thumbnail}
                 text={item.name}
                 salePrice={item.offer_price}
                 price={item.price}
-                discount={item.discount}                
+                discount={item.discount}
+                imgVariantSmall={true}                
                 actionCb={()=>{setModalData(item);setModals(!modals);}}
                 groupClass="w-40 md:w-52 lg:w-60 3xl:w-[260px] p-2"
               />

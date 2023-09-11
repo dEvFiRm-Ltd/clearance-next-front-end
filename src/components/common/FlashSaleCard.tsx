@@ -21,6 +21,7 @@ const FlashSaleCard: FC<flashSaleCardProps | any> = ({
   colorImg,
   actionCb,
   check = false,
+  imgVariantSmall=false
 }) => {
   const [selectSize, setSelectSize] = useState(false);
   const [selectedColorIndex, setSelectedColorIndex] = useState<number | null>(
@@ -57,7 +58,9 @@ const FlashSaleCard: FC<flashSaleCardProps | any> = ({
           src={selectedImg}
           alt='img'
           fill
-          className='group-hover:transform object-contain group-hover:scale-110 transition-transform duration-300'
+          className={`group-hover:transform group-hover:scale-110 transition-transform duration-300 ${
+            imgVariantSmall ? "object-contain" : "object-cover"
+          }`}
         />
         {discount && (
           <span className='absolute top-3 bg-red-400 text-white px-1 py-0.5 text-xs lg:text-sm 3xl:text-base'>

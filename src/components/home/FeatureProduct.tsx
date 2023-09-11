@@ -16,9 +16,9 @@ const FeatureProduct:FC<featureProductProps> = ({featureProductArr,title}) => {
            {title}
         </h3>
         <div className="flex flex-row justify-center gap-2.5 md:gap-4 lg:gap-5 xl:gap-6 flex-wrap !items-start">
-          {featureProductArr.map((item:any, id: number) => (
+          {featureProductArr.map((item:any) => (
             <FlashSaleCard
-              key={id}
+              key={item.id}
               img={item.thumbnail}
               preSaleImgSticker={item.preSaleImgSticker}
               salePrice={item.price}

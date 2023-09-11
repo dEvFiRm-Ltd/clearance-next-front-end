@@ -19,6 +19,7 @@ export type flashSaleCardProps = {
   colorImg?:string[];
   actionCb?:()=>void;
   variant?: object[];
+  imgVariantSmall?: boolean;
 };
 export type linkType = {
   icon?: string;
