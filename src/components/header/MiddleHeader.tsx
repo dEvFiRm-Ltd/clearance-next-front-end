@@ -13,7 +13,28 @@ const MiddleHeader = () => {
   const {isCartOpen, setIsCartOpen} = useCart();
   const languageButtonRef = useRef<HTMLButtonElement>(null);
   const userButtonRef = useRef<HTMLButtonElement>(null);
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        languageButtonRef.current &&
+        !languageButtonRef.current.contains(event.target as Node)
+      ) {
+        setLanguage(false);
+      }
+      if (
+        userButtonRef.current &&
+        !userButtonRef.current.contains(event.target as Node)
+      ) {
+        setUser(false);
+      }    
+    }
 
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
   return (
     <div className="hidden lg:flex flex-row justify-between items-center lg:py-4 2xl:py-5 lg:px-6 xl:px-8 2xl:px-12 3xl:px-[60px]">
       <Link
