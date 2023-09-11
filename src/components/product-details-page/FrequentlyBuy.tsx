@@ -8,74 +8,74 @@ import Slider from "react-slick";
 
 const FrequentlyBuy = () => {
   const [modal, setModal] = useState(false);
-  const sliderRef = createRef<Slider>();
-  const settings = {
-    infinite: true,
-    autoplay: false,
-    speed: 300,
-    autoplaySpeed: 3000,
-    slidesToShow: 3.03,
-    slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 1536,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 1280,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 640,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 2,
-          initialSlide: 2,
-        },
-      },
-      {
-        breakpoint: 360,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
-  const previous = () => {
-    sliderRef.current?.slickPrev();
-  };
-  const next = () => {
-    sliderRef.current?.slickNext();
-  };
+  // const sliderRef = createRef<Slider>();
+  // const settings = {
+  //   infinite: true,
+  //   autoplay: false,
+  //   speed: 300,
+  //   autoplaySpeed: 3000,
+  //   slidesToShow: 3.03,
+  //   slidesToScroll: 1,
+  //   responsive: [
+  //     {
+  //       breakpoint: 1536,
+  //       settings: {
+  //         slidesToShow: 3,
+  //         slidesToScroll: 1,
+  //         infinite: true,
+  //         dots: true,
+  //       },
+  //     },
+  //     {
+  //       breakpoint: 1280,
+  //       settings: {
+  //         slidesToShow: 3,
+  //         slidesToScroll: 1,
+  //         infinite: true,
+  //         dots: true,
+  //       },
+  //     },
+  //     {
+  //       breakpoint: 1024,
+  //       settings: {
+  //         slidesToShow: 2,
+  //         slidesToScroll: 1,
+  //         infinite: true,
+  //         dots: true,
+  //       },
+  //     },
+  //     {
+  //       breakpoint: 768,
+  //       settings: {
+  //         slidesToShow: 2,
+  //         slidesToScroll: 1,
+  //         infinite: true,
+  //         dots: true,
+  //       },
+  //     },
+  //     {
+  //       breakpoint: 640,
+  //       settings: {
+  //         slidesToShow: 3,
+  //         slidesToScroll: 2,
+  //         initialSlide: 2,
+  //       },
+  //     },
+  //     {
+  //       breakpoint: 360,
+  //       settings: {
+  //         slidesToShow: 2,
+  //         slidesToScroll: 1,
+  //       },
+  //     },
+  //   ],
+  // };
+  // const previous = () => {
+  //   sliderRef.current?.slickPrev();
+  // };
+  // const next = () => {
+  //   sliderRef.current?.slickNext();
+  // };
   return (
     <section className="py-10 bg-[#F2F2F3]">
       <div className="w-[1200px] mx-auto">
@@ -100,7 +100,7 @@ const FrequentlyBuy = () => {
           />
           <span className="text-[40px] font-normal mx-6 mt-20">+</span>
           <div className="w-[647px] flex justify-center items-start flex-wrap gap-5 pl-2.5 relative">
-            <Button
+            {/* <Button
               actionCb={previous}
               variant="primary"
               icon="fas fa-chevron-left !text-base lg:!text-xl"
@@ -113,6 +113,7 @@ const FrequentlyBuy = () => {
               btnClass="!bg-[#00000020] hover:!bg-[#00000040] flex items-center justify-center !absolute top-1/2 -translate-y-1/2 right-0 !w-10 !h-[104px] text-white z-10"
             />
             <Slider className="w-[33vw] " ref={sliderRef} {...settings}>
+            </Slider> */}
               {frequentlyBuyData.map((item: flashSaleCardProps, id: number) => (
                   <FlashSaleCard
                     key={id}
@@ -130,7 +131,6 @@ const FrequentlyBuy = () => {
                   />
                 )
               )}
-            </Slider>
           </div>
           <div className="flex flex-col justify-center items-center gap-10 h-[340px] w-60 overflow-hidden px-4 bg-white ml-10">
             <div className="flex flex-col justify-start items-center gap-4">

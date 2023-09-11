@@ -1,5 +1,5 @@
 "use client";
-import React, { FC, ReactNode, SetStateAction, createContext, useContext, useEffect, useState } from "react";
+import React, {  FC, ReactNode, SetStateAction, createContext, useContext, useEffect, useState } from "react";
 
 type Product = {
   img: string;

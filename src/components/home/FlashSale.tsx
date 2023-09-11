@@ -112,8 +112,8 @@ const FlashSale:FC<flashSaleProps> = ({flashSaleArr}) => {
                 key={item.id}
                 img={item.thumbnail}
                 text={item.name}
-                salePrice={item.offer_price_formatted}
-                price={item.price_formatted}
+                salePrice={item.offer_price}
+                price={item.price}
                 discount={item.discount}                
                 actionCb={()=>{setModalData(item);setModals(!modals);}}
                 groupClass="w-40 md:w-52 lg:w-60 3xl:w-[260px] p-2"
