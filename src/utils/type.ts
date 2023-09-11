@@ -11,8 +11,8 @@ export type flashSaleCardProps = {
   preSaleImgSticker?: string;
   discount?: string;
   text: string;
-  salePrice: string;
-  price?: string;
+  salePrice:number | string;
+  price?:number | string;
   text2?: string;  
   review?:string;
   btnText?:string;

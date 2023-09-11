@@ -21,8 +21,8 @@ const FeatureProduct:FC<featureProductProps> = ({featureProductArr,title}) => {
               key={id}
               img={item.thumbnail}
               preSaleImgSticker={item.preSaleImgSticker}
-              salePrice={item.price_formatted}
-              price={item.offer_price_formatted}
+              salePrice={item.price}
+              price={item.offer_price}
               text={item.name}
               text2={item.text2}
               discount={item.discount}
