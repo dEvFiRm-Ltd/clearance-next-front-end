@@ -29,13 +29,13 @@ const CartSideBar: FC<cartSideBarProps> = ({ value, setCart }) => {
 
   return (
     <div
-      className={`h-screen bg-black-primary/60 w-full flex justify-end absolute z-50 transition-all duration-500 top-0 ${
-        value ? "right-0" : "-right-full"
-      }`}
+    className={`h-screen bg-black-primary/60 w-full flex justify-end fixed z-50 transition-opacity ease-in-out duration-500 top-0 right-0 ${
+      value ? "opacity-100 visible" : "opacity-0 invisible"
+    }`}
     >
       <div
         ref={cartBox}
-        className={`h-screen bg-[#f2f2f3] w-[480px]  border border-ash`}
+        className={`h-screen bg-[#f2f2f3] w-[480px] absolute transition-all duration-300 border border-ash ${value ?'right-0':'-right-full'}`}
       >
         <div className="bg-white w-full flex justify-between items-center p-4 border-b border-ash">
           <h6 className="capitalize text-2xl text-black-primary font-bold">
