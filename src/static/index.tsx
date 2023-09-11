@@ -710,25 +710,25 @@ export const frequentlyBuyData: flashSaleCardProps[] = [
     salePrice: "71.38",
     btnText: "rose red,s",
   },
-  {
-    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e4e057337b.avif",
-    text: "Long sleeve crew neck loose leo....",
-    salePrice: "71.38",
-    btnText: "blue,s",
-  },
-  {
-    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e58925291c.avif",
-    text: "Long sleeve crew neck loose leo....",
-    salePrice: "71.38",
-    btnText: "brown,s",
-  },
-  {
-    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e5e6cdbe66.avif",
-    discount: "20",
-    text: "Long sleeve crew neck loose leo....",
-    salePrice: "71.38",
-    btnText: "red,s",
-  },
+  // {
+  //   img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e4e057337b.avif",
+  //   text: "Long sleeve crew neck loose leo....",
+  //   salePrice: "71.38",
+  //   btnText: "blue,s",
+  // },
+  // {
+  //   img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e58925291c.avif",
+  //   text: "Long sleeve crew neck loose leo....",
+  //   salePrice: "71.38",
+  //   btnText: "brown,s",
+  // },
+  // {
+  //   img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e5e6cdbe66.avif",
+  //   discount: "20",
+  //   text: "Long sleeve crew neck loose leo....",
+  //   salePrice: "71.38",
+  //   btnText: "red,s",
+  // },
 ];
 export const recentlyBuyData: flashSaleCardProps[] = [
   {

@@ -13,11 +13,30 @@ import GetMyDiscount from "./GetMyDiscount";
 import { useCart } from "@/context/CartContext";
 
 const CartModal: FC<commonModalProps> = ({ closeStateCb, viewState, data }) => {
+  ``;
   const { addToCart } = useCart();
   const [modal, setModal] = useState(false);
-  const {isCartOpen, setIsCartOpen} = useCart();
+  const { isCartOpen, setIsCartOpen } = useCart();
   const [activeTab, setActiveTab] = useState("regular");
   const [selectedSize, setSelectedSize] = useState<dropDowns>(sizeDropDown[0]);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+
+  const handleImageClick = (index: any) => {
+    setSelectedImageIndex(index);
+  };
+
+  const handlePrevButtonClick = () => {
+    if (selectedImageIndex > 0) {
+      setSelectedImageIndex(selectedImageIndex - 1);
+    }
+  };
+
+  const handleNextButtonClick = () => {
+    if (selectedImageIndex < images.length - 1) {
+      setSelectedImageIndex(selectedImageIndex + 1);
+    }
+  };
+
   const handleTabClick = (tab: any) => {
     setActiveTab(tab);
   };
@@ -30,6 +49,12 @@ const CartModal: FC<commonModalProps> = ({ closeStateCb, viewState, data }) => {
     closeStateCb();
   };
 
+  const images = [
+    "https://sstorage.clearance.ae/production/storage/product/2023-08-25-64e89fdb8efab.png",
+    "https://sstorage.clearance.ae/production/storage/product/2023-08-25-64e89fdbaec44.png",
+    "https://sstorage.clearance.ae/production/storage/product/2023-08-25-64e89fdbc3fc3.png",
+    "https://sstorage.clearance.ae/production/storage/product/2023-08-25-64e89fdbd65f8.png",
+  ];
   return (
     <>
       <Modal
@@ -48,30 +73,24 @@ const CartModal: FC<commonModalProps> = ({ closeStateCb, viewState, data }) => {
                 icon="fas fa-chevron-up"
                 btnClass="!bg-[#f1f2f3] !h-6 flex items-center justify-center !text-black-primary"
               />
-              <div className="w-[50px] h-[70px] relative overflow-hidden ring-black-primary hover:ring-1 ring-black group">
-                <Image
-                  src={`https://sstorage.clearance.ae/production/storage/product/2023-08-25-64e89fdb8efab.png`}
-                  alt="image"
-                  fill
-                  className="object-cover group-hover:scale-90"
-                />
-              </div>
-              <div className="w-[50px] h-[70px] relative overflow-hidden ring-black-primary hover:ring-1 ring-black group">
-                <Image
-                  src={`https://sstorage.clearance.ae/production/storage/product/2023-08-25-64e89fdb8efab.png`}
-                  alt="image"
-                  fill
-                  className="object-cover group-hover:scale-90"
-                />
-              </div>
-              <div className="w-[50px] h-[70px] relative overflow-hidden ring-black-primary hover:ring-1 ring-black group">
-                <Image
-                  src={`https://sstorage.clearance.ae/production/storage/product/2023-08-25-64e89fdb8efab.png`}
-                  alt="image"
-                  fill
-                  className="object-cover group-hover:scale-90"
-                />
-              </div>
+              {images.map((imageUrl, id) => (
+                <div
+                  key={id}
+                  className={`h-[70px] w-[50px] relative overflow-hidden group ${
+                    id === selectedImageIndex ? "ring-1 ring-black-primary" : ""
+                  }`}
+                  onClick={() => handleImageClick(id)}
+                >
+                  <Image
+                    fill
+                    alt="image"
+                    className={`${
+                      id === selectedImageIndex ? "scale-90" : "scale-100"
+                    }`}
+                    src={imageUrl}
+                  />
+                </div>
+              ))}
               <Button
                 actionCb={() => {}}
                 variant="primary"
@@ -81,24 +100,33 @@ const CartModal: FC<commonModalProps> = ({ closeStateCb, viewState, data }) => {
             </div>
             {/* big image  */}
             <div className="w-[300px] h-[400px] 2xl:w-[372px] 2xl:h-[496px] relative">
-              <Image
-                src={data?.img}
-                alt="image"
-                fill
-                className="object-cover"
-              />
-              <Button
-                actionCb={() => {}}
-                variant="primary"
-                icon="fas fa-chevron-left !text-base lg:!text-xl"
-                btnClass="!bg-[#00000020] hover:!bg-[#00000040] flex items-center justify-center !absolute top-1/2 -translate-y-1/2 left-0 !w-9 !h-16 2xl:!w-[52px] 2xl:!h-[104px] text-white"
-              />
-              <Button
-                actionCb={() => {}}
-                variant="primary"
-                icon="fas fa-chevron-right !text-base lg:!text-xl"
-                btnClass="!bg-[#00000020] hover:!bg-[#00000040] flex items-center justify-center !absolute top-1/2 -translate-y-1/2 right-0 !w-9 !h-16 2xl:!w-[52px] 2xl:!h-[104px] text-white"
-              />
+              {images.map((imageUrl, index) => (
+                <Image
+                  key={index}
+                  fill
+                  alt="image"
+                  src={imageUrl}
+                  className={`absolute top-0 left-0 transition-opacity duration-1000 ease-in-out ${
+                    index === selectedImageIndex ? "opacity-100" : "opacity-0"
+                  }`}
+                />
+              ))}
+              {selectedImageIndex !== 0 && (
+                <Button
+                  actionCb={handlePrevButtonClick}
+                  variant="primary"
+                  icon="fas fa-chevron-left !text-base lg:!text-xl"
+                  btnClass="!bg-[#00000020] hover:!bg-[#00000040] flex items-center justify-center !absolute top-1/2 -translate-y-1/2 left-0 !w-9 !h-16 2xl:!w-[52px] 2xl:!h-[104px] text-white"
+                />
+              )}
+              {selectedImageIndex !== images.length - 1 && (
+                <Button
+                  actionCb={handleNextButtonClick}
+                  variant="primary"
+                  icon="fas fa-chevron-right !text-base lg:!text-xl"
+                  btnClass="!bg-[#00000020] hover:!bg-[#00000040] flex items-center justify-center !absolute top-1/2 -translate-y-1/2 right-0 !w-9 !h-16 2xl:!w-[52px] 2xl:!h-[104px] text-white"
+                />
+              )}
             </div>
             <div className="w-[362px] 2xl:w-[458px] pl-2">
               <p className="text-lg 2xl:text-xl leading-6 line-clamp-2 capitalize text-black-primary font-medium">
