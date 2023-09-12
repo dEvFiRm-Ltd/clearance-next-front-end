@@ -4,6 +4,7 @@ import Image from 'next/image';
 import React, { FC, useEffect, useRef, useState } from 'react';
 import StarList from './StarList';
 import SizeSelectDropDown from './SizeSelectDropDown';
+import Link from 'next/link';
 
 const FlashSaleCard: FC<flashSaleCardProps | any> = ({
   img,
@@ -21,6 +22,7 @@ const FlashSaleCard: FC<flashSaleCardProps | any> = ({
   colorImg,
   actionCb,
   check = false,
+  imgVariantSmall=false
 }) => {
   const [selectSize, setSelectSize] = useState(false);
   const [selectedColorIndex, setSelectedColorIndex] = useState<number | null>(
@@ -49,7 +51,7 @@ const FlashSaleCard: FC<flashSaleCardProps | any> = ({
     };
   }, []);
   return (
-    <div className={`boxShadow relative ${groupClass}`}>
+    <Link href={'/product-details'} className={`boxShadow flex flex-col relative ${groupClass}`}>
       <div
         className={`w-full h-52 md:h-[278px] lg:h-80 3xl:h-[324px] overflow-hidden relative group ${imgClass}`}
       >
@@ -57,7 +59,9 @@ const FlashSaleCard: FC<flashSaleCardProps | any> = ({
           src={selectedImg}
           alt='img'
           fill
-          className='group-hover:transform object-contain group-hover:scale-110 transition-transform duration-300'
+          className={`group-hover:transform group-hover:scale-110 transition-transform duration-300 ${
+            imgVariantSmall ? "object-contain" : "object-cover"
+          }`}
         />
         {discount && (
           <span className='absolute top-3 bg-red-400 text-white px-1 py-0.5 text-xs lg:text-sm 3xl:text-base'>
@@ -74,13 +78,15 @@ const FlashSaleCard: FC<flashSaleCardProps | any> = ({
             <Image src={preSaleImgSticker} alt='' fill />
           </span>
         )}
-        <button
-          type='button'
-          onClick={actionCb}
+        <div
+          onClick={(e) => {            
+            e.preventDefault();
+            actionCb(); 
+          }}
           className={`group-hover:opacity-100 opacity-0 text-center py-2.5 lg:py-3.5 w-[130px] md:w-[140px] lg:w-[160px] 2xl:w-[220px] px-3 absolute left-1/2 -translate-x-1/2 bottom-12 rounded-full bg-white/90 uppercase ${btnClass}`}
         >
           add to bag
-        </button>
+        </div>
       </div>
       <div className='flex w-full flex-col justify-start items-start self-stretch flex-1 gap-1.5 py-1.5 px-1'>
         <p className='line-clamp-1 text-xs lg:text-sm'>{text}</p>
@@ -122,8 +128,7 @@ const FlashSaleCard: FC<flashSaleCardProps | any> = ({
       </div>
       {btnText && (
         <div className='relative' ref={sizeSelectRef}>
-          <button
-            type='button'
+          <div
             onClick={() => {
               setSelectSize(!selectSize);
             }}
@@ -131,11 +136,11 @@ const FlashSaleCard: FC<flashSaleCardProps | any> = ({
           >
             {btnText}
             <i className='fa-solid fa-chevron-down text-xs ml-1'></i>
-          </button>
+          </div>
           {selectSize && <SizeSelectDropDown />}
         </div>
       )}
-    </div>
+    </Link>
   );
 };
 

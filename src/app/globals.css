@@ -2,20 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-} */
-
 body {
   color: rgb(var(--foreground-rgb));
   overflow-x: hidden;
@@ -40,7 +26,7 @@ body {
 .slick-prev {
   display: none !important;
 }
-.slick-track{
+.slick-track {
   padding: 10px 0px;
 }
 /* Styles for the link on hover */
@@ -67,26 +53,27 @@ body {
 .cartShadow {
   filter: drop-shadow(rgba(0, 0, 0, 0.1) 0 8px 24px);
 }
-.selectItem{
+.selectItem {
   box-shadow: 0 1px 5px #ccc;
 }
 .slideIn {
-  animation-duration: .3s;
+  animation-duration: 0.3s;
   animation-name: slidein;
 }
 
-.coupon_before::before, .coupon_before::after{
+.coupon_before::before,
+.coupon_before::after {
   background: rgb(255, 255, 255);
-    border: 1px solid rgb(243, 31, 40);
-    border-radius: 50%;
-    content: "";
-    display: block;
-    height: 13px;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 13px;
-    z-index: 1;
+  border: 1px solid rgb(243, 31, 40);
+  border-radius: 50%;
+  content: "";
+  display: block;
+  height: 13px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 13px;
+  z-index: 1;
 }
 
 @keyframes slidein {
@@ -98,5 +85,14 @@ body {
   to {
     margin-left: 0%;
     width: 100%;
+  }
+}
+@layer base {
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"] {
+    -webkit-appearance: none;
+    margin: 0;
+    -moz-appearance: textfield !important;
   }
 }

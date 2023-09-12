@@ -6,7 +6,11 @@ import { commonModalProps } from "@/utils/type";
 import Image from "next/image";
 import Button from "../base/Button";
 
-const GetMyDiscount: FC<commonModalProps> = ({ closeStateCb, viewState }) => {
+const GetMyDiscount: FC<commonModalProps> = ({
+  closeStateCb,
+  viewState,
+  data,
+}) => {
   return (
     <Modal visible={viewState} closeCb={closeStateCb} title="">
       <ModalBody modalBodyClass="flex text-center items-center flex-col gap-y-2 lg:gap-y-2.5 2xl:gap-y-3.5 !p-6 !w-[300px]">
@@ -18,14 +22,7 @@ const GetMyDiscount: FC<commonModalProps> = ({ closeStateCb, viewState }) => {
         </p>
         <p className="text-lg xl:text-xl text-red-400 ">On your first order</p>
         <div className="w-[250px] h-[270px] relative overflow-hidden ">
-          <Image
-            fill
-            className="object-contain"
-            alt=""
-            src={
-              "https://sstorage.clearance.ae/production/storage/product/2023-08-25-64e89fdb8efab.png"
-            }
-          />
+          <Image fill className="object-contain" alt="" src={data?.thumbnail} />
         </div>
         <input
           type="email"

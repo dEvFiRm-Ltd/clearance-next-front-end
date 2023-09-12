@@ -32,7 +32,7 @@ const CartModal: FC<commonModalProps> = ({ closeStateCb, viewState, data }) => {
   };
 
   const handleNextButtonClick = () => {
-    if (selectedImageIndex < images.length - 1) {
+    if (selectedImageIndex < data?.images.length - 1) {
       setSelectedImageIndex(selectedImageIndex + 1);
     }
   };
@@ -42,19 +42,11 @@ const CartModal: FC<commonModalProps> = ({ closeStateCb, viewState, data }) => {
   };
 
   const handleAddToCart = () => {
-    console.log("add to card clicked");
-    setIsCartOpen(true);
     setModal(true);
+    setIsCartOpen(true);
     addToCart(data);
     closeStateCb();
   };
-
-  const images = [
-    "https://sstorage.clearance.ae/production/storage/product/2023-08-25-64e89fdb8efab.png",
-    "https://sstorage.clearance.ae/production/storage/product/2023-08-25-64e89fdbaec44.png",
-    "https://sstorage.clearance.ae/production/storage/product/2023-08-25-64e89fdbc3fc3.png",
-    "https://sstorage.clearance.ae/production/storage/product/2023-08-25-64e89fdbd65f8.png",
-  ];
   return (
     <>
       <Modal
@@ -67,13 +59,16 @@ const CartModal: FC<commonModalProps> = ({ closeStateCb, viewState, data }) => {
           <ModalBody modalBodyClass="flex flex-row gap-x-3">
             {/* small image are here  */}
             <div className="flex flex-col gap-y-3">
-              <Button
-                actionCb={() => {}}
-                variant="primary"
-                icon="fas fa-chevron-up"
-                btnClass="!bg-[#f1f2f3] !h-6 flex items-center justify-center !text-black-primary"
-              />
-              {images.map((imageUrl, id) => (
+              {data?.images.length > 6 && (
+                <Button
+                  variant="primary"
+                  icon="fas fa-chevron-up"
+                  btnClass="!bg-[#f1f2f3] !h-6 flex items-center justify-center !text-black-primary"
+                  actionCb={handlePrevButtonClick}
+                  disabled={selectedImageIndex === 0}
+                />
+              )}
+              {data?.images.map((imageUrl: any, id: number) => (
                 <div
                   key={id}
                   className={`h-[70px] w-[50px] relative overflow-hidden group ${
@@ -91,23 +86,26 @@ const CartModal: FC<commonModalProps> = ({ closeStateCb, viewState, data }) => {
                   />
                 </div>
               ))}
-              <Button
-                actionCb={() => {}}
-                variant="primary"
-                icon="fas fa-chevron-down"
-                btnClass="!bg-[#f1f2f3] !h-6 flex items-center justify-center !text-black-primary"
-              />
+              {data?.images.length > 6 && (
+                <Button
+                  actionCb={handleNextButtonClick}
+                  variant="primary"
+                  icon="fas fa-chevron-down"
+                  btnClass="!bg-[#f1f2f3] !h-6 flex items-center justify-center !text-black-primary"
+                  disabled={selectedImageIndex === data?.images.length - 1}
+                />
+              )}
             </div>
             {/* big image  */}
             <div className="w-[300px] h-[400px] 2xl:w-[372px] 2xl:h-[496px] relative">
-              {images.map((imageUrl, index) => (
+              {data?.images.map((imageUrl: any, id: number) => (
                 <Image
-                  key={index}
+                  key={id}
                   fill
                   alt="image"
                   src={imageUrl}
-                  className={`absolute top-0 left-0 transition-opacity duration-1000 ease-in-out ${
-                    index === selectedImageIndex ? "opacity-100" : "opacity-0"
+                  className={`absolute top-0 left-0 transition-opacity duration-1000 ease-in-out object-contain ${
+                    id === selectedImageIndex ? "opacity-100" : "opacity-0"
                   }`}
                 />
               ))}
@@ -119,7 +117,7 @@ const CartModal: FC<commonModalProps> = ({ closeStateCb, viewState, data }) => {
                   btnClass="!bg-[#00000020] hover:!bg-[#00000040] flex items-center justify-center !absolute top-1/2 -translate-y-1/2 left-0 !w-9 !h-16 2xl:!w-[52px] 2xl:!h-[104px] text-white"
                 />
               )}
-              {selectedImageIndex !== images.length - 1 && (
+              {selectedImageIndex !== data?.images.length - 1 && (
                 <Button
                   actionCb={handleNextButtonClick}
                   variant="primary"
@@ -135,10 +133,10 @@ const CartModal: FC<commonModalProps> = ({ closeStateCb, viewState, data }) => {
               <div className="flex flex-row justify-between items-center">
                 <div className="flex flex-row items-center gap-3 mt-4">
                   <p className="text-sm md:text-base xl:text-lg 3xl:text-3xl text-[#DC2626] font-bold">
-                    ${data?.SalePrice}
+                    ${data?.offer_price}
                   </p>
                   <p className="text-xs lg:text-sm xl:text-base font-normal text-[#868C93] line-through ">
-                    ${data?.Price}
+                    ${data?.price}
                   </p>
                   <p className="bg-black-primary text-xs text-white px-0.5">
                     -13%
@@ -160,7 +158,7 @@ const CartModal: FC<commonModalProps> = ({ closeStateCb, viewState, data }) => {
                   color: <span className="font-bold">Black</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  {data?.variant?.map((clr: string, index: number) => (
+                  {data?.variation?.map((clr: string, index: number) => (
                     <div
                       key={index}
                       className="h-8 w-8 2xl:h-9 2xl:w-9 flex justify-center items-center border border-black rounded-full bg-white"
@@ -181,7 +179,7 @@ const CartModal: FC<commonModalProps> = ({ closeStateCb, viewState, data }) => {
                   fit:
                 </div>
                 <div className="flex justify-start items-center gap-x-3">
-                  {data?.variant[1]?.fit?.map((fit: string, i: number) => (
+                  {/* {data?.variation.fit?.map((fit: string, i: number) => (
                     <button
                       key={i}
                       className={`p-1.5 2xl:p-2 border text-xs 2xl:text-sm uppercase w-fit border-black-primary ${
@@ -193,7 +191,7 @@ const CartModal: FC<commonModalProps> = ({ closeStateCb, viewState, data }) => {
                     >
                       {fit}
                     </button>
-                  ))}
+                  ))} */}
                   {/* <button
                   className={`p-1.5 2xl:p-2 border text-xs 2xl:text-sm uppercase w-fit border-black-primary ${
                     activeTab === "regular"
@@ -226,7 +224,7 @@ const CartModal: FC<commonModalProps> = ({ closeStateCb, viewState, data }) => {
                     }}
                   />
                 </div>
-                <Tab tabb={data?.variant[0]?.size} />
+                {/* <Tab tabb={data?.variant[0]?.size} /> */}
                 {/* sizes area ends  */}
                 <div className="flex flex-row justify-between gap-x-2.5 2xl:gap-x-4 w-full">
                   {/* Add to cart button  */}
@@ -249,7 +247,11 @@ const CartModal: FC<commonModalProps> = ({ closeStateCb, viewState, data }) => {
         </form>
       </Modal>
       {/* gift modal  */}
-      <GetMyDiscount closeStateCb={() => setModal(false)} viewState={modal} />
+      <GetMyDiscount
+        closeStateCb={() => setModal(false)}
+        viewState={modal}
+        data={data}
+      />
     </>
   );
 };

@@ -6,12 +6,12 @@ import { FlashSaleData } from "@/static";
 import { flashSaleCardProps } from "@/utils/type";
 import Slider from "react-slick";
 import CartModal from "../modal/CartModal";
-type flashSaleProps={
-  flashSaleArr:any
-}
+type flashSaleProps = {
+  flashSaleArr: any;
+};
 
-const FlashSale:FC<flashSaleProps> = ({flashSaleArr}) => {
-  const [modals, setModals] = useState(false)
+const FlashSale: FC<flashSaleProps> = ({ flashSaleArr }) => {
+  const [modals, setModals] = useState(false);
   const [modalData, setModalData] = useState<any>();
   const sliderRef = createRef<Slider>();
   const settings = {
@@ -85,7 +85,7 @@ const FlashSale:FC<flashSaleProps> = ({flashSaleArr}) => {
     <section className="mx-auto container">
       <Title />
       <div className="w-full md:px-4 lg:px-6 2xl:px-8 3xl:px-10 flex justify-center items-center pt-3 relative">
-        <div className="flex w-full absolute top-1/2 -translate-y-1/2 justify-between z-50 px-1">
+        <div className="flex w-full absolute top-1/2 -translate-y-1/2 justify-between z-10 px-1">
           <button
             type="button"
             onClick={previous}
@@ -107,15 +107,19 @@ const FlashSale:FC<flashSaleProps> = ({flashSaleArr}) => {
             ref={sliderRef}
             {...settings}
           >
-            {flashSaleArr.map((item:any, id: number) => (
+            {flashSaleArr.map((item: any) => (
               <FlashSaleCard
                 key={item.id}
                 img={item.thumbnail}
                 text={item.name}
                 salePrice={item.offer_price}
                 price={item.price}
-                discount={item.discount}                
-                actionCb={()=>{setModalData(item);setModals(!modals);}}
+                discount={item.discount}
+                imgVariantSmall={true}
+                actionCb={() => {
+                  setModalData(item);
+                  setModals(!modals);
+                }}
                 groupClass="w-40 md:w-52 lg:w-60 3xl:w-[260px] p-2"
               />
             ))}
@@ -123,7 +127,9 @@ const FlashSale:FC<flashSaleProps> = ({flashSaleArr}) => {
         </div>
       </div>
       <CartModal
-        closeStateCb={() => {setModals(false)}}
+        closeStateCb={() => {
+          setModals(false);
+        }}
         viewState={modals}
         data={modalData}
       />

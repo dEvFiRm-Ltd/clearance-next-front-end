@@ -7,6 +7,7 @@ type buttonProps = {
   icon?: string;
   suffixIcon?: string;
   prefixIcon?: string;
+  disabled?: boolean;
   variant?: "primary" | "outlined" | "naked" | "link";
 } & (
   | {
@@ -24,6 +25,7 @@ const Button: FC<buttonProps> = ({
   icon,
   suffixIcon,
   prefixIcon,
+  disabled,
   btnClass = "",
   actionCb,
   btnType = "button",
@@ -31,6 +33,7 @@ const Button: FC<buttonProps> = ({
 }) => {
   return (
     <button
+      disabled={disabled}
       type={btnType}
       onClick={actionCb}
       className={`w-full font-normal flex justify-center items-center baseBtnClass ${
@@ -47,7 +50,7 @@ const Button: FC<buttonProps> = ({
           : variant === "link"
           ? "text-black-primary bg-white underline"
           : ""
-      } ${btnClass}`}
+      } ${disabled ? "opacity-50" : ""} ${btnClass}`}
     >
       {prefixIcon && <i className={`text-sm ${prefixIcon}`}></i>}
       {icon && <i className={`text-sm ${icon}`}></i>}

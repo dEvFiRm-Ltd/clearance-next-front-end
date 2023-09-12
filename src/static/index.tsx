@@ -31,51 +31,51 @@ export const bannerImgArr: bannerProps[] = [
 export const bottomHeaderLinkItems: linkType[] = [
   {
     title: "clothing",
-    url: "",
+    url: "/category-listing",
   },
   {
     title: "FW23",
-    url: "",
+    url: "/category-listing",
   },
   {
     title: "new in",
-    url: "",
+    url: "/category-listing",
   },
   {
     title: "tops",
-    url: "",
+    url: "/category-listing",
   },
   {
     title: "dresses",
-    url: "",
+    url: "/category-listing",
   },
   {
     title: "outwear",
-    url: "",
+    url: "/category-listing",
   },
   {
     title: "knitwear",
-    url: "",
+    url: "/category-listing",
   },
   {
     title: "bottoms",
-    url: "",
+    url: "/category-listing",
   },
   {
     title: "plus+curve",
-    url: "",
+    url: "/category-listing",
   },
   {
     title: "shoes+accessories",
-    url: "",
+    url: "/category-listing",
   },
   {
     title: "sale",
-    url: "",
+    url: "/category-listing",
   },
   {
     title: "community",
-    url: "",
+    url: "/category-listing",
   },
 ];
 export const productSubSliderData: linkImgType[] = [
@@ -146,31 +146,31 @@ export const bottomHeaderItems: footerProps[] = [
     itemArr: [
       {
         title: "All Dresses",
-        url: "",
+        url: "category-listing",
       },
       {
         title: "New Dresses",
-        url: "",
+        url: "category-listing",
       },
       {
         title: "Top-Rated Dresses",
-        url: "",
+        url: "category-listing",
       },
       {
         title: "Maxi Dresses",
-        url: "",
+        url: "category-listing",
       },
       {
         title: "Midi Dresses",
-        url: "",
+        url: "category-listing",
       },
       {
         title: "Mini Dresses",
-        url: "",
+        url: "category-listing",
       },
       {
         title: "Plus Dresses",
-        url: "",
+        url: "category-listing",
       },
     ],
   },
@@ -179,23 +179,23 @@ export const bottomHeaderItems: footerProps[] = [
     itemArr: [
       {
         title: "Best Sellers",
-        url: "",
+        url: "category-listing",
       },
       {
         title: "FW 2023",
-        url: "",
+        url: "category-listing",
       },
       {
         title: "Special Event",
-        url: "",
+        url: "category-listing",
       },
       {
         title: "Earth tone",
-        url: "",
+        url: "category-listing",
       },
       {
         title: "Intellectual Looks",
-        url: "",
+        url: "category-listing",
       },
     ],
   },
@@ -204,11 +204,11 @@ export const bottomHeaderItems: footerProps[] = [
     itemArr: [
       {
         title: "Item 1",
-        url: "",
+        url: "category-listing",
       },
       {
         title: "Designer Shop",
-        url: "",
+        url: "category-listing",
       },
     ],
   },
