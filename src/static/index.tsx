@@ -286,10 +286,10 @@ export const footerItems: footerProps[] = [
         title: "About Us",
         url: "https://production.clearance.ae/information/about-us-1/",
       },
-      {
-        title: "Intellectual Property Rights",
-        url: "",
-      },
+      // {
+      //   title: "Intellectual Property Rights",
+      //   url: "",
+      // },
       {
         title: "Privacy Policy",
         url: "https://production.clearance.ae/information/privacy-policy-2/",
