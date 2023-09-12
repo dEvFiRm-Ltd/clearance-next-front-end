@@ -15,7 +15,7 @@ const img = [
 ];
 const ProductDetails = () => {
   const [activeTab, setActiveTab] = useState("regular");
-  const [selectedSize, setSelectedSize] = useState<dropDowns>(sizeDropDown[0]);
+  const [selectedSize, setSelectedSize] = useState();
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
   const handleTabClick = (tab: any) => {
@@ -232,13 +232,13 @@ const ProductDetails = () => {
           <div className="w-full flex justify-between items-center">
             <div className="flex justify-start items-center gap-x-3">
               <p className="text-gray text-lg capitalize">size:</p>
-              <SelectField
+              {/* <SelectField
                 dropdownItems={sizeDropDown}
                 currentItem={selectedSize.title}
                 onChangeCb={(item: dropDowns) => {
                   setSelectedSize(item);
                 }}
-              />
+              /> */}
             </div>
             <Button
               actionCb={() => {}}

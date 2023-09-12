@@ -3,6 +3,7 @@ export type bannerProps={
   url:string;
 }
 export type flashSaleCardProps = {
+  url?:string
   groupClass?: string;  
   imgClass?: string;
   btnClass?: string;

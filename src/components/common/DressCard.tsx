@@ -4,7 +4,8 @@ import React, { FC } from "react";
 
 export type dressType = {
   image: string;
-  title: string;
+  title?: string;
+  url?: string;
   heading?: string;
   hightClass?: string;
   withClass?: string;
@@ -13,6 +14,7 @@ export type dressType = {
 
 const DressCard: FC<dressType> = ({
   image,
+  url,
   title,
   hightClass,
   withClass,
@@ -20,8 +22,7 @@ const DressCard: FC<dressType> = ({
   totalProduct
 }) => {
   return (
-    <Link
-      href={`/category-listing`}
+    <Link target='_blank' href={'https://www.clearance.ae/products?category='+url}
       className={`w-40 lg:w-44 xl:w-48 2xl:w-[234px] 3xl:w-[272px] flex flex-col items-center justify-start gap-y-4 uppercase ${withClass}`}
     >
       <div
@@ -34,9 +35,9 @@ const DressCard: FC<dressType> = ({
           {heading}
         </p>
       )}
-      <p className="border-b text-gray border-[#B9B9B9] text-sm lg:text-base xl:text-lg 3xl:text-xl xl:leading-8">
+     {title && <p className="border-b text-gray border-[#B9B9B9] text-sm lg:text-base xl:text-lg 3xl:text-xl xl:leading-8">
         {title} ({totalProduct})
-      </p>
+      </p>}
     </Link>
   );
 };
