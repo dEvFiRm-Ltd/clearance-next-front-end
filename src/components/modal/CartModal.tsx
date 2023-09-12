@@ -68,7 +68,6 @@ const CartModal: FC<commonModalProps> = ({ closeStateCb, viewState, data }) => {
                   disabled={selectedImageIndex === 0}
                 />
               )}
-
               {data?.images.map((imageUrl: any, id: number) => (
                 <div
                   key={id}
@@ -105,7 +104,7 @@ const CartModal: FC<commonModalProps> = ({ closeStateCb, viewState, data }) => {
                   fill
                   alt="image"
                   src={imageUrl}
-                  className={`absolute top-0 left-0 transition-opacity duration-1000 ease-in-out ${
+                  className={`absolute top-0 left-0 transition-opacity duration-1000 ease-in-out object-contain ${
                     id === selectedImageIndex ? "opacity-100" : "opacity-0"
                   }`}
                 />
