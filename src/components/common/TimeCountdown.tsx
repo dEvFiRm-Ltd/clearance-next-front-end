@@ -2,12 +2,22 @@
 
 import FlipClockCountdown from "@leenguyen/react-flip-clock-countdown";
 import "@leenguyen/react-flip-clock-countdown/dist/index.css";
-import React from "react";
+import React, { useEffect, useState } from "react";
 type dateType = {
   date: string;
 };
 
 export const TimeCountdown = ({ date }: dateType) => {
+  const [blockCss, setBlockCss] = useState({
+    width: 18,
+    height: 28,
+    fontSize: 20,
+  });
+  const [separatorCSS, setSeparatorCSS] = useState({
+    color: "black",
+    size: "4px",
+  });
+
   const mobileStyle = {
     width: 18,
     height: 28,
@@ -36,21 +46,45 @@ export const TimeCountdown = ({ date }: dateType) => {
     color: "black",
     size: "5px",
   };
-  
+
   const desktopSeparatorStyle = {
     color: "black",
     size: "6px",
   };
+
+  const handleWindowResize = () => {
+    if (window?.innerWidth <= 640) {
+      setBlockCss(mobileStyle);
+      setSeparatorCSS(mobileSeparatorStyle);
+    } else if (window?.innerWidth <= 768) {
+      setBlockCss(tabStyle);
+      setSeparatorCSS(laptopSeparatorStyle);
+    } else if (window?.innerWidth <= 1536) {
+      setSeparatorCSS(desktopSeparatorStyle);
+      setBlockCss(laptopStyle);
+    } else {
+      setSeparatorCSS(desktopSeparatorStyle);
+      setBlockCss(desktopStyle);
+    }
+  };
+
+  useEffect(() => {
+    // component is mounted and window is available
+    handleWindowResize();
+    window.addEventListener("resize", handleWindowResize);
+    // unsubscribe from the event on component unmount
+    return () => window.removeEventListener("resize", handleWindowResize);
+  }, []);
+
   return (
     <FlipClockCountdown
       to={date} // Date/Time  -- examples?: "2023-09-08T15:27:32.635Z"
       showLabels={true}
       labels={["DAYS", "HOURS", "MINUTES", "SECONDS"]}
       labelStyle={{ fontSize: 7, fontWeight: 500, textTransform: "uppercase" }}
-      digitBlockStyle={window.innerWidth <= 640 ? mobileStyle : window.innerWidth <= 768 ? tabStyle :window.innerWidth <= 1280 ? laptopStyle : desktopStyle }
-      // digitBlockStyle={{ width: 40, height: 60, fontSize: 30 }}
+      digitBlockStyle={blockCss}
       // dividerStyle={{ color: 'white', height: 1 }}
-      separatorStyle={window.innerWidth <= 640 ? mobileSeparatorStyle : window.innerWidth <= 1024 ? laptopSeparatorStyle : desktopSeparatorStyle }
+      separatorStyle={separatorCSS}
       duration={0.5}
     />
   );

@@ -8,11 +8,10 @@ const Title = () => {
         flash sale{" "}
       </h3>
       <div className="flex flex-row justify-center">
-      <span className="text-sm sm:text-base lg:text-lg 2xl:text-xl 3xl:text-2xl lg:font-bold text-black-primary mt-1 2xl:mt-4 mr-1.5 md:mr-2 lg:mr-4 capitalize">
-        ends in
-      </span>     
-      <TimeCountdown date={"2023-10-08T15:27:32.635Z"}/>
-
+        <span className="hidden lg:block lg:text-lg 2xl:text-xl 3xl:text-2xl lg:font-bold text-black-primary mt-2 2xl:mt-4 lg:mr-4 capitalize">
+          ends in
+        </span>
+        <TimeCountdown date={"2023-10-08T15:27:32.635Z"} />
       </div>
     </div>
   );
