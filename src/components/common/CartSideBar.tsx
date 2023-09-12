@@ -3,8 +3,8 @@ import React, { FC, useEffect, useRef, useState } from "react";
 import Button from "../base/Button";
 import { CartProduct } from "./CartProduct";
 import { useCart } from "@/context/CartContext";
+import Checkbox from "../base/Checkbox";
 export type cartSideBarProps = {
-  closeCb: () => void;
   value: boolean;
   setCart: (e: boolean) => void;
 };
@@ -21,9 +21,6 @@ const CartSideBar: FC<cartSideBarProps> = ({ value, setCart }) => {
     };
 
     document.addEventListener("click", handleClickOutside, true);
-    return () => {
-      document.removeEventListener("click", handleClickOutside, true);
-    };
   }, [setCart]);
 
   return (
@@ -104,10 +101,7 @@ const CartSideBar: FC<cartSideBarProps> = ({ value, setCart }) => {
               </p>
               <div className="flex items-end justify-between p-2">
                 <div className="flex space-x-2 items-center">
-                  <input
-                    className="checked:bg-black-primary mt-[0.5px]"
-                    type="checkbox"
-                  />
+                <Checkbox identifier="select" onChangeCb={()=>{}}/>
                   <p className="text-[16px] leading-[18px] text-left text-black-primary">
                     Selected ({cartItem?.length})
                   </p>

@@ -1,27 +1,47 @@
-import React, { useState } from 'react';
+import React, { ChangeEvent, FC } from 'react'
 
-interface CheckboxProps {
-  label: string;
-//   checked: boolean;
-  onChange: (checked: boolean) => void;
+type checkboxProps = {
+  identifier: string
+  label?: string
+  groupClass?: string
+  stateData?: string
+  isChecked?: boolean
+  onChangeCb: (e: ChangeEvent<HTMLInputElement>) => void
 }
 
-const Checkbox: React.FC<CheckboxProps> = ({ label, onChange }) => {
-  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    onChange(e.target.checked);
-  };
-
+const Checkbox: FC<checkboxProps> = ({
+  identifier,
+  label,
+  isChecked,
+  stateData,
+  groupClass = '',
+  onChangeCb,
+}) => {
   return (
-    <label className="flex gap-2 items-center cursor-pointer overflow-hidden filter-checkbox">
+    <label
+      htmlFor={identifier}
+      className={`flex flex-row justify-center items-center gap-2.5 cursor-pointer ${groupClass}`}
+    >
       <input
+        checked={isChecked}
+        name={identifier}
         type="checkbox"
-        className="form-checkbox h-4 w-4"
-        // checked={checked}
-        onChange={handleCheckboxChange}
+        value={stateData}
+        id={identifier}
+        onChange={(e: ChangeEvent<HTMLInputElement>) => {
+          onChangeCb(e)
+        }}
+        className="hidden peer"
       />
-      <span className="text-[#484C52] text-[14px] leading-[17px] flex-1 truncate select-none">{label}</span>
+      <span className="peer-checked:bg-black-primary bg-white w-4 h-4 relative border border-black-primary rounded peer-checked:border-black-primary ">
+        <span className="absolute w-2 top-1/2 -translate-y-1/2 left-1 -rotate-45 h-0.5 bg-white rounded-tl-none rounded-full " />
+        <span className="absolute w-1 top-[52%] -translate-y-1/2 left-0.5 rotate-45 h-0.5 bg-white rounded-br-none rounded-full" />
+      </span>
+      <p className="font-normal text-sm text-black-primary ">
+        {label}
+      </p>
     </label>
-  );
-};
+  )
+}
 
-export default Checkbox;
+export default Checkbox

@@ -37,7 +37,7 @@ const FilterItem: FC<filterType> = ({
         <div>
           <div className="flex flex-col gap-y-4">
             {labels.map((item: labelType, i: number) => (
-              <Checkbox key={i} label={item.label} onChange={() => {}} />
+              <Checkbox identifier="check" key={i} label={item.label} onChangeCb={() => {}} />
             ))}
           </div>
           <button

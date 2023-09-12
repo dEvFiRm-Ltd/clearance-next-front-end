@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { useCart } from "@/context/CartContext";
+import Checkbox from "../base/Checkbox";
 
 export const CartProduct = ({ data, index }: any) => {
   const { removeFromCart, increaseQuantity, decreaseQuantity } = useCart();
@@ -33,7 +34,7 @@ export const CartProduct = ({ data, index }: any) => {
 
   return (
     <div className="flex justify-start items-center gap-x-3 max-w-[460px] px-4 mt-2">
-      <input className="checked:bg-black-primary" type="checkbox" />
+      <Checkbox identifier={data?.id} isChecked onChangeCb={()=>{}}/>
       <div className="flex items-start space-x-3">
         {/* image  */}
         <div className="w-[102px] h-[136px] relative">

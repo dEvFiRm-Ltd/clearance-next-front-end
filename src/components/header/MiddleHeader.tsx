@@ -124,7 +124,7 @@ const MiddleHeader = () => {
           </button>
         </div>
       </div>
-      <CartSideBar closeCb={()=>setIsCartOpen(!isCartOpen)} value={isCartOpen} setCart={setIsCartOpen}/> 
+      <CartSideBar value={isCartOpen} setCart={setIsCartOpen}/> 
     </div>
   );
 };
