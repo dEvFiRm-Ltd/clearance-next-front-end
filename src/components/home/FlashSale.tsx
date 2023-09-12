@@ -71,6 +71,9 @@ const FlashSale: FC<flashSaleProps> = ({ flashSaleArr }) => {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
+          infinite: true,
+          autoplay: true,
+          
         },
       },
     ],
@@ -89,19 +92,19 @@ const FlashSale: FC<flashSaleProps> = ({ flashSaleArr }) => {
           <button
             type="button"
             onClick={previous}
-            className="h-7 w-7 md:h-8 md:w-8 lg:h-9 lg:w-9 2xl:h-10 2xl:w-10 bg-white rounded-full flex justify-center items-center text-gray btnShadow"
+            className="hidden sm:h-7 sm:w-7 md:h-8 md:w-8 lg:h-9 lg:w-9 2xl:h-10 2xl:w-10 bg-white rounded-full sm:flex justify-center items-center text-gray btnShadow"
           >
             <i className="fas fa-chevron-left"></i>
           </button>
           <button
             type="button"
             onClick={next}
-            className="h-7 w-7 md:h-8 md:w-8 lg:h-9 lg:w-9 2xl:h-10 2xl:w-10 bg-white rounded-full flex justify-center items-center text-gray btnShadow"
+            className="hidden sm:h-7 sm:w-7 md:h-8 md:w-8 lg:h-9 lg:w-9 2xl:h-10 2xl:w-10 bg-white rounded-full sm:flex justify-center items-center text-gray btnShadow"
           >
             <i className="fas fa-chevron-right"></i>
           </button>
         </div>
-        <div className="p-3 flex flex-row justify-center items-center ">
+        <div className="p-3 flex flex-row justify-center items-center">
           <Slider
             className="w-[90vw] 2xl:w-[95vw] 3xl:w-[87vw] "
             ref={sliderRef}

@@ -52,7 +52,7 @@ const FlashSaleCard: FC<flashSaleCardProps> = ({
     };
   }, []);
   return (
-    <Link target='_blank' href={'https://www.clearance.ae/product/'+url} className={`boxShadow flex flex-col relative ${groupClass}`}>
+    <Link target='_blank' href={'https://www.clearance.ae/product/'+url} className={`boxShadow flex flex-col relative bg-white border border-ash ${groupClass}`}>
       <div
         className={`w-full h-52 md:h-[278px] lg:h-80 3xl:h-[324px] overflow-hidden relative group ${imgClass}`}
       >

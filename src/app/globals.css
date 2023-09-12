@@ -13,6 +13,12 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+/* @media (max-width: 640px) {
+  body {
+    background: #f1f1f1; 
+  }
+} */
+
 
 /* Initial styles for the link */
 .hover-link {
