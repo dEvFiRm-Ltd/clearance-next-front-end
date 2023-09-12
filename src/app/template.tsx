@@ -16,7 +16,7 @@ const Template: React.FC<TemplateProps> = ({ children }) => {
       <TopHeader />
       <MobileHeader />
       <MiddleHeader />
-      <BottomHeader />
+      {/* <BottomHeader /> */}
       <main className="">{children}</main>
       <Footer />
     </>
