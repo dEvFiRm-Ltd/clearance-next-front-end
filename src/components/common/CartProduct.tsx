@@ -34,7 +34,7 @@ export const CartProduct = ({ data, index }: any) => {
 
   return (
     <div className="flex justify-start items-center gap-x-3 max-w-[460px] px-4 mt-2">
-      <Checkbox identifier={data?.id} isChecked onChangeCb={()=>{}}/>
+      <Checkbox identifier={data?.id} onChangeCb={()=>{}}/>
       <div className="flex items-start space-x-3">
         {/* image  */}
         <div className="w-[102px] h-[136px] relative">

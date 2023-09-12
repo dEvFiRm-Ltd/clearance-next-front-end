@@ -59,9 +59,8 @@ const MiddleHeader = () => {
           </button>
         </div>
         <div className="flex flex-row items-center gap-x-2 xl:gap-x-3.5 2xl:gap-x-4 3xl:gap-x-5 text-xl 2xl:text-2xl">
-          <button type="button" onClick={()=>setLanguage(!language)}  ref={languageButtonRef} className="relative p-2 2xl:p-3">
+          {/* <button type="button" onClick={()=>setLanguage(!language)}  ref={languageButtonRef} className="relative p-2 2xl:p-3">
             <i className="fa-solid fa-globe"></i>
-            {/* hover dropdown */}
             {language && <div className="w-80 flex flex-col justify-start gap-y-5 absolute top-full right-0 z-50 px-4 pt-5 pb-2 bg-white cartShadow">
               <p className="text-sm 2xl:text-base font-bold text-black-primary capitalize text-left">
                 Language
@@ -70,9 +69,8 @@ const MiddleHeader = () => {
                 <option value="english">English</option>
                 <option value="arabic">Arabic</option>
               </select>
-            </div>}            
-             {/* hover dropdown ends */}
-          </button>
+            </div>}
+          </button> */}
           <button type="button" onClick={()=>setUser(!user)}  ref={userButtonRef} className="relative p-2 2xl:p-3">
             <i className="fa-regular fa-user"></i>
             {/* hover dropdown */}

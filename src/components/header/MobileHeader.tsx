@@ -10,13 +10,13 @@ const MobileHeader = () => {
     <>
       <div className="lg:hidden flex flex-row justify-between items-center py-1.5 md:py-4 px-2 md:px-5 relative">
         <div className="flex flex-row items-center gap-3">
-          <button
+          {/* <button
             type="button"
             onClick={() => setShow(!show)}
             className="group relative p-2 md:p-3 text-xl md:text-2xl"
           >
             <i className="fas fa-bars"></i>
-          </button>
+          </button> */}
           <Link href={"/"} className="w-32 h-8 md:h-9 relative">
             <Image
               src="https://backend-live.clearance.ae/storage/company/2023-02-06-63e08deba2852.png"

@@ -18,7 +18,7 @@ const CartModal: FC<commonModalProps> = ({ closeStateCb, viewState, data }) => {
   const [modal, setModal] = useState(false);
   const { isCartOpen, setIsCartOpen } = useCart();
   const [activeTab, setActiveTab] = useState("regular");
-  const [selectedSize, setSelectedSize] = useState<dropDowns>(sizeDropDown[0]);
+  const [selectedSize, setSelectedSize] = useState<any>(data?.choice_options?.options[0]);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
   const handleImageClick = (index: any) => {
@@ -177,9 +177,9 @@ const CartModal: FC<commonModalProps> = ({ closeStateCb, viewState, data }) => {
                       </div>
                     ))}
                   </div>
-                  <div className="text-black-primary text-lg capitalize">
+                  {/* <div className="text-black-primary text-lg capitalize">
                     fit:
-                  </div>
+                  </div> */}
                   <div className="flex justify-start items-center gap-x-3">
                     {/* {data?.variation.fit?.map((fit: string, i: number) => (
                     <button
@@ -217,14 +217,14 @@ const CartModal: FC<commonModalProps> = ({ closeStateCb, viewState, data }) => {
                   </div>
                   {/* sizes area  */}
                   <div className="flex justify-start items-center gap-x-3">
-                    <p className="text-gray text-lg capitalize">size:</p>
-                    <SelectField
-                      dropdownItems={sizeDropDown}
-                      currentItem={selectedSize.title}
-                      onChangeCb={(item: dropDowns) => {
+                  {data?.choice_options?.title&& <p className="text-gray text-lg capitalize">{data?.choice_options?.title}:</p>}
+                  {data?.choice_options?.options && <SelectField
+                      dropdownItems={data?.choice_options?.options}
+                      currentItem={selectedSize}
+                      onChangeCb={(item: any) => {
                         setSelectedSize(item);
                       }}
-                    />
+                    />}
                   </div>
                   {/* <Tab tabb={data?.variant[0]?.size} /> */}
                   {/* sizes area ends  */}

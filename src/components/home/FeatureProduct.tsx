@@ -3,7 +3,7 @@ import React, { FC, useState } from "react";
 import FlashSaleCard from "../common/FlashSaleCard";
 import CartModal from "../modal/CartModal";
 type featureProductProps={
-  featureProductArr:any
+  featureProductArr:any[]
   title:string
 }
 const FeatureProduct:FC<featureProductProps> = ({featureProductArr,title}) => {
@@ -26,6 +26,7 @@ const FeatureProduct:FC<featureProductProps> = ({featureProductArr,title}) => {
               text={item.name}
               text2={item.text2}
               discount={item.discount}
+              url={item.slug}
               actionCb={()=>{setModalData(item);setModals(!modals);}}
               groupClass="w-40 sm:w-52 md:w-60 lg:w-80 xl:w-[390px] 2xl:w-[427px]"
               imgClass="!h-52 sm:!h-[278px] md:!h-80 lg:!h-[400px] xl:!h-[480px] 2xl:!h-[570px]"

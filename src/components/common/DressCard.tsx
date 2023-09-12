@@ -4,7 +4,7 @@ import React, { FC } from "react";
 
 export type dressType = {
   image: string;
-  title: string;
+  title?: string;
   heading?: string;
   hightClass?: string;
   withClass?: string;
@@ -34,9 +34,9 @@ const DressCard: FC<dressType> = ({
           {heading}
         </p>
       )}
-      <p className="border-b text-gray border-[#B9B9B9] text-sm lg:text-base xl:text-lg 3xl:text-xl xl:leading-8">
+     {title && <p className="border-b text-gray border-[#B9B9B9] text-sm lg:text-base xl:text-lg 3xl:text-xl xl:leading-8">
         {title} ({totalProduct})
-      </p>
+      </p>}
     </Link>
   );
 };

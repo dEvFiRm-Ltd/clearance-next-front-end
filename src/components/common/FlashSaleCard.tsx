@@ -6,7 +6,7 @@ import StarList from './StarList';
 import SizeSelectDropDown from './SizeSelectDropDown';
 import Link from 'next/link';
 
-const FlashSaleCard: FC<flashSaleCardProps | any> = ({
+const FlashSaleCard: FC<flashSaleCardProps> = ({
   img,
   preSaleImgSticker,
   discount,
@@ -21,6 +21,7 @@ const FlashSaleCard: FC<flashSaleCardProps | any> = ({
   btnClass,
   colorImg,
   actionCb,
+  url,
   check = false,
   imgVariantSmall=false
 }) => {
@@ -51,7 +52,7 @@ const FlashSaleCard: FC<flashSaleCardProps | any> = ({
     };
   }, []);
   return (
-    <Link href={'/product-details'} className={`boxShadow flex flex-col relative ${groupClass}`}>
+    <Link target='_blank' href={'https://www.clearance.ae/product/'+url} className={`boxShadow flex flex-col relative ${groupClass}`}>
       <div
         className={`w-full h-52 md:h-[278px] lg:h-80 3xl:h-[324px] overflow-hidden relative group ${imgClass}`}
       >
@@ -81,9 +82,9 @@ const FlashSaleCard: FC<flashSaleCardProps | any> = ({
         <div
           onClick={(e) => {            
             e.preventDefault();
-            actionCb(); 
+            actionCb?.(); 
           }}
-          className={`group-hover:opacity-100 opacity-0 text-center py-2.5 lg:py-3.5 w-[130px] md:w-[140px] lg:w-[160px] 2xl:w-[220px] px-3 absolute left-1/2 -translate-x-1/2 bottom-12 rounded-full bg-white/90 uppercase ${btnClass}`}
+          className={`hidden md:block group-hover:opacity-100 opacity-0 text-center py-2.5 lg:py-3.5 w-[130px] md:w-[140px] lg:w-[160px] 2xl:w-[220px] px-3 absolute left-1/2 -translate-x-1/2 bottom-12 rounded-full bg-white/90 uppercase ${btnClass}`}
         >
           add to bag
         </div>

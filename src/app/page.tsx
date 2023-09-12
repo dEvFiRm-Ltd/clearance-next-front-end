@@ -104,8 +104,8 @@ export default async function Home() {
           <DressCard
             key={item.id}
             image={item.icon}
-            title={item.name}
-            totalProduct={item.total_product}            
+            // title={item.name}
+            // totalProduct={item.total_product}            
           />
         ))}
       </div>
@@ -144,13 +144,13 @@ export default async function Home() {
         ))}
       </div>
       <FeatureProduct featureProductArr={featureProductArr} title="Feature Product" />
-      <FeatureProduct featureProductArr={supermarketDealsArr} title="Supermarket Deals" />
+      {/* <FeatureProduct featureProductArr={supermarketDealsArr} title="Supermarket Deals" />
       <FeatureProduct featureProductArr={womenArr} title="Women" />
       <FeatureProduct featureProductArr={menArr} title="Man" />
       <FeatureProduct featureProductArr={girlArr} title="Girls" />
       <FeatureProduct featureProductArr={boysArr} title="Boys" />
       <FeatureProduct featureProductArr={sportsOutdoorsArr} title="Sports outdoors" />
-      <FeatureProduct featureProductArr={wholeSaleArr} title="wholesale" />
+      <FeatureProduct featureProductArr={wholeSaleArr} title="wholesale" /> */}
     </>
   );
 }

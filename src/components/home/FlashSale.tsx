@@ -115,6 +115,7 @@ const FlashSale: FC<flashSaleProps> = ({ flashSaleArr }) => {
                 salePrice={item.offer_price}
                 price={item.price}
                 discount={item.discount}
+                url={item.slug}
                 imgVariantSmall={true}
                 actionCb={() => {
                   setModalData(item);
