@@ -104,6 +104,7 @@ export default async function Home() {
           <DressCard
             key={item.id}
             image={item.icon}
+            url={item.slug}
             // title={item.name}
             // totalProduct={item.total_product}            
           />
