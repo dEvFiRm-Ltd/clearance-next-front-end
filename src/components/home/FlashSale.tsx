@@ -25,7 +25,7 @@ const FlashSale: FC<flashSaleProps> = ({ flashSaleArr }) => {
             navigation={true}
             autoplay={{
               delay: 2500,
-              disableOnInteraction: false,
+              disableOnInteraction: true,
             }}
             modules={[Autoplay, Navigation]}
             className='flashSlider'
