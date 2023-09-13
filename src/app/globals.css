@@ -38,6 +38,9 @@ body {
   display: flex;
   gap: 10px;
 }
+.slick-slide{
+  width: 84px;
+}
 /* .slick-list {
   overflow: visible;
 } */

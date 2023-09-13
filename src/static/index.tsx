@@ -60,6 +60,54 @@ export const brandsDataArr: brandsType[] = [
     logo: "https://sstorage.clearance.ae/production/storage/brand/2022-04-28-626a6db998913.png",
     url: "https://www.clearance.ae/products?id=13&data_from=brand&page=1",
   },
+  {
+    logo: "https://sstorage.clearance.ae/production/storage/brand/2022-04-27-6268f5f9185a5.png",
+    url: "https://www.clearance.ae/products?id=1&data_from=brand&page=1",
+  },
+  {
+    logo: "https://sstorage.clearance.ae/production/storage/brand/2022-04-25-626678013fc02.png",
+    url: "https://www.clearance.ae/products?id=2&data_from=brand&page=1",
+  },
+  {
+    logo: "https://sstorage.clearance.ae/production/storage/brand/2022-04-25-626684f82ebe2.png",
+    url: "https://www.clearance.ae/products?id=3&data_from=brand&page=1",
+  },
+  {
+    logo: "https://sstorage.clearance.ae/production/storage/brand/2022-04-25-62668b1422a69.png",
+    url: "https://www.clearance.ae/products?id=4&data_from=brand&page=1",
+  },
+  {
+    logo: "https://sstorage.clearance.ae/production/storage/brand/2022-04-25-62669170315e8.png",
+    url: "https://www.clearance.ae/products?id=5&data_from=brand&page=1",
+  },
+  {
+    logo: "https://sstorage.clearance.ae/production/storage/brand/2022-04-26-62681474d8de2.png",
+    url: "https://www.clearance.ae/products?id=6&data_from=brand&page=1",
+  },
+  {
+    logo: "https://sstorage.clearance.ae/production/storage/brand/2022-04-27-6268ed8172ea4.png",
+    url: "https://www.clearance.ae/products?id=7&data_from=brand&page=1",
+  },
+  {
+    logo: "https://sstorage.clearance.ae/production/storage/brand/2022-04-27-6269030ade694.png",
+    url: "https://www.clearance.ae/products?id=9&data_from=brand&page=1",
+  },
+  {
+    logo: "https://sstorage.clearance.ae/production/storage/brand/2022-04-27-626906fc5d312.png",
+    url: "https://www.clearance.ae/products?id=10&data_from=brand&page=1",
+  },
+  {
+    logo: "https://sstorage.clearance.ae/production/storage/brand/2022-04-27-626909b86ea8a.png",
+    url: "https://www.clearance.ae/products?id=11&data_from=brand&page=1",
+  },
+  {
+    logo: "https://sstorage.clearance.ae/production/storage/brand/2022-04-27-62692a8e5b41f.png",
+    url: "https://www.clearance.ae/products?id=12&data_from=brand&page=1",
+  },
+  {
+    logo: "https://sstorage.clearance.ae/production/storage/brand/2022-04-28-626a6db998913.png",
+    url: "https://www.clearance.ae/products?id=13&data_from=brand&page=1",
+  },
 ];
 export const bannerImgArr: bannerProps[] = [
   {

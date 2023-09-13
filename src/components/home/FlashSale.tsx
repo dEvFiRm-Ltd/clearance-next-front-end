@@ -28,25 +28,22 @@ const FlashSale: FC<flashSaleProps> = ({ flashSaleArr }) => {
           slidesToShow: 5,
           slidesToScroll: 2,
           infinite: true,
-          dots: true,
         },
       },
       {
         breakpoint: 1280,
         settings: {
-          slidesToShow: 5,
+          slidesToShow: 4,
           slidesToScroll: 2,
           infinite: true,
-          dots: true,
         },
       },
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 4,
+          slidesToShow: 3,
           slidesToScroll: 2,
           infinite: true,
-          dots: true,
         },
       },
       {
@@ -55,7 +52,6 @@ const FlashSale: FC<flashSaleProps> = ({ flashSaleArr }) => {
           slidesToShow: 3,
           slidesToScroll: 2,
           infinite: true,
-          dots: true,
         },
       },
       {
@@ -73,7 +69,6 @@ const FlashSale: FC<flashSaleProps> = ({ flashSaleArr }) => {
           slidesToScroll: 1,
           infinite: true,
           autoplay: true,
-          
         },
       },
     ],
@@ -106,7 +101,7 @@ const FlashSale: FC<flashSaleProps> = ({ flashSaleArr }) => {
         </div>
         <div className="p-3 flex flex-row justify-center items-center">
           <Slider
-            className="w-[90vw] 2xl:w-[95vw] 3xl:w-[87vw] "
+            className="w-[90vw] lg:w-[80vw] 2xl:w-[95vw] 3xl:w-[87vw] "
             ref={sliderRef}
             {...settings}
           >
