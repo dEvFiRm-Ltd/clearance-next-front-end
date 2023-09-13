@@ -35,7 +35,12 @@ body {
 }
 .slick-track {
   padding: 10px 0px;
+  display: flex;
+  gap: 10px;
 }
+/* .slick-list {
+  overflow: visible;
+} */
 /* Styles for the link on hover */
 .hover-link::before {
   content: "";
