@@ -15,33 +15,10 @@ type flashSaleProps = {
 const FlashSale: FC<flashSaleProps> = ({ flashSaleArr }) => {
   const [modals, setModals] = useState(false);
   const [modalData, setModalData] = useState<any>();
-  // const sliderRef = createRef<any>();
-  // const previous = () => {
-  //   sliderRef.current?.swiperButtonPrev();
-  // };
-  // const next = () => {
-  //   sliderRef.current?.swiperButtonNext();
-  // };
   return (
     <section className="mx-auto container">
       <Title />
       <div className="w-full md:px-4 lg:px-6 2xl:px-8 3xl:px-10 flex justify-center items-center pt-3 relative">
-        {/* <div className="flex w-full absolute top-1/2 -translate-y-1/2 justify-between z-10 px-1">
-          <button
-            type="button"
-            onClick={() => {}}
-            className="hidden sm:h-7 sm:w-7 md:h-8 md:w-8 lg:h-9 lg:w-9 2xl:h-10 2xl:w-10 bg-white rounded-full sm:flex justify-center items-center text-gray btnShadow"
-          >
-            <i className="fas fa-chevron-left"></i>
-          </button>
-          <button
-            type="button"
-            onClick={() => {}}
-            className="hidden sm:h-7 sm:w-7 md:h-8 md:w-8 lg:h-9 lg:w-9 2xl:h-10 2xl:w-10 bg-white rounded-full sm:flex justify-center items-center text-gray btnShadow"
-          >
-            <i className="fas fa-chevron-right"></i>
-          </button>
-        </div> */}
         <div className="w-full flex flex-row justify-center items-center">
           <Swiper
             slidesPerView={2}
