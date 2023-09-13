@@ -18,7 +18,9 @@ const CartModal: FC<commonModalProps> = ({ closeStateCb, viewState, data }) => {
   const [modal, setModal] = useState(false);
   const { isCartOpen, setIsCartOpen } = useCart();
   const [activeTab, setActiveTab] = useState("regular");
-  const [selectedSize, setSelectedSize] = useState<any>(data?.choice_options?.options[0]);
+  const [selectedSize, setSelectedSize] = useState<any>(
+    data?.choice_options?.options[0]
+  );
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
   const handleImageClick = (index: any) => {
@@ -217,14 +219,20 @@ const CartModal: FC<commonModalProps> = ({ closeStateCb, viewState, data }) => {
                   </div>
                   {/* sizes area  */}
                   <div className="flex justify-start items-center gap-x-3">
-                  {data?.choice_options?.title&& <p className="text-gray text-lg capitalize">{data?.choice_options?.title}:</p>}
-                  {data?.choice_options?.options && <SelectField
-                      dropdownItems={data?.choice_options?.options}
-                      currentItem={selectedSize}
-                      onChangeCb={(item: any) => {
-                        setSelectedSize(item);
-                      }}
-                    />}
+                    {data?.choice_options?.title && (
+                      <p className="text-gray text-lg capitalize">
+                        {data?.choice_options?.title}:
+                      </p>
+                    )}
+                    {data?.choice_options?.options && (
+                      <SelectField
+                        dropdownItems={data?.choice_options?.options}
+                        currentItem={selectedSize}
+                        onChangeCb={(item: any) => {
+                          setSelectedSize(item);
+                        }}
+                      />
+                    )}
                   </div>
                   {/* <Tab tabb={data?.variant[0]?.size} /> */}
                   {/* sizes area ends  */}
