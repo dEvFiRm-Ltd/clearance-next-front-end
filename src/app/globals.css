@@ -96,7 +96,7 @@ body {
     margin-left: 100%;
     width: 0%;
   }
-
+  
   to {
     margin-left: 0%;
     width: 100%;
@@ -111,3 +111,18 @@ body {
     -moz-appearance: textfield !important;
   }
 }
+
+/* .swiper-button-next{
+  display: none !important;  
+}
+.swiper-button-prev{
+  display: none !important;  
+} */
+.swiper {
+  width: 100%;
+  height: auto;
+}
+.mySwiper{
+  padding: 12px !important;
+}
+
