@@ -18,6 +18,7 @@ const CartModal: FC<commonModalProps> = ({ closeStateCb, viewState, data }) => {
   const [modal, setModal] = useState(false);
   const { isCartOpen, setIsCartOpen } = useCart();
   const [activeTab, setActiveTab] = useState("regular");
+  const [checkValue, setCheckValue] = useState(true);
   const [selectedSize, setSelectedSize] = useState<any>(
     data?.choice_options?.options[0]
   );
@@ -46,7 +47,7 @@ const CartModal: FC<commonModalProps> = ({ closeStateCb, viewState, data }) => {
   const handleAddToCart = () => {
     setModal(true);
     setIsCartOpen(true);
-    addToCart(data);
+    addToCart({ ...data, checked: checkValue });
     closeStateCb();
   };
   return (

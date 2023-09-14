@@ -15,6 +15,7 @@ type Product = {
   offer_price: string;
   price: string;
   qty: number;
+  checked?: boolean;
   variant: [
     {
       size: string[];

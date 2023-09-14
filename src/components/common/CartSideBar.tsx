@@ -101,7 +101,11 @@ const CartSideBar: FC<cartSideBarProps> = ({ value, setCart }) => {
               </p>
               <div className="flex items-end justify-between p-2">
                 <div className="flex space-x-2 items-center">
-                <Checkbox identifier="select" onChangeCb={()=>{}}/>
+                  <Checkbox
+                    identifier="selected"
+                    isChecked={cartItem[0]?.checeked}
+                    onChangeCb={() => {}}
+                  />
                   <p className="text-[16px] leading-[18px] text-left text-black-primary">
                     Selected ({cartItem?.length})
                   </p>
