@@ -23,7 +23,7 @@ const FlashSaleCard: FC<flashSaleCardProps> = ({
   actionCb,
   url,
   check = false,
-  imgVariantSmall=false
+  imgVariantSmall = false,
 }) => {
   const [selectSize, setSelectSize] = useState(false);
   const [selectedColorIndex, setSelectedColorIndex] = useState<number | null>(
@@ -52,7 +52,11 @@ const FlashSaleCard: FC<flashSaleCardProps> = ({
     };
   }, []);
   return (
-    <Link target='_blank' href={'https://www.clearance.ae/product/'+url} className={`boxShadow flex flex-col relative bg-white border border-ash ${groupClass}`}>
+    <Link
+      target='_blank'
+      href={'https://www.clearance.ae/product/' + url}
+      className={`boxShadow flex flex-col relative bg-white border border-ash ${groupClass}`}
+    >
       <div
         className={`w-full h-52 md:h-[278px] lg:h-80 3xl:h-[324px] overflow-hidden relative group ${imgClass}`}
       >
@@ -61,7 +65,7 @@ const FlashSaleCard: FC<flashSaleCardProps> = ({
           alt='img'
           fill
           className={`group-hover:transform group-hover:scale-110 transition-transform duration-300 ${
-            imgVariantSmall ? "object-contain" : "object-cover"
+            imgVariantSmall ? 'object-contain' : 'object-cover'
           }`}
         />
         {discount && (
@@ -80,9 +84,9 @@ const FlashSaleCard: FC<flashSaleCardProps> = ({
           </span>
         )}
         <div
-          onClick={(e) => {            
+          onClick={(e) => {
             e.preventDefault();
-            actionCb?.(); 
+            actionCb?.();
           }}
           className={`hidden md:block group-hover:opacity-100 opacity-0 text-center py-2.5 lg:py-3.5 w-[130px] md:w-[140px] lg:w-[160px] 2xl:w-[220px] px-3 absolute left-1/2 -translate-x-1/2 bottom-12 rounded-full bg-white/90 uppercase ${btnClass}`}
         >
@@ -93,11 +97,11 @@ const FlashSaleCard: FC<flashSaleCardProps> = ({
         <p className='line-clamp-1 text-xs lg:text-sm'>{text}</p>
         <div className='flex flex-wrap justify-start items-center gap-2'>
           <span className='text-sm md:text-base xl:text-lg 3xl:text-xl text-red-400 font-bold'>
-            ${salePrice}
+            {salePrice} AED
           </span>
           {price && (
             <span className='text-xs lg:text-sm font-normal text-[#868C93] line-through '>
-              ${price}
+              {price} AED
             </span>
           )}
         </div>

@@ -37,7 +37,7 @@ export const CartProduct = ({ data, index, checkedCb }: any) => {
       <Checkbox
         identifier={data?.id}
         isChecked={data?.checked}
-        onChangeCb={checkedCb}
+        onChangeCb={() => checkedCb()}
       />
       <div className='flex items-start space-x-3'>
         {/* image  */}
@@ -59,10 +59,10 @@ export const CartProduct = ({ data, index, checkedCb }: any) => {
           </div>
           <div className='flex justify-start items-center relative gap-2 my-2'>
             <p className='text-base font-bold text-left text-black-primary'>
-              ${data?.offer_price}
+              {data?.offer_price} AED
             </p>
             <p className='text-sm line-through text-left text-[#a1a5ab]'>
-              ${data?.price}
+              {data?.price} AED
             </p>
           </div>
           <Popover className='relative'>
@@ -128,10 +128,10 @@ export const CartProduct = ({ data, index, checkedCb }: any) => {
             <div>
               Total:{' '}
               <strong className='text-base leading-[18px]'>
-                $
                 {data?.offer_price
                   ? (data?.offer_price * data.qty).toFixed(2)
-                  : (data?.price * data.qty).toFixed(2)}
+                  : (data?.price * data.qty).toFixed(2)}{' '}
+                AED
               </strong>
             </div>
           </div>

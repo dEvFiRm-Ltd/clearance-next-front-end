@@ -1,16 +1,25 @@
 'use client';
-import React, { FC, useContext, useEffect, useRef } from 'react';
+import React, {
+  FC,
+  useCallback,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import Button from '../base/Button';
 import { CartProduct } from './CartProduct';
-import { CartContext, Product, useCart } from '@/context/CartContext';
+import { CartContext, Product } from '@/context/CartContext';
 import Checkbox from '../base/Checkbox';
 export type cartSideBarProps = {
   value: boolean;
   setCart: (e: boolean) => void;
 };
 const CartSideBar: FC<cartSideBarProps> = ({ value, setCart }) => {
-  const { cartItem, totalPrice, toggleCheckProduct } = useContext(CartContext);
+  const { cartItem, totalPrice, toggleCheckProduct, itemCount, savingAmount } =
+    useContext(CartContext);
   const cartBox = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     const handleClickOutside = (event: any) => {
       if (cartBox.current && !cartBox.current.contains(event.target)) {
@@ -21,6 +30,10 @@ const CartSideBar: FC<cartSideBarProps> = ({ value, setCart }) => {
     };
 
     document.addEventListener('click', handleClickOutside, true);
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
   }, [setCart]);
 
   return (
@@ -65,7 +78,7 @@ const CartSideBar: FC<cartSideBarProps> = ({ value, setCart }) => {
             <div className='bg-white pb-2 w-full'>
               {/* free gift  */}
               <p className='text-[12px] leading-[14px] text-left text-black-primary line-clamp-2 bg-[#FBEFEFCC] px-2 py-3 mb-1 w-full border-b-4 border-ash'>
-                Order <strong>$12 </strong>more and get{' '}
+                Order <strong>12 AED </strong>more and get{' '}
                 <strong>FREE GIFT</strong>
               </p>
               {/* flash sale */}
@@ -103,7 +116,7 @@ const CartSideBar: FC<cartSideBarProps> = ({ value, setCart }) => {
 
             <div className='w-full bg-white sticky bottom-0'>
               <p className='bg-[#f5fcfbf5] w-full text-black-primary text-xs line-clamp-2 leading-[14px] text-left px-2 py-3 border-b-2 border-ash'>
-                Spend <strong>$42.32</strong> more and get{' '}
+                Spend <strong>42.32 AED</strong> more and get{' '}
                 <strong>FREE SHIPPING!</strong>(Except final sale items)
               </p>
               <div className='flex items-end justify-between p-2'>
@@ -123,17 +136,17 @@ const CartSideBar: FC<cartSideBarProps> = ({ value, setCart }) => {
                     }}
                   />
                   <p className='text-[16px] leading-[18px] text-left text-black-primary'>
-                    Selected ({cartItem?.length})
+                    Selected ({itemCount})
                   </p>
                 </div>
                 <div>
                   <p className='text-[16px] leading-[18px] text-gray text-right my-2'>
-                    Save: $15.3
+                    Save: {savingAmount} AED
                   </p>
                   <p className='text-'>
                     Total:{' '}
                     <strong className='text-red-700'>
-                      ${totalPrice.toFixed(2)}
+                      {totalPrice.toFixed(2)} AED
                     </strong>
                   </p>
                 </div>
