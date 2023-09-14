@@ -1,13 +1,13 @@
-import React, { ChangeEvent, FC } from 'react'
+import React, { ChangeEvent, FC } from 'react';
 
 type checkboxProps = {
-  identifier: string
-  label?: string
-  groupClass?: string
-  stateData?: string
-  isChecked?: boolean
-  onChangeCb: (e: ChangeEvent<HTMLInputElement>) => void
-}
+  identifier: string;
+  label?: string;
+  groupClass?: string;
+  stateData?: string;
+  isChecked?: boolean;
+  onChangeCb: (e: boolean) => void;
+};
 
 const Checkbox: FC<checkboxProps> = ({
   identifier,
@@ -25,23 +25,22 @@ const Checkbox: FC<checkboxProps> = ({
       <input
         checked={isChecked}
         name={identifier}
-        type="checkbox"
+        type='checkbox'
         value={stateData}
         id={identifier}
         onChange={(e: ChangeEvent<HTMLInputElement>) => {
-          onChangeCb(e)
+          onChangeCb(e.target.checked);
         }}
-        className="hidden peer"
+        className='hidden peer'
       />
-      <span className="peer-checked:bg-black-primary bg-white w-4 h-4 relative border border-black-primary rounded peer-checked:border-black-primary ">
-        <span className="absolute w-2 top-1/2 -translate-y-1/2 left-1 -rotate-45 h-0.5 bg-white rounded-tl-none rounded-full " />
-        <span className="absolute w-1 top-[52%] -translate-y-1/2 left-0.5 rotate-45 h-0.5 bg-white rounded-br-none rounded-full" />
+      <span className='peer-checked:bg-black-primary bg-white w-4 h-4 relative border border-black-primary rounded peer-checked:border-black-primary '>
+        <span className='absolute w-2 top-1/2 -translate-y-1/2 left-1 -rotate-45 h-0.5 bg-white rounded-tl-none rounded-full ' />
+        <span className='absolute w-1 top-[52%] -translate-y-1/2 left-0.5 rotate-45 h-0.5 bg-white rounded-br-none rounded-full' />
       </span>
-      <p className="font-normal text-sm text-black-primary ">
-        {label}
-      </p>
+      <p className='font-normal text-sm text-black-primary '>{label}</p>
     </label>
-  )
-}
+  );
+};
 
-export default Checkbox
+export default Checkbox;
+

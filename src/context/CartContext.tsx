@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, {
   FC,
   ReactNode,
@@ -7,9 +7,9 @@ import React, {
   useContext,
   useEffect,
   useState,
-} from "react";
+} from 'react';
 
-type Product = {
+export type Product = {
   thumbnail: string;
   name: string;
   offer_price: string;
@@ -35,16 +35,18 @@ type CartContextValue = {
   removeFromCart: (index: number) => void;
   totalPrice: number;
   increaseQuantity: (index: number) => void;
+  toggleCheckProduct: (index: number) => void;
   decreaseQuantity: (index: number) => void;
   isCartOpen?: boolean | any;
   setIsCartOpen?: any;
 };
 
-const CartContext = createContext<CartContextValue>({
+export const CartContext = createContext<CartContextValue>({
   cartItem: [],
   addToCart: () => {},
   removeFromCart: () => {},
   increaseQuantity: (index: number) => {},
+  toggleCheckProduct: (index: number) => {},
   decreaseQuantity: (index: number) => {},
   totalPrice: 0,
 });
@@ -79,12 +81,22 @@ export const CartProvider: FC<CartProviderProps> = ({ children }) => {
         prevCart.map((p) => (p === existingProduct ? existingProduct : p))
       );
     } else {
-      setCartItem((prevCart) => [...prevCart, { ...product, qty: 1 }]);
+      setCartItem((prevCart) => [
+        ...prevCart,
+        { ...product, qty: 1, checked: true },
+      ]);
     }
   };
   const removeFromCart = (index: number) => {
     const newCart = cartItem.filter((product, i) => i !== index);
     setCartItem(newCart);
+  };
+
+  const toggleCheckProduct = (index: number) => {
+    const tempArr = [...cartItem];
+    tempArr[index].checked = tempArr[index].checked ? false : true;
+
+    setCartItem(tempArr);
   };
 
   useEffect(() => {
@@ -128,9 +140,11 @@ export const CartProvider: FC<CartProviderProps> = ({ children }) => {
         decreaseQuantity,
         isCartOpen,
         setIsCartOpen,
+        toggleCheckProduct,
       }}
     >
       {children}
     </CartContext.Provider>
   );
 };
+

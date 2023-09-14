@@ -1,21 +1,11 @@
-import BestSeller from '@/components/home/BestSeller';
-import DressCard, { dressType } from '@/components/common/DressCard';
+import DressCard from '@/components/common/DressCard';
 import Banner from '@/components/home/Banner';
 import FlashSale from '@/components/home/FlashSale';
-import DenimShop from '@/components/home/DenimShop';
-import {
-  brandsDataArr,
-  dress,
-  dressTwo,
-  verticalImage,
-  verticalImageTwo,
-} from '@/static';
+
 import VerticalImage from '@/components/common/VerticalImage';
-import HandPicked from '@/components/home/FeatureProduct';
-import Footer from '@/components/home/Footer';
+
 import { env } from 'node:process';
 import FeatureProduct from '@/components/home/FeatureProduct';
-import Brands from '@/components/home/Brands';
 
 export default async function Home() {
   const bannerApiCall = await fetch(
