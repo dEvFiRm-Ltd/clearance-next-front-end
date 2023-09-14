@@ -105,7 +105,25 @@ export const CartProvider: FC<CartProviderProps> = ({ children }) => {
   };
 
   useEffect(() => {
-    const totalPrc = cartItem.reduce(
+    let tempArr: Product[] = [];
+    if (cartItem.length) {
+      tempArr = [...cartItem];
+      localStorage.setItem('cartItems', JSON.stringify(cartItem));
+    } else {
+      const value: Product[] = JSON.parse(
+        localStorage.getItem('cartItems') || '{}'
+      );
+      console.log(
+        '🚀 ~ file: CartContext.tsx:112 ~ useEffect ~ value:',
+        localStorage.getItem('cartItems')
+      );
+      if (value.length) {
+        tempArr = [...value];
+        setCartItem(value);
+      }
+    }
+
+    const totalPrc = tempArr.reduce(
       (total, product) =>
         product.checked
           ? total +
@@ -114,7 +132,7 @@ export const CartProvider: FC<CartProviderProps> = ({ children }) => {
           : total,
       0
     );
-    const savingPrc = cartItem.reduce(
+    const savingPrc = tempArr.reduce(
       (total, product) =>
         product.checked
           ? total +
@@ -128,7 +146,7 @@ export const CartProvider: FC<CartProviderProps> = ({ children }) => {
     );
     let tempTotalCount = 0;
     let tempUncheckedCount = 0;
-    cartItem.forEach((element) => {
+    tempArr.forEach((element) => {
       tempTotalCount = tempTotalCount + element.qty;
       if (!element.checked) {
         tempUncheckedCount = tempUncheckedCount + element.qty;
