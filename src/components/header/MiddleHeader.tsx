@@ -1,16 +1,17 @@
-'use client'
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import CartSideBar from "../common/CartSideBar";
 import { useCart } from "@/context/CartContext";
+import SearchField from "../base/SearchField";
 
 const MiddleHeader = () => {
   // const [show, setShow] = useState(false)
   const [language, setLanguage] = useState(false);
   const [user, setUser] = useState(false);
   // const [cart, setCart] = useState(false);
-  const {isCartOpen, setIsCartOpen} = useCart();
+  const { isCartOpen, setIsCartOpen } = useCart();
   const languageButtonRef = useRef<HTMLButtonElement>(null);
   const userButtonRef = useRef<HTMLButtonElement>(null);
   useEffect(() => {
@@ -26,7 +27,7 @@ const MiddleHeader = () => {
         !userButtonRef.current.contains(event.target as Node)
       ) {
         setUser(false);
-      }    
+      }
     }
 
     document.addEventListener("mousedown", handleClickOutside);
@@ -48,16 +49,7 @@ const MiddleHeader = () => {
         />
       </Link>
       <div className="flex flex-row items-center gap-x-5 xl:gap-x-6 3xl:gap-x-8">
-        <div className="">
-          <input
-            type="text"
-            placeholder="Jacket"
-            className="w-48 pl-5 outline-none border rounded-l lg:w-56 xl:w-60 2xl:w-64 3xl:w-[300px] py-2 xl:py-2.5 2xl:py-3 3xl:py-4 text-sm 2xl:text-base"
-          />
-          <button className="rounded-r hover:bg-[#616368] bg-black-primary px-5 xl:px-6 2xl:px-8 3xl:px-10 py-2 xl:py-2.5 2xl:py-3 3xl:py-4">
-            <i className="fa-solid fa-magnifying-glass text-white"></i>
-          </button>
-        </div>
+        <SearchField />
         <div className="flex flex-row items-center gap-x-2 xl:gap-x-3.5 2xl:gap-x-4 3xl:gap-x-5 text-xl 2xl:text-2xl">
           {/* <button type="button" onClick={()=>setLanguage(!language)}  ref={languageButtonRef} className="relative p-2 2xl:p-3">
             <i className="fa-solid fa-globe"></i>
@@ -71,58 +63,69 @@ const MiddleHeader = () => {
               </select>
             </div>}
           </button> */}
-          <button type="button" onClick={()=>setUser(!user)}  ref={userButtonRef} className="relative p-2 2xl:p-3">
+          <button
+            type="button"
+            onClick={() => setUser(!user)}
+            ref={userButtonRef}
+            className="relative p-2 2xl:p-3"
+          >
             <i className="fa-regular fa-user"></i>
             {/* hover dropdown */}
-            {user && <div className="absolute right-[50%] translate-x-[50%] z-50 top-[115%] bg-white flex min-w-[240px] rounded-md cartShadow">
-              <div className="w-full flex flex-col justify-start items-center gap-4 relative p-4">
-                <button
-                  type="button"
-                  className="flex justify-center items-center overflow-hidden rounded hover:opacity-80 bg-black-primary group w-full px-3 py-2 text-white text-sm 2xl:text-base"
-                >
-                  Sign In / Register{" "}
-                </button>
-                <p className="text-sm font-normal text-black capitalize">
-                  or sign in:
-                </p>
-                <span className="flex justify-center items-center gap-x-10">
-                  <Link href="">
-                    <i className="fab fa-facebook text-blue-500"></i>
+            {user && (
+              <div className="absolute right-[50%] translate-x-[50%] z-50 top-[115%] bg-white flex min-w-[240px] rounded-md cartShadow">
+                <div className="w-full flex flex-col justify-start items-center gap-4 relative p-4">
+                  <button
+                    type="button"
+                    className="flex justify-center items-center overflow-hidden rounded hover:opacity-80 bg-black-primary group w-full px-3 py-2 text-white text-sm 2xl:text-base"
+                  >
+                    Sign In / Register{" "}
+                  </button>
+                  <p className="text-sm font-normal text-black capitalize">
+                    or sign in:
+                  </p>
+                  <span className="flex justify-center items-center gap-x-10">
+                    <Link href="">
+                      <i className="fab fa-facebook text-blue-500"></i>
+                    </Link>
+                    <Link href="">
+                      <i className="fab fa-google text-red-400"></i>
+                    </Link>
+                  </span>
+                  <span className="h-px bg-slate-500 w-full" />
+                  <Link
+                    href={""}
+                    className="w-full text-sm 2xl:text-base text-left text-gray hover:font-bold capitalize"
+                  >
+                    my order
                   </Link>
-                  <Link href="">
-                    <i className="fab fa-google text-red-400"></i>
+                  <Link
+                    href={""}
+                    className="w-full text-sm 2xl:text-base text-left text-gray hover:font-bold capitalize"
+                  >
+                    my coupons
                   </Link>
-                </span>
-                <span className="h-px bg-slate-500 w-full" />
-                <Link
-                  href={""}
-                  className="w-full text-sm 2xl:text-base text-left text-gray hover:font-bold capitalize"
-                >
-                  my order
-                </Link>
-                <Link
-                  href={""}
-                  className="w-full text-sm 2xl:text-base text-left text-gray hover:font-bold capitalize"
-                >
-                  my coupons
-                </Link>
-                <Link
-                  href={""}
-                  className="w-full text-sm 2xl:text-base text-left text-gray hover:font-bold capitalize"
-                >
-                  my wallet
-                </Link>
-                <span className="h-3 w-3 bg-white cartShadow rotate-45 absolute -z-50 -top-1.5 left-1/2 -translate-x-1/2" />
+                  <Link
+                    href={""}
+                    className="w-full text-sm 2xl:text-base text-left text-gray hover:font-bold capitalize"
+                  >
+                    my wallet
+                  </Link>
+                  <span className="h-3 w-3 bg-white cartShadow rotate-45 absolute -z-50 -top-1.5 left-1/2 -translate-x-1/2" />
+                </div>
               </div>
-            </div>}
+            )}
             {/* hover dropdown ends */}
           </button>
-          <button type="button" onClick={()=>setIsCartOpen(true)} className="relative p-2 2xl:p-3">
+          <button
+            type="button"
+            // onClick={() => setIsCartOpen(true)}
+            className="relative p-2 2xl:p-3"
+          >
             <i className="fa-solid fa-bag-shopping"></i>
           </button>
         </div>
       </div>
-      <CartSideBar value={isCartOpen} setCart={setIsCartOpen}/> 
+      <CartSideBar value={isCartOpen} setCart={setIsCartOpen} />
     </div>
   );
 };
