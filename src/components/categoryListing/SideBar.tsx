@@ -1,6 +1,7 @@
 "use client";
 import React, { FC, useState } from "react";
 import FilterItem from "../common/FilterItem";
+import Button from "../base/Button";
 
 type FilterItemType = {
   title: string;
@@ -17,12 +18,34 @@ const SideBar: FC = () => {
   // Define an array of filter items with different titles and labels
   const filterItems: FilterItemType[] = [
     {
-      title: "Category 1",
-      labels: [{ label: "Label 1" }, { label: "Label 2" }],
+      title: "sizes",
+      labels: [
+        { label: "xxl" },
+        { label: "xs" },
+        { label: "l" },
+        { label: "s" },
+      ],
     },
     {
-      title: "Category 2",
-      labels: [{ label: "Label 3" }, { label: "Label 4" }],
+      title: "Brands",
+      labels: [
+        { label: "Pull & Bear" },
+        { label: "Zara" },
+        { label: "Reebok" },
+        { label: "adidas" },
+        { label: "UNIVERSAL" },
+        { label: "Roccobarroco" },
+        { label: "Speedo" },
+      ],
+    },
+    {
+      title: "Prices",
+      labels: [
+        { label: "Less than 266" },
+        { label: "266 - 517" },
+        { label: "517 - 768" },
+        { label: "More than 768" },
+      ],
     },
     // Add more filter items as needed
   ];
@@ -45,6 +68,12 @@ const SideBar: FC = () => {
           actionCbView={() => {}}
         />
       ))}
+
+      <Button
+        btnText="Reset"
+        btnClass="!mt-5 !text-lg !font-semibold disabled:opacity-20 disabled:cursor-not-allowed hover:opacity-80 active:opacity-90 active:shadow-[inset_0px_0px_8px_rgba(0,0,0,0.25)] px-4 h-10 border-[1.5px] self-center uppercase"
+        variant="outlined"
+      />
     </div>
   );
 };

@@ -30,7 +30,7 @@ const FilterItem: FC<filterType> = ({
         onClick={actionCb}
         className="w-full flex flex-row justify-between items-center "
       >
-        <p className="text-base font-semibold leading-10 truncate">{title}</p>
+        <p className="text-base font-semibold leading-10 capitalize">{title}</p>
         <i className={`fa-solid fa-chevron-up text-xs ${icon}`}></i>
       </button>
       {viewStateCb && (
