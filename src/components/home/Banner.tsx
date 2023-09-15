@@ -51,7 +51,7 @@ const Banner: FC<bannerPropsType> = ({ imgArr }) => {
           </Link>
         ))}
       </Slider>
-      <div className='absolute z-30 w-full justify-between flex group-hover:opacity-100 opacity-0 transition-opacity duration-300 px-3 xl:px-5'>
+      <div className='absolute z-10 w-full justify-between flex group-hover:opacity-100 opacity-0 transition-opacity duration-300 px-3 xl:px-5'>
         <button
           type='button'
           onClick={previous}
