@@ -71,6 +71,7 @@ const SideBar: FC = () => {
 
       <Button
         btnText="Reset"
+        actionCb={() => {}}
         btnClass="!mt-5 !text-lg !font-semibold disabled:opacity-20 disabled:cursor-not-allowed hover:opacity-80 active:opacity-90 active:shadow-[inset_0px_0px_8px_rgba(0,0,0,0.25)] px-4 h-10 border-[1.5px] self-center uppercase"
         variant="outlined"
       />
