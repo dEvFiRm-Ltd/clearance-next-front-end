@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import React, {
   FC,
   ReactNode,
@@ -7,7 +7,7 @@ import React, {
   useContext,
   useEffect,
   useState,
-} from 'react';
+} from "react";
 
 export type Product = {
   thumbnail: string;
@@ -108,14 +108,10 @@ export const CartProvider: FC<CartProviderProps> = ({ children }) => {
     let tempArr: Product[] = [];
     if (cartItem.length) {
       tempArr = [...cartItem];
-      localStorage.setItem('cartItems', JSON.stringify(cartItem));
+      localStorage.setItem("cartItems", JSON.stringify(cartItem));
     } else {
       const value: Product[] = JSON.parse(
-        localStorage.getItem('cartItems') || '{}'
-      );
-      console.log(
-        '🚀 ~ file: CartContext.tsx:112 ~ useEffect ~ value:',
-        localStorage.getItem('cartItems')
+        localStorage.getItem("cartItems") || "{}"
       );
       if (value.length) {
         tempArr = [...value];
@@ -196,4 +192,3 @@ export const CartProvider: FC<CartProviderProps> = ({ children }) => {
     </CartContext.Provider>
   );
 };
-
