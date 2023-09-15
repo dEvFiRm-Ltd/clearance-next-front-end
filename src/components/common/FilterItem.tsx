@@ -37,13 +37,19 @@ const FilterItem: FC<filterType> = ({
         <div>
           <div className="flex flex-col gap-y-4">
             {labels.map((item: labelType, i: number) => (
-              <Checkbox identifier="check" key={i} label={item.label} onChangeCb={() => {}} />
+              <Checkbox
+                identifier="check"
+                key={i}
+                label={item.label}
+                groupClass="!justify-start"
+                onChangeCb={() => {}}
+              />
             ))}
           </div>
           <button
             type="button"
             onClick={actionCbView}
-            className="mb-[21px] mt-6 py-2 flex w-full justify-start items-center font-medium gap-x-1 text-[14px] leading-[17px] text-black"            
+            className="mb-[21px] mt-6 py-2 flex w-full justify-start items-center font-medium gap-x-1 text-[14px] leading-[17px] text-black"
           >
             <div>
               <i className="fa-solid fa-plus text-xs"></i>

@@ -13,8 +13,24 @@ const DressList = () => {
 
   const [isOpen, setIsOpen] = useState(false);
   const [currentItem, setCurrentItem] = useState("Our Pick");
-  const dropdownRef = useRef(null);
+  const dropdownRef = useRef<any>();
 
+  // Function to handle clicks outside of the dropdown
+  const handleClickOutsideSelectField = (event: any) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setIsOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    // Add an event listener when the component mounts
+    document.addEventListener("mousedown", handleClickOutsideSelectField);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutsideSelectField);
+    };
+  }, [dropdownRef]); // Empty dependency array to run this effect only once
   const dropdownItems = [
     "Our Pick",
     "New",
@@ -22,47 +38,33 @@ const DressList = () => {
     "Price(High > Low)",
     "Best Selling",
   ];
-
-  const handleClickOutside = (event: any) => {
-    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-      setIsOpen(false);
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
-
-  const handleItemClick = (item: any) => {
-    setCurrentItem(item);
-    setIsOpen(false);
-  };
-
   return (
-    <div className="w-full 3xl:w-[calc(100%-216px-24px)] relative">
-      <div className="flex flex-row items-center justify-between gap-x-2 capitalize mb-3.5 px-3">
+    <div className="w-full xl:w-[calc(100%-216px-24px)] relative">
+      <div className="flex flex-row items-center justify-between gap-x-2 capitalize mb-3.5 px-3 xl:px-0">
         <p className="text-lg leading-none text-black-primary font-bold">
           Dresses <span className="text-sm font-normal text-center">566</span>{" "}
           <span className="text-sm font-normal text-center">Results</span>
         </p>
-        <div className="3xl:flex flex-row items-center gap-x-2 capitalize hidden">
+        <div
+          className="xl:flex flex-row items-center gap-x-2 capitalize hidden relative"
+          ref={dropdownRef}
+        >
           <p className="text-base text-black-primary font-normal">Sort By</p>
           <SelectField
-            dropDownClass="!w-full !text-sm !hover:font-bold"
-            currentItemClass="!text-[#31353C] !font-semibold !text-sm !capitalize"
+            dropDownClass="!w-full"
+            currentItemClass="!text-[#31353C] !font-semibold !capitalize !text-sm"
+            dropItemClass="!capitalize hover:font-bold"
+            iconClass={`${isOpen === true ? "rotate-180" : ""}`}
             currentItem={currentItem}
             dropdownItems={dropdownItems}
             onChangeCb={(item: any) => setCurrentItem(item)}
-            groupClass="!w-[200px] !border pl-3 pr-1 py-1"
+            groupClass="!w-[200px] !border !border-black/20 pl-3 pr-1.5 py-1"
           />
         </div>
       </div>
       {/* buttons are here  */}
       {/* <Recommend recommendArr={recommendData} heading="" btnClass=""/> */}
-      <div className="w-full flex flex-row flex-wrap items-center gap-3 3xl:hidden border-b-[7px] border-[#F2F2F3] px-3 pb-3.5">
+      <div className="w-full flex flex-row flex-wrap items-center gap-3 xl:hidden border-b-[7px] border-[#F2F2F3] px-3 pb-3.5">
         {recommendData.map((item: recommendType, i: number) => (
           <div key={i} className="">
             <Button
@@ -74,7 +76,7 @@ const DressList = () => {
         ))}
       </div>
 
-      <div className="flex flex-row items-center justify-between px-3 3xl:hidden">
+      <div className="flex flex-row items-center justify-between px-3 xl:hidden">
         <div>
           <Button btnText="New" actionCb={() => {}} variant="naked" />
         </div>
@@ -102,7 +104,7 @@ const DressList = () => {
           <i className="fa-solid fa-filter text-sm"></i>
         </div>
       </div>
-      <div className="w-full flex flex-row flex-wrap gap-x-4 gap-y-5">
+      <div className="w-full flex flex-row justify-center xl:justify-start flex-wrap gap-4 xl:gap-x-6 2xl:gap-x-[22.5px] lg:gap-y-5 xl:gap-y-6">
         {dressListData.map((item: flashSaleCardProps, id: number) => (
           <FlashSaleCard
             key={id}
@@ -111,8 +113,8 @@ const DressList = () => {
             salePrice={item.salePrice}
             price={item.price}
             discount={item.discount}
-            groupClass="!w-[162px] sm:!w-[302px] md:!w-[366px] lg:!w-[494px] xl:!w-[622px] 2xl:!w-[750px] 3xl:!w-[290px] p-2"
-            imgClass="!h-[215px] sm:!h-[402px] md:!h-[487px] lg:!h-[657px] xl:!h-[827px] 2xl:!h-[997.5px] 3xl:!h-[385px]"
+            groupClass="!w-[170px] sm:!w-[302px] md:!w-[366px] lg:!w-[494px] xl:!w-[212px] 2xl:!w-[750px] 3xl:!w-[290px]"
+            imgClass="!h-[225px] sm:!h-[402px] md:!h-[487px] lg:!h-[657px] xl:!h-[282.66px] 2xl:!h-[997.5px] 3xl:!h-[385px]"
           />
         ))}
       </div>

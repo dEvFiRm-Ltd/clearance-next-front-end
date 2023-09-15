@@ -6,7 +6,9 @@ export type dropDowns = {
 type componentProps = {
   groupClass?: string;
   dropDownClass?: string;
+  iconClass?: string;
   currentItemClass?: string;
+  dropItemClass?: string;
   currentItem: string;
   dropdownItems: string[];
   onChangeCb: (e: dropDowns) => void;
@@ -19,6 +21,8 @@ const SelectField: FC<componentProps> = ({
   onChangeCb,
   dropDownClass,
   currentItemClass,
+  dropItemClass,
+  iconClass,
 }) => {
   const [open, setOpen] = useState<boolean>(false);
   return (
@@ -35,7 +39,7 @@ const SelectField: FC<componentProps> = ({
         >
           {currentItem} &nbsp;
         </p>
-        <i className="fas fa-chevron-down text-sm"></i>
+        <i className={`fas fa-chevron-down text-sm ${iconClass}`}></i>
       </button>
       <div
         className={`${dropDownClass} selectItem my-0.5 border border-[#ccc] rounded-[3px] w-fit bg-white transition absolute ${
@@ -52,7 +56,7 @@ const SelectField: FC<componentProps> = ({
                 onChangeCb(item);
                 setOpen(false);
               }}
-              className={` hover:bg-[#eee] flex justify-between gap-x-6 cursor-pointer w-full text-xs font-normal py-[7px] pl-2.5 pr-5 text-gray uppercase ${
+              className={`${dropItemClass} hover:bg-[#eee] flex justify-between gap-x-6 cursor-pointer w-full text-xs font-normal py-[7px] pl-2.5 pr-5 text-gray uppercase ${
                 item.title === currentItem ? "bg-[#eee]" : "bg-white"
               }`}
             >
