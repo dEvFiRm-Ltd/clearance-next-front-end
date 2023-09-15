@@ -116,13 +116,13 @@ const MiddleHeader = () => {
             )}
             {/* hover dropdown ends */}
           </button>
-          <button
+          {/* <button
             type="button"
-            // onClick={() => setIsCartOpen(true)}
+            onClick={() => setIsCartOpen(true)}
             className="relative p-2 2xl:p-3"
           >
             <i className="fa-solid fa-bag-shopping"></i>
-          </button>
+          </button> */}
         </div>
       </div>
       <CartSideBar value={isCartOpen} setCart={setIsCartOpen} />
