@@ -113,6 +113,8 @@ const DressList = () => {
             salePrice={item.salePrice}
             price={item.price}
             discount={item.discount}
+            imageTextsClass="!px-3"
+            imgVariantSmall={true}
             groupClass="!w-[170px] sm:!w-[302px] md:!w-[366px] lg:!w-[494px] xl:!w-[212px] 2xl:!w-[750px] 3xl:!w-[290px]"
             imgClass="!h-[225px] sm:!h-[402px] md:!h-[487px] lg:!h-[657px] xl:!h-[282.66px] 2xl:!h-[997.5px] 3xl:!h-[385px]"
           />
