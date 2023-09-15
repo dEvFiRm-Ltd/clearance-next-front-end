@@ -42,7 +42,7 @@ export const CartProduct = ({ data, index, checkedCb }: any) => {
       <div className='flex items-start space-x-3'>
         {/* image  */}
         <div className='w-[102px] h-[136px] relative'>
-          <Image src={data?.thumbnail} alt='' fill className='' />
+          <img src={data?.thumbnail} alt='' className='' />
         </div>
         {/* product details  */}
         <div className='flex flex-col justify-start gap-x-3'>
@@ -77,7 +77,7 @@ export const CartProduct = ({ data, index, checkedCb }: any) => {
                 </span>
                 <div className='h-7 w-7 flex justify-center items-center border border-black rounded-full bg-white'>
                   <span className='h-[22px] w-[22px] rounded-full overflow-hidden relative'>
-                    <Image alt='' fill src={data?.img} />
+                    <img alt='' src={data?.img} />
                   </span>
                 </div>
               </div>

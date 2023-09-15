@@ -1,32 +1,32 @@
-import Link from "next/link";
-import React from "react";
-import { bottomHeaderItems, bottomHeaderLinkItems } from "@/static";
-import { footerProps, linkType } from "@/utils/type";
-import FooterPart from "../common/FooterPart";
-import Image from "next/image";
+import Link from 'next/link';
+import React from 'react';
+import { bottomHeaderItems, bottomHeaderLinkItems } from '@/static';
+import { footerProps, linkType } from '@/utils/type';
+import FooterPart from '../common/FooterPart';
+import Image from 'next/image';
 const BottomHeader = () => {
   return (
-    <div className="hidden border-b relative lg:flex flex-row items-center justify-center text-[#000000] font-bold uppercase w-fit mx-auto lg:gap-x-4 xl:gap-x-5 2xl:gap-x-8 3xl:gap-x-10 text-[13px] xl:text-sm 2xl:text-base 3xl:text-lg">
+    <div className='hidden border-b relative lg:flex flex-row items-center justify-center text-[#000000] font-bold uppercase w-fit mx-auto lg:gap-x-4 xl:gap-x-5 2xl:gap-x-8 3xl:gap-x-10 text-[13px] xl:text-sm 2xl:text-base 3xl:text-lg'>
       {bottomHeaderLinkItems.map((item: linkType, id: number) => (
-        <Link key={id} href={item.url} className="hover-link py-4 peer">
+        <Link key={id} href={item.url} className='hover-link py-4 peer'>
           {item.title}
         </Link>
       ))}
-      <div className="absolute top-full border-t peer-hover:visible hover:visible invisible flex transition-all flex-row justify-center items-start gap-x-10 pt-10 pb-[52px] z-40 bg-white w-screen">
+      <div className='absolute top-full border-t peer-hover:visible hover:visible invisible flex transition-all flex-row justify-center items-start gap-x-10 pt-10 pb-[52px] z-40 bg-white w-screen'>
         {bottomHeaderItems.map((item: footerProps, id: number) => (
           <FooterPart
             key={id}
             heading={item.heading}
             itemArr={item.itemArr}
-            headingClass="!text-sm !capitalize !mb-4" 
+            headingClass='!text-sm !capitalize !mb-4'
           />
         ))}
-        <div className="flex flex-row items-center lg:gap-x-4 2xl:gap-x-5">
-          <div className="lg:w-48 xl:w-60 2xl:w-72 3xl:w-80 lg:h-32 xl:h-40 2xl:h-48 3xl:h-52 relative overflow-hidden">
-            <Image src="/girl.jpg" alt="" fill className="object-cover" />
+        <div className='flex flex-row items-center lg:gap-x-4 2xl:gap-x-5'>
+          <div className='lg:w-48 xl:w-60 2xl:w-72 3xl:w-80 lg:h-32 xl:h-40 2xl:h-48 3xl:h-52 relative overflow-hidden'>
+            <img src='/girl.jpg' alt='' className='object-cover' />
           </div>
-          <div className="lg:w-48 xl:w-60 2xl:w-72 3xl:w-80 lg:h-32 xl:h-40 2xl:h-48 3xl:h-52 relative overflow-hidden">
-            <Image src="/girl2.jpg" alt="" fill className="object-cover" />
+          <div className='lg:w-48 xl:w-60 2xl:w-72 3xl:w-80 lg:h-32 xl:h-40 2xl:h-48 3xl:h-52 relative overflow-hidden'>
+            <img src='/girl2.jpg' alt='' className='object-cover' />
           </div>
         </div>
       </div>
@@ -89,3 +89,4 @@ export default BottomHeader;
 // };
 
 // export default BottomHeader;
+

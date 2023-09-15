@@ -1,5 +1,5 @@
-import Image from "next/image";
-import React, { FC } from "react";
+import Image from 'next/image';
+import React, { FC } from 'react';
 
 type imageType = {
   img: string;
@@ -10,14 +10,10 @@ type imageType = {
 const VerticalImage: FC<imageType> = ({ img, className, objectClass }) => {
   return (
     <div className={`relative ${className}`}>
-      <Image
-        src={img}
-        alt="image"
-        fill
-        className={`object-cover ${objectClass}`}
-      />
+      <img src={img} alt='image' className={`object-cover ${objectClass}`} />
     </div>
   );
 };
 
 export default VerticalImage;
+

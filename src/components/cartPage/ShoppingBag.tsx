@@ -90,7 +90,7 @@ const ShoppingBag = () => {
             <div className='flex items-start space-x-3'>
               {/* image  */}
               <div className='w-[102px] h-[136px] relative'>
-                <Image src='' alt='' fill className='' />
+                <img src='' alt='' className='' />
               </div>
               {/* product details  */}
               <div>
@@ -129,9 +129,8 @@ const ShoppingBag = () => {
                       </span>
                       <div className='h-9 w-9 flex justify-center items-center border border-black rounded-full bg-white'>
                         <span className='h-7 w-7 rounded-full overflow-hidden relative'>
-                          <Image
+                          <img
                             alt=''
-                            fill
                             src={
                               'https://sstorage.clearance.ae/production/storage/product/2023-08-04-64ccaafb5233f.png'
                             }

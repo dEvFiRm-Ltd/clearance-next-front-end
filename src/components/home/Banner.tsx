@@ -47,7 +47,7 @@ const Banner: FC<bannerPropsType> = ({ imgArr }) => {
             href={item.url}
             className=' w-screen aspect-rectangle bg-center bg-no-repeat relative z-10 flex justify-center items-center'
           >
-            <Image src={item.photo} alt='' fill className='object-contain' />
+            <img src={item.photo} alt='' className='object-contain' />
           </Link>
         ))}
       </Slider>

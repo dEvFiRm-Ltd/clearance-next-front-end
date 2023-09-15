@@ -55,8 +55,7 @@ const ProductDetails = () => {
               }`}
               onClick={() => handleImageClick(id)}
             >
-              <Image
-                fill
+              <img
                 alt='image'
                 className={`${
                   id === selectedImageIndex ? 'scale-90' : 'scale-100'
@@ -69,9 +68,8 @@ const ProductDetails = () => {
         <div className='w-[558px]'>
           <div className='h-[744px] w-full overflow-hidden relative'>
             {images.map((imageUrl, index) => (
-              <Image
+              <img
                 key={index}
-                fill
                 alt='image'
                 src={imageUrl}
                 className={`absolute top-0 left-0 transition-opacity duration-1000 ease-in-out ${
@@ -79,7 +77,7 @@ const ProductDetails = () => {
                 }`}
               />
             ))}
-            {/* <Image fill alt="image" src={images[selectedImageIndex]} /> */}
+            {/* <img  alt="image" src={images[selectedImageIndex]} /> */}
             {selectedImageIndex !== 0 && (
               <Button
                 actionCb={handlePrevButtonClick}
@@ -122,7 +120,7 @@ const ProductDetails = () => {
       {/* product details  */}
       <div className='w-[512px] flex flex-col justify-start items-start gap-4'>
         <div className='w-[300px] h-[22px] relative overflow-hidden'>
-          <Image alt='' fill src={''} />
+          <img alt='' src={''} />
         </div>
         <div>
           <h3 className='text-xl text-black-primary capitalize mb-1'>
@@ -170,7 +168,7 @@ const ProductDetails = () => {
             </span>
             {img.map((item: string, id: number) => (
               <span key={id} className='h-7 w-7 overflow-hidden relative'>
-                <Image alt='' fill src={item} />
+                <img alt='' src={item} />
               </span>
             ))}
           </div>
@@ -178,7 +176,7 @@ const ProductDetails = () => {
         </button>
         <div className='w-full p-3.5 border border-ash flex flex-row justify-start items-center gap-x-3.5'>
           <span className='rounded w-[60px] h-[30px] relative overflow-hidden bg-red-300'>
-            <Image fill alt='Logo' src={''} />
+            <img alt='Logo' src={''} />
           </span>
           <p className='text-sm text-[#17120f]'>
             4 interest-free payments of 10.83 AED.
@@ -194,9 +192,8 @@ const ProductDetails = () => {
           </div>
           <div className='h-9 w-9 flex justify-center items-center border border-black rounded-full bg-white'>
             <span className='h-7 w-7 rounded-full overflow-hidden relative'>
-              <Image
+              <img
                 alt=''
-                fill
                 src={
                   'https://sstorage.clearance.ae/production/storage/product/2023-08-04-64ccaafb5233f.png'
                 }
