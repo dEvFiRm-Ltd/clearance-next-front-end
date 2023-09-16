@@ -238,6 +238,48 @@ export const silderBottomHeaderData: linkType[] = [
     url: "",
   },
 ];
+export const trendingSearch: linkType[] = [
+  {
+    icon: "fab fa-gripfire",
+    title: "Hot sale",
+    url: "",
+  },
+  {
+    icon: "fab fa-gripfire",
+    title: "Sweaters",
+    url: "",
+  },
+  {
+    icon: "fab fa-gripfire",
+    title: "Jackets & Blazer",
+    url: "",
+  },
+  {
+    icon: "fab fa-gripfire",
+    title: "Plus",
+    url: "",
+  },
+  {
+    title: "Special Event",
+    url: "",
+  },
+  {
+    title: "Matching Sets",
+    url: "",
+  },
+  {
+    title: "Turtleneck sweaters",
+    url: "",
+  },
+  {
+    title: "FW 23",
+    url: "",
+  },
+  {
+    title: "Leather",
+    url: "",
+  },
+];
 
 export const bottomHeaderItems: footerProps[] = [
   {

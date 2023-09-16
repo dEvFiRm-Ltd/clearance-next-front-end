@@ -1,24 +1,33 @@
-import Image from 'next/image';
-import React, { FC } from 'react';
+import Image from "next/image";
+import Link from "next/link";
+import React, { FC } from "react";
 
 type imageType = {
   img: string;
   className: string;
   objectClass?: string;
+  item?:any
 };
 
-const VerticalImage: FC<imageType> = ({ img, className, objectClass }) => {
+const VerticalImage: FC<imageType> = ({ img, className, objectClass ,item}) => {
   return (
-    <div className={`relative ${className}`}>
+    <Link
+      target={process.env.NEXT_PUBLIC_SITE_URL ? "_blank" : ""}
+      href={
+        process.env.NEXT_PUBLIC_SITE_URL
+          ? item?.url  || ""
+          : "/product-details" + item?.url
+      }
+      className={`relative ${className} aspect-video`}
+    >
       <Image
         src={img}
-        alt='image'
+        alt="image"
         fill
-        className={`object-cover ${objectClass}`}
+        className={`object-contain ${objectClass}`}
       />
-    </div>
+    </Link>
   );
 };
 
 export default VerticalImage;
-
