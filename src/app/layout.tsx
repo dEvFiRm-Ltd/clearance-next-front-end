@@ -7,6 +7,7 @@ import "./globals.css";
 import "./all.min.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import BodyScripts from "./bodyScript";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -39,9 +40,12 @@ export default function RootLayout({
     <html lang="en">
       <head>
         {" "}
-        <meta property="og:title" content="mDoc LMS" key="title" />
+        <meta property="og:title" content="clearance" key="title" />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {children}
+        <BodyScripts />
+      </body>
     </html>
   );
 }
