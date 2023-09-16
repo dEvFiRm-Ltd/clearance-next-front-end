@@ -67,7 +67,7 @@ const MiddleHeader = () => {
             onBlur={() => setSearchDropdownVisible(false)}
           />
           {/* search dropdown */}
-          <div
+          {/* <div
             className={`absolute z-30 top-full w-full rounded mt-0.5 p-5 max-h-[340px] overflow-y-auto overflow-x-hidden flex-col justify-start items-start gap-y-4 bg-white ${
               isSearchDropdownVisible ? "flex" : "hidden"
             }`}
@@ -87,7 +87,7 @@ const MiddleHeader = () => {
                 </Link>
               ))}
             </div>
-          </div>
+          </div> */}
           {/* search dropdown ends  */}
         </div>
         <div className="flex flex-row items-center gap-x-2 xl:gap-x-3.5 2xl:gap-x-4 3xl:gap-x-5 text-xl 2xl:text-2xl">
