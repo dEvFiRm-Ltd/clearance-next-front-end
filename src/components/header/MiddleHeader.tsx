@@ -14,7 +14,7 @@ const MiddleHeader = () => {
   const [user, setUser] = useState(false);
   // const [cart, setCart] = useState(false);
   const { isCartOpen, setIsCartOpen } = useCart();
-  const languageButtonRef = useRef<HTMLButtonElement>(null);
+  const languageButtonRef = useRef<HTMLDivElement>(null);
   const userButtonRef = useRef<HTMLButtonElement>(null);
   const [isSearchDropdownVisible, setSearchDropdownVisible] = useState(false);
   useEffect(() => {
@@ -81,18 +81,26 @@ const MiddleHeader = () => {
           {/* search dropdown ends  */}
         </div>
         <div className="flex flex-row items-center gap-x-2 xl:gap-x-3.5 2xl:gap-x-4 3xl:gap-x-5 text-xl 2xl:text-2xl">
-          {/* <button type="button" onClick={()=>setLanguage(!language)}  ref={languageButtonRef} className="relative p-2 2xl:p-3">
-            <i className="fa-solid fa-globe"></i>
-            {language && <div className="w-80 flex flex-col justify-start gap-y-5 absolute top-full right-0 z-50 px-4 pt-5 pb-2 bg-white cartShadow">
-              <p className="text-sm 2xl:text-base font-bold text-black-primary capitalize text-left">
-                Language
-              </p>
-              <select className="w-full p-3 border text-sm 2xl:text-base text-gray border-gray hover:border-black-primary focus-visible:outline-none">
-                <option value="english">English</option>
-                <option value="arabic">Arabic</option>
-              </select>
-            </div>}
-          </button> */}
+          {/* <div ref={languageButtonRef} className="relative ">
+            <button
+              type="button"
+              onClick={() => setLanguage(!language)}
+              className="p-2 2xl:p-3"
+            >
+              <i className="fa-solid fa-globe"></i>
+            </button>
+            {language && (
+              <div className="w-80 flex flex-col justify-start gap-y-5 absolute top-full right-0 z-50 px-4 pt-5 pb-2 bg-white cartShadow">
+                <p className="text-sm 2xl:text-base font-bold text-black-primary capitalize text-left">
+                  Language
+                </p>
+                <select className="w-full p-3 border text-sm 2xl:text-base text-gray border-gray hover:border-black-primary focus-visible:outline-none">
+                  <option value="english">English</option>
+                  <option value="arabic">Arabic</option>
+                </select>
+              </div>
+            )}
+          </div> */}
           <button
             type="button"
             onClick={() => setUser(!user)}
