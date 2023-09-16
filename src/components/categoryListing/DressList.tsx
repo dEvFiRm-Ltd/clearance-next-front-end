@@ -34,7 +34,7 @@ const DressList = () => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutsideSelectField);
     };
-  }, [dropdownRef]); // Empty dependency array to run this effect only once
+  }, []); // Empty dependency array to run this effect only once
   const dropdownItems = [
     "Our Pick",
     "New",
@@ -43,16 +43,16 @@ const DressList = () => {
     "Best Selling",
   ];
   return (
-    <div className="w-full xl:w-[calc(100%-216px-24px)] relative">
+    <div
+      className="w-full xl:w-[calc(100%-216px-24px)] relative"
+      ref={dropdownRef}
+    >
       <div className="flex flex-row items-center justify-between gap-x-2 capitalize mb-3.5 px-3 xl:px-0">
         <p className="text-lg leading-none text-black-primary font-bold">
           Dresses <span className="text-sm font-normal text-center">566</span>{" "}
           <span className="text-sm font-normal text-center">Results</span>
         </p>
-        <div
-          className="xl:flex flex-row items-center gap-x-2 capitalize hidden relative"
-          ref={dropdownRef}
-        >
+        <div className="xl:flex flex-row items-center gap-x-2 capitalize hidden relative">
           <p className="text-base text-black-primary font-normal">Sort By</p>
           <SelectField
             dropDownClass="!w-full"
@@ -119,6 +119,7 @@ const DressList = () => {
             discount={item.discount}
             imageTextsClass="!px-3"
             love={true}
+            preSaleImgSticker=""
             review="10"
             imgVariantSmall={true}
             actionCb={() => {

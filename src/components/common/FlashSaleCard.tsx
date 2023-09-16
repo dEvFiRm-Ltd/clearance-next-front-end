@@ -81,7 +81,7 @@ const FlashSaleCard: FC<flashSaleCardProps> = ({
           </span>
         )}
         {love && (
-          <span className="absolute top-1 right-1 text-center bg-black-primary/80 h-7 w-7 rounded text-white px-1 py-0.5 text-xs lg:text-sm 3xl:text-base">
+          <span className="absolute xl:top-2 top-1 xl:right-2 right-1 text-center bg-[#F3F4F6] h-5 md:h-6 lg:h-7 w-5 md:w-6 lg:w-7 rounded-full text-[#CBCCD1] px-1 py-0.5 text-xs lg:text-sm 3xl:text-base flex flex-col items-center justify-center">
             <i className="fa-regular fa-heart"></i>
           </span>
         )}
