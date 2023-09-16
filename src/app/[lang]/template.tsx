@@ -1,18 +1,18 @@
-import BottomHeader from "@/components/header/BottomHeader";
-import MiddleHeader from "@/components/header/MiddleHeader";
-import MobileHeader from "@/components/header/MobileHeader";
-import TopHeader from "@/components/header/TopHeader";
-import Footer from "@/components/home/Footer";
-import { CartProvider } from "@/context/CartContext";
-import { env } from "process";
-import React from "react";
+import BottomHeader from '@/components/header/BottomHeader';
+import MiddleHeader from '@/components/header/MiddleHeader';
+import MobileHeader from '@/components/header/MobileHeader';
+import TopHeader from '@/components/header/TopHeader';
+import Footer from '@/components/home/Footer';
+import { CartProvider } from '@/context/CartContext';
+import { env } from 'process';
+import React from 'react';
 
 type TemplateProps = {
   children: React.ReactNode;
 };
 const Template: React.FC<TemplateProps> = async (props) => {
   const categoryApiCall = await fetch(
-    env.BASE_URL + "api/v10/web/home/categories",
+    env.BASE_URL + 'api/v10/web/home/categories',
     {
       next: { revalidate: 1 },
     }
@@ -25,10 +25,10 @@ const Template: React.FC<TemplateProps> = async (props) => {
         <TopHeader />
         <MobileHeader />
         <MiddleHeader />
-        {process.env.MODE !== "prod" && (
+        {process.env.MODE !== 'prod' && (
           <BottomHeader bottomHeaderArr={categoryArr} />
         )}
-        <main className="">{props.children}</main>
+        <main className=''>{props.children}</main>
         <Footer />
       </>
     </CartProvider>
@@ -36,3 +36,4 @@ const Template: React.FC<TemplateProps> = async (props) => {
 };
 
 export default Template;
+
