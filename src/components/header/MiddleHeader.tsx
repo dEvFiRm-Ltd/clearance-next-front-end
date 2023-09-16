@@ -1,24 +1,31 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { ChangeEvent, useEffect, useRef, useState } from 'react';
 import CartSideBar from '../common/CartSideBar';
 import { useCart } from '@/context/CartContext';
 import SearchField from '../base/SearchField';
 import { trendingSearch } from '@/static';
 import { linkType } from '@/utils/type';
+import { useParams, usePathname, useRouter } from 'next/navigation';
 
 const MiddleHeader = () => {
   // const [show, setShow] = useState(false)
   const [language, setLanguage] = useState(false);
   const [user, setUser] = useState(false);
+  const [locale, setLocale] = useState<string>('');
   // const [cart, setCart] = useState(false);
   const { isCartOpen, setIsCartOpen } = useCart();
   const languageButtonRef = useRef<HTMLDivElement>(null);
   const userButtonRef = useRef<HTMLButtonElement>(null);
   const [isSearchDropdownVisible, setSearchDropdownVisible] = useState(false);
 
+  const path = usePathname();
+  const router = useRouter();
+
   useEffect(() => {
+    const defaultLocale = path.split('/')[1];
+    setLocale(defaultLocale);
     function handleClickOutside(event: MouseEvent) {
       if (
         languageButtonRef.current &&
@@ -60,7 +67,7 @@ const MiddleHeader = () => {
           />
           {/* search dropdown */}
           <div
-            className={`hidden absolute z-30 top-full w-full rounded mt-0.5 p-5 max-h-[340px] overflow-y-auto overflow-x-hidden flex flex-col justify-start items-start gap-y-4 bg-white ${
+            className={`absolute z-30 top-full w-full rounded mt-0.5 p-5 max-h-[340px] overflow-y-auto overflow-x-hidden flex-col justify-start items-start gap-y-4 bg-white ${
               isSearchDropdownVisible ? 'flex' : 'hidden'
             }`}
           >
@@ -96,9 +103,20 @@ const MiddleHeader = () => {
                   <p className='text-sm 2xl:text-base font-bold text-black-primary capitalize text-left'>
                     Language
                   </p>
-                  <select className='w-full p-3 border text-sm 2xl:text-base text-gray border-gray hover:border-black-primary focus-visible:outline-none'>
-                    <option value='english'>English</option>
-                    <option value='arabic'>Arabic</option>
+                  <select
+                    value={locale}
+                    onChange={(e: ChangeEvent<HTMLSelectElement>) => {
+                      const selectedLocale = e.target.value;
+                      const pathArr = path.split('/');
+                      pathArr[1] = selectedLocale;
+                      const changedPath = pathArr.join('/');
+                      router.push(changedPath);
+                      setLocale(selectedLocale);
+                    }}
+                    className='w-full p-3 border text-sm 2xl:text-base text-gray border-gray hover:border-black-primary focus-visible:outline-none'
+                  >
+                    <option value='en'>English</option>
+                    <option value='ae'>Arabic</option>
                   </select>
                 </div>
               )}
