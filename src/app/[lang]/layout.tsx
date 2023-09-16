@@ -36,12 +36,10 @@ export default function RootLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: string;
+  params: { [key: string]: any };
 }) {
-  console.log('params', params);
-
   return (
-    <html lang='en'>
+    <html lang={params.lang}>
       <head>
         {' '}
         <meta property='og:title' content='clearance' key='title' />
