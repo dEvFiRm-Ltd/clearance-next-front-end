@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 'use client';
 import Link from 'next/link';
 import React, { FC } from 'react';
@@ -6,18 +5,7 @@ import { bottomHeaderItems, bottomHeaderLinkItems } from '@/static';
 import { footerProps, linkType } from '@/utils/type';
 import FooterPart from '../common/FooterPart';
 import Image from 'next/image';
-import { env } from 'process';
 import { Swiper, SwiperSlide } from 'swiper/react';
-=======
-"use client";
-import Link from "next/link";
-import React, { FC } from "react";
-import { bottomHeaderItems, bottomHeaderLinkItems } from "@/static";
-import { footerProps, linkType } from "@/utils/type";
-import FooterPart from "../common/FooterPart";
-import Image from "next/image";
-import { Swiper, SwiperSlide } from "swiper/react";
->>>>>>> 30ded0a5e4b59fc76e4fbffd7f751dc81dd01771
 type bottomHeaderProps = {
   bottomHeaderArr: any;
 };
@@ -27,12 +15,12 @@ const BottomHeader: FC<bottomHeaderProps> = ({ bottomHeaderArr }) => {
       <Swiper
         spaceBetween={30}
         loop={true}
-        slidesPerView="auto"
-        className="flashSlider peer"
+        slidesPerView='auto'
+        className='flashSlider peer'
       >
         {bottomHeaderArr.map((item: any, id: number) => (
           <SwiperSlide key={id}>
-            <Link href={item?.url || ""} className="hover-link py-4">
+            <Link href={item?.url || ''} className='hover-link py-4'>
               {item?.name}
             </Link>
           </SwiperSlide>
