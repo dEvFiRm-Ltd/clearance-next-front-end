@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "../base/Button";
+import { Popover } from "@headlessui/react";
 
 const ShoppingBagTotal = () => {
   return (
@@ -14,13 +15,19 @@ const ShoppingBagTotal = () => {
             placeholder="Enter or Select Coupon Code"
             className="focus:outline-none placeholder:text-xs pl-3 py-2"
           />
-          <Button
-            icon="fa-solid fa-chevron-down text-xs"
-            variant="naked"
-            btnClass="!w-10"
-            actionCb={() => {}}
-            btnType="button"
-          />
+
+          <Popover className="relative">
+            <Popover.Button className="w-10 h-10 text-center focus:outline-none">
+              <i className="fa-solid fa-chevron-down text-xs"></i>
+            </Popover.Button>
+            <Popover.Panel className="w-[241px] absolute z-10 bg-white -right-[1px] border">
+              <input
+                type="text"
+                placeholder="No Code Available"
+                className="w-full focus:outline-none placeholder:text-xs pl-3 py-4"
+              />
+            </Popover.Panel>
+          </Popover>
         </div>
         <Button
           btnText="APPLY"
