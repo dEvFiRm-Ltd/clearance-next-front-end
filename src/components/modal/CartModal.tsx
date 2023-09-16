@@ -13,7 +13,7 @@ import GetMyDiscount from "./GetMyDiscount";
 import { useCart } from "@/context/CartContext";
 
 const CartModal: FC<commonModalProps> = ({ closeStateCb, viewState, data }) => {
-  ``;
+  console.log("myData : ",data)
   const { addToCart } = useCart();
   const [modal, setModal] = useState(false);
   const { isCartOpen, setIsCartOpen } = useCart();
@@ -73,7 +73,7 @@ const CartModal: FC<commonModalProps> = ({ closeStateCb, viewState, data }) => {
                 icon="fas fa-chevron-up"
                 btnClass="!bg-[#f1f2f3] !h-6 flex items-center justify-center !text-black-primary"
               />
-              {images.map((imageUrl, id) => (
+              {data?.images.map((imageUrl:string, id:number) => (
                 <div
                   key={id}
                   className={`h-[70px] w-[50px] relative overflow-hidden group ${
@@ -100,7 +100,7 @@ const CartModal: FC<commonModalProps> = ({ closeStateCb, viewState, data }) => {
             </div>
             {/* big image  */}
             <div className="w-[300px] h-[400px] 2xl:w-[372px] 2xl:h-[496px] relative">
-              {images.map((imageUrl, index) => (
+              {data?.images?.map((imageUrl:string, index:number) => (
                 <Image
                   key={index}
                   fill
@@ -130,7 +130,7 @@ const CartModal: FC<commonModalProps> = ({ closeStateCb, viewState, data }) => {
             </div>
             <div className="w-[362px] 2xl:w-[458px] pl-2">
               <p className="text-lg 2xl:text-xl leading-6 line-clamp-2 capitalize text-black-primary font-medium">
-                {data?.text}
+                {data?.name}
               </p>
               <div className="flex flex-row justify-between items-center">
                 <div className="flex flex-row items-center gap-3 mt-4">
@@ -180,7 +180,9 @@ const CartModal: FC<commonModalProps> = ({ closeStateCb, viewState, data }) => {
                 <div className="text-black-primary text-lg capitalize">
                   fit:
                 </div>
-                <div className="flex justify-start items-center gap-x-3">
+
+
+                {/* <div className="flex justify-start items-center gap-x-3">
                   {data?.variant[1]?.fit?.map((fit: string, i: number) => (
                     <button
                       key={i}
@@ -194,6 +196,8 @@ const CartModal: FC<commonModalProps> = ({ closeStateCb, viewState, data }) => {
                       {fit}
                     </button>
                   ))}
+                </div>   */}
+                  
                   {/* <button
                   className={`p-1.5 2xl:p-2 border text-xs 2xl:text-sm uppercase w-fit border-black-primary ${
                     activeTab === "regular"
@@ -214,7 +218,7 @@ const CartModal: FC<commonModalProps> = ({ closeStateCb, viewState, data }) => {
                 >
                   plus
                 </button> */}
-                </div>
+
                 {/* sizes area  */}
                 <div className="flex justify-start items-center gap-x-3">
                   <p className="text-gray text-lg capitalize">size:</p>
@@ -226,7 +230,7 @@ const CartModal: FC<commonModalProps> = ({ closeStateCb, viewState, data }) => {
                     }}
                   />
                 </div>
-                <Tab tabb={data?.variant[0]?.size} />
+                {/* <Tab tabb={data?.variant[0]?.size} /> */}
                 {/* sizes area ends  */}
                 <div className="flex flex-row justify-between gap-x-2.5 2xl:gap-x-4 w-full">
                   {/* Add to cart button  */}
