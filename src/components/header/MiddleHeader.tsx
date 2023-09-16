@@ -133,13 +133,14 @@ const MiddleHeader = () => {
             {user && (
               <div className="absolute right-[50%] translate-x-[50%] z-50 top-[115%] bg-white flex min-w-[240px] rounded-md cartShadow">
                 <div className="w-full flex flex-col justify-start items-center gap-4 relative p-4">
-                  <button
-                    type="button"
+                  <Link
+                    target="_blank"
+                    href={"https://www.clearance.ae/customer/auth/login"}
                     className="flex justify-center items-center overflow-hidden rounded hover:opacity-80 bg-black-primary group w-full px-3 py-2 text-white text-sm 2xl:text-base"
                   >
                     Sign In / Register{" "}
-                  </button>
-                  <p className="text-sm font-normal text-black capitalize">
+                  </Link>
+                  {/* <p className="text-sm font-normal text-black capitalize">
                     or sign in:
                   </p>
                   <span className="flex justify-center items-center gap-x-10">
@@ -169,7 +170,7 @@ const MiddleHeader = () => {
                   >
                     my wallet
                   </Link>
-                  <span className="h-3 w-3 bg-white cartShadow rotate-45 absolute -z-50 -top-1.5 left-1/2 -translate-x-1/2" />
+                  <span className="h-3 w-3 bg-white cartShadow rotate-45 absolute -z-50 -top-1.5 left-1/2 -translate-x-1/2" /> */}
                 </div>
               </div>
             )}
