@@ -5,7 +5,6 @@ import { bottomHeaderItems, bottomHeaderLinkItems } from "@/static";
 import { footerProps, linkType } from "@/utils/type";
 import FooterPart from "../common/FooterPart";
 import Image from "next/image";
-import { env } from "process";
 import { Swiper, SwiperSlide } from "swiper/react";
 type bottomHeaderProps = {
   bottomHeaderArr: any;
@@ -17,15 +16,11 @@ const BottomHeader: FC<bottomHeaderProps> = ({ bottomHeaderArr }) => {
         spaceBetween={30}
         loop={true}
         slidesPerView="auto"
-        className="flashSlider"
+        className="flashSlider peer"
       >
         {bottomHeaderArr.map((item: any, id: number) => (
           <SwiperSlide>
-            <Link
-              key={id}
-              href={item?.url || ""}
-              className="hover-link py-4 peer"
-            >
+            <Link key={id} href={item?.url || ""} className="hover-link py-4">
               {item?.name}
             </Link>
           </SwiperSlide>
