@@ -1,8 +1,24 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import Button from "../base/Button";
 import { Popover } from "@headlessui/react";
 
 const ShoppingBagTotal = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    const handleClickOutside = (event: any) => {
+      if (!event.target.closest(".popover")) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
   return (
     <div className="w-[400px] p-5 border">
       <p className="text-lg text-black-primary">Shopping Bag Total</p>
@@ -17,7 +33,12 @@ const ShoppingBagTotal = () => {
           />
 
           <Popover className="relative">
-            <Popover.Button className="w-10 h-10 text-center focus:outline-none">
+            <Popover.Button
+              className={`w-10 h-10 text-center focus:outline-none ${
+                isOpen ? "rotate-180" : ""
+              }`}
+              onClick={() => setIsOpen(!isOpen)}
+            >
               <i className="fa-solid fa-chevron-down text-xs"></i>
             </Popover.Button>
             <Popover.Panel className="w-[241px] absolute z-10 bg-white -right-[1px] border">
