@@ -59,7 +59,7 @@ const MiddleHeader = () => {
           />
           {/* search dropdown */}
           <div
-            className={`absolute z-30 top-full w-full rounded mt-0.5 p-5 max-h-[340px] overflow-y-auto overflow-x-hidden flex flex-col justify-start items-start gap-y-4 bg-white ${
+            className={`hidden absolute z-30 top-full w-full rounded mt-0.5 p-5 max-h-[340px] overflow-y-auto overflow-x-hidden flex flex-col justify-start items-start gap-y-4 bg-white ${
               isSearchDropdownVisible ? "flex" : "hidden"
             }`}
           >

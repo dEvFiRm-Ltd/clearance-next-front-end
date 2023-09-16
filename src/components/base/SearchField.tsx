@@ -1,24 +1,32 @@
 "use client";
 import React, { ChangeEvent, useRef, useState } from "react";
 import Button from "./Button";
+import { useRouter } from 'next/navigation';
 // export type searchFieldProps = {
 //   actionCb: (e: ChangeEvent<HTMLInputElement>) => void;
 // };
 const SearchField = ({ onChange, onFocus, onBlur }: any) => {
+  const router = useRouter();
   const searchInputRef = useRef<HTMLInputElement>(null);
   const [searchValue, setSearchValue] = useState("");
 
   const handleSearchButtonClick = () => {
     searchInputRef.current!.focus();
+    window?.open(`https://www.clearance.ae/products?search_text=${searchValue}`, '_blank')
   };
   const handleClearButtonClick = () => {
     setSearchValue("");
     searchInputRef.current!.focus();
   };
   const handleChange = (e: any) => {
-    const value = e.target.value;
+    let value = e.target.value;
+    value= value.split(' ');
+    value = value.join('+');
+    console.log("🚀 ~ file: SearchField.tsx:22 ~ handleChange ~ value:", value)
+    
     setSearchValue(value);
-    onChange(value);
+    onChange(e.target.value);
+
   };
   return (
     <div className="w-full flex flex-row justify-start items-center bg-white rounded overflow-hidden ">
@@ -28,7 +36,6 @@ const SearchField = ({ onChange, onFocus, onBlur }: any) => {
           type="text"
           placeholder="Jacket"
           className="pl-5 outline-none py-2 xl:py-2.5 2xl:py-3 text-sm 2xl:text-base w-full"
-          value={searchValue}
           onChange={handleChange}
           onFocus={onFocus}
           onBlur={onBlur}
