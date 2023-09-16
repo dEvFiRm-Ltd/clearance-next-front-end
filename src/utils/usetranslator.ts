@@ -4,6 +4,15 @@ export const title = {
   titleRu: "Наш успех в цифрах",
   titleIn: "संख्या में हमारी सफलता",
 };
+
+export const benefitsList = [
+  {
+    icon: benefit1,
+    titleEn: "Automatic posting and deleting of promo posts",
+    titleRu: "Автоматическое размещение и удаление промопостов",
+    titleIn: "स्वचालित पोस्टिंग और प्रोमो पोस्ट को हटाना",
+  },
+];
 */
 
 /**
@@ -24,7 +33,9 @@ function useTranslator(
   locale: string,
   jsonObj: Array<{ [key: string]: any }> | { [key: string]: any }
 ) {
-  /**The Locale Have to be two letters. Changing the First letter to uppercase as the locale in the key will have the first letter uppercase */
+  /**
+   * The Locale Have to be two letters. Changing the First letter to uppercase as the locale in the key will have the first letter uppercase
+   */
   const language = locale[0].toUpperCase() + locale[1];
   const regex = new RegExp(`(${language})$`);
 
@@ -54,15 +65,20 @@ function useTranslator(
     });
   } else if (typeof jsonObj === 'object') {
     // If the data is an Object
-    //Filter Object with key contanis the passed locale
-    const filteredObj: any = Object.keys(jsonObj)
-      // Filtering the object that has the key matched to the language
-      .filter((key) => key.includes(language))
-      .reduce((obj, key) => {
+    //Filter Object with key contains the passed locale
+    const objArr: string[] = Object.keys(jsonObj);
+    // Filtering the object that has the key matched to the language
+    const filteredArr: string[] = objArr.filter((key) =>
+      key.includes(language)
+    );
+    const filteredObj: { [key: string]: any } = filteredArr.reduce(
+      (obj, key) => {
         return Object.assign(obj, {
           [key]: jsonObj[key],
         });
-      }, {});
+      },
+      {}
+    );
     /**
      * Validator
      * If the filtered object is empty, then that's mean the object has mismatch with the structure, or there is something wrong with locale spelling in the object key
