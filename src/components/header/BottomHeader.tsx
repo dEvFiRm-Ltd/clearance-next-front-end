@@ -4,7 +4,7 @@ import React, { FC } from "react";
 import { bottomHeaderItems, bottomHeaderLinkItems } from "@/static";
 import { footerProps, linkType } from "@/utils/type";
 import FooterPart from "../common/FooterPart";
-import Image from "next/image";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 type bottomHeaderProps = {
   bottomHeaderArr: any;
