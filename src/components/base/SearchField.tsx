@@ -4,7 +4,7 @@ import Button from "./Button";
 // export type searchFieldProps = {
 //   actionCb: (e: ChangeEvent<HTMLInputElement>) => void;
 // };
-const SearchField = ({ onChange, onFocus }: any) => {
+const SearchField = ({ onChange, onFocus, onBlur }: any) => {
   const searchInputRef = useRef<HTMLInputElement>(null);
   const [searchValue, setSearchValue] = useState("");
 
@@ -31,6 +31,7 @@ const SearchField = ({ onChange, onFocus }: any) => {
           value={searchValue}
           onChange={handleChange}
           onFocus={onFocus}
+          onBlur={onBlur}
         />
         {searchValue.length > 0 && (
           <Button
@@ -38,7 +39,7 @@ const SearchField = ({ onChange, onFocus }: any) => {
             btnType="button"
             variant="primary"
             icon="fas fa-times !text-xs"
-            btnClass="bg-[#dadee6] !w-fit !flex !justify-center !items-center !rounded-full !px-1 !py-px "
+            btnClass="!bg-[#a9abaf] !w-fit !flex !justify-center !items-center !rounded-full !px-1 !py-px "
           />
         )}
       </div>
