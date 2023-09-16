@@ -13,8 +13,9 @@ const SizeSelectDropDown = () => {
         </div>
         <div className='h-7 w-7 flex justify-center items-center border border-black-primary rounded-full bg-white'>
           <span className='h-[22px] w-[22px] rounded-full overflow-hidden relative'>
-            <img
+            <Image
               alt=''
+              fill
               src={
                 'https://sstorage.clearance.ae/production/storage/product/2023-08-04-64ccaafb5233f.png'
               }

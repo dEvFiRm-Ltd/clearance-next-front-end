@@ -22,7 +22,7 @@ const GetMyDiscount: FC<commonModalProps> = ({
         </p>
         <p className='text-lg xl:text-xl text-red-400 '>On your first order</p>
         <div className='w-[250px] h-[270px] relative overflow-hidden '>
-          <img className='object-contain' alt='' src={data?.thumbnail} />
+          <Image fill className='object-contain' alt='' src={data?.thumbnail} />
         </div>
         <input
           type='email'

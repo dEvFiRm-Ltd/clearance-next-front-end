@@ -60,9 +60,10 @@ const FlashSaleCard: FC<flashSaleCardProps> = ({
       <div
         className={`w-full h-52 md:h-[278px] lg:h-80 3xl:h-[324px] overflow-hidden relative group ${imgClass}`}
       >
-        <img
+        <Image
           src={selectedImg}
           alt='img'
+          fill
           className={`group-hover:transform group-hover:scale-110 transition-transform duration-300 ${
             imgVariantSmall ? 'object-contain' : 'object-cover'
           }`}
@@ -79,7 +80,7 @@ const FlashSaleCard: FC<flashSaleCardProps> = ({
         )}
         {preSaleImgSticker && (
           <span className='h-10 w-8 lg:h-[52px] lg:w-[42px] absolute right-0'>
-            <img src={preSaleImgSticker} alt='' />
+            <Image src={preSaleImgSticker} alt='' fill />
           </span>
         )}
         {/* <div
@@ -122,7 +123,7 @@ const FlashSaleCard: FC<flashSaleCardProps> = ({
                 onClick={() => setSelectedColorIndex(id)}
               >
                 <span className='h-[18px] w-[18px] rounded-full overflow-hidden relative'>
-                  <img alt='' src={item} />
+                  <Image alt='' fill src={item} />
                 </span>
               </div>
             ))}

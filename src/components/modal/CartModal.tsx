@@ -78,7 +78,8 @@ const CartModal: FC<commonModalProps> = ({ closeStateCb, viewState, data }) => {
                   }`}
                   onClick={() => handleImageClick(id)}
                 >
-                  <img
+                  <Image
+                    fill
                     alt='image'
                     className={`${
                       id === selectedImageIndex ? 'scale-90' : 'scale-100'
@@ -100,8 +101,9 @@ const CartModal: FC<commonModalProps> = ({ closeStateCb, viewState, data }) => {
             {/* big image  */}
             <div className='w-[300px] h-[400px] 2xl:w-[372px] 2xl:h-[496px] relative'>
               {data?.images.map((imageUrl: any, id: number) => (
-                <img
+                <Image
                   key={id}
+                  fill
                   alt='image'
                   src={imageUrl}
                   className={`absolute top-0 left-0 transition-opacity duration-1000 ease-in-out object-contain ${
@@ -166,8 +168,9 @@ const CartModal: FC<commonModalProps> = ({ closeStateCb, viewState, data }) => {
                         className='h-8 w-8 2xl:h-9 2xl:w-9 flex justify-center items-center border border-black rounded-full bg-white'
                       >
                         <span className='h-6 w-6 2xl:h-7 2xl:w-7 rounded-full overflow-hidden relative'>
-                          <img
+                          <Image
                             alt=''
+                            fill
                             src={
                               'https://sstorage.clearance.ae/production/storage/product/2023-08-04-64ccaafb5233f.png'
                             }

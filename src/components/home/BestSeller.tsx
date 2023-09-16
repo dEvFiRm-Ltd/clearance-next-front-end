@@ -11,7 +11,7 @@ const BestSeller: FC<bestSellerPropsType> = ({ imgArr }) => {
           key={item.id}
           className='w-[48%] h-48 md:h-[300px] lg:h-[450px] xl:h-[550px] 2xl:h-[670px] 3xl:h-[818px] relative flex flex-col items-center justify-center'
         >
-          <img src={item.photo} alt='image' className='object-cover' />
+          <Image src={item.photo} alt='image' fill className='object-cover' />
           <h1 className='text-xl md:text-2xl lg:text-3xl 2xl:text-4xl 3xl:text-5xl font-bold text-white mb-4 2xl:mb-8 3xl:mb-10 z-10 uppercase'>
             Best Seller
           </h1>
@@ -25,10 +25,10 @@ const BestSeller: FC<bestSellerPropsType> = ({ imgArr }) => {
         </div>
       ))}
       {/* <div className="w-[48%] h-48 md:h-[300px] lg:h-[450px] xl:h-[550px] 2xl:h-[670px] 3xl:h-[818px] relative flex flex-col items-center justify-center">
-        <img
+        <Image
           src="https://sstorage.clearance.ae/production/storage/banner/2023-08-29-64edb55839c25.png"
           alt="image"
-          
+          fill
           className="object-cover"
         />
         <h1 className="text-xl md:text-2xl lg:text-3xl 2xl:text-4xl 3xl:text-5xl font-bold text-white mb-4 2xl:mb-8 3xl:mb-10 z-10 uppercase">

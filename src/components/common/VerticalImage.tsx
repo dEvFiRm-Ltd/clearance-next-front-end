@@ -10,7 +10,12 @@ type imageType = {
 const VerticalImage: FC<imageType> = ({ img, className, objectClass }) => {
   return (
     <div className={`relative ${className}`}>
-      <img src={img} alt='image' className={`object-cover ${objectClass}`} />
+      <Image
+        src={img}
+        alt='image'
+        fill
+        className={`object-cover ${objectClass}`}
+      />
     </div>
   );
 };

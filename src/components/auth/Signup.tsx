@@ -7,7 +7,7 @@ export const Signup = () => {
       <div className='flex flex-col space-y-2 md:space-y-4 text-center text-[#5c5c5c] text-2xl'>
         <h1 className='hidden xl:block'>Register</h1>
         <div className='relative w-full min-h-[200px]'>
-          <img src={'/Img/promo.webp'} alt={'Promotion Img'} />
+          <Image src={promo} alt={'Promotion Img'} fill />
         </div>
       </div>
 

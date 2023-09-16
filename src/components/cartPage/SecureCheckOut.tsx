@@ -11,8 +11,9 @@ const SecureCheckOut = () => {
             href={'/'}
             className='w-32 h-10 relative lg:w-40 2xl:w-44 3xl:w-[200px]'
           >
-            <img
+            <Image
               src='https://backend-live.clearance.ae/storage/company/2023-02-06-63e08deba2852.png'
+              fill
               alt='logo'
             />
           </Link>
@@ -34,4 +35,3 @@ const SecureCheckOut = () => {
 };
 
 export default SecureCheckOut;
-

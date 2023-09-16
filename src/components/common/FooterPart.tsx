@@ -66,7 +66,8 @@ const FooterPart: FC<footerProps> = ({
                 className='rounded overflow-hidden'
               >
                 <div className='!w-[152px] !h-[50px] bg-black-primary relative'>
-                  <img
+                  <Image
+                    fill
                     src='https://www.clearance.ae/assets/front-end/png/apple_app.png'
                     alt=''
                   />
@@ -77,7 +78,8 @@ const FooterPart: FC<footerProps> = ({
                 className='rounded overflow-hidden'
               >
                 <div className='!w-[152px] !h-[50px] bg-black-primary relative'>
-                  <img
+                  <Image
+                    fill
                     src='https://www.clearance.ae/assets/front-end/png/google_app.png'
                     alt=''
                   />
@@ -134,7 +136,8 @@ const FooterPart: FC<footerProps> = ({
               className='rounded overflow-hidden'
             >
               <div className='!w-[152px] !h-[50px] bg-black-primary relative'>
-                <img
+                <Image
+                  fill
                   src='https://www.clearance.ae/assets/front-end/png/apple_app.png'
                   alt=''
                 />
@@ -145,7 +148,8 @@ const FooterPart: FC<footerProps> = ({
               className='rounded overflow-hidden'
             >
               <div className='!w-[152px] !h-[50px] bg-black-primary relative'>
-                <img
+                <Image
+                  fill
                   src='https://www.clearance.ae/assets/front-end/png/google_app.png'
                   alt=''
                 />

@@ -18,8 +18,9 @@ const MobileHeader = () => {
             <i className="fas fa-bars"></i>
           </button> */}
           <Link href={'/'} className='w-32 h-8 md:h-9 relative'>
-            <img
+            <Image
               src='https://backend-live.clearance.ae/storage/company/2023-02-06-63e08deba2852.png'
+              fill
               alt='logo'
             />
           </Link>

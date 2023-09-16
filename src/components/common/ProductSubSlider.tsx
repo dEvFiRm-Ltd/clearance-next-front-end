@@ -23,7 +23,8 @@ const ProductSubSlider: FC<commonSliderProps> = ({ closeStateCb }) => {
           href={''}
           className='w-full h-40 md:h-[366px] flex justify-center items-center relative overflow-hidden'
         >
-          <img
+          <Image
+            fill
             src={
               'https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-08-29-64ede7ac360a3.png'
             }
@@ -48,7 +49,7 @@ const ProductSubSlider: FC<commonSliderProps> = ({ closeStateCb }) => {
                 className='px-2.5 w-[84px] md:w-[194px] text-center'
               >
                 <div className='w-full h-16 md:h-[174px] overflow-hidden relative'>
-                  <img alt='Image' src={item.img} />
+                  <Image alt='Image' fill src={item.img} />
                 </div>
                 <span className='my-2 text-xs text-black-primary capitalize'>
                   {item.title}
@@ -67,4 +68,3 @@ const ProductSubSlider: FC<commonSliderProps> = ({ closeStateCb }) => {
 };
 
 export default ProductSubSlider;
-

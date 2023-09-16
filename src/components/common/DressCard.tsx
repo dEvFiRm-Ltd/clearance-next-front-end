@@ -30,7 +30,7 @@ const DressCard: FC<dressType> = ({
       <div
         className={`relative h-56 lg:h-64 xl:h-72 2xl:h-[335px] 3xl:h-[390px] w-full ${hightClass}`}
       >
-        <img src={image} alt='image' className='object-cover' />
+        <Image src={image} alt='image' fill className='object-cover' />
       </div>
       {heading && (
         <p className='text-base md:text-sm lg:text-lg xl:text-xl 2xl:text-2xl 2xl:leading-10 font-semibold text-black'>

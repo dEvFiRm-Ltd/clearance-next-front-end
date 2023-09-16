@@ -82,7 +82,7 @@ const Brands: FC<brandProps> = ({ brandArr }) => {
                 href={item.url}
                 className='h-[84px] w-[84px] rounded-full overflow-hidden relative'
               >
-                <img src={item.logo} alt='brand logo' />
+                <Image fill src={item.logo} alt='brand logo' />
               </Link>
             ))}
           </Slider>
