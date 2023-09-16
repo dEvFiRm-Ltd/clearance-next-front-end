@@ -7,6 +7,7 @@ import VerticalImage from "@/components/common/VerticalImage";
 import { env } from "node:process";
 import FeatureProduct from "@/components/home/FeatureProduct";
 
+
 export default async function Home() {
   const bannerApiCall = await fetch(
     env.BASE_URL + "api/v10/web/home/main-banner",
@@ -162,6 +163,7 @@ export default async function Home() {
           <VerticalImage
             key={item.id}
             img={item.photo}
+            item={item}
             className="w-[336px] sm:w-[616px] md:w-[744px] lg:w-[1000px] xl:w-[614px] 2xl:w-[738px] 3xl:w-[880px] h-[200px] sm:h-[300px] md:h-[350px] lg:h-[405px] xl:h-[350px] 2xl:h-[380px] 3xl:h-[405px]"
           />
         ))}
@@ -171,6 +173,7 @@ export default async function Home() {
           <VerticalImage
             key={item.id}
             img={item.photo}
+            item={item}
             className="w-[336px] sm:w-[616px] md:w-[744px] lg:w-[1000px] xl:w-[614px] 2xl:w-[738px] 3xl:w-[880px] h-[170px] sm:h-[240px] md:h-[273px]"
             objectClass="!object-cover"
           />

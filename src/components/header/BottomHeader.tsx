@@ -4,12 +4,22 @@ import { bottomHeaderItems, bottomHeaderLinkItems } from "@/static";
 import { footerProps, linkType } from "@/utils/type";
 import FooterPart from "../common/FooterPart";
 import Image from "next/image";
-const BottomHeader = () => {
+import { env } from "process";
+const BottomHeader = async() => {
+
+  const categoryApiCall = await fetch(
+    env.BASE_URL + "api/v10/web/home/categories",
+    {
+      next: { revalidate: 10 },
+    }
+  );
+  const categoryResponse = await categoryApiCall.json();
+  const categoryArr: Array<any> = categoryResponse.data.categories || [];
   return (
-    <div className="hidden border-b relative lg:flex flex-row items-center justify-center text-[#000000] font-bold uppercase w-fit mx-auto lg:gap-x-4 xl:gap-x-5 2xl:gap-x-8 3xl:gap-x-10 text-[13px] xl:text-sm 2xl:text-base 3xl:text-lg">
-      {bottomHeaderLinkItems.map((item: linkType, id: number) => (
-        <Link key={id} href={item.url} className="hover-link py-4 peer">
-          {item.title}
+    <div className="hidden  border-b relative lg:flex flex-row items-center justify-center text-[#000000] font-bold uppercase w-fit mx-auto lg:gap-x-4 xl:gap-x-5 2xl:gap-x-8 3xl:gap-x-10 text-[13px] xl:text-sm 2xl:text-base 3xl:text-lg">
+      {categoryArr.map((item:  any, id: number) => (
+        <Link key={id} href={item?.url || ''} className="hover-link py-4 peer">
+          {item?.name}
         </Link>
       ))}
       <div className="absolute top-full border-t peer-hover:visible hover:visible invisible flex transition-all flex-row justify-center items-start gap-x-10 pt-10 pb-[52px] z-40 bg-white w-screen">
