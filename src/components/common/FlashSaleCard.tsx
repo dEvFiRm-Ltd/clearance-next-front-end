@@ -5,6 +5,8 @@ import React, { FC, useEffect, useRef, useState } from "react";
 import StarList from "./StarList";
 import SizeSelectDropDown from "./SizeSelectDropDown";
 import Link from "next/link";
+import { env } from "process";
+import { defaultUrl } from "@/static";
 
 const FlashSaleCard: FC<flashSaleCardProps> = ({
   img,
@@ -53,8 +55,8 @@ const FlashSaleCard: FC<flashSaleCardProps> = ({
   }, []);
   return (
     <Link
-      target="_blank"
-      href={"https://www.clearance.ae/product/" + url}
+      target={defaultUrl !== "/" ? "_blank" : ""}
+      href={defaultUrl + url}
       className={`boxShadow flex flex-col relative bg-white border border-ash ${groupClass}`}
     >
       <div
