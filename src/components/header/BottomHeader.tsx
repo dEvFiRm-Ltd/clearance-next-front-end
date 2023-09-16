@@ -11,7 +11,7 @@ type bottomHeaderProps = {
 };
 const BottomHeader: FC<bottomHeaderProps> = ({ bottomHeaderArr }) => {
   return (
-    <div className=" border-b relative lg:flex flex-row items-center justify-center text-[#000000] font-bold uppercase w-fit mx-auto lg:gap-x-4 xl:gap-x-5 2xl:gap-x-8 3xl:gap-x-10 text-[13px] xl:text-sm 2xl:text-base 3xl:text-lg">
+    <div className="border-b relative lg:flex flex-row items-center justify-center text-[#000000] font-bold uppercase w-fit mx-auto lg:gap-x-4 xl:gap-x-5 2xl:gap-x-8 3xl:gap-x-10 text-[13px] xl:text-sm 2xl:text-base 3xl:text-lg">
       <Swiper
         spaceBetween={30}
         loop={true}
@@ -26,7 +26,7 @@ const BottomHeader: FC<bottomHeaderProps> = ({ bottomHeaderArr }) => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="absolute top-full border-t peer-hover:visible hover:visible invisible flex transition-all flex-row justify-center items-start gap-x-10 pt-10 pb-[52px] z-40 bg-white w-screen">
+      <div className="absolute left-0 top-full border-t peer-hover:visible hover:visible invisible hidden lg:flex transition-all flex-row justify-center items-start gap-x-10 pt-10 pb-[52px] z-40 bg-white w-screen">
         {bottomHeaderItems.map((item: footerProps, id: number) => (
           <FooterPart
             key={id}
