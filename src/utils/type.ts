@@ -8,6 +8,7 @@ export type flashSaleCardProps = {
   imgClass?: string;
   btnClass?: string;
   check?: boolean;
+  love?: boolean;
   imageTextsClass?: string;
   img: string;
   preSaleImgSticker?: string;

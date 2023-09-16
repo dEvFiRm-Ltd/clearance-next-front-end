@@ -6,10 +6,14 @@ import FlashSaleCard from "../common/FlashSaleCard";
 import Button from "../base/Button";
 import Recommend, { recommendType } from "./Recommend";
 import SelectField from "../base/SelectField";
+import CartModal from "../modal/CartModal";
 
 const DressList = () => {
   const [show, setShow] = useState<boolean>(false);
   const [itemShow, setItemShow] = useState(false);
+  // for modal
+  const [modals, setModals] = useState(false);
+  // const [modalData, setModalData] = useState<any>();
 
   const [isOpen, setIsOpen] = useState(false);
   const [currentItem, setCurrentItem] = useState("Our Pick");
@@ -114,7 +118,13 @@ const DressList = () => {
             price={item.price}
             discount={item.discount}
             imageTextsClass="!px-3"
+            love={true}
+            review="10"
             imgVariantSmall={true}
+            actionCb={() => {
+              // setModalData(item);
+              setModals(!modals);
+            }}
             groupClass="!w-[170px] sm:!w-[302px] md:!w-[366px] lg:!w-[494px] xl:!w-[212px] 2xl:!w-[750px] 3xl:!w-[290px]"
             imgClass="!h-[225px] sm:!h-[402px] md:!h-[487px] lg:!h-[657px] xl:!h-[282.66px] 2xl:!h-[997.5px] 3xl:!h-[385px]"
           />
@@ -186,6 +196,13 @@ const DressList = () => {
           </div>
         </div>
       )}
+      <CartModal
+        closeStateCb={() => {
+          setModals(false);
+        }}
+        viewState={modals}
+        // data={modalData}
+      />
     </div>
   );
 };

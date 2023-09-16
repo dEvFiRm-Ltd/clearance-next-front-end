@@ -24,6 +24,7 @@ const FlashSaleCard: FC<flashSaleCardProps> = ({
   actionCb,
   url,
   check = false,
+  love = false,
   imgVariantSmall = false,
 }) => {
   const [selectSize, setSelectSize] = useState(false);
@@ -77,6 +78,11 @@ const FlashSaleCard: FC<flashSaleCardProps> = ({
         {check && (
           <span className="absolute top-1 right-1 text-center bg-black-primary/80 h-7 w-7 rounded text-white px-1 py-0.5 text-xs lg:text-sm 3xl:text-base">
             <i className="fa-solid fa-check"></i>
+          </span>
+        )}
+        {love && (
+          <span className="absolute top-1 right-1 text-center bg-black-primary/80 h-7 w-7 rounded text-white px-1 py-0.5 text-xs lg:text-sm 3xl:text-base">
+            <i className="fa-regular fa-heart"></i>
           </span>
         )}
         {preSaleImgSticker && (
