@@ -1,24 +1,43 @@
+"use client";
 import Link from "next/link";
-import React from "react";
+import React, { FC } from "react";
 import { bottomHeaderItems, bottomHeaderLinkItems } from "@/static";
 import { footerProps, linkType } from "@/utils/type";
 import FooterPart from "../common/FooterPart";
 import Image from "next/image";
-const BottomHeader = () => {
+import { env } from "process";
+import { Swiper, SwiperSlide } from "swiper/react";
+type bottomHeaderProps = {
+  bottomHeaderArr: any;
+};
+const BottomHeader: FC<bottomHeaderProps> = ({ bottomHeaderArr }) => {
   return (
-    <div className="hidden border-b relative lg:flex flex-row items-center justify-center text-[#000000] font-bold uppercase w-fit mx-auto lg:gap-x-4 xl:gap-x-5 2xl:gap-x-8 3xl:gap-x-10 text-[13px] xl:text-sm 2xl:text-base 3xl:text-lg">
-      {bottomHeaderLinkItems.map((item: linkType, id: number) => (
-        <Link key={id} href={item.url} className="hover-link py-4 peer">
-          {item.title}
-        </Link>
-      ))}
+    <div className=" border-b relative lg:flex flex-row items-center justify-center text-[#000000] font-bold uppercase w-fit mx-auto lg:gap-x-4 xl:gap-x-5 2xl:gap-x-8 3xl:gap-x-10 text-[13px] xl:text-sm 2xl:text-base 3xl:text-lg">
+      <Swiper
+        spaceBetween={30}
+        loop={true}
+        slidesPerView="auto"
+        className="flashSlider"
+      >
+        {bottomHeaderArr.map((item: any, id: number) => (
+          <SwiperSlide>
+            <Link
+              key={id}
+              href={item?.url || ""}
+              className="hover-link py-4 peer"
+            >
+              {item?.name}
+            </Link>
+          </SwiperSlide>
+        ))}
+      </Swiper>
       <div className="absolute top-full border-t peer-hover:visible hover:visible invisible flex transition-all flex-row justify-center items-start gap-x-10 pt-10 pb-[52px] z-40 bg-white w-screen">
         {bottomHeaderItems.map((item: footerProps, id: number) => (
           <FooterPart
             key={id}
             heading={item.heading}
             itemArr={item.itemArr}
-            headingClass="!text-sm !capitalize !mb-4" 
+            headingClass="!text-sm !capitalize !mb-4"
           />
         ))}
         <div className="flex flex-row items-center lg:gap-x-4 2xl:gap-x-5">

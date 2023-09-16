@@ -9,12 +9,13 @@ import React, {
   useState,
 } from "react";
 
-type Product = {
+export type Product = {
   thumbnail: string;
   name: string;
   offer_price: string;
   price: string;
   qty: number;
+  checked?: boolean;
   variant: [
     {
       size: string[];
@@ -34,18 +35,24 @@ type CartContextValue = {
   removeFromCart: (index: number) => void;
   totalPrice: number;
   increaseQuantity: (index: number) => void;
+  itemCount: number;
+  savingAmount: number;
+  toggleCheckProduct: (index: number) => void;
   decreaseQuantity: (index: number) => void;
   isCartOpen?: boolean | any;
   setIsCartOpen?: any;
 };
 
-const CartContext = createContext<CartContextValue>({
+export const CartContext = createContext<CartContextValue>({
   cartItem: [],
   addToCart: () => {},
   removeFromCart: () => {},
   increaseQuantity: (index: number) => {},
+  toggleCheckProduct: (index: number) => {},
   decreaseQuantity: (index: number) => {},
   totalPrice: 0,
+  savingAmount: 0,
+  itemCount: 0,
 });
 
 // Create a custom hook to use the cart context
@@ -58,6 +65,8 @@ type CartProviderProps = { children: ReactNode };
 export const CartProvider: FC<CartProviderProps> = ({ children }) => {
   const [cartItem, setCartItem] = useState<Product[]>([]);
   const [totalPrice, setTotalPrice] = useState<number>(0);
+  const [itemCount, setItemCount] = useState(0);
+  const [savingAmount, setSavingAmount] = useState(0);
   const [isCartOpen, setIsCartOpen] = useState<boolean>(false);
 
   const addToCart = (product: Product) => {
@@ -78,7 +87,10 @@ export const CartProvider: FC<CartProviderProps> = ({ children }) => {
         prevCart.map((p) => (p === existingProduct ? existingProduct : p))
       );
     } else {
-      setCartItem((prevCart) => [...prevCart, { ...product, qty: 1 }]);
+      setCartItem((prevCart) => [
+        ...prevCart,
+        { ...product, qty: 1, checked: true },
+      ]);
     }
   };
   const removeFromCart = (index: number) => {
@@ -86,14 +98,58 @@ export const CartProvider: FC<CartProviderProps> = ({ children }) => {
     setCartItem(newCart);
   };
 
+  const toggleCheckProduct = (index: number) => {
+    const tempArr = [...cartItem];
+    tempArr[index].checked = !tempArr[index].checked;
+    setCartItem(tempArr);
+  };
+
   useEffect(() => {
-    const totalPrc = cartItem.reduce(
+    let tempArr: Product[] = [];
+    if (cartItem.length) {
+      tempArr = [...cartItem];
+      localStorage.setItem("cartItems", JSON.stringify(cartItem));
+    } else {
+      const value: Product[] = JSON.parse(
+        localStorage.getItem("cartItems") || "{}"
+      );
+      if (value.length) {
+        tempArr = [...value];
+        setCartItem(value);
+      }
+    }
+
+    const totalPrc = tempArr.reduce(
       (total, product) =>
-        total +
-        Number(product.offer_price ? product.offer_price : product.price) *
-          product.qty,
+        product.checked
+          ? total +
+            Number(product.offer_price ? product.offer_price : product.price) *
+              product.qty
+          : total,
       0
     );
+    const savingPrc = tempArr.reduce(
+      (total, product) =>
+        product.checked
+          ? total +
+            (Number(product.price) * product.qty -
+              Number(
+                product.offer_price ? product.offer_price : product.price
+              ) *
+                product.qty)
+          : total,
+      0
+    );
+    let tempTotalCount = 0;
+    let tempUncheckedCount = 0;
+    tempArr.forEach((element) => {
+      tempTotalCount = tempTotalCount + element.qty;
+      if (!element.checked) {
+        tempUncheckedCount = tempUncheckedCount + element.qty;
+      }
+    });
+    setSavingAmount(savingPrc);
+    setItemCount(tempTotalCount - tempUncheckedCount);
     setTotalPrice(totalPrc);
   }, [cartItem]);
 
@@ -126,7 +182,10 @@ export const CartProvider: FC<CartProviderProps> = ({ children }) => {
         increaseQuantity,
         decreaseQuantity,
         isCartOpen,
+        itemCount,
         setIsCartOpen,
+        toggleCheckProduct,
+        savingAmount,
       }}
     >
       {children}

@@ -1,12 +1,12 @@
 import React, { FC, useState } from 'react'
 
 export type dropDowns = {
-  title: string
+  title?: string
 }
 type componentProps = {
   groupClass?: string
   currentItem: string
-  dropdownItems: dropDowns[]
+  dropdownItems: string[]
   onChangeCb: (e: dropDowns) => void
 }
 
@@ -30,15 +30,15 @@ const SelectField: FC<componentProps> = ({
       <div
         className={`selectItem my-0.5 border border-[#ccc] rounded-[3px] w-fit bg-white transition absolute ${
           open ? 'z-50 translate-y-0 opacity-100 ' : '-z-20 translate-y-2 opacity-0'}`}>
-        {dropdownItems.map((item: dropDowns, i: number) => (
+        {dropdownItems && dropdownItems.map((item:any, i: number) => (
           <p
             key={i}
             onClick={() => {onChangeCb(item)
               setOpen(false)}}
             className={`hover:bg-[#eee] flex justify-between gap-x-6 cursor-pointer w-full text-xs font-normal py-[7px] pl-2.5 pr-5 text-gray uppercase ${item.title===currentItem ?'bg-[#eee]':'bg-white'}`}
           >
-            {item.title}
-            {item.title === currentItem? ( <i className="fas fa-check"></i>):''}
+            {item}
+            {item === currentItem? ( <i className="fas fa-check"></i>):''}
             
           </p>
         ))}
