@@ -78,6 +78,7 @@ const MiddleHeader = () => {
             <div className="ml-5 w-full flex flex-row justify-start items-start gap-4 flex-wrap">
               {trendingSearch.map((item: linkType, id: number) => (
                 <Link
+                  key={id}
                   href={item.url}
                   className="rounded py-1.5 px-4 flex justify-center items-center gap-1 bg-[#F2F2F2] text-black-primary hover:bg-[#E7E7E7]"
                 >
