@@ -1,10 +1,10 @@
-"use client";
-import { flashSaleCardProps } from "@/utils/type";
-import Image from "next/image";
-import React, { FC, useEffect, useRef, useState } from "react";
-import StarList from "./StarList";
-import SizeSelectDropDown from "./SizeSelectDropDown";
-import Link from "next/link";
+'use client';
+import { flashSaleCardProps } from '@/utils/type';
+import Image from 'next/image';
+import React, { FC, useEffect, useRef, useState } from 'react';
+import StarList from './StarList';
+import SizeSelectDropDown from './SizeSelectDropDown';
+import Link from 'next/link';
 
 const FlashSaleCard: FC<flashSaleCardProps> = ({
   img,
@@ -45,16 +45,16 @@ const FlashSaleCard: FC<flashSaleCardProps> = ({
       }
     };
 
-    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside);
 
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
   return (
     <Link
-      target="_blank"
-      href={"https://www.clearance.ae/product/" + url}
+      target='_blank'
+      href={'https://www.clearance.ae/product/' + url}
       className={`boxShadow flex flex-col relative bg-white border border-ash ${groupClass}`}
     >
       <div
@@ -62,25 +62,25 @@ const FlashSaleCard: FC<flashSaleCardProps> = ({
       >
         <Image
           src={selectedImg}
-          alt="img"
+          alt='img'
           fill
           className={`group-hover:transform group-hover:scale-110 transition-transform duration-300 ${
-            imgVariantSmall ? "object-contain" : "object-cover"
+            imgVariantSmall ? 'object-contain' : 'object-cover'
           }`}
         />
         {discount && (
-          <span className="absolute top-3 bg-red-400 text-white px-1 py-0.5 text-xs lg:text-sm 3xl:text-base">
+          <span className='absolute top-3 bg-red-400 text-white px-1 py-0.5 text-xs lg:text-sm 3xl:text-base'>
             -{discount}%
           </span>
         )}
         {check && (
-          <span className="absolute top-1 right-1 text-center bg-black-primary/80 h-7 w-7 rounded text-white px-1 py-0.5 text-xs lg:text-sm 3xl:text-base">
-            <i className="fa-solid fa-check"></i>
+          <span className='absolute top-1 right-1 text-center bg-black-primary/80 h-7 w-7 rounded text-white px-1 py-0.5 text-xs lg:text-sm 3xl:text-base'>
+            <i className='fa-solid fa-check'></i>
           </span>
         )}
         {preSaleImgSticker && (
-          <span className="h-10 w-8 lg:h-[52px] lg:w-[42px] absolute right-0">
-            <Image src={preSaleImgSticker} alt="" fill />
+          <span className='h-10 w-8 lg:h-[52px] lg:w-[42px] absolute right-0'>
+            <Image src={preSaleImgSticker} alt='' fill />
           </span>
         )}
         {/* <div
@@ -93,37 +93,37 @@ const FlashSaleCard: FC<flashSaleCardProps> = ({
           add to bag
         </div> */}
       </div>
-      <div className="flex w-full flex-col justify-start items-start self-stretch flex-1 gap-1.5 py-1.5 px-1">
-        <p className="line-clamp-1 text-xs lg:text-sm">{text}</p>
-        <div className="flex flex-wrap justify-start items-center gap-2">
-          <span className="text-sm md:text-base xl:text-lg 3xl:text-xl text-red-400 font-bold">
+      <div className='flex w-full flex-col justify-start items-start self-stretch flex-1 gap-1.5 py-1.5 px-1'>
+        <p className='line-clamp-1 text-xs lg:text-sm'>{text}</p>
+        <div className='flex flex-wrap justify-start items-center gap-2'>
+          <span className='text-sm md:text-base xl:text-lg 3xl:text-xl text-red-400 font-bold'>
             {salePrice} AED
           </span>
           {price && (
-            <span className="text-xs lg:text-sm font-normal text-[#868C93] line-through ">
+            <span className='text-xs lg:text-sm font-normal text-[#868C93] line-through '>
               {price} AED
             </span>
           )}
         </div>
         {text2 && (
-          <span className="px-1 rounded-sm text-red-400 bg-[#FEF2F2] font-normal !font-[Helvetica] text-xs">
+          <span className='px-1 rounded-sm text-red-400 bg-[#FEF2F2] font-normal !font-[Helvetica] text-xs'>
             {text2}
           </span>
         )}
         {colorImg && (
-          <div className="flex justify-start gap-x-1">
+          <div className='flex justify-start gap-x-1'>
             {colorImg.map((item: string, id: number) => (
               <div
                 key={id}
                 className={`h-6 w-6 flex justify-center items-center border  rounded-full bg-white ${
                   id === selectedColorIndex
-                    ? "border-black-primary"
-                    : "border-transparent"
+                    ? 'border-black-primary'
+                    : 'border-transparent'
                 }`}
                 onClick={() => setSelectedColorIndex(id)}
               >
-                <span className="h-[18px] w-[18px] rounded-full overflow-hidden relative">
-                  <Image alt="" fill src={item} />
+                <span className='h-[18px] w-[18px] rounded-full overflow-hidden relative'>
+                  <Image alt='' fill src={item} />
                 </span>
               </div>
             ))}
@@ -132,15 +132,15 @@ const FlashSaleCard: FC<flashSaleCardProps> = ({
         {review && <StarList review={review} />}
       </div>
       {btnText && (
-        <div className="relative" ref={sizeSelectRef}>
+        <div className='relative' ref={sizeSelectRef}>
           <div
             onClick={() => {
               setSelectSize(!selectSize);
             }}
-            className="w-full text-sm ring-1 ring-ash bg-white py-1 px-2 text-gray capitalize"
+            className='w-full text-sm ring-1 ring-ash bg-white py-1 px-2 text-gray capitalize'
           >
             {btnText}
-            <i className="fa-solid fa-chevron-down text-xs ml-1"></i>
+            <i className='fa-solid fa-chevron-down text-xs ml-1'></i>
           </div>
           {selectSize && <SizeSelectDropDown />}
         </div>
@@ -150,3 +150,4 @@ const FlashSaleCard: FC<flashSaleCardProps> = ({
 };
 
 export default FlashSaleCard;
+

@@ -34,13 +34,12 @@ const FlashSale: FC<flashSaleProps> = ({ flashSaleArr }) => {
               <SwiperSlide>
                 <FlashSaleCard
                   key={item.id}
-                  // img={item.thumbnail}
+                  img={item.thumbnail}
                   text={item.name}
                   salePrice={item.offer_price}
                   price={item.price}
                   discount={item.discount}
                   url={item.slug}
-                  img='/test.jpeg'
                   imgVariantSmall={true}
                   actionCb={() => {
                     setModalData(item);

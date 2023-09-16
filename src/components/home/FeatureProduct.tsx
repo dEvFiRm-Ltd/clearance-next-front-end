@@ -22,8 +22,7 @@ const FeatureProduct: FC<featureProductProps> = ({
           {featureProductArr.map((item: any) => (
             <FlashSaleCard
               key={item.id}
-              // img={item.thumbnail}
-              img={'/test.jpeg'}
+              img={item.thumbnail}
               preSaleImgSticker={item.preSaleImgSticker}
               salePrice={item.price}
               price={item.offer_price}
