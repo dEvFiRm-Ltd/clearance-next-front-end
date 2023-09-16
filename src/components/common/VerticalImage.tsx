@@ -9,12 +9,12 @@ type imageType = {
 
 const VerticalImage: FC<imageType> = ({ img, className, objectClass }) => {
   return (
-    <div className={`relative ${className}`}>
+    <div className={`relative ${className} aspect-video`}>
       <Image
         src={img}
         alt='image'
         fill
-        className={`object-cover ${objectClass}`}
+        className={`object-contain ${objectClass}`}
       />
     </div>
   );

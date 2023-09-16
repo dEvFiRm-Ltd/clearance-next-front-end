@@ -45,7 +45,7 @@ const Banner: FC<bannerPropsType> = ({ imgArr }) => {
           <Link
             key={item.id}
             href={item.url}
-            className=' w-screen aspect-rectangle bg-center bg-no-repeat relative z-10 flex justify-center items-center'
+            className=' w-screen aspect-video bg-center bg-no-repeat relative z-10 flex justify-center items-center'
           >
             <Image src={item.photo} alt='' fill className='object-contain' />
           </Link>
