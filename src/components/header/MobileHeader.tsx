@@ -26,9 +26,17 @@ const MobileHeader = () => {
           </Link>
         </div>
         <div className="flex flex-row items-center gap-x-2 text-xl md:text-2xl">
-          <button type="button" className="group relative p-2 md:p-3">
+          <Link
+            target={process.env.NEXT_PUBLIC_SITE_URL ? "_blank" : ""}
+            href={
+              process.env.NEXT_PUBLIC_SITE_URL
+                ? process.env.NEXT_PUBLIC_SITE_URL + "customer/auth/login"
+                : `customer/auth/login`
+            }
+            className="group relative p-2 md:p-3"
+          >
             <i className="fa-regular fa-user"></i>
-          </button>
+          </Link>
           <button className="p-2">
             <i className="fa-solid fa-magnifying-glass text-black"></i>
           </button>
