@@ -11,7 +11,6 @@ type TemplateProps = {
   children: React.ReactNode;
 };
 const Template: React.FC<TemplateProps> = async (props) => {
-  console.log('🚀 ~ file: params:', props);
   const categoryApiCall = await fetch(
     env.BASE_URL + 'api/v10/web/home/categories',
     {
