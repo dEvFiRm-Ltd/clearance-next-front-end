@@ -31,9 +31,8 @@ const FlashSale: FC<flashSaleProps> = ({ flashSaleArr }) => {
             className='flashSlider'
           >
             {flashSaleArr.map((item: any) => (
-              <SwiperSlide>
+              <SwiperSlide key={item.id}>
                 <FlashSaleCard
-                  key={item.id}
                   img={item.thumbnail}
                   text={item.name}
                   salePrice={item.offer_price}
