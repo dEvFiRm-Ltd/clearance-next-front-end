@@ -8,6 +8,7 @@ import SearchField from "../base/SearchField";
 import { trendingSearch } from "@/static";
 import { linkType } from "@/utils/type";
 import { useParams, usePathname, useRouter } from "next/navigation";
+import Select from "./Select";
 
 const MiddleHeader = () => {
   // const [show, setShow] = useState(false)
@@ -99,11 +100,11 @@ const MiddleHeader = () => {
                 <i className="fa-solid fa-globe"></i>
               </button>
               {language && (
-                <div className="w-80 flex flex-col justify-start gap-y-5 absolute top-full right-0 z-50 px-4 pt-5 pb-2 bg-white cartShadow">
+                <div className=" w-80 flex flex-col justify-start gap-y-5 absolute top-full right-0 z-50 px-4 pt-5 pb-2 bg-white cartShadow">
                   <p className="text-sm 2xl:text-base font-bold text-black-primary capitalize text-left">
                     Language
                   </p>
-                  <select
+                  {/* <select
                     value={locale}
                     onChange={(e: ChangeEvent<HTMLSelectElement>) => {
                       const selectedLocale = e.target.value;
@@ -117,7 +118,10 @@ const MiddleHeader = () => {
                   >
                     <option value="en">English</option>
                     <option value="ae">Arabic</option>
-                  </select>
+                  </select> */}
+                  <div className="w-full absolute top-full left-0 bg-white">
+                    <Select />
+                  </div>
                 </div>
               )}
             </div>
