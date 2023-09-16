@@ -5,8 +5,6 @@ import React, { FC, useEffect, useRef, useState } from "react";
 import StarList from "./StarList";
 import SizeSelectDropDown from "./SizeSelectDropDown";
 import Link from "next/link";
-import { env } from "process";
-import { defaultUrl } from "@/static";
 
 const FlashSaleCard: FC<flashSaleCardProps> = ({
   img,
@@ -53,10 +51,15 @@ const FlashSaleCard: FC<flashSaleCardProps> = ({
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+
   return (
     <Link
-      target={defaultUrl !== "/" ? "_blank" : ""}
-      href={defaultUrl + url}
+      target={process.env.NEXT_PUBLIC_SITE_URL ? "_blank" : ""}
+      href={
+        process.env.NEXT_PUBLIC_SITE_URL
+          ? process.env.NEXT_PUBLIC_SITE_URL + "product/" + url
+          : "/product-details" + url
+      }
       className={`boxShadow flex flex-col relative bg-white border border-ash ${groupClass}`}
     >
       <div

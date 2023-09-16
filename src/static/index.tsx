@@ -10,7 +10,6 @@ import {
   linkImgType,
   linkType,
 } from "@/utils/type";
-import { env } from "process";
 
 export const brandsDataArr: brandsType[] = [
   {
@@ -1182,5 +1181,3 @@ export const measurementContent = [
     hemWidth: "33.9",
   },
 ];
-
-export const defaultUrl = env.NEXT_PUBLIC_SITE_URL || "/";
