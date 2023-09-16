@@ -5,6 +5,7 @@ type checkboxProps = {
   label?: string;
   groupClass?: string;
   stateData?: string;
+  checkBoxBorderClass?: string;
   isChecked?: boolean;
   onChangeCb: (e: boolean) => void;
 };
@@ -16,6 +17,7 @@ const Checkbox: FC<checkboxProps> = ({
   stateData,
   groupClass = '',
   onChangeCb,
+  checkBoxBorderClass,
 }) => {
   return (
     <label
@@ -33,7 +35,7 @@ const Checkbox: FC<checkboxProps> = ({
         }}
         className='hidden peer'
       />
-      <span className='peer-checked:bg-black-primary bg-white w-4 h-4 relative border border-black-primary rounded peer-checked:border-black-primary '>
+      <span className={`peer-checked:bg-black-primary bg-white w-4 h-4 relative border border-black-primary rounded peer-checked:border-black-primary ${checkBoxBorderClass}`}>
         <span className='absolute w-2 top-1/2 -translate-y-1/2 left-1 -rotate-45 h-0.5 bg-white rounded-tl-none rounded-full ' />
         <span className='absolute w-1 top-[52%] -translate-y-1/2 left-0.5 rotate-45 h-0.5 bg-white rounded-br-none rounded-full' />
       </span>

@@ -45,7 +45,7 @@ body {
 } */
 /* Styles for the link on hover */
 .hover-link::before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -80,7 +80,7 @@ body {
   background: rgb(255, 255, 255);
   border: 1px solid rgb(243, 31, 40);
   border-radius: 50%;
-  content: '';
+  content: "";
   display: block;
   height: 13px;
   position: absolute;
@@ -102,9 +102,9 @@ body {
   }
 }
 @layer base {
-  input[type='number']::-webkit-outer-spin-button,
-  input[type='number']::-webkit-inner-spin-button,
-  input[type='number'] {
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"] {
     -webkit-appearance: none;
     margin: 0;
     -moz-appearance: textfield !important;
@@ -120,6 +120,10 @@ body {
 }
 .flashSlider .swiper-slide {
   width: fit-content;
+}
+
+.borderShadow {
+  box-shadow: grey 0px 0px 3px 0px;
 }
 
 @media screen and (max-width: 639px) {
@@ -184,4 +188,3 @@ body {
     font-weight: 700;
   }
 }
-
