@@ -34,10 +34,6 @@ export default async function Home({
   );
   const categoryResponse = await categoryApiCall.json();
   const categoryArr: Array<any> = categoryResponse.data.categories || [];
-  console.log(
-    'page.tsx:36 ~ categoryResponse:',
-    categoryResponse.data.categories
-  );
 
   const footerBannerApiCall = await fetch(
     env.BASE_URL + 'api/v10/web/home/footer-banner',
