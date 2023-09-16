@@ -12,14 +12,14 @@ type TemplateProps = {
 const Template: React.FC<TemplateProps> = ({ children }) => {
   return (
     <CartProvider>
-    <>
-      <TopHeader />
-      <MobileHeader />
-      <MiddleHeader />
-      {/* <BottomHeader /> */}
-      <main className="">{children}</main>
-      <Footer />
-    </>
+      <>
+        <TopHeader />
+        <MobileHeader />
+        <MiddleHeader />
+        {process.env.MODE !== "prod" && <BottomHeader />}
+        <main className="">{children}</main>
+        <Footer />
+      </>
     </CartProvider>
   );
 };
