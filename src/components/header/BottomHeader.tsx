@@ -35,14 +35,14 @@ const BottomHeader: FC<bottomHeaderProps> = ({ bottomHeaderArr }) => {
             headingClass="!text-sm !capitalize !mb-4"
           />
         ))}
-        <div className="flex flex-row items-center lg:gap-x-4 2xl:gap-x-5">
+        {/* <div className="flex flex-row items-center lg:gap-x-4 2xl:gap-x-5">
           <div className="lg:w-48 xl:w-60 2xl:w-72 3xl:w-80 lg:h-32 xl:h-40 2xl:h-48 3xl:h-52 relative overflow-hidden">
             <Image src="/girl.jpg" alt="" fill className="object-cover" />
           </div>
           <div className="lg:w-48 xl:w-60 2xl:w-72 3xl:w-80 lg:h-32 xl:h-40 2xl:h-48 3xl:h-52 relative overflow-hidden">
             <Image src="/girl2.jpg" alt="" fill className="object-cover" />
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
