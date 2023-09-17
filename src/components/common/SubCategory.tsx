@@ -6,10 +6,9 @@ const SubCategory: FC<any> = ({
   itemArr,
   heading,
   headingClass,
-  socialArr,
-  contactUsArr,
   groupClass = "",
 }) => {
+  console.log("🚀 ~ file: SubCategory.tsx:11 ~ itemArr:", itemArr);
   const [isExpanded, setIsExpanded] = useState(false);
   return (
     <div className={groupClass}>
@@ -28,10 +27,10 @@ const SubCategory: FC<any> = ({
               <Link
                 target="_blank"
                 key={id}
-                href={item.url}
+                href={item.url || ""}
                 className="py-2 text-sm text-gray"
               >
-                {item.title}
+                {item.name}
               </Link>
             ))}
         </div>
@@ -47,10 +46,10 @@ const SubCategory: FC<any> = ({
           <Link
             key={id}
             target="_blank"
-            href={item.url}
+            href={item.url || ""}
             className="text-[13px] 2xl:text-sm text-black font-normal leading-5"
           >
-            {item.title}
+            {item.name}
           </Link>
         ))}
       </div>

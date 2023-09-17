@@ -122,6 +122,12 @@ body {
 .flashSlider .swiper-slide {
   width: fit-content;
 }
+.categorySlider {
+  padding: 0px 12px !important;
+}
+.categorySlider .swiper-slide {
+  width: fit-content;
+}
 
 @media screen and (max-width: 639px) {
   .swiper-button-prev,
