@@ -85,7 +85,7 @@ const MiddleHeader = () => {
           {/* search dropdown ends  */}
         </div>
         <div className="flex flex-row items-center gap-x-2 xl:gap-x-3.5 2xl:gap-x-4 3xl:gap-x-5 text-xl 2xl:text-2xl">
-          {process.env.NEXT_PUBLIC_MODE !== "prod" && (
+          {process.env.NEXT_PUBLIC_MODE == "prod" && (
             <div ref={languageButtonRef} className="relative ">
               <button
                 type="button"

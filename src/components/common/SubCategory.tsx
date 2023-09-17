@@ -7,8 +7,15 @@ const SubCategory: FC<any> = ({
   heading,
   headingClass,
   groupClass = "",
+  slug,
+  categorySlug,
 }) => {
-  console.log("🚀 ~ file: SubCategory.tsx:11 ~ itemArr:", itemArr);
+  console.log("🚀 ~ file: SubCategory.tsx:13 ~ name:", categorySlug?.name);
+  // console.log("🚀 ~ file: SubCategory.tsx:12 ~ slug:", slug);
+  let url = slug.split("_");
+  url = url[0];
+  // console.log("🚀 ~ file: SubCategory.tsx:15 ~ url:", url);
+  // console.log("🚀 ~ file: SubCategory.tsx:11 ~ itemArr:", itemArr);
   const [isExpanded, setIsExpanded] = useState(false);
   return (
     <div className={groupClass}>
@@ -27,7 +34,10 @@ const SubCategory: FC<any> = ({
               <Link
                 target="_blank"
                 key={id}
-                href={item.url || ""}
+                href={
+                  `https://www.clearance.ae/products?category=${categorySlug?.name}-${url}-${item.slug}&page=1` ||
+                  ""
+                }
                 className="py-2 text-sm text-gray"
               >
                 {item.name}
@@ -46,7 +56,10 @@ const SubCategory: FC<any> = ({
           <Link
             key={id}
             target="_blank"
-            href={item.url || ""}
+            href={
+              `https://www.clearance.ae/products?category=${categorySlug?.name}-${url}-${item.slug}&page=1` ||
+              ""
+            }
             className="text-[13px] 2xl:text-sm text-black font-normal leading-5"
           >
             {item.name}
