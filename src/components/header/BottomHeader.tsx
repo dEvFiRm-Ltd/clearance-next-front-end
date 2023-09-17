@@ -8,7 +8,6 @@ type bottomHeaderProps = {
 };
 const BottomHeader: FC<bottomHeaderProps> = ({ bottomHeaderArr }) => {
   const [subCategories, setSubCategories] = useState<Array<any>>([]);
-  console.log("subCategories:", subCategories);
   return (
     <div className=" border-b relative lg:flex flex-row items-center justify-center text-[#000000] font-bold uppercase w-fit mx-auto lg:gap-x-4 xl:gap-x-5 2xl:gap-x-8 3xl:gap-x-10 text-[13px] xl:text-sm 2xl:text-base 3xl:text-lg">
       <Swiper
@@ -24,9 +23,6 @@ const BottomHeader: FC<bottomHeaderProps> = ({ bottomHeaderArr }) => {
               onMouseEnter={() => {
                 setSubCategories(item.sub_category);
               }}
-              onMouseLeave={() => {
-                setSubCategories([]);
-              }}
               className="hover-link py-4"
             >
               {item?.name}
@@ -40,7 +36,7 @@ const BottomHeader: FC<bottomHeaderProps> = ({ bottomHeaderArr }) => {
             <SubCategory
               key={item.id}
               heading={item.name}
-              itemArr={item.itemArr}
+              itemArr={item.childes}
               headingClass="!text-sm !capitalize !mb-4"
             />
           ))}
