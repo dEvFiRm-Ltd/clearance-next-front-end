@@ -1,47 +1,47 @@
-"use client";
-import Link from "next/link";
-import React, { FC, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import SubCategory from "../common/SubCategory";
+'use client';
+import Link from 'next/link';
+import React, { FC, useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import SubCategory from '../common/SubCategory';
 type bottomHeaderProps = {
   bottomHeaderArr: any;
 };
 const BottomHeader: FC<bottomHeaderProps> = ({ bottomHeaderArr }) => {
   const [subCategories, setSubCategories] = useState<Array<any>>([]);
-  console.log("subCategories:", subCategories);
+  console.log('subCategories:', subCategories);
   return (
-    <div className=" border-b relative lg:flex flex-row items-center justify-center text-[#000000] font-bold uppercase w-fit mx-auto lg:gap-x-4 xl:gap-x-5 2xl:gap-x-8 3xl:gap-x-10 text-[13px] xl:text-sm 2xl:text-base 3xl:text-lg">
+    <div className=' border-b relative lg:flex flex-row items-center justify-center text-[#000000] font-bold uppercase w-fit mx-auto lg:gap-x-4 xl:gap-x-5 2xl:gap-x-8 3xl:gap-x-10 text-[13px] xl:text-sm 2xl:text-base 3xl:text-lg'>
       <Swiper
         spaceBetween={30}
         loop={true}
-        slidesPerView="auto"
-        className="flashSlider peer"
+        slidesPerView='auto'
+        className='flashSlider peer'
       >
         {bottomHeaderArr.map((item: any, id: number) => (
           <SwiperSlide key={id}>
             <Link
-              href={item?.url || ""}
+              href={item?.url || ''}
               onMouseEnter={() => {
                 setSubCategories(item.sub_category);
               }}
               onMouseLeave={() => {
                 setSubCategories([]);
               }}
-              className="hover-link py-4"
+              className='hover-link py-4'
             >
               {item?.name}
             </Link>
           </SwiperSlide>
         ))}
       </Swiper>
-      {subCategories.length && (
-        <div className="absolute top-full border-t peer-hover:visible hover:visible invisible flex transition-all flex-row justify-center items-start gap-x-10 pt-10 pb-[52px] z-40 bg-white w-screen">
+      {subCategories.length ? (
+        <div className='absolute top-full border-t peer-hover:visible hover:visible invisible flex transition-all flex-row justify-center items-start gap-x-10 pt-10 pb-[52px] z-40 bg-white w-screen'>
           {subCategories.map((item: any) => (
             <SubCategory
               key={item.id}
               heading={item.name}
               itemArr={item.itemArr}
-              headingClass="!text-sm !capitalize !mb-4"
+              headingClass='!text-sm !capitalize !mb-4'
             />
           ))}
           {/* <div className="flex flex-row items-center lg:gap-x-4 2xl:gap-x-5">
@@ -53,6 +53,8 @@ const BottomHeader: FC<bottomHeaderProps> = ({ bottomHeaderArr }) => {
           </div>
         </div> */}
         </div>
+      ) : (
+        <></>
       )}
     </div>
   );
@@ -113,3 +115,4 @@ export default BottomHeader;
 // };
 
 // export default BottomHeader;
+
