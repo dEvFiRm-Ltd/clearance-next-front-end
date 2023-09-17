@@ -27,10 +27,10 @@ const BottomHeader: FC<bottomHeaderProps> = ({ bottomHeaderArr }) => {
         ))}
       </Swiper>
       <div className="absolute top-full border-t peer-hover:visible hover:visible invisible flex transition-all flex-row justify-center items-start gap-x-10 pt-10 pb-[52px] z-40 bg-white w-screen">
-        {bottomHeaderItems.map((item: footerProps, id: number) => (
+        {bottomHeaderItems.map((item: footerProps|any, id: number) => (
           <FooterPart
             key={id}
-            heading={item.heading}
+            headingAe={item.heading}
             itemArr={item.itemArr}
             headingClass="!text-sm !capitalize !mb-4"
           />
