@@ -1,10 +1,10 @@
-export type bannerProps={
-  img:string;
-  url:string;
-}
+export type bannerProps = {
+  img: string;
+  url: string;
+};
 export type flashSaleCardProps = {
-  url?:string
-  groupClass?: string;  
+  url?: string;
+  groupClass?: string;
   imgClass?: string;
   btnClass?: string;
   check?: boolean;
@@ -12,13 +12,13 @@ export type flashSaleCardProps = {
   preSaleImgSticker?: string;
   discount?: string;
   text: string;
-  salePrice:number | string;
-  price?:number | string;
-  text2?: string;  
-  review?:string;
-  btnText?:string;
-  colorImg?:string[];
-  actionCb?:()=>void;
+  salePrice: number | string;
+  price?: number | string;
+  text2?: string;
+  review?: string;
+  btnText?: string;
+  colorImg?: string[];
+  actionCb?: () => void;
   variant?: object[];
   imgVariantSmall?: boolean;
 };
@@ -29,15 +29,15 @@ export type linkType = {
   titleAe: string;
 };
 export type linkImgType = {
-  img:string;
+  img: string;
   title: string;
   url: string;
 };
 export type commonSliderProps = {
-  closeStateCb: () => void
-  ref?: any
-  deleteBtnText?: string
-}
+  closeStateCb: () => void;
+  ref?: any;
+  deleteBtnText?: string;
+};
 export type footerProps = {
   itemArr?: linkType[];
   socialArr?: linkType[];
@@ -50,19 +50,24 @@ export type footerProps = {
   headingClass?: string;
   groupClass?: string;
 };
+export type subCategoryProps = {
+  itemArr?: linkType[];
+  heading: string;
+  headingClass?: string;
+  groupClass?: string;
+};
 
-
-export type dropDownType ={
-  title:string;
-  btnClass:string;
+export type dropDownType = {
+  title: string;
+  btnClass: string;
   actionCb: () => void;
-}
+};
 
-// for modals 
+// for modals
 export type commonModalProps = {
-  viewState: boolean
-  closeStateCb: () => void
-  ref?: any
-  deleteBtnText?: string
-  data?:any
-}
+  viewState: boolean;
+  closeStateCb: () => void;
+  ref?: any;
+  deleteBtnText?: string;
+  data?: any;
+};
