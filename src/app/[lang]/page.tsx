@@ -138,7 +138,7 @@ export default async function Home({
   return (
     <>
       <Banner imgArr={bannerArr} />
-      <div className="container flex flex-row justify-center mt-[30px] gap-4 md:gap-5 xl:gap-6 3xl:gap-7 flex-wrap">
+      <div className="container flex flex-row justify-center mt-5 gap-4 md:gap-5 flex-wrap">
         {categoryArr.map((item: any) => (
           <DressCard key={item.id} image={item.icon} url={item.slug} />
         ))}
@@ -158,7 +158,7 @@ export default async function Home({
           />
         ))}
       </div> */}
-      <div className="container mt-[60px] mb-5 3xl:mb-10 flex flex-wrap flex-row justify-center gap-x-5 gap-y-3">
+      <div className="container mb-5 flex flex-wrap flex-row justify-center gap-5 ">
         {footerBannerArr.splice(0, 2).map((item: any) => (
           <VerticalImage
             key={item.id}
@@ -168,7 +168,7 @@ export default async function Home({
           />
         ))}
       </div>
-      <div className="container mb-10 flex flex-row flex-wrap justify-center gap-x-5 gap-y-3">
+      <div className="container flex flex-row flex-wrap justify-center gap-5 ">
         {footerBannerArr.splice(0, 2).map((item: any) => (
           <VerticalImage
             key={item.id}

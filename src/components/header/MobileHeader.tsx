@@ -5,16 +5,27 @@ import React, { useEffect, useRef, useState } from "react";
 import SlideInOut from "../common/SlideInOut";
 import Select from "./Select";
 import { usePathname } from "next/navigation";
+import SearchField from "../base/SearchField";
+import Button from "../base/Button";
 
 const MobileHeader = () => {
   const [show, setShow] = useState(false);
+  const [isSearchVisible, setSearchVisible] = useState(false);
+  const [isSearchDropdownVisible, setSearchDropdownVisible] = useState(false);
   const languageButtonRef = useRef<HTMLDivElement>(null);
+  const searchButtonRef = useRef<HTMLDivElement>(null);
   const [language, setLanguage] = useState(false);
   const path = usePathname();
   const local = path.split("/")[1];
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
+      if (
+        searchButtonRef.current &&
+        !searchButtonRef.current.contains(event.target as Node)
+      ) {
+        setSearchVisible(false);
+      }
       if (
         languageButtonRef.current &&
         !languageButtonRef.current.contains(event.target as Node)
@@ -31,7 +42,10 @@ const MobileHeader = () => {
   }, []);
   return (
     <>
-      <div className="lg:hidden flex flex-row justify-between items-center py-1.5 md:py-4 px-2 md:px-5 relative">
+      <div
+        ref={searchButtonRef}
+        className="lg:hidden w-full flex flex-row justify-between items-center py-1.5 md:py-4 px-2 md:px-5 relative"
+      >
         <div className="flex flex-row items-center gap-3">
           {/* <button
             type="button"
@@ -60,6 +74,13 @@ const MobileHeader = () => {
           >
             <i className="fa-regular fa-user"></i>
           </Link>
+          <Button
+            actionCb={() => setSearchVisible(true)}
+            btnType="button"
+            variant="primary"
+            icon="fa-solid fa-magnifying-glass !text-base"
+            btnClass="!text-[#616368] !px-4 !py-2 !bg-white !w-auto"
+          />
           <div ref={languageButtonRef} className="relative ">
             <button
               type="button"
@@ -91,6 +112,14 @@ const MobileHeader = () => {
               <i className="fa-solid fa-bag-shopping"></i>
             </Link> */}
         </div>
+        {isSearchVisible && (
+          <div className="w-full absolute">
+            <SearchField
+              onFocus={() => setSearchDropdownVisible(true)}
+              onBlur={() => setSearchDropdownVisible(false)}
+            />
+          </div>
+        )}
       </div>
       <div
         className={`w-[80%] absolute transition-all duration-1000 ${
