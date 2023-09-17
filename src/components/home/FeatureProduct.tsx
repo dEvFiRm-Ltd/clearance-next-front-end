@@ -39,9 +39,9 @@ const FeatureProduct: FC<featureProductProps> = ({
             />
           ))}
         </div>
-        <button className='rounded bg-black-primary hover:opacity-80 text-white px-3 md:px-4 lg:px-5 xl:px-6 2xl:px-8 py-2 text-xs md:text-sm 2xl:text-base uppercase'>
+        {/*   <button className='rounded bg-black-primary hover:opacity-80 text-white px-3 md:px-4 lg:px-5 xl:px-6 2xl:px-8 py-2 text-xs md:text-sm 2xl:text-base uppercase'>
           view more
-        </button>
+        </button> */}
       </div>
       <CartModal
         closeStateCb={() => {

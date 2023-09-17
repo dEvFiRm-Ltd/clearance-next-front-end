@@ -11,7 +11,7 @@ type bannerPropsType = {
 const Banner: FC<bannerPropsType> = ({ imgArr }) => {
   const sliderRef = createRef<Slider>();
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     autoplay: true,
     speed: 300,
