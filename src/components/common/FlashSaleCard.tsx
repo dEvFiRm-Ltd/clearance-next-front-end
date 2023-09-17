@@ -91,7 +91,7 @@ const FlashSaleCard: FC<flashSaleCardProps> = ({
             <Image src={preSaleImgSticker} alt="" fill />
           </span>
         )}
-        {process.env.NEXT_PUBLIC_MODE !== "prod" && (
+        {/* {process.env.NEXT_PUBLIC_MODE !== "prod" && (
           <div
             onClick={(e) => {
               e.preventDefault();
@@ -101,7 +101,7 @@ const FlashSaleCard: FC<flashSaleCardProps> = ({
           >
             {local === "en" ? " add to bag" : "أضف الى الحقيبة"}
           </div>
-        )}
+        )} */}
       </div>
       <div className="flex w-full flex-col justify-start items-start self-stretch flex-1 gap-1.5 py-1.5 px-1">
         <p className="line-clamp-1 text-xs lg:text-sm">{text}</p>

@@ -79,11 +79,7 @@ const MobileHeader = () => {
               </div>
             )}
           </div>
-          {/* <button className="p-2">
-            <i className="fa-solid fa-magnifying-glass text-black"></i>
-          </button> */}
-          {process.env.NEXT_PUBLIC_MODE !== "prod" && (
-            <Link
+          {/* <Link
               target={process.env.NEXT_PUBLIC_SITE_URL ? "_blank" : ""}
               href={
                 process.env.NEXT_PUBLIC_SITE_URL
@@ -93,8 +89,7 @@ const MobileHeader = () => {
               className="group relative p-2 md:p-3"
             >
               <i className="fa-solid fa-bag-shopping"></i>
-            </Link>
-          )}
+            </Link> */}
         </div>
       </div>
       <div
