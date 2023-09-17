@@ -65,9 +65,9 @@ export default async function RootLayout({
           <TopHeader />
           <MobileHeader />
           <MiddleHeader />
-          {process.env.NEXT_PUBLIC_MODE == "prod" && (
+          
             <BottomHeader bottomHeaderArr={categoryArr} />
-          )}
+      
           <main className="">{children}</main>
           <Footer />
         </CartProvider>
