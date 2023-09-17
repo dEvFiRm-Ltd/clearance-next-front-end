@@ -1,24 +1,29 @@
-'use client';
-import React, { FC, useState } from 'react';
-import FlashSaleCard from '../common/FlashSaleCard';
-import CartModal from '../modal/CartModal';
+"use client";
+import React, { FC, useState } from "react";
+import FlashSaleCard from "../common/FlashSaleCard";
+import CartModal from "../modal/CartModal";
+import { usePathname } from "next/navigation";
 type featureProductProps = {
   featureProductArr: any[];
-  title: string;
+  titleEn: string;
+  titleAe: string;
 };
 const FeatureProduct: FC<featureProductProps> = ({
   featureProductArr,
-  title,
+  titleEn,
+  titleAe,
 }) => {
   const [modals, setModals] = useState(false);
   const [modalData, setModalData] = useState<any>();
+  const path = usePathname();
+  const local = path.split("/")[1];
   return (
-    <section className='py-7'>
-      <div className='container flex flex-col justify-start items-center gap-y-6'>
-        <h3 className='text-base lg:text-lg 2xl:text-xl font-bold text-center text-black-primary uppercase'>
-          {title}
+    <section className="py-7">
+      <div className="container flex flex-col justify-start items-center gap-y-6">
+        <h3 className="text-base lg:text-lg 2xl:text-xl font-bold text-center text-black-primary uppercase">
+          {local === "en" ? titleEn : titleAe}
         </h3>
-        <div className='flex flex-row justify-center gap-2.5 md:gap-4 lg:gap-5 xl:gap-6 flex-wrap !items-start'>
+        <div className="flex flex-row justify-center gap-2.5 md:gap-4 lg:gap-5 xl:gap-6 flex-wrap !items-start">
           {featureProductArr.map((item: any) => (
             <FlashSaleCard
               key={item.id}
@@ -34,8 +39,8 @@ const FeatureProduct: FC<featureProductProps> = ({
                 setModalData(item);
                 setModals(!modals);
               }}
-              groupClass='w-40 sm:w-52 md:w-60 lg:w-80 xl:w-[390px] 2xl:w-[427px]'
-              imgClass='!h-52 sm:!h-[278px] md:!h-80 lg:!h-[400px] xl:!h-[480px] 2xl:!h-[570px]'
+              groupClass="w-40 sm:w-52 md:w-60 lg:w-80 xl:w-[390px] 2xl:w-[427px]"
+              imgClass="!h-52 sm:!h-[278px] md:!h-80 lg:!h-[400px] xl:!h-[480px] 2xl:!h-[570px]"
             />
           ))}
         </div>
@@ -55,4 +60,3 @@ const FeatureProduct: FC<featureProductProps> = ({
 };
 
 export default FeatureProduct;
-
