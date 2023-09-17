@@ -10,12 +10,8 @@ const SubCategory: FC<any> = ({
   slug,
   categorySlug,
 }) => {
-  console.log("🚀 ~ file: SubCategory.tsx:13 ~ name:", categorySlug?.name);
-  // console.log("🚀 ~ file: SubCategory.tsx:12 ~ slug:", slug);
   let url = slug.split("_");
   url = url[0];
-  // console.log("🚀 ~ file: SubCategory.tsx:15 ~ url:", url);
-  // console.log("🚀 ~ file: SubCategory.tsx:11 ~ itemArr:", itemArr);
   const [isExpanded, setIsExpanded] = useState(false);
   return (
     <div className={groupClass}>
@@ -25,7 +21,15 @@ const SubCategory: FC<any> = ({
           onClick={() => setIsExpanded(!isExpanded)}
           className={`w-full flex flex-row justify-between items-center uppercase text-base text-black py-4 ${headingClass}`}
         >
-          <span>{heading}</span>
+          <Link
+            target="_blank"
+            href={
+              `https://www.clearance.ae/products?category=${categorySlug?.name}-${slug}-&page=1` ||
+              ""
+            }
+          >
+            <span>{heading}</span>
+          </Link>
           <i className="fas fa-plus text-sm"></i>
         </button>
         <div className="pl-4 flex flex-col justify-start gap-y-1">
@@ -46,11 +50,19 @@ const SubCategory: FC<any> = ({
         </div>
       </div>
       {/* mobile & tab only */}
-      <h3
-        className={`hidden lg:block lg:text-base 2xl:text-lg font-bold text-black uppercase mb-5 ${headingClass}`}
+      <Link
+        target="_blank"
+        href={
+          `https://www.clearance.ae/products?category=${categorySlug?.name}-${slug}-&page=1` ||
+          ""
+        }
       >
-        {heading}
-      </h3>
+        <h3
+          className={`hidden lg:block lg:text-base 2xl:text-lg font-bold text-black uppercase mb-5 ${headingClass}`}
+        >
+          {heading}
+        </h3>
+      </Link>
       <div className="hidden lg:flex flex-col justify-start gap-y-3">
         {itemArr?.map((item: any, id: number) => (
           <Link
