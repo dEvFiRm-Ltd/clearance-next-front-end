@@ -124,16 +124,16 @@ const MiddleHeader = () => {
           <button
             type="button"
             onClick={() => {
-              if (process.env.NEXT_PUBLIC_MODE !== "prod") {
-                setUser(!user);
-              } else if (process.env.NEXT_PUBLIC_SITE_URL) {
-                window?.open(
-                  process.env.NEXT_PUBLIC_SITE_URL + "customer/auth/login",
-                  "_blank"
-                );
-              } else {
-                console.error("No Base URL Found!");
-              }
+              // if (process.env.NEXT_PUBLIC_MODE !== "prod") {
+              //   // setUser(!user);
+              // } else if (process.env.NEXT_PUBLIC_SITE_URL) {
+              window?.open(
+                process.env.NEXT_PUBLIC_SITE_URL + "customer/auth/login",
+                "_blank"
+              );
+              // } else {
+              //   console.error("No Base URL Found!");
+              // }
             }}
             ref={userButtonRef}
             className="relative p-2 2xl:p-3"
