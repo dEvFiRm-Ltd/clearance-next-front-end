@@ -25,7 +25,8 @@ export type flashSaleCardProps = {
 export type linkType = {
   icon?: string;
   url: string;
-  title: string;
+  titleEn: string;
+  titleAe: string;
 };
 export type linkImgType = {
   img:string;
@@ -42,8 +43,10 @@ export type footerProps = {
   socialArr?: linkType[];
   contactUsArr?: linkType[];
   hasBtn?: boolean;
-  heading: string;
-  contactUsText?: string;
+  headingEn: string;
+  headingAe: string;
+  contactUsTextEn?: string;
+  contactUsTextAe?: string;
   headingClass?: string;
   groupClass?: string;
 };

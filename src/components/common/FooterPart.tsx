@@ -2,20 +2,24 @@
 import { footerProps, linkType } from "@/utils/type";
 import Link from "next/link";
 import React, { FC, useState } from "react";
-import GoogleBtn from "./GoogleButton";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 const FooterPart: FC<footerProps> = ({
   itemArr,
-  heading,
+  headingEn,
+  headingAe,
   headingClass,
   socialArr,
-  contactUsText,
+  contactUsTextEn,
+  contactUsTextAe,
   contactUsArr,
   hasBtn,
   groupClass = "",
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const path = usePathname();
+  const local = path.split("/")[1];
   return (
     <div className={groupClass}>
       <div className="lg:hidden w-full border-b ">
@@ -24,7 +28,7 @@ const FooterPart: FC<footerProps> = ({
           onClick={() => setIsExpanded(!isExpanded)}
           className={`w-full flex flex-row justify-between items-center uppercase text-base text-black py-4 ${headingClass}`}
         >
-          <span>{heading}</span>
+          <span>{local === "en" ? headingEn : headingAe}</span>
           <i className="fas fa-plus text-sm"></i>
         </button>
         <div className="pl-4 flex flex-col justify-start gap-y-1">
@@ -36,12 +40,12 @@ const FooterPart: FC<footerProps> = ({
                 href={item.url}
                 className="py-2 text-sm text-gray"
               >
-                {item.title}
+                {local === "en" ? item.titleEn : item.titleAe}
               </Link>
             ))}
-          {isExpanded && contactUsText && (
+          {isExpanded && contactUsTextEn && (
             <p className="text-sm font-bold text-black uppercase ">
-              {contactUsText}
+              {local === "en" ? contactUsTextEn : contactUsTextAe}
             </p>
           )}
           {isExpanded && contactUsArr && (
@@ -50,7 +54,7 @@ const FooterPart: FC<footerProps> = ({
                 contactUsArr?.map((item: linkType, id: number) => (
                   <Link key={id} href={item.url} className="text-xs">
                     <i className={`${item.icon} mr-1.5`}></i>
-                    {item.title}
+                    {local === "en" ? item.titleEn : item.titleAe}
                   </Link>
                 ))}
             </div>
@@ -64,7 +68,7 @@ const FooterPart: FC<footerProps> = ({
                   href={item.url}
                   className="text-2xl"
                 >
-                  <i className={`${item.title}`}></i>
+                  <i className={`${item.icon}`}></i>
                 </Link>
               ))}
             </div>
@@ -105,7 +109,7 @@ const FooterPart: FC<footerProps> = ({
       <h3
         className={`hidden lg:block lg:text-base 2xl:text-lg font-bold text-black uppercase mb-5 ${headingClass}`}
       >
-        {heading}
+        {local === "en" ? headingEn : headingAe}
       </h3>
       <div className="hidden lg:flex flex-col justify-start gap-y-3">
         {itemArr?.map((item: linkType, id: number) => (
@@ -115,12 +119,12 @@ const FooterPart: FC<footerProps> = ({
             href={item.url}
             className="text-[13px] 2xl:text-sm text-black font-normal leading-5"
           >
-            {item.title}
+            {local === "en" ? item.titleEn : item.titleAe}
           </Link>
         ))}
-        {contactUsText && (
+        {contactUsTextEn && (
           <p className="lg:text-base font-bold text-black uppercase ">
-            {contactUsText}
+            {local === "en" ? contactUsTextEn : contactUsTextAe}
           </p>
         )}
         {contactUsArr && (
@@ -128,7 +132,7 @@ const FooterPart: FC<footerProps> = ({
             {contactUsArr?.map((item: linkType, id: number) => (
               <Link key={id} href={item.url}>
                 <i className={`${item.icon} mr-1.5`}></i>
-                {item.title}
+                {local === "en" ? item.titleEn : item.titleAe}
               </Link>
             ))}
           </div>
@@ -142,7 +146,7 @@ const FooterPart: FC<footerProps> = ({
                 href={item.url}
                 className="text-4xl"
               >
-                <i className={`${item.title}`}></i>
+                <i className={`${item.icon}`}></i>
               </Link>
             ))}
           </div>
