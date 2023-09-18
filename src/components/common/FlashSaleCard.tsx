@@ -5,6 +5,7 @@ import React, { FC, useEffect, useRef, useState } from "react";
 import StarList from "./StarList";
 import SizeSelectDropDown from "./SizeSelectDropDown";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const FlashSaleCard: FC<flashSaleCardProps> = ({
   img,
@@ -29,6 +30,8 @@ const FlashSaleCard: FC<flashSaleCardProps> = ({
   const [selectedColorIndex, setSelectedColorIndex] = useState<number | null>(
     0
   );
+  const path = usePathname();
+  const local = path.split("/")[1];
   const selectedImg =
     colorImg && selectedColorIndex !== null
       ? colorImg[selectedColorIndex]
@@ -88,7 +91,7 @@ const FlashSaleCard: FC<flashSaleCardProps> = ({
             <Image src={preSaleImgSticker} alt="" fill />
           </span>
         )}
-        {process.env.MODE !== "prod" && (
+        {/* {process.env.NEXT_PUBLIC_MODE !== "prod" && (
           <div
             onClick={(e) => {
               e.preventDefault();
@@ -96,9 +99,9 @@ const FlashSaleCard: FC<flashSaleCardProps> = ({
             }}
             className={`hidden md:block group-hover:opacity-100 opacity-0 text-center py-2.5 lg:py-3.5 w-[130px] md:w-[140px] lg:w-[160px] 2xl:w-[220px] px-3 absolute left-1/2 -translate-x-1/2 bottom-12 rounded-full bg-white/90 uppercase ${btnClass}`}
           >
-            add to bag
+            {local === "en" ? " add to bag" : "أضف الى الحقيبة"}
           </div>
-        )}
+        )} */}
       </div>
       <div className="flex w-full flex-col justify-start items-start self-stretch flex-1 gap-1.5 py-1.5 px-1">
         <p className="line-clamp-1 text-xs lg:text-sm">{text}</p>

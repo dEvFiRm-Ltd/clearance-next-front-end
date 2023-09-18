@@ -1,14 +1,12 @@
-import axois from "axios";
+import axois from 'axios';
 
 const getMetaDataFunction = async ({ slug }: any) => {
   const defaultDescription =
-    "<p><strong>Clearance is the ecommerce version  and the online operational name of Master out";
-  const defaultTitle = "Welcome To Clearance";
+    '<p><strong>Clearance is the ecommerce version  and the online operational name of Master out';
+  const defaultTitle = 'Welcome To Clearance';
 
   const seo = await axois
-    .get(
-      `${process.env.NEXT_PUBLIC_BASE_URL_LIVE}api/v10/products/details/${slug}`
-    )
+    .get(`${process.env.NEXT_PUBLIC_BASE_URL}api/v10/products/details/${slug}`)
     .then((res) => {
       return res.data.data;
     });
@@ -32,3 +30,4 @@ const getMetaDataFunction = async ({ slug }: any) => {
 };
 
 export default getMetaDataFunction;
+
