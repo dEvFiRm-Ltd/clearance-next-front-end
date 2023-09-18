@@ -45,6 +45,8 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: { [key: string]: any };
 }) {
+  console.log('Base URL', env.BASE_URL);
+
   const categoryApiCall = await fetch(
     env.BASE_URL + 'api/v10/web/home/categories',
     {
