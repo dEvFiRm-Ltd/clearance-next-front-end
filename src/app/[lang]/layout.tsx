@@ -68,7 +68,7 @@ export default async function RootLayout({
 
           <BottomHeader bottomHeaderArr={categoryArr} />
 
-          <main className=''>{children}</main>
+          <main>{children}</main>
           <Footer />
         </CartProvider>
         <BodyScripts />

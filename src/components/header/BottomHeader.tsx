@@ -27,8 +27,10 @@ const BottomHeader: FC<bottomHeaderProps> = ({ bottomHeaderArr }) => {
                   : '/'
               }
               onMouseEnter={() => {
-                setSubCategories(item.sub_category);
-                setIndex(id);
+                if (window?.innerWidth >= 1024) {
+                  setSubCategories(item.sub_category);
+                  setIndex(id);
+                }
               }}
               className='hover-link py-4'
             >

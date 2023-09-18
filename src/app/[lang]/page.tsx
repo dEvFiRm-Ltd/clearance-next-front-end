@@ -164,7 +164,7 @@ export default async function Home({
             key={item.id}
             img={item.photo}
             item={item}
-            className='w-full bg-ash xl:w-[614px] 2xl:w-[738px] 3xl:w-[880px] aspect-video object-contain'
+            className='w-full bg-ash xl:w-[614px] 2xl:w-[738px] 3xl:w-[880px] aspect-[851/479] object-contain'
           />
         ))}
       </div>
