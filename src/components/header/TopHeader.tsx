@@ -7,7 +7,7 @@ const TopHeader = () => {
   const local = path.split("/")[1];
   return (
     <div className="bg-[#181818] py-3">
-      <div className="container mx-auto flex flex-row items-center justify-center gap-2 lg:gap-x-4 uppercase text-xs lg:text-xl 2xl:text-2xl font-normal">
+      <div className="container mx-auto flex flex-row items-center justify-center gap-1 lg:gap-x-4 uppercase text-xs lg:text-xl 2xl:text-2xl font-normal">
         <div className="flex flex-row gap-1.5 lg:gap-3 items-center justify-center flex-wrap">
           <p className=" text-white">
             <i className="fa-solid fa-gift text-base lg:text-2xl text-[#E6E3C4] mr-1.5 lg:mr-3"></i>
@@ -26,7 +26,7 @@ const TopHeader = () => {
           </p>
           <span className="font-bold text-[#E3D8C5]">over 99 AED</span>
         </div> */}
-        <div className="flex flex-row gap-1.5 lg:gap-3 items-center justify-center flex-wrap border-l border-[#656565] pl-4">
+        <div className="flex flex-row gap-1.5 lg:gap-3 items-center justify-center flex-wrap border-l border-[#656565] pl-1 md:pl-4">
           <p className=" text-white">
             <i className="fa-solid fa-gift text-base lg:text-2xl text-[#E6E3C4] mr-1.5 lg:mr-3"></i>
             {local === "en" ? "free gift" : "هدية مجانية"}
