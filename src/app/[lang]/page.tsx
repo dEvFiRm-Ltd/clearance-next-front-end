@@ -63,7 +63,7 @@ export default async function Home({
   const featureProductArr: Array<any> =
     featureProductResponse.data.featured_products || [];
 
-  const supermarketDealsApiCall = await fetch(
+  /*  const supermarketDealsApiCall = await fetch(
     env.BASE_URL +
       'api/v10/web/home/products?category_slug=Supermarket-Deals_43&offset=1&limit=7',
     {
@@ -72,9 +72,7 @@ export default async function Home({
   );
   const supermarketDealsResponse = await supermarketDealsApiCall.json();
   const supermarketDealsArr: Array<any> =
-    supermarketDealsResponse.data.products || [];
-
-  const womenApiCall = await fetch(
+    supermarketDealsResponse.data.products || [];   const womenApiCall = await fetch(
     env.BASE_URL +
       'api/v10/web/home/products?category_slug=women_1&offset=1&limit=7',
     {
@@ -82,7 +80,7 @@ export default async function Home({
     }
   );
   const womenResponse = await womenApiCall.json();
-  const womenArr: Array<any> = womenResponse.data.products || [];
+  const womenArr: Array<any> = womenResponse.data.products || []; 
 
   const menApiCall = await fetch(
     env.BASE_URL +
@@ -133,7 +131,7 @@ export default async function Home({
     }
   );
   const wholeSaleResponse = await wholeSaleApiCall.json();
-  const wholeSaleArr: Array<any> = wholeSaleResponse.data.products || [];
+  const wholeSaleArr: Array<any> = wholeSaleResponse.data.products || [];*/
 
   return (
     <>
