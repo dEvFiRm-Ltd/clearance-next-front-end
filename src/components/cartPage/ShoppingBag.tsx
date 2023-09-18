@@ -6,10 +6,12 @@ import React, { useState } from "react";
 import Button from "../base/Button";
 import Checkbox from "../base/Checkbox";
 import ShoppingBagTotal from "./ShoppingBagTotal";
+import CartAddItemsModal from "../modal/CartAddItemsModal";
 
 const ShoppingBag = () => {
   const tabs = ["S(6-8)", "M(10)", "L(12)", "XL(14)", "XXL(16)"];
   const [activeTab, setActiveTab] = useState(0);
+  const [shipping, setShipping] = useState(false);
   let [qty, setQty] = useState(1);
   return (
     <div className="container mb-[91px]">
@@ -43,6 +45,7 @@ const ShoppingBag = () => {
           {/* Shipping Fee */}
           <button
             type="button"
+            onClick={() => setShipping(!shipping)}
             className="w-full flex flex-col gap-y-[9px] bg-[#F5FCFB] px-[30px] py-[15px]"
           >
             <div className="flex flex-row justify-between items-center">
@@ -228,6 +231,10 @@ const ShoppingBag = () => {
         {/* ========> Right Side <======= */}
         <ShoppingBagTotal />
       </div>
+      <CartAddItemsModal
+        closeStateCb={() => setShipping(false)}
+        viewState={shipping}
+      />
     </div>
   );
 };
