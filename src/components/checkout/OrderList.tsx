@@ -2,15 +2,15 @@ import React from "react";
 
 export const OrderList = () => {
   return (
-    <div className="w-full">
+    <div>
       <h2 className="text-2xl border-b-2 pb-4 border-black-primary mb-6">
         Order List
       </h2>
-      <div className="flex items-start lg:mb-20">
-        <button className="bg-black-primary border border-slate-400 rounded-sm text-white text-center w-[90px] h-[35px] lg:w-[175px] lg:h-[50px]">
+      <div className="flex items-start mb-20">
+        <button className="bg-black-primary border border-slate-400 rounded-sm text-white text-center w-[130px] h-[35px] lg:w-[175px] lg:h-[50px]">
           Order
         </button>
-        <button className="text-black-primary border border-slate-400 rounded-sm bg-white text-center w-[90px] h-[35px] lg:w-[175px] lg:h-[50px]">
+        <button className="text-black-primary border border-slate-400 rounded-sm bg-white text-center w-[130px] h-[35px] lg:w-[175px] lg:h-[50px]">
           Return Order
         </button>
       </div>
