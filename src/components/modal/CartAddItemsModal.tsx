@@ -74,7 +74,7 @@ const CartAddItemsModal: FC<commonModalProps> = ({
   };
   return (
     <Modal visible={viewState} closeCb={closeStateCb} title="">
-      <ModalBody modalBodyClass="!w-[1200px] !px-[72px] !py-[27px]">
+      <ModalBody modalBodyClass="!w-[1200px] !px-[72px] !py-[27px] h-[700px] ">
         <h1 className="text-xl lg:text-2xl xl:text-[32px] xl:leading-[38px] mb-5 text-black-primary font-bold text-center">
           Add Items
         </h1>
