@@ -46,6 +46,8 @@ export default async function RootLayout({
   params: { [key: string]: any };
 }) {
   console.log('Base URL', env.BASE_URL);
+  console.log('NEXT_PUBLIC_BASE_URL', env.NEXT_PUBLIC_BASE_URL);
+  console.log('NEXT_PUBLIC_SITE_URL', env.NEXT_PUBLIC_SITE_URL);
 
   const categoryApiCall = await fetch(
     env.BASE_URL + 'api/v10/web/home/categories',
