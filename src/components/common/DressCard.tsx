@@ -16,8 +16,8 @@ const DressCard: FC<dressType> = ({
   image,
   url,
   title,
-  hightClass,
-  withClass,
+  hightClass = "",
+  withClass = "",
   heading,
   totalProduct,
 }) => {
@@ -34,12 +34,12 @@ const DressCard: FC<dressType> = ({
             `&page=1`
           : `/products?category=` + url
       }
-      className={`md:w-40 md:ml-0 md:mr-0 lg:w-44 xl:w-48 2xl:w-[234px] 3xl:w-[272px] flex flex-col items-center justify-start gap-y-4 uppercase ${withClass}`}
+      className={`sm:w-40 sm:ml-0 sm:mr-0 lg:w-44 xl:w-48 2xl:w-[234px] 3xl:w-[272px] flex flex-col items-center justify-start gap-y-4 uppercase ${withClass}`}
     >
       <div
-        className={`relative h-56 lg:h-64 xl:h-72 2xl:h-[335px] 3xl:h-[390px] w-full ${hightClass}`}
+        className={`relative sm:h-56 lg:h-64 xl:h-72 2xl:h-[335px] 3xl:h-[390px] w-full ${hightClass}`}
       >
-        <Image src={image} alt="image" fill className="object-cover" />
+        <Image src={image} alt="image" fill className="object-contain" />
       </div>
       {heading && (
         <p className="text-base md:text-sm lg:text-lg xl:text-xl 2xl:text-2xl 2xl:leading-10 font-semibold text-black">
