@@ -64,7 +64,7 @@ const CartAddItemsModal: FC<commonModalProps> = ({
 }) => {
   const [modals, setModals] = useState(false);
   const [modalData, setModalData] = useState<any>();
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState<number>(1);
   const totalPages = 265;
 
   const onPageChange = (page: any) => {
@@ -74,7 +74,7 @@ const CartAddItemsModal: FC<commonModalProps> = ({
   };
   return (
     <Modal visible={viewState} closeCb={closeStateCb} title="">
-      <ModalBody modalBodyClass="!w-[1200px] !px-[72px] !py-[27px] h-[700px] ">
+      <ModalBody modalBodyClass="!w-[1200px] !px-[72px] !pt-[27px] h-[700px] ">
         <h1 className="text-xl lg:text-2xl xl:text-[32px] xl:leading-[38px] mb-5 text-black-primary font-bold text-center">
           Add Items
         </h1>
@@ -108,7 +108,7 @@ const CartAddItemsModal: FC<commonModalProps> = ({
             />
           ))}
         </div>
-        <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center pb-[27px]">
           <div className="flex flex-row items-center gap-x-10 mt-8">
             <p>total of {totalPages} pages</p>
             <Pagination
