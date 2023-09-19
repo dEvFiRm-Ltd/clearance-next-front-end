@@ -1,8 +1,8 @@
-"use client";
-import React, { FC, useState } from "react";
-import FlashSaleCard from "../common/FlashSaleCard";
-import CartModal from "../modal/CartModal";
-import { usePathname } from "next/navigation";
+'use client';
+import React, { FC, useState } from 'react';
+import FlashSaleCard from '../common/FlashSaleCard';
+import CartModal from '../modal/CartModal';
+import { usePathname } from 'next/navigation';
 type featureProductProps = {
   featureProductArr: any[];
   titleEn: string;
@@ -16,21 +16,21 @@ const FeatureProduct: FC<featureProductProps> = ({
   const [modals, setModals] = useState(false);
   const [modalData, setModalData] = useState<any>();
   const path = usePathname();
-  const local = path.split("/")[1];
+  const local = path.split('/')[1];
   return (
-    <section className="py-5">
-      <div className="container flex flex-col justify-start items-center gap-y-5">
-        <h3 className="text-base lg:text-lg 2xl:text-xl font-bold text-center text-black-primary uppercase ">
-          {local === "en" ? titleEn : titleAe}
+    <section className='py-5'>
+      <div className='container flex flex-col justify-start items-center gap-y-5'>
+        <h3 className='text-base lg:text-lg 2xl:text-xl font-bold text-center text-black-primary uppercase '>
+          {local === 'en' ? titleEn : titleAe}
         </h3>
-        <div className="flex flex-row justify-center gap-2.5 md:gap-4 lg:gap-5 flex-wrap !items-start">
+        <div className='flex flex-row justify-center gap-2.5 md:gap-4 lg:gap-5 flex-wrap !items-start'>
           {featureProductArr.map((item: any) => (
             <FlashSaleCard
               key={item.id}
               img={item.thumbnail}
               preSaleImgSticker={item.preSaleImgSticker}
-              salePrice={item.price}
-              price={item.offer_price}
+              salePrice={item.offer_price}
+              price={item.price}
               text={item.name}
               text2={item.text2}
               discount={item.discount}
@@ -39,8 +39,8 @@ const FeatureProduct: FC<featureProductProps> = ({
                 setModalData(item);
                 setModals(!modals);
               }}
-              groupClass="w-40 sm:w-52 md:w-60 lg:w-80 xl:w-[390px] 2xl:w-[427px]"
-              imgClass="!h-52 sm:!h-[278px] md:!h-80 lg:!h-[400px] xl:!h-[480px] 2xl:!h-[570px]"
+              groupClass='w-40 sm:w-52 md:w-60 lg:w-80 xl:w-[390px] 2xl:w-[427px]'
+              imgClass='!h-52 sm:!h-[278px] md:!h-80 lg:!h-[400px] xl:!h-[480px] 2xl:!h-[570px]'
             />
           ))}
         </div>
@@ -60,3 +60,4 @@ const FeatureProduct: FC<featureProductProps> = ({
 };
 
 export default FeatureProduct;
+
