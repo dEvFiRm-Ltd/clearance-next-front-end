@@ -116,9 +116,7 @@ body {
   width: 100%;
   height: auto;
 }
-.flashSlider {
-  padding: 12px !important;
-}
+
 .flashSlider .swiper-slide {
   width: fit-content;
 }
