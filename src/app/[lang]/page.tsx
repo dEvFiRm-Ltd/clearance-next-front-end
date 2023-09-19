@@ -149,6 +149,7 @@ export default async function Home({
                 ? "w-[47%] ml-2"
                 : "w-[25%]"
             }
+            hightClass={index <= 1 ? "h-[170px]" : "h-[120px]"}
           />
         ))}
       </div>
