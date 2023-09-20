@@ -19,7 +19,7 @@ const FlashSale: FC<flashSaleProps> = ({ flashSaleArr }) => {
       <div className='w-full md:px-4 lg:px-6 2xl:px-8 3xl:px-10 flex justify-center items-center pt-3 relative'>
         <div className='w-full flex flex-row justify-center items-center'>
           <Swiper
-            spaceBetween={20}
+            spaceBetween={10}
             loop={true}
             slidesPerView='auto'
             navigation={true}

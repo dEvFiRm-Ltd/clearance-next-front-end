@@ -21,7 +21,7 @@ export default async function Home({
   );
   const bannerResponse = await bannerApiCall.json();
 
-  const bannerArr: Array<any> = bannerResponse.data.main_banners || [];
+  const mainBannerArr: Array<any> = bannerResponse.data.main_banners || [];
 
   const categoryApiCall = await fetch(
     env.BASE_URL + 'api/v10/web/home/categories',
@@ -135,7 +135,7 @@ export default async function Home({
 
   return (
     <>
-      <Banner imgArr={bannerArr} />
+      <Banner imgArr={mainBannerArr} />
       <div className='container w-full flex flex-row justify-center mt-5 md:gap-5 flex-wrap'>
         {categoryArr.map((item: any, index: number) => (
           <DressCard
