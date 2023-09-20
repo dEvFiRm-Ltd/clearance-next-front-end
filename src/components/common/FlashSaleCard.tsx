@@ -5,6 +5,7 @@ import React, { FC, useEffect, useRef, useState } from "react";
 import StarList from "./StarList";
 import SizeSelectDropDown from "./SizeSelectDropDown";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const FlashSaleCard: FC<flashSaleCardProps> = ({
   img,
@@ -31,6 +32,8 @@ const FlashSaleCard: FC<flashSaleCardProps> = ({
   const [selectedColorIndex, setSelectedColorIndex] = useState<number | null>(
     0
   );
+  const path = usePathname();
+  const local = path.split("/")[1];
   const selectedImg =
     colorImg && selectedColorIndex !== null
       ? colorImg[selectedColorIndex]
@@ -53,10 +56,15 @@ const FlashSaleCard: FC<flashSaleCardProps> = ({
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+
   return (
     <Link
-      target="_blank"
-      href={"https://www.clearance.ae/product/" + url}
+      target={process.env.NEXT_PUBLIC_SITE_URL ? "_blank" : ""}
+      href={
+        process.env.NEXT_PUBLIC_SITE_URL
+          ? process.env.NEXT_PUBLIC_SITE_URL + "product/" + url
+          : "/product-details" + url
+      }
       className={`boxShadow flex flex-col relative bg-white border border-ash ${groupClass}`}
     >
       <div
@@ -80,29 +88,24 @@ const FlashSaleCard: FC<flashSaleCardProps> = ({
             <i className="fa-solid fa-check"></i>
           </span>
         )}
-        {love && (
-          <span className="absolute xl:top-2 top-1 xl:right-2 right-1 text-center bg-[#F3F4F6] h-5 md:h-6 lg:h-7 w-5 md:w-6 lg:w-7 rounded-full text-[#CBCCD1] px-1 py-0.5 text-xs lg:text-sm 3xl:text-base flex flex-col items-center justify-center">
-            <i className="fa-regular fa-heart"></i>
-          </span>
-        )}
         {preSaleImgSticker && (
           <span className="h-10 w-8 lg:h-[52px] lg:w-[42px] absolute right-0">
             <Image src={preSaleImgSticker} alt="" fill />
           </span>
         )}
-        <div
-          onClick={(e) => {
-            e.preventDefault();
-            actionCb?.();
-          }}
-          className={`hidden md:block group-hover:opacity-100 opacity-0 text-center py-2.5 lg:py-3.5 w-[130px] md:w-[140px] lg:w-[160px] 2xl:w-[220px] px-3 absolute left-1/2 -translate-x-1/2 bottom-12 rounded-full bg-white/90 uppercase ${btnClass}`}
-        >
-          add to bag
-        </div>
+        {/* {process.env.NEXT_PUBLIC_MODE !== "prod" && (
+          <div
+            onClick={(e) => {
+              e.preventDefault();
+              actionCb?.();
+            }}
+            className={`hidden md:block group-hover:opacity-100 opacity-0 text-center py-2.5 lg:py-3.5 w-[130px] md:w-[140px] lg:w-[160px] 2xl:w-[220px] px-3 absolute left-1/2 -translate-x-1/2 bottom-12 rounded-full bg-white/90 uppercase ${btnClass}`}
+          >
+            {local === "en" ? " add to bag" : "أضف الى الحقيبة"}
+          </div>
+        )} */}
       </div>
-      <div
-        className={`${imageTextsClass} flex w-full flex-col justify-start items-start self-stretch flex-1 gap-1.5 py-1.5 px-1`}
-      >
+      <div className="flex w-full flex-col justify-start items-start self-stretch flex-1 gap-1.5 py-1.5 px-1">
         <p className="line-clamp-1 text-xs lg:text-sm">{text}</p>
         <div className="flex flex-wrap justify-start items-center gap-2">
           <span className="text-sm md:text-base xl:text-lg 3xl:text-xl text-red-400 font-bold">

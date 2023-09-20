@@ -14,99 +14,99 @@ import {
 export const brandsDataArr: brandsType[] = [
   {
     logo: "https://sstorage.clearance.ae/production/storage/brand/2022-04-27-6268f5f9185a5.png",
-    url: "https://www.clearance.ae/products?id=1&data_from=brand&page=1",
+    url: "process.env.NEXT_PUBLIC_SITE_URL/products?id=1&data_from=brand&page=1",
   },
   {
     logo: "https://sstorage.clearance.ae/production/storage/brand/2022-04-25-626678013fc02.png",
-    url: "https://www.clearance.ae/products?id=2&data_from=brand&page=1",
+    url: "process.env.NEXT_PUBLIC_SITE_URL/products?id=2&data_from=brand&page=1",
   },
   {
     logo: "https://sstorage.clearance.ae/production/storage/brand/2022-04-25-626684f82ebe2.png",
-    url: "https://www.clearance.ae/products?id=3&data_from=brand&page=1",
+    url: "process.env.NEXT_PUBLIC_SITE_URL/products?id=3&data_from=brand&page=1",
   },
   {
     logo: "https://sstorage.clearance.ae/production/storage/brand/2022-04-25-62668b1422a69.png",
-    url: "https://www.clearance.ae/products?id=4&data_from=brand&page=1",
+    url: "process.env.NEXT_PUBLIC_SITE_URL/products?id=4&data_from=brand&page=1",
   },
   {
     logo: "https://sstorage.clearance.ae/production/storage/brand/2022-04-25-62669170315e8.png",
-    url: "https://www.clearance.ae/products?id=5&data_from=brand&page=1",
+    url: "process.env.NEXT_PUBLIC_SITE_URL/products?id=5&data_from=brand&page=1",
   },
   {
     logo: "https://sstorage.clearance.ae/production/storage/brand/2022-04-26-62681474d8de2.png",
-    url: "https://www.clearance.ae/products?id=6&data_from=brand&page=1",
+    url: "process.env.NEXT_PUBLIC_SITE_URL/products?id=6&data_from=brand&page=1",
   },
   {
     logo: "https://sstorage.clearance.ae/production/storage/brand/2022-04-27-6268ed8172ea4.png",
-    url: "https://www.clearance.ae/products?id=7&data_from=brand&page=1",
+    url: "process.env.NEXT_PUBLIC_SITE_URL/products?id=7&data_from=brand&page=1",
   },
   {
     logo: "https://sstorage.clearance.ae/production/storage/brand/2022-04-27-6269030ade694.png",
-    url: "https://www.clearance.ae/products?id=9&data_from=brand&page=1",
+    url: "process.env.NEXT_PUBLIC_SITE_URL/products?id=9&data_from=brand&page=1",
   },
   {
     logo: "https://sstorage.clearance.ae/production/storage/brand/2022-04-27-626906fc5d312.png",
-    url: "https://www.clearance.ae/products?id=10&data_from=brand&page=1",
+    url: "process.env.NEXT_PUBLIC_SITE_URL/products?id=10&data_from=brand&page=1",
   },
   {
     logo: "https://sstorage.clearance.ae/production/storage/brand/2022-04-27-626909b86ea8a.png",
-    url: "https://www.clearance.ae/products?id=11&data_from=brand&page=1",
+    url: "process.env.NEXT_PUBLIC_SITE_URL/products?id=11&data_from=brand&page=1",
   },
   {
     logo: "https://sstorage.clearance.ae/production/storage/brand/2022-04-27-62692a8e5b41f.png",
-    url: "https://www.clearance.ae/products?id=12&data_from=brand&page=1",
+    url: "process.env.NEXT_PUBLIC_SITE_URL/products?id=12&data_from=brand&page=1",
   },
   {
     logo: "https://sstorage.clearance.ae/production/storage/brand/2022-04-28-626a6db998913.png",
-    url: "https://www.clearance.ae/products?id=13&data_from=brand&page=1",
+    url: "process.env.NEXT_PUBLIC_SITE_URL/products?id=13&data_from=brand&page=1",
   },
   {
     logo: "https://sstorage.clearance.ae/production/storage/brand/2022-04-27-6268f5f9185a5.png",
-    url: "https://www.clearance.ae/products?id=1&data_from=brand&page=1",
+    url: "process.env.NEXT_PUBLIC_SITE_URL/products?id=1&data_from=brand&page=1",
   },
   {
     logo: "https://sstorage.clearance.ae/production/storage/brand/2022-04-25-626678013fc02.png",
-    url: "https://www.clearance.ae/products?id=2&data_from=brand&page=1",
+    url: "process.env.NEXT_PUBLIC_SITE_URL/products?id=2&data_from=brand&page=1",
   },
   {
     logo: "https://sstorage.clearance.ae/production/storage/brand/2022-04-25-626684f82ebe2.png",
-    url: "https://www.clearance.ae/products?id=3&data_from=brand&page=1",
+    url: "process.env.NEXT_PUBLIC_SITE_URL/products?id=3&data_from=brand&page=1",
   },
   {
     logo: "https://sstorage.clearance.ae/production/storage/brand/2022-04-25-62668b1422a69.png",
-    url: "https://www.clearance.ae/products?id=4&data_from=brand&page=1",
+    url: "process.env.NEXT_PUBLIC_SITE_URL/products?id=4&data_from=brand&page=1",
   },
   {
     logo: "https://sstorage.clearance.ae/production/storage/brand/2022-04-25-62669170315e8.png",
-    url: "https://www.clearance.ae/products?id=5&data_from=brand&page=1",
+    url: "process.env.NEXT_PUBLIC_SITE_URL/products?id=5&data_from=brand&page=1",
   },
   {
     logo: "https://sstorage.clearance.ae/production/storage/brand/2022-04-26-62681474d8de2.png",
-    url: "https://www.clearance.ae/products?id=6&data_from=brand&page=1",
+    url: "process.env.NEXT_PUBLIC_SITE_URL/products?id=6&data_from=brand&page=1",
   },
   {
     logo: "https://sstorage.clearance.ae/production/storage/brand/2022-04-27-6268ed8172ea4.png",
-    url: "https://www.clearance.ae/products?id=7&data_from=brand&page=1",
+    url: "process.env.NEXT_PUBLIC_SITE_URL/products?id=7&data_from=brand&page=1",
   },
   {
     logo: "https://sstorage.clearance.ae/production/storage/brand/2022-04-27-6269030ade694.png",
-    url: "https://www.clearance.ae/products?id=9&data_from=brand&page=1",
+    url: "process.env.NEXT_PUBLIC_SITE_URL/products?id=9&data_from=brand&page=1",
   },
   {
     logo: "https://sstorage.clearance.ae/production/storage/brand/2022-04-27-626906fc5d312.png",
-    url: "https://www.clearance.ae/products?id=10&data_from=brand&page=1",
+    url: "process.env.NEXT_PUBLIC_SITE_URL/products?id=10&data_from=brand&page=1",
   },
   {
     logo: "https://sstorage.clearance.ae/production/storage/brand/2022-04-27-626909b86ea8a.png",
-    url: "https://www.clearance.ae/products?id=11&data_from=brand&page=1",
+    url: "process.env.NEXT_PUBLIC_SITE_URL/products?id=11&data_from=brand&page=1",
   },
   {
     logo: "https://sstorage.clearance.ae/production/storage/brand/2022-04-27-62692a8e5b41f.png",
-    url: "https://www.clearance.ae/products?id=12&data_from=brand&page=1",
+    url: "process.env.NEXT_PUBLIC_SITE_URL/products?id=12&data_from=brand&page=1",
   },
   {
     logo: "https://sstorage.clearance.ae/production/storage/brand/2022-04-28-626a6db998913.png",
-    url: "https://www.clearance.ae/products?id=13&data_from=brand&page=1",
+    url: "process.env.NEXT_PUBLIC_SITE_URL/products?id=13&data_from=brand&page=1",
   },
 ];
 export const bannerImgArr: bannerProps[] = [
@@ -129,51 +129,63 @@ export const bannerImgArr: bannerProps[] = [
 ];
 export const bottomHeaderLinkItems: linkType[] = [
   {
-    title: "clothing",
+    titleEn: "clothing",
+    titleAe: "",
     url: "/category-listing",
   },
   {
-    title: "FW23",
+    titleEn: "FW23",
+    titleAe: "",
     url: "/category-listing",
   },
   {
-    title: "new in",
+    titleEn: "new in",
+    titleAe: "",
     url: "/category-listing",
   },
   {
-    title: "tops",
+    titleEn: "tops",
+    titleAe: "",
     url: "/category-listing",
   },
   {
-    title: "dresses",
+    titleEn: "dresses",
+    titleAe: "",
     url: "/category-listing",
   },
   {
-    title: "outwear",
+    titleEn: "outwear",
+    titleAe: "",
     url: "/category-listing",
   },
   {
-    title: "knitwear",
+    titleEn: "knitwear",
+    titleAe: "",
     url: "/category-listing",
   },
   {
-    title: "bottoms",
+    titleEn: "bottoms",
+    titleAe: "",
     url: "/category-listing",
   },
   {
-    title: "plus+curve",
+    titleEn: "plus+curve",
+    titleAe: "",
     url: "/category-listing",
   },
   {
-    title: "shoes+accessories",
+    titleEn: "shoes+accessories",
+    titleAe: "",
     url: "/category-listing",
   },
   {
-    title: "sale",
+    titleEn: "sale",
+    titleAe: "",
     url: "/category-listing",
   },
   {
-    title: "community",
+    titleEn: "community",
+    titleAe: "",
     url: "/category-listing",
   },
 ];
@@ -222,91 +234,167 @@ export const productSubSliderData: linkImgType[] = [
 
 export const silderBottomHeaderData: linkType[] = [
   {
-    title: "fas fa-home",
+    icon: "fas fa-home",
+    titleAe: "",
+    titleEn: "",
     url: "",
   },
   {
-    title: "far fa-heart",
+    icon: "far fa-heart",
+    titleAe: "",
+    titleEn: "",
     url: "",
   },
   {
-    title: "fas fa-headset",
+    icon: "fas fa-headset",
+    titleAe: "",
+    titleEn: "",
     url: "",
   },
   {
-    title: "far fa-user",
+    icon: "far fa-user",
+    titleAe: "",
+    titleEn: "",
+    url: "",
+  },
+];
+export const trendingSearch: linkType[] = [
+  {
+    icon: "fab fa-gripfire",
+    titleEn: "Hot sale",
+    titleAe: "",
+    url: "",
+  },
+  {
+    icon: "fab fa-gripfire",
+    titleEn: "Sweaters",
+    titleAe: "",
+    url: "",
+  },
+  {
+    icon: "fab fa-gripfire",
+    titleEn: "Jackets & Blazer",
+    titleAe: "",
+    url: "",
+  },
+  {
+    icon: "fab fa-gripfire",
+    titleEn: "Plus",
+    titleAe: "",
+    url: "",
+  },
+  {
+    titleEn: "Special Event",
+    titleAe: "",
+    url: "",
+  },
+  {
+    titleEn: "Matching Sets",
+    titleAe: "",
+    url: "",
+  },
+  {
+    titleEn: "Turtleneck sweaters",
+    titleAe: "",
+    url: "",
+  },
+  {
+    titleEn: "FW 23",
+    titleAe: "",
+    url: "",
+  },
+  {
+    titleEn: "Leather",
+    titleAe: "",
     url: "",
   },
 ];
 
 export const bottomHeaderItems: footerProps[] = [
   {
-    heading: "Shop By Category",
+    headingEn: "Shop By Category",
+    headingAe: "",
     itemArr: [
       {
-        title: "All Dresses",
+        titleEn: "All Dresses",
+        titleAe: "",
         url: "category-listing",
       },
       {
-        title: "New Dresses",
+        titleEn: "New Dresses",
+        titleAe: "",
         url: "category-listing",
       },
       {
-        title: "Top-Rated Dresses",
+        titleEn: "Top-Rated Dresses",
+        titleAe: "",
         url: "category-listing",
       },
       {
-        title: "Maxi Dresses",
+        titleEn: "Maxi Dresses",
+        titleAe: "",
         url: "category-listing",
       },
       {
-        title: "Midi Dresses",
+        titleEn: "Midi Dresses",
+        titleAe: "",
         url: "category-listing",
       },
       {
-        title: "Mini Dresses",
+        titleEn: "Mini Dresses",
+        titleAe: "",
         url: "category-listing",
       },
       {
-        title: "Plus Dresses",
+        titleEn: "Plus Dresses",
+        titleAe: "",
         url: "category-listing",
       },
     ],
   },
   {
-    heading: "Featured Shops",
+    headingEn: "Featured Shops",
+    headingAe: "",
     itemArr: [
       {
-        title: "Best Sellers",
+        titleEn: "Best Sellers",
+        titleAe: "",
         url: "category-listing",
       },
       {
-        title: "FW 2023",
+        titleEn: "FW 2023",
+        titleAe: "",
         url: "category-listing",
       },
       {
-        title: "Special Event",
+        titleEn: "Special Event",
+        titleAe: "",
         url: "category-listing",
       },
       {
-        title: "Earth tone",
+        titleEn: "Earth tone",
+        titleAe: "",
         url: "category-listing",
       },
       {
-        title: "Intellectual Looks",
+        titleEn: "Intellectual Looks",
+        titleAe: "",
         url: "category-listing",
       },
     ],
   },
   {
-    heading: "Stylewe Classic Look",
+    headingEn: "Stylewe Classic Look",
+    headingAe: "",
     itemArr: [
       {
-        title: "Item 1",
+        titleEn: "Item 1",
+        titleAe: "",
         url: "category-listing",
       },
       {
-        title: "Designer Shop",
+        titleEn: "Designer Shop",
+        titleAe: "",
         url: "category-listing",
       },
     ],
@@ -379,66 +467,79 @@ export const sizeDropDown: dropDowns[] = [
 export const tabs = ["S(6-8)", "M(10)", "L(12)", "XL(14)", "XXL(16)"];
 export const footerItems: footerProps[] = [
   {
-    heading: "COMPANY INFO",
+    headingEn: "COMPANY INFO",
+    headingAe: "معلومات الشركة",
     itemArr: [
       {
-        title: "About Us",
+        titleEn: "About Us",
+        titleAe: "معلومات عنا",
         url: "https://production.clearance.ae/information/about-us-1/",
       },
-      // {
-      //   title: "Intellectual Property Rights",
-      //   url: "",
-      // },
       {
-        title: "Privacy Policy",
+        titleEn: "Privacy Policy",
+        titleAe: "سياسة الخصوصية",
         url: "https://production.clearance.ae/information/privacy-policy-2/",
       },
       {
-        title: "Payment Method",
+        titleEn: "Payment Method",
+        titleAe: "طريقة الدفع او السداد",
         url: "https://production.clearance.ae/information/payment-method-3/",
       },
       {
-        title: "Refund Exchange Policy",
+        titleEn: "Refund Exchange Policy",
+        titleAe: "سياسة استبدال الاسترداد",
         url: "https://production.clearance.ae/information/refund-exchange-policy-4/",
       },
       {
-        title: "Terms and conditions",
+        titleEn: "Terms and conditions",
+        titleAe: "الأحكام والشروط",
         url: "https://production.clearance.ae/information/terms-and-conditions-5/",
       },
     ],
   },
   {
-    heading: "contact us",
-    contactUsText: "Contact us everyday 9 Am -7 Pm",
+    headingEn: "contact us",
+    headingAe: "اتصل بنا",
+    contactUsTextEn: "Contact us everyday 9 Am -7 Pm",
+    contactUsTextAe: "اتصل بنا يوميًا من 9 صباحًا حتى 7 مساءً",
     contactUsArr: [
       {
         icon: "fas fa-phone-volume ",
-        title: "+97142553311",
+        titleEn: "+97142553311",
+        titleAe: "+97142553311",
         url: "tel:+97142553311",
       },
       {
         icon: "fas fa-envelope",
-        title: "care@clearance.ae",
-        url: "mailto:someone@example.com",
+        titleEn: "care@clearance.ae",
+        titleAe: "care@clearance.ae",
+        url: "mailto:care@clearance.ae",
       },
     ],
     socialArr: [
       {
-        title: "fab fa-linkedin ",
+        icon: "fab fa-linkedin ",
+        titleEn: "",
+        titleAe: "",
         url: "https://www.linkedin.com/company/clearanceae/mycompany/",
       },
       {
-        title: "fab fa-instagram-square",
+        icon: "fab fa-instagram-square",
+        titleEn: "",
+        titleAe: "",
         url: "https://www.instagram.com/master_outlet_brands/?igshid=YmMyMTA2M2Y=",
       },
       {
-        title: "fab fa-facebook-square",
+        icon: "fab fa-facebook-square",
+        titleEn: "",
+        titleAe: "",
         url: "https://www.facebook.com/clearanceuae/",
       },
     ],
   },
   {
-    heading: "download our app",
+    headingEn: "download our app",
+    headingAe: "تحميل التطبيق لدينا",
     hasBtn: true,
   },
 ];
@@ -697,21 +798,21 @@ export const FlashSaleData: flashSaleCardProps[] = [
 ];
 export const dressListData: flashSaleCardProps[] = [
   {
-    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-05-647df9a231255.avif",
+    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-05-647df9a609520.avif",
     text: "Long sleeve crew neck loose leo....",
     salePrice: "71.38",
     price: "112.99",
     review: "10",
   },
   {
-    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e8c25f2b30.avif",
+    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-05-647e055d5a6d0.avif",
     text: "Long sleeve crew neck loose leo....",
     salePrice: "71.38",
     price: "93.99",
     review: "10",
   },
   {
-    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647ec465e2a12.avif",
+    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e4e025a3b7.avif",
     discount: "20",
     text: "Long sleeve crew neck loose leo....",
     salePrice: "71.38",
@@ -719,21 +820,21 @@ export const dressListData: flashSaleCardProps[] = [
     review: "10",
   },
   {
-    img: "	https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647ebfb3855ad.avif",
+    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e4e057337b.avif",
     text: "Long sleeve crew neck loose leo....",
     salePrice: "71.38",
     price: "93.99",
     review: "10",
   },
   {
-    img: "	https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647f11c09e4b0.avif",
+    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e58925291c.avif",
     text: "Long sleeve crew neck loose leo....",
     salePrice: "71.38",
     price: "93.99",
     review: "10",
   },
   {
-    img: "	https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647f11bfe1db7.avif",
+    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e5e6cdbe66.avif",
     discount: "20",
     text: "Long sleeve crew neck loose leo....",
     salePrice: "71.38",
@@ -741,21 +842,21 @@ export const dressListData: flashSaleCardProps[] = [
     review: "10",
   },
   {
-    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647f108ec6d44.avif",
+    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-05-647df9a609520.avif",
     text: "Long sleeve crew neck loose leo....",
     salePrice: "71.38",
     price: "93.99",
     review: "10",
   },
   {
-    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647edaa546bc8.avif",
+    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-05-647e055d5a6d0.avif",
     text: "Long sleeve crew neck loose leo....",
     salePrice: "71.38",
     price: "93.99",
     review: "10",
   },
   {
-    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647edaa4d324b.avif",
+    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e4e025a3b7.avif",
     discount: "20",
     text: "Long sleeve crew neck loose leo....",
     salePrice: "71.38",
@@ -763,20 +864,20 @@ export const dressListData: flashSaleCardProps[] = [
     review: "10",
   },
   {
-    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-08-26-64e9f7a239f4d.png",
+    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e4e057337b.avif",
     text: "Long sleeve crew neck loose leo....",
     salePrice: "71.38",
     price: "93.99",
   },
   {
-    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-14-64891ba35baaf.avif",
+    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e58925291c.avif",
     text: "Long sleeve crew neck loose leo....",
     salePrice: "71.38",
     price: "93.99",
     review: "10",
   },
   {
-    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647f0d0e73cb4.avif",
+    img: "https://sstorage.clearance.ae/production/storage/product/thumbnail/2023-06-06-647e5e6cdbe66.avif",
     discount: "20",
     text: "Long sleeve crew neck loose leo....",
     salePrice: "71.38",

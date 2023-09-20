@@ -11,7 +11,7 @@ type bannerPropsType = {
 const Banner: FC<bannerPropsType> = ({ imgArr }) => {
   const sliderRef = createRef<Slider>();
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     autoplay: true,
     speed: 300,
@@ -43,9 +43,14 @@ const Banner: FC<bannerPropsType> = ({ imgArr }) => {
       >
         {imgArr.map((item: any) => (
           <Link
+            target={process.env.NEXT_PUBLIC_SITE_URL ? '_blank' : ''}
+            href={
+              process.env.NEXT_PUBLIC_SITE_URL
+                ? item.url
+                : '/product-details' + item.url
+            }
             key={item.id}
-            href={item.url}
-            className=' w-screen aspect-rectangle bg-center bg-no-repeat relative z-10 flex justify-center items-center'
+            className=' w-screen aspect-video bg-center bg-no-repeat relative z-10 flex justify-center items-center'
           >
             <Image src={item.photo} alt='' fill className='object-contain' />
           </Link>

@@ -11,10 +11,12 @@ const Footer = () => {
           {footerItems.map((item: footerProps, i: number) => (
             <FooterPart
               key={i}
-              heading={item.heading}
+              headingEn={item.headingEn}
+              headingAe={item.headingAe}
               itemArr={item.itemArr}
               socialArr={item.socialArr}
-              contactUsText={item.contactUsText}
+              contactUsTextEn={item.contactUsTextEn}
+              contactUsTextAe={item.contactUsTextAe}
               contactUsArr={item.contactUsArr}
               hasBtn={item.hasBtn}
               groupClass="lg:w-[32%]"

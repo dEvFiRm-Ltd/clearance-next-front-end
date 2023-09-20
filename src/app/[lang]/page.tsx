@@ -1,35 +1,42 @@
-import DressCard from '@/components/common/DressCard';
-import Banner from '@/components/home/Banner';
-import FlashSale from '@/components/home/FlashSale';
+import DressCard from "@/components/common/DressCard";
+import Banner from "@/components/home/Banner";
+import FlashSale from "@/components/home/FlashSale";
 
-import VerticalImage from '@/components/common/VerticalImage';
+import VerticalImage from "@/components/common/VerticalImage";
 
-import { env } from 'node:process';
-import FeatureProduct from '@/components/home/FeatureProduct';
+import { env } from "node:process";
+import FeatureProduct from "@/components/home/FeatureProduct";
 
-export default async function Home() {
+export default async function Home({
+  params: { lang },
+}: {
+  params: { [key: string]: any };
+}) {
   const bannerApiCall = await fetch(
-    env.BASE_URL + 'api/v10/web/home/main-banner',
+    env.BASE_URL + "api/v10/web/home/main-banner",
     {
-      next: { revalidate: 10 },
+      next: { revalidate: 1 },
+      headers: { lang },
     }
   );
   const bannerResponse = await bannerApiCall.json();
+
   const bannerArr: Array<any> = bannerResponse.data.main_banners || [];
 
   const categoryApiCall = await fetch(
-    env.BASE_URL + 'api/v10/web/home/categories',
+    env.BASE_URL + "api/v10/web/home/categories",
     {
-      next: { revalidate: 10 },
+      next: { revalidate: 1 },
+      headers: { lang },
     }
   );
   const categoryResponse = await categoryApiCall.json();
   const categoryArr: Array<any> = categoryResponse.data.categories || [];
 
   const footerBannerApiCall = await fetch(
-    env.BASE_URL + 'api/v10/web/home/footer-banner',
+    env.BASE_URL + "api/v10/web/home/footer-banner",
     {
-      next: { revalidate: 10 },
+      next: { revalidate: 1 },
     }
   );
   const footerBannerResponse = await footerBannerApiCall.json();
@@ -37,51 +44,49 @@ export default async function Home() {
     footerBannerResponse.data.footer_banners || [];
 
   const flashDealsApiCall = await fetch(
-    env.BASE_URL + 'api/v10/web/home/flashDeals',
+    env.BASE_URL + "api/v10/web/home/flashDeals",
     {
-      next: { revalidate: 10 },
+      next: { revalidate: 1 },
+      headers: { lang },
     }
   );
   const flashDealsResponse = await flashDealsApiCall.json();
   const flashDealsArr: Array<any> =
     flashDealsResponse.data.flash_deals_products || [];
-
   const featureProductApiCall = await fetch(
-    env.BASE_URL + 'api/v10/web/home/feature-product',
+    env.BASE_URL + "api/v10/web/home/feature-product",
     {
-      next: { revalidate: 10 },
+      next: { revalidate: 1 },
     }
   );
   const featureProductResponse = await featureProductApiCall.json();
   const featureProductArr: Array<any> =
     featureProductResponse.data.featured_products || [];
 
-  const supermarketDealsApiCall = await fetch(
+  /*  const supermarketDealsApiCall = await fetch(
     env.BASE_URL +
       'api/v10/web/home/products?category_slug=Supermarket-Deals_43&offset=1&limit=7',
     {
-      next: { revalidate: 10 },
+      next: { revalidate: 1 },
     }
   );
   const supermarketDealsResponse = await supermarketDealsApiCall.json();
   const supermarketDealsArr: Array<any> =
-    supermarketDealsResponse.data.products || [];
-
-  const womenApiCall = await fetch(
+    supermarketDealsResponse.data.products || [];   const womenApiCall = await fetch(
     env.BASE_URL +
       'api/v10/web/home/products?category_slug=women_1&offset=1&limit=7',
     {
-      next: { revalidate: 10 },
+      next: { revalidate: 1 },
     }
   );
   const womenResponse = await womenApiCall.json();
-  const womenArr: Array<any> = womenResponse.data.products || [];
+  const womenArr: Array<any> = womenResponse.data.products || []; 
 
   const menApiCall = await fetch(
     env.BASE_URL +
       'api/v10/web/home/products?category_slug=Men_36&offset=1&limit=7',
     {
-      next: { revalidate: 10 },
+      next: { revalidate: 1 },
     }
   );
   const menResponse = await menApiCall.json();
@@ -91,7 +96,7 @@ export default async function Home() {
     env.BASE_URL +
       'api/v10/web/home/products?category_slug=Girls_164&offset=1&limit=7',
     {
-      next: { revalidate: 10 },
+      next: { revalidate: 1 },
     }
   );
   const girlResponse = await girlApiCall.json();
@@ -101,7 +106,7 @@ export default async function Home() {
     env.BASE_URL +
       'api/v10/web/home/products?category_slug=Boys_165&offset=1&limit=7',
     {
-      next: { revalidate: 10 },
+      next: { revalidate: 1 },
     }
   );
   const boysResponse = await boysApiCall.json();
@@ -111,7 +116,7 @@ export default async function Home() {
     env.BASE_URL +
       'api/v10/web/home/products?category_slug=Sports-Outdoors_299&offset=1&limit=7',
     {
-      next: { revalidate: 10 },
+      next: { revalidate: 1 },
     }
   );
   const sportsOutdoorsResponse = await sportsOutdoorsApiCall.json();
@@ -122,23 +127,29 @@ export default async function Home() {
     env.BASE_URL +
       'api/v10/web/home/products?category_slug=wholesale_323&offset=1&limit=7',
     {
-      next: { revalidate: 10 },
+      next: { revalidate: 1 },
     }
   );
   const wholeSaleResponse = await wholeSaleApiCall.json();
-  const wholeSaleArr: Array<any> = wholeSaleResponse.data.products || [];
+  const wholeSaleArr: Array<any> = wholeSaleResponse.data.products || [];*/
 
   return (
     <>
       <Banner imgArr={bannerArr} />
-      <div className='container flex flex-row justify-center mt-[30px] gap-4 md:gap-5 xl:gap-6 3xl:gap-7 flex-wrap'>
-        {categoryArr.map((item: any) => (
+      <div className="container w-full flex flex-row justify-center mt-5 md:gap-5 flex-wrap">
+        {categoryArr.map((item: any, index: number) => (
           <DressCard
             key={item.id}
             image={item.icon}
             url={item.slug}
-            // title={item.name}
-            // totalProduct={item.total_product}
+            withClass={
+              index === 0
+                ? "w-[47%] mr-2"
+                : index === 1
+                ? "w-[47%] ml-2"
+                : "w-[25%]"
+            }
+            hightClass={index <= 1 ? "h-[170px]" : "h-[120px]"}
           />
         ))}
       </div>
@@ -157,38 +168,40 @@ export default async function Home() {
           />
         ))}
       </div> */}
-      <div className='container mt-[60px] mb-5 3xl:mb-10 flex flex-wrap flex-row justify-center gap-x-5 gap-y-3'>
+      <div className="container flex flex-wrap flex-row justify-center gap-5 ">
+        {footerBannerArr.map((item: any) => (
+          <VerticalImage
+            key={item.id}
+            img={item.photo}
+            item={item}
+            className="w-full bg-ash xl:w-[614px] 2xl:w-[738px] 3xl:w-[880px] aspect-[851/479] object-contain"
+          />
+        ))}
+      </div>
+      {/* <div className="container flex flex-row flex-wrap justify-center gap-5 ">
         {footerBannerArr.splice(0, 2).map((item: any) => (
           <VerticalImage
             key={item.id}
             img={item.photo}
-            className='w-[336px] sm:w-[616px] md:w-[744px] lg:w-[1000px] xl:w-[614px] 2xl:w-[738px] 3xl:w-[880px] h-[200px] sm:h-[300px] md:h-[350px] lg:h-[405px] xl:h-[350px] 2xl:h-[380px] 3xl:h-[405px]'
+            item={item}
+            className="w-[336px] sm:w-[616px] md:w-[744px] lg:w-[1000px] xl:w-[614px] 2xl:w-[738px] 3xl:w-[880px] h-[170px] sm:h-[240px] md:h-[273px]"
+            objectClass="!object-cover"
           />
         ))}
-      </div>
-      <div className='container mb-10 flex flex-row flex-wrap justify-center gap-x-5 gap-y-3'>
-        {footerBannerArr.splice(0, 2).map((item: any) => (
-          <VerticalImage
-            key={item.id}
-            img={item.photo}
-            className='w-[336px] sm:w-[616px] md:w-[744px] lg:w-[1000px] xl:w-[614px] 2xl:w-[738px] 3xl:w-[880px] h-[170px] sm:h-[240px] md:h-[273px]'
-            objectClass='!object-cover'
-          />
-        ))}
-      </div>
+      </div> */}
       <FeatureProduct
         featureProductArr={featureProductArr}
-        title='Feature Product'
+        titleAe="منتج مميز"
+        titleEn="Feature Product"
       />
       {/* <Brands brandArr={brandsDataArr} /> */}
-      {/* <FeatureProduct featureProductArr={supermarketDealsArr} title="Supermarket Deals" />
-      <FeatureProduct featureProductArr={womenArr} title="Women" />
-      <FeatureProduct featureProductArr={menArr} title="Man" />
-      <FeatureProduct featureProductArr={girlArr} title="Girls" />
-      <FeatureProduct featureProductArr={boysArr} title="Boys" />
-      <FeatureProduct featureProductArr={sportsOutdoorsArr} title="Sports outdoors" />
-      <FeatureProduct featureProductArr={wholeSaleArr} title="wholesale" /> */}
+      {/* <FeatureProduct featureProductArr={supermarketDealsArr} titleAe='عروض السوبر ماركت' titleEn="Supermarket Deals" />
+      <FeatureProduct featureProductArr={womenArr} titleAe='نحيف' titleEn="Women" />
+      <FeatureProduct featureProductArr={menArr} titleAe='رجال' titleEn="Man" />
+      <FeatureProduct featureProductArr={girlArr} titleAe='فتيات' titleEn="Girls" />
+      <FeatureProduct featureProductArr={boysArr} titleAe='أولاد' titleEn="Boys" />
+      <FeatureProduct featureProductArr={sportsOutdoorsArr} titleAe='الرياضة والهواء الطلق' titleEn="Sports outdoors" />
+      <FeatureProduct featureProductArr={wholeSaleArr} titleAe='بالجملة' titleEn="wholesale" /> */}
     </>
   );
 }
-
