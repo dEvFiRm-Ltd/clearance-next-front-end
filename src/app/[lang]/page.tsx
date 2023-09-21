@@ -159,7 +159,7 @@ export default async function Home({
   return (
     <>
       <Banner imgArr={mainBannerArr} />
-      <div className="container w-full flex flex-row justify-center mt-5 md:gap-5 flex-wrap">
+      <div className="container w-full flex flex-row justify-center mt-5 xl:gap-3 2xl:gap-5 flex-wrap">
         {category?.map((item: any, index: number) => (
           <DressCard
             key={item.id}

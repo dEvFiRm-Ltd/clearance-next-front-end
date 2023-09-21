@@ -34,7 +34,7 @@ const DressCard: FC<dressType> = ({
             `&page=1`
           : `/products?category=` + url
       }
-      className={`sm:w-40 sm:ml-0 sm:mr-0 lg:w-36 xl:w-48 2xl:w-[234px] 3xl:w-[272px] flex flex-col items-center justify-start gap-y-4 uppercase ${withClass}`}
+      className={`xl:ml-0 xl:mr-0 xl:w-48 2xl:w-[234px] 3xl:w-[272px] flex flex-col items-center justify-start gap-y-4 uppercase ${withClass}`}
     >
       <div className={`relative aspect-[40/53] w-full ${hightClass}`}>
         <Image src={image} alt="image" fill className="object-contain" />
