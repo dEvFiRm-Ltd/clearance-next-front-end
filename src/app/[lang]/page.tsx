@@ -164,7 +164,7 @@ export default async function Home({
           <DressCard
             key={item.id}
             image={item?.photo}
-            url={item.slug}
+            url={item.url}
             withClass={
               index === 0
                 ? 'w-[47%] mr-1'
