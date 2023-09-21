@@ -6,6 +6,7 @@ import VerticalImage from '@/components/common/VerticalImage';
 
 import { env } from 'node:process';
 import FeatureProduct from '@/components/home/FeatureProduct';
+import BestSeller from '@/components/home/BestSeller';
 
 export default async function Home({
   params: { lang },
@@ -154,7 +155,7 @@ export default async function Home({
           />
         ))}
       </div>
-      {/* <BestSeller imgArr={footerBannerArr} /> */}
+      <BestSeller imgArr={footerBannerArr} />
       <FlashSale flashSaleArr={flashDealsArr} />
       {/* <DenimShop />
       <div className="container flex flex-col items-center sm:flex-row sm:flex-wrap md:flex-nowrap justify-center gap-y-5 md:gap-y-0 sm:gap-x-3 lg:gap-x-4 2xl:gap-x-5 3xl:gap-x-[23px] mt-[30px] ">
