@@ -159,7 +159,7 @@ export default async function Home({
   return (
     <>
       <Banner imgArr={mainBannerArr} />
-      <div className='container w-full flex flex-row justify-center mt-2 md:mt-5 xl:gap-3 2xl:gap-5 flex-wrap'>
+      {/*  <div className='container w-full flex flex-row justify-center mt-2 md:mt-5 xl:gap-3 2xl:gap-5 flex-wrap'>
         {category?.map((item: any, index: number) => (
           <DressCard
             key={item.id}
@@ -175,7 +175,7 @@ export default async function Home({
             hightClass={index <= 1 ? 'aspect-[16/15]' : 'aspect-[40/53]'}
           />
         ))}
-      </div>
+      </div> */}
       <SectionCard sectionArr={twoImage} />
       {/* <BestSeller imgArr={footerBannerArr} /> */}
       <FlashSale flashSaleArr={flashDealsArr} />
