@@ -175,9 +175,9 @@ export default async function Home({
             hightClass={index <= 1 ? 'aspect-[16/15]' : 'aspect-[40/53]'}
           />
         ))}
-      </div> */}
+      </div> 
       <SectionCard sectionArr={twoImage} />
-      {/* <BestSeller imgArr={footerBannerArr} /> */}
+      <BestSeller imgArr={footerBannerArr} /> */}
       <FlashSale flashSaleArr={flashDealsArr} />
       {/* <DenimShop />
       <div className="container flex flex-col items-center sm:flex-row sm:flex-wrap md:flex-nowrap justify-center gap-y-5 md:gap-y-0 sm:gap-x-3 lg:gap-x-4 2xl:gap-x-5 3xl:gap-x-[23px] mt-[30px] ">
