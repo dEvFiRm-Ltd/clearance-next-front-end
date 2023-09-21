@@ -126,6 +126,9 @@ body {
 .categorySlider .swiper-slide {
   width: fit-content;
 }
+.slick-track {
+  padding: 0 !important;
+}
 
 @media screen and (max-width: 639px) {
   .swiper-button-prev,

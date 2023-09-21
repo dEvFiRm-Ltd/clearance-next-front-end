@@ -1,6 +1,6 @@
-import React, { FC, useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
+import React, { FC, useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 export type sectionCardType = {
   url?: string;
   sectionArr: any[];
@@ -8,28 +8,26 @@ export type sectionCardType = {
 
 const SectionCard: FC<sectionCardType> = ({ url, sectionArr }) => {
   return (
-    <div className="container w-full flex flex-row justify-center mt-3 md:mt-4 xl:mt-5 gap-1 md:gap-2 lg:gap-3 xl:gap-4">
+    <div className='container w-full flex flex-row justify-center mt-1 md:mt-4 xl:mt-5 gap-1 md:gap-2 lg:gap-3 xl:gap-4'>
       {sectionArr.map((item: any) => (
         <Link
-          target={process.env.NEXT_PUBLIC_SITE_URL ? "_blank" : ""}
+          target={process.env.NEXT_PUBLIC_SITE_URL ? '_blank' : ''}
           href={
             process.env.NEXT_PUBLIC_SITE_URL
               ? process.env.NEXT_PUBLIC_SITE_URL +
-                "products?category=" +
+                'products?category=' +
                 url +
                 `&page=1`
               : `/products?category=` + url
           }
-          className={`w-[50%]`}
+          className={`w-[50%] relative aspect-[7/8] overflow-hidden`}
         >
-          <div className="relative aspect-[40/53] w-full overflow-hidden">
-            <Image
-              src={item?.photo}
-              alt="image"
-              fill
-              className="object-contain"
-            />
-          </div>
+          <Image
+            src={item?.photo}
+            alt='image'
+            fill
+            className='object-contain'
+          />
         </Link>
       ))}
     </div>
@@ -37,3 +35,4 @@ const SectionCard: FC<sectionCardType> = ({ url, sectionArr }) => {
 };
 
 export default SectionCard;
+

@@ -13,7 +13,7 @@ const Banner: FC<bannerPropsType> = ({ imgArr }) => {
   const settings = {
     dots: false,
     infinite: true,
-    autoplay: true,
+    // autoplay: true,
     speed: 300,
     autoplaySpeed: 3000,
     slidesToShow: 1,
@@ -50,7 +50,7 @@ const Banner: FC<bannerPropsType> = ({ imgArr }) => {
                 : '/product-details' + item.url
             }
             key={item.id}
-            className=' w-screen aspect-video bg-center bg-no-repeat relative z-10 flex justify-center items-center'
+            className=' w-full aspect-[40/17] bg-center bg-no-repeat relative z-10 flex justify-center items-center'
           >
             <Image src={item.photo} alt='' fill className='object-contain' />
           </Link>

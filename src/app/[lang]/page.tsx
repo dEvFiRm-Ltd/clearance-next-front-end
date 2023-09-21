@@ -1,12 +1,12 @@
-import DressCard from "@/components/common/DressCard";
-import Banner from "@/components/home/Banner";
-import FlashSale from "@/components/home/FlashSale";
+import DressCard from '@/components/common/DressCard';
+import Banner from '@/components/home/Banner';
+import FlashSale from '@/components/home/FlashSale';
 
-import VerticalImage from "@/components/common/VerticalImage";
+import VerticalImage from '@/components/common/VerticalImage';
 
-import { env } from "node:process";
-import FeatureProduct from "@/components/home/FeatureProduct";
-import SectionCard from "@/components/common/SectionCard";
+import { env } from 'node:process';
+import FeatureProduct from '@/components/home/FeatureProduct';
+import SectionCard from '@/components/common/SectionCard';
 
 export default async function Home({
   params: { lang },
@@ -14,7 +14,7 @@ export default async function Home({
   params: { [key: string]: any };
 }) {
   const bannerApiCall = await fetch(
-    env.BASE_URL + "api/v10/web/home/main-banner",
+    env.BASE_URL + 'api/v10/web/home/main-banner',
     {
       next: { revalidate: 1 },
       headers: { lang },
@@ -26,7 +26,7 @@ export default async function Home({
 
   const sectionApiCall = await fetch(
     env.BASE_URL +
-      "api/v10/web/home/home-sections?category_slug=web-home-section_333",
+      'api/v10/web/home/home-sections?category_slug=web-home-section_333',
     {
       next: { revalidate: 1 },
       headers: { lang },
@@ -34,7 +34,7 @@ export default async function Home({
   );
   const sectionResponse = await sectionApiCall.json();
   const sectionArr: Array<any> = sectionResponse.data.sections || [];
-  console.log("🚀 ~ file: page.tsx:37 ~ sectionArr:", sectionArr[0]);
+  console.log('🚀 ~ file: page.tsx:37 ~ sectionArr:', sectionArr[0]);
 
   let category = [
     sectionArr[0]?.hs_banner,
@@ -47,7 +47,7 @@ export default async function Home({
   let twoImage = [sectionArr[2]?.hs_banner, sectionArr[2]?.hs_banner2];
 
   const categoryApiCall = await fetch(
-    env.BASE_URL + "api/v10/web/home/categories",
+    env.BASE_URL + 'api/v10/web/home/categories',
     {
       next: { revalidate: 1 },
       headers: { lang },
@@ -57,7 +57,7 @@ export default async function Home({
   const categoryArr: Array<any> = categoryResponse.data.categories || [];
 
   const footerBannerApiCall = await fetch(
-    env.BASE_URL + "api/v10/web/home/footer-banner",
+    env.BASE_URL + 'api/v10/web/home/footer-banner',
     {
       next: { revalidate: 1 },
     }
@@ -67,7 +67,7 @@ export default async function Home({
     footerBannerResponse.data.footer_banners || [];
 
   const flashDealsApiCall = await fetch(
-    env.BASE_URL + "api/v10/web/home/flashDeals",
+    env.BASE_URL + 'api/v10/web/home/flashDeals',
     {
       next: { revalidate: 1 },
       headers: { lang },
@@ -77,7 +77,7 @@ export default async function Home({
   const flashDealsArr: Array<any> =
     flashDealsResponse.data.flash_deals_products || [];
   const featureProductApiCall = await fetch(
-    env.BASE_URL + "api/v10/web/home/feature-product",
+    env.BASE_URL + 'api/v10/web/home/feature-product',
     {
       next: { revalidate: 1 },
     }
@@ -159,7 +159,7 @@ export default async function Home({
   return (
     <>
       <Banner imgArr={mainBannerArr} />
-      <div className="container w-full flex flex-row justify-center mt-5 xl:gap-3 2xl:gap-5 flex-wrap">
+      <div className='container w-full flex flex-row justify-center mt-2 md:mt-5 xl:gap-3 2xl:gap-5 flex-wrap'>
         {category?.map((item: any, index: number) => (
           <DressCard
             key={item.id}
@@ -167,11 +167,12 @@ export default async function Home({
             url={item.slug}
             withClass={
               index === 0
-                ? "w-[47%] mr-1"
+                ? 'w-[47%] mr-1'
                 : index === 1
-                ? "w-[47%] ml-1"
-                : "w-[25%]"
+                ? 'w-[47%] ml-1'
+                : 'w-[25%]'
             }
+            hightClass={index <= 1 ? 'aspect-[16/15]' : 'aspect-[40/53]'}
           />
         ))}
       </div>
@@ -191,13 +192,13 @@ export default async function Home({
           />
         ))}
       </div> */}
-      <div className="container flex flex-wrap flex-row justify-center gap-5 ">
+      <div className='container flex flex-wrap flex-row justify-center gap-5 '>
         {footerBannerArr.map((item: any) => (
           <VerticalImage
             key={item.id}
             img={item.photo}
             item={item}
-            className="w-full bg-ash xl:w-[614px] 2xl:w-[738px] 3xl:w-[880px] aspect-[851/479] object-contain"
+            className='w-full bg-ash xl:w-[614px] 2xl:w-[738px] 3xl:w-[880px] aspect-[851/479] object-contain'
           />
         ))}
       </div>
@@ -214,8 +215,8 @@ export default async function Home({
       </div> */}
       <FeatureProduct
         featureProductArr={featureProductArr}
-        titleAe="منتج مميز"
-        titleEn="Feature Product"
+        titleAe='منتج مميز'
+        titleEn='Feature Product'
       />
       {/* <Brands brandArr={brandsDataArr} /> */}
       {/* <FeatureProduct featureProductArr={supermarketDealsArr} titleAe='عروض السوبر ماركت' titleEn="Supermarket Deals" />
@@ -228,3 +229,4 @@ export default async function Home({
     </>
   );
 }
+
