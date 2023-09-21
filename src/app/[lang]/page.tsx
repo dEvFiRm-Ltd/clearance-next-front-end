@@ -140,13 +140,15 @@ export default async function Home({
         {categoryArr.map((item: any, index: number) => (
           <DressCard
             key={item.id}
-            image={item.icon}
+            image={
+              'https://www.stylewe.com/image/catalog/activity/mjm0jHc5un1695285464.webp'
+            }
             url={item.slug}
             withClass={
               index === 0
                 ? 'w-[47%] mr-1'
                 : index === 1
-                ? 'w-[47%] ml-'
+                ? 'w-[47%] ml-1'
                 : 'w-[25%]'
             }
           />
