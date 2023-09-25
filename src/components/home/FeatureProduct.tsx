@@ -4,11 +4,8 @@ import FlashSaleCard from '../common/FlashSaleCard';
 import CartModal from '../modal/CartModal';
 import { usePathname } from 'next/navigation';
 import axios from 'axios';
-type featureProductProps = {
-  featureProductArr?: any[];
-  titleEn: string;
-  titleAe: string;
-};
+import { featureProductProps } from '@/utils/type';
+
 const FeatureProduct: FC<featureProductProps> = ({
   featureProductArr,
   titleEn,

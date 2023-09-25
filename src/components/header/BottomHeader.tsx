@@ -3,9 +3,8 @@ import Link from 'next/link';
 import React, { FC, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SubCategory from '../common/SubCategory';
-type bottomHeaderProps = {
-  bottomHeaderArr: any;
-};
+import { bottomHeaderProps } from '@/utils/type';
+
 const BottomHeader: FC<bottomHeaderProps> = ({ bottomHeaderArr }) => {
   const [subCategories, setSubCategories] = useState<Array<any>>([]);
   const [index, setIndex] = useState<number>(0);

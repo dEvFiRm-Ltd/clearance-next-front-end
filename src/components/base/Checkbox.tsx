@@ -1,13 +1,7 @@
+import { checkboxProps } from '@/utils/type';
 import React, { ChangeEvent, FC } from 'react';
 
-type checkboxProps = {
-  identifier: string;
-  label?: string;
-  groupClass?: string;
-  stateData?: string;
-  isChecked?: boolean;
-  onChangeCb: (e: boolean) => void;
-};
+
 
 const Checkbox: FC<checkboxProps> = ({
   identifier,

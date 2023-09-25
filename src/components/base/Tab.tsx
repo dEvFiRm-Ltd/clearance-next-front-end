@@ -1,15 +1,8 @@
 'use client'
 import React, { ReactNode, useState } from "react";
 
-export type tabTypes={
-    text:string;
-    content:ReactNode;
-}
-export type tabProps={
-    actionCb:()=> void;
-    value:string;
-    tabArr:tabTypes[]
-}
+
+// props are shifted to utils folder
 
 const Tab = ({tabb}:any) => {
   const [activeTab, setActiveTab] = useState(0);

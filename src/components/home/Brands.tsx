@@ -1,15 +1,10 @@
 'use client';
+import { brandProps } from '@/utils/type';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { FC, createRef } from 'react';
 import Slider from 'react-slick';
-export type brandsType = {
-  url: string;
-  logo: string;
-};
-type brandProps = {
-  brandArr: brandsType[];
-};
+
 const Brands: FC<brandProps> = ({ brandArr }) => {
   const sliderRef = createRef<Slider>();
   const settings = {

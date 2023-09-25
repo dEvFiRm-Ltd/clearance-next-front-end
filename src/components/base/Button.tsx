@@ -1,24 +1,7 @@
+import { buttonProps } from "@/utils/type";
 import React, { FC } from "react";
 
-type buttonProps = {
-  btnType?: "submit" | "reset" | "button";
-  btnText?: string;
-  btnClass?: string;
-  icon?: string;
-  suffixIcon?: string;
-  prefixIcon?: string;
-  disabled?: boolean;
-  variant?: "primary" | "outlined" | "naked" | "link";
-} & (
-  | {
-      btnType?: "reset" | "button";
-      actionCb: () => void;
-    }
-  | {
-      btnType?: "submit";
-      actionCb?: never;
-    }
-);
+
 
 const Button: FC<buttonProps> = ({
   btnText,

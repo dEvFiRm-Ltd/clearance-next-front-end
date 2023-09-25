@@ -5,10 +5,8 @@ import FlashSaleCard from '../common/FlashSaleCard';
 import CartModal from '../modal/CartModal';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules';
+import { flashSaleProps } from '@/utils/type';
 
-type flashSaleProps = {
-  flashSaleArr: any;
-};
 
 const FlashSale: FC<flashSaleProps> = ({ flashSaleArr }) => {
   const [modals, setModals] = useState(false);

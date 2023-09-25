@@ -1,14 +1,15 @@
-import { dropDowns } from '@/components/base/SelectField';
-import { tabTypes } from '@/components/base/Tab';
-import { recommendType } from '@/components/categoryListing/Recommend';
-import { dressType } from '@/components/common/DressCard';
-import { brandsType } from '@/components/home/Brands';
+
 import {
   bannerProps,
+  brandsType,
+  dressType,
   flashSaleCardProps,
   footerProps,
   linkImgType,
   linkType,
+  recommendType,
+  dropDowns,
+  tabTypes
 } from '@/utils/type';
 
 export const brandsDataArr: brandsType[] = [

@@ -1,15 +1,8 @@
 "use client"
 import React, { FC, useState } from "react";
 import FilterItem from "../common/FilterItem";
+import { FilterItemType } from "@/utils/type";
 
-type FilterItemType = {
-  title: string;
-  labels: Label[];
-};
-
-type Label = {
-  label: string;
-};
 
 const SideBar: FC = () => {
   const [check, setCheck] = useState(true);

@@ -1,14 +1,7 @@
+import { componentProps } from '@/utils/type'
 import React, { FC, useState } from 'react'
 
-export type dropDowns = {
-  title?: string
-}
-type componentProps = {
-  groupClass?: string
-  currentItem: string
-  dropdownItems: string[]
-  onChangeCb: (e: dropDowns) => void
-}
+
 
 const SelectField: FC<componentProps> = ({
   groupClass,

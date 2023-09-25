@@ -1,14 +1,6 @@
 import React, { FC } from "react";
 import Button from "../base/Button";
-
-export type recommendType = {
-  title: string;
-};
-export type recommendProps = {
-  recommendArr: recommendType[];
-  heading:string;
-  btnClass:string;
-};
+import { recommendProps, recommendType } from "@/utils/type";
 
 const Recommend: FC<recommendProps> = ({ recommendArr,heading, btnClass }) => {
   return (

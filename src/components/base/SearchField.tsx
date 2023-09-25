@@ -2,14 +2,9 @@
 import React, { ChangeEvent, FC, useRef, useState } from "react";
 import Button from "./Button";
 import { usePathname } from "next/navigation";
-// export type searchFieldProps = {
-//   actionCb: (e: ChangeEvent<HTMLInputElement>) => void;
-// };
+import { searchFieldProps } from "@/utils/type";
 
-type searchFieldProps = {
-  onFocus: () => void;
-  onBlur: () => void;
-};
+
 const SearchField: FC<searchFieldProps> = ({ onFocus, onBlur }) => {
   const searchInputRef = useRef<HTMLInputElement>(null);
   const [searchValue, setSearchValue] = useState<string>("");

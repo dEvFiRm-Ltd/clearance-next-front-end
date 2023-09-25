@@ -1,8 +1,6 @@
+import { starProps } from '@/utils/type'
 import React, { FC } from 'react'
-export type starProps={
-    review?:string;
-    
-}
+
 const StarList:FC<starProps> = ({review}) => {
   const star= [
     "fas fa-star",
