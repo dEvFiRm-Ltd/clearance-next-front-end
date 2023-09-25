@@ -1,6 +1,5 @@
 import { dropDowns } from '@/components/base/SelectField';
-import { tabTypes } from '@/components/base/Tab';
-import { recommendType } from '@/components/categoryListing/Recommend';
+
 import { dressType } from '@/components/common/DressCard';
 import { brandsType } from '@/components/home/Brands';
 import {
@@ -1132,7 +1131,7 @@ export const verticalImageTwo = [
 ];
 
 // Recommend components data
-export const recommendData: recommendType[] = [
+export const recommendData: any[] = [
   {
     title: 'Maxi',
   },
@@ -1167,7 +1166,7 @@ export const recommendData: recommendType[] = [
     title: 'Dopamine Dresses',
   },
 ];
-export const filterData: recommendType[] = [
+export const filterData: any[] = [
   {
     title: 'Maxi',
   },
