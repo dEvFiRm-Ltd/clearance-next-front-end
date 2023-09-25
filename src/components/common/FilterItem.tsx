@@ -1,18 +1,8 @@
 import React, { FC, useState } from "react";
 import Checkbox from "../base/Checkbox";
+import { filterType, labelType } from "@/utils/type";
 
-type filterType = {
-  title: string;
-  actionCb: () => void;
-  viewStateCb: boolean;
-  icon: string;
-  labels: labelType[];
-  actionCbView: () => void;
-};
 
-export type labelType = {
-  label: string;
-};
 
 const FilterItem: FC<filterType> = ({
   title,

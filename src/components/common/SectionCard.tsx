@@ -1,10 +1,7 @@
 import React, { FC, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-export type sectionCardType = {
-  url?: string;
-  sectionArr: any[];
-};
+import { sectionCardType } from '@/utils/type';
 
 const SectionCard: FC<sectionCardType> = ({ url, sectionArr }) => {
   return (

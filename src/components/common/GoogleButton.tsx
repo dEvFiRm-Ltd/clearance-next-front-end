@@ -1,15 +1,8 @@
+import { buttonProps2 } from "@/utils/type";
 import React, { FC } from "react";
 
-type buttonProps = {
-  btnType?: "submit" | "reset" | "button";
-  btnText?: string;
-  btnText2?: string;
-  groupClass?: string;
-  prefixIcon?: string;
-  actionCb: () => void;
-};
 
-const GoogleBtn: FC<buttonProps> = ({
+const GoogleBtn: FC<buttonProps2> = ({
   btnText,
   btnText2,
   prefixIcon,

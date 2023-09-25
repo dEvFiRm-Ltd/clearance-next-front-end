@@ -1,10 +1,8 @@
 import { Fragment, useEffect, useState } from 'react';
 import { Listbox, Transition } from '@headlessui/react';
 import { usePathname, useRouter } from 'next/navigation';
-export type langType = {
-  name: string;
-  value: 'en' | 'ae';
-};
+import { langType } from '@/utils/type';
+
 export const langs: langType[] = [
   { name: 'Arabic', value: 'ae' },
   { name: 'English', value: 'en' },

@@ -11,10 +11,8 @@ import Button from "../base/Button";
 import { CartProduct } from "./CartProduct";
 import { CartContext, Product } from "@/context/CartContext";
 import Checkbox from "../base/Checkbox";
-export type cartSideBarProps = {
-  value: boolean;
-  setCart: (e: boolean) => void;
-};
+import { cartSideBarProps } from "@/utils/type";
+
 const CartSideBar: FC<cartSideBarProps> = ({ value, setCart }) => {
   const { cartItem, totalPrice, toggleCheckProduct, itemCount, savingAmount } =
     useContext(CartContext);

@@ -7,10 +7,8 @@ import Select from "./Select";
 import { usePathname } from "next/navigation";
 import SearchField from "../base/SearchField";
 import Button from "../base/Button";
+import { MobileHeaderProp } from "@/utils/type";
 
-type MobileHeaderProp = {
-  navArr: any[];
-};
 
 const MobileHeader: FC<MobileHeaderProp> = ({ navArr }) => {
   const [show, setShow] = useState(false);

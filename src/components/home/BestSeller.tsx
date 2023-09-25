@@ -1,8 +1,8 @@
+
+import { bestSellerPropsType } from '@/utils/type';
 import Image from 'next/image';
 import React, { FC } from 'react';
-type bestSellerPropsType = {
-  imgArr: Array<any>;
-};
+
 const BestSeller: FC<bestSellerPropsType> = ({ imgArr }) => {
   return (
     <div className='md:container my-8 flex flex-row justify-center gap-x-2.5'>

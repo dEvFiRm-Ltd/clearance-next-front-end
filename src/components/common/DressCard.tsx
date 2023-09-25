@@ -1,16 +1,9 @@
+import { dressType } from '@/utils/type';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { FC } from 'react';
 
-export type dressType = {
-  image: string;
-  title?: string;
-  url?: string;
-  heading?: string;
-  hightClass?: string;
-  withClass?: string;
-  totalProduct?: number;
-};
+
 
 const DressCard: FC<dressType> = ({
   image,

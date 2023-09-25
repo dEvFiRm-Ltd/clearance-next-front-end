@@ -1,4 +1,5 @@
 "use client";
+import { CartContextValue, Product } from "@/utils/type";
 import React, {
   FC,
   ReactNode,
@@ -9,39 +10,7 @@ import React, {
   useState,
 } from "react";
 
-export type Product = {
-  thumbnail: string;
-  name: string;
-  offer_price: string;
-  price: string;
-  qty: number;
-  checked?: boolean;
-  variant: [
-    {
-      size: string[];
-    },
-    {
-      fit: string[];
-    },
-    {
-      color: string[];
-    },
-  ];
-};
 
-type CartContextValue = {
-  cartItem: Product[];
-  addToCart: (product: Product) => void;
-  removeFromCart: (index: number) => void;
-  totalPrice: number;
-  increaseQuantity: (index: number) => void;
-  itemCount: number;
-  savingAmount: number;
-  toggleCheckProduct: (index: number) => void;
-  decreaseQuantity: (index: number) => void;
-  isCartOpen?: boolean | any;
-  setIsCartOpen?: any;
-};
 
 export const CartContext = createContext<CartContextValue>({
   cartItem: [],

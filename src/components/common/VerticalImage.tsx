@@ -1,13 +1,8 @@
+import { imageType } from "@/utils/type";
 import Image from "next/image";
 import Link from "next/link";
 import React, { FC } from "react";
 
-type imageType = {
-  img: string;
-  className: string;
-  objectClass?: string;
-  item?:any
-};
 
 const VerticalImage: FC<imageType> = ({ img, className, objectClass ,item}) => {
   return (

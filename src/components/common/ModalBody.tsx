@@ -1,9 +1,7 @@
 "use client";
+import { modalBodyProps } from "@/utils/type";
 import React, { FC, ReactNode } from "react";
-type modalBodyProps = {
-  children: ReactNode;
-  modalBodyClass?: string;
-};
+
 const ModalBody: FC<modalBodyProps> = ({ children, modalBodyClass }) => {
   return (
     <div

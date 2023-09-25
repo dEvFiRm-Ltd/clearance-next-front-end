@@ -1,13 +1,11 @@
 'use client';
-import React, { FC, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import FlashSaleCard from '../common/FlashSaleCard';
 import CartModal from '../modal/CartModal';
 import { usePathname } from 'next/navigation';
-type featureProductProps = {
-  featureProductArr: any[];
-  titleEn: string;
-  titleAe: string;
-};
+import axios from 'axios';
+import { featureProductProps } from '@/utils/type';
+
 const FeatureProduct: FC<featureProductProps> = ({
   featureProductArr,
   titleEn,
@@ -15,8 +13,49 @@ const FeatureProduct: FC<featureProductProps> = ({
 }) => {
   const [modals, setModals] = useState(false);
   const [modalData, setModalData] = useState<any>();
+  const [data, setData] = useState<any>([]);
+  const [limit] = useState<number>(8);
+  const [willScroll, setWillScroll] = useState<boolean>(true);
+  const [page, setPage] = useState(1);
   const path = usePathname();
   const local = path.split('/')[1];
+
+
+// <----- scroll function  ----->
+  const handleScroll = () => {
+    if (
+      window.innerHeight + document.documentElement.scrollTop ===
+      document.documentElement.offsetHeight
+    ) {
+      setPage(page + 1);
+    }
+  };
+
+  // <----- ** data fetching ** -----> 
+  useEffect(() => {
+    (async () => {
+      if (process.env.NEXT_PUBLIC_BASE_URL && willScroll) {
+       const responseJson = await axios.get(
+          process.env.NEXT_PUBLIC_BASE_URL +
+          `api/v10/web/home/feature-product?limit=${limit}&offset=${page}`
+        )
+        setData((data: any) => [...data, ...responseJson?.data?.data?.featured_products])
+        if(responseJson?.data?.data?.featured_products.length < limit){
+          setWillScroll(false)
+        }
+      }
+    })();
+  }, [page]);
+
+  
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [page]);
+
+
   return (
     <section className='py-5'>
       <div className='container flex flex-col justify-start items-center gap-y-5'>
@@ -24,7 +63,7 @@ const FeatureProduct: FC<featureProductProps> = ({
           {local === 'en' ? titleEn : titleAe}
         </h3>
         <div className='flex flex-row justify-center gap-2.5 md:gap-4 lg:gap-5 flex-wrap !items-start'>
-          {featureProductArr.map((item: any) => (
+          {data.map((item: any) => (
             <FlashSaleCard
               key={item.id}
               img={item.thumbnail}

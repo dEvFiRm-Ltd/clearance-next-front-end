@@ -1,12 +1,7 @@
 import React, { FC, ReactElement, useEffect, useRef, useState } from "react";
 import Button from "./Button";
-type modalProps = {
-  visible: boolean;
-  modalClass?: string;
-  title?: string;
-  children: ReactElement;
-  closeCb: () => void;
-};
+import { modalProps } from "@/utils/type";
+
 
 const Modal: FC<modalProps> = ({
   title,
