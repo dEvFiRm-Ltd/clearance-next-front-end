@@ -14,6 +14,7 @@ export default async function Home({
 }: {
   params: { [key: string]: any };
 }) {
+
   const bannerApiCall = await fetch(
     env.BASE_URL + 'api/v10/web/home/main-banner',
     {
@@ -87,15 +88,19 @@ export default async function Home({
   const flashDealsResponse = await flashDealsApiCall.json();
   const flashDealsArr: Array<any> =
     flashDealsResponse.data.flash_deals_products || [];
-  const featureProductApiCall = await fetch(
-    env.BASE_URL + 'api/v10/web/home/feature-product',
-    {
-      next: { revalidate: 1 },
-    }
-  );
-  const featureProductResponse = await featureProductApiCall.json();
-  const featureProductArr: Array<any> =
-    featureProductResponse.data.featured_products || [];
+
+    // <------------------- ** FeatureProduct ** ------------------------->
+
+  // const featureProductApiCall = await fetch(
+  //   // env.BASE_URL + 'api/v10/web/home/feature-product',
+  //   env.BASE_URL + 'api/v10/web/home/feature-product?limit=10&offset=1',
+  //   {
+  //     next: { revalidate: 1 },
+  //   }
+  // );
+  // const featureProductResponse = await featureProductApiCall.json();
+  // const featureProductArr: Array<any> =
+  //   featureProductResponse.data.featured_products || [];
 
   /*  const supermarketDealsApiCall = await fetch(
     env.BASE_URL +
@@ -226,7 +231,6 @@ export default async function Home({
         ))}
       </div> */}
       <FeatureProduct
-        featureProductArr={featureProductArr}
         titleAe='منتج مميز'
         titleEn='Feature Product'
       />
