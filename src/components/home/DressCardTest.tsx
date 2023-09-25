@@ -9,32 +9,10 @@ export const DressCardTest = ({ sectionResponse, sectionLgResponse }: any) => {
   const [mobileImgSmall, setMobileImgSmall] = useState(
     sectionResponse?.data?.sections[1]
   );
-  const [mobileImgOther, setMobileOther] = useState(
-    sectionResponse?.data?.sections[2]
-  );
-  //   console.log("🚀 ~ file: DressCardTest", sectionResponse?.data?.sections);
   const [desktopImgs, setDesktopImgs] = useState(
     sectionLgResponse?.data?.sections[0]
   );
-  console.log("🚀 ~ file: DressCardTest.tsx:19 ~ DressCardTest ~ desktopImgs:", sectionLgResponse)
   return (
-    // <div className="container w-full flex flex-row justify-center mt-2 md:mt-5 xl:gap-3 2xl:gap-5 flex-wrap">
-    //   {[1, 2, 3, 4]?.map((item: any, index: number) => (
-    //     <DressCard
-    //       key={item}
-    //       image={item?.photo}
-    //       url={item?.url}
-    //       withClass={
-    //         index === 0
-    //           ? "w-[47%] mr-1"
-    //           : index === 1
-    //           ? "w-[47%] ml-1"
-    //           : "w-[25%]"
-    //       }
-    //       hightClass={index <= 1 ? "aspect-[16/15]" : "aspect-[40/53]"}
-    //     />
-    //   ))}
-    // </div>
     <>
       {/* <----- mobile device -----> */}
       <div className="xl:hidden">
