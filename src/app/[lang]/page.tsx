@@ -7,6 +7,7 @@ import VerticalImage from '@/components/common/VerticalImage';
 import { env } from 'node:process';
 import FeatureProduct from '@/components/home/FeatureProduct';
 import SectionCard from '@/components/common/SectionCard';
+import { DressCardTest } from '@/components/home/DressCardTest';
 
 export default async function Home({
   params: { lang },
@@ -34,7 +35,17 @@ export default async function Home({
   );
   const sectionResponse = await sectionApiCall.json();
   const sectionArr: Array<any> = sectionResponse.data.sections || [];
-  console.log('🚀 ~ file: page.tsx:37 ~ sectionArr:', sectionArr[0]);
+  // console.log('🚀 ~ file: page.tsx:37 ~ sectionArr:', sectionArr[0]);
+
+  const sectionLgApiCall = await fetch(
+    env.BASE_URL +
+      'api/v10/web/home/home-sections?category_slug=web-home-section-desktop_334',
+    {
+      next: { revalidate: 1 },
+      headers: { lang },
+    }
+  );
+  const sectionLgResponse = await sectionLgApiCall.json();
 
   let category = [
     sectionArr[0]?.hs_banner,
@@ -159,6 +170,7 @@ export default async function Home({
   return (
     <>
       <Banner imgArr={mainBannerArr} />
+      <DressCardTest sectionResponse={sectionResponse} sectionLgResponse={sectionLgResponse}/>
       {/*  <div className='container w-full flex flex-row justify-center mt-2 md:mt-5 xl:gap-3 2xl:gap-5 flex-wrap'>
         {category?.map((item: any, index: number) => (
           <DressCard
