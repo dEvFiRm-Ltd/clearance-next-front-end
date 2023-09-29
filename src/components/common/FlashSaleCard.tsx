@@ -25,6 +25,7 @@ const FlashSaleCard: FC<flashSaleCardProps> = ({
   url,
   check = false,
   imgVariantSmall = false,
+  whitelist = false,
 }) => {
   const [selectSize, setSelectSize] = useState(false);
   const [selectedColorIndex, setSelectedColorIndex] = useState<number | null>(
@@ -68,6 +69,11 @@ const FlashSaleCard: FC<flashSaleCardProps> = ({
       <div
         className={`w-full h-52 md:h-[278px] lg:h-80 3xl:h-[324px] overflow-hidden relative group ${imgClass}`}
       >
+        {whitelist && (
+          <button className="absolute top-1 right-1 z-10 bg-white py-1 px-2 rounded-full text-slate-500">
+            <i className="fa-regular fa-heart" />
+          </button>
+        )}
         <Image
           src={selectedImg}
           alt="img"
@@ -105,15 +111,18 @@ const FlashSaleCard: FC<flashSaleCardProps> = ({
       </div>
       <div className="flex w-full flex-col justify-start items-start self-stretch flex-1 gap-1.5 py-1.5 px-1">
         <p className="line-clamp-1 text-xs lg:text-sm">{text}</p>
-        <div className="flex flex-wrap justify-start items-center gap-2">
-          <span className="text-sm md:text-base xl:text-lg 3xl:text-xl text-red-400 font-bold">
-            {salePrice} AED
-          </span>
-          {price && (
-            <span className="text-xs lg:text-sm font-normal text-[#868C93] line-through ">
-              {price} AED
+        <div className="flex justify-between items-center gap-2 w-full">
+          <div className="flex flex-wrap items-center space-x-1 w-[85%]">
+            <span className="text-sm md:text-base xl:text-lg 3xl:text-xl text-red-400 font-bold">
+              {salePrice} AED
             </span>
-          )}
+            {price && (
+              <span className="text-xs lg:text-sm font-normal text-[#868C93] line-through ">
+                {price} AED
+              </span>
+            )}
+          </div>
+          <button className="w-[15%] text-[#000]/50"><i className="fa-solid fa-cart-plus lg:text-xl"/></button>
         </div>
         {text2 && (
           <span className="px-1 rounded-sm text-red-400 bg-[#FEF2F2] font-normal !font-[Helvetica] text-xs">

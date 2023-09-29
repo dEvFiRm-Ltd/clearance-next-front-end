@@ -193,7 +193,7 @@ export default async function Home({
         ))}
       </div>
       <div className='container flex flex-wrap flex-row justify-center gap-5 '>
-        {footerBannerArr.map((item: any) => (
+        {footerBannerArr.splice(0, 2).map((item: any) => (
           <VerticalImage
             key={item?.id}
             img={item?.photo}
@@ -202,14 +202,16 @@ export default async function Home({
           />
         ))}
       </div>
-      <div className='container flex flex-row flex-wrap justify-center gap-5 '>
+      {/* <div className='container flex flex-row flex-wrap justify-center gap-5 '> */}
+      <div className='container flex flex-row space-x-2 justify-center max-w-screen mt-5'>
         {footerBannerArr.splice(0, 2).map((item: any) => (
           <VerticalImage
             key={item?.id}
             img={item?.photo}
             item={item}
-            className='w-[336px] sm:w-[616px] md:w-[744px] lg:w-[1000px] xl:w-[614px] 2xl:w-[738px] 3xl:w-[880px] h-[170px] sm:h-[240px] md:h-[273px]'
-            objectClass='!object-cover'
+            // className='w-[336px] sm:w-[616px] md:w-[744px] lg:w-[1000px] xl:w-[614px] 2xl:w-[738px] 3xl:w-[880px] h-[170px] sm:h-[240px] md:h-[273px]'
+            className='w-1/2 lg:w-[1000px] xl:w-[614px] 2xl:w-[738px] 3xl:w-[880px] h-[170px] sm:h-[240px] md:h-[273px]'
+            objectClass='!object-fill lg:!object-cover'
           />
         ))}
       </div>
@@ -217,6 +219,7 @@ export default async function Home({
         featureProductArr={featureProductArr}
         titleAe='منتج مميز'
         titleEn='Feature Product'
+        whitelist={true}
       />
       {/* <Brands brandArr={brandsDataArr} /> */}
       <FeatureProduct

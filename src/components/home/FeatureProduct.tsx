@@ -7,11 +7,13 @@ type featureProductProps = {
   featureProductArr: any[];
   titleEn: string;
   titleAe: string;
+  whitelist?:boolean;
 };
 const FeatureProduct: FC<featureProductProps> = ({
   featureProductArr,
   titleEn,
   titleAe,
+  whitelist
 }) => {
   const [modals, setModals] = useState(false);
   const [modalData, setModalData] = useState<any>();
@@ -41,6 +43,7 @@ const FeatureProduct: FC<featureProductProps> = ({
               }}
               groupClass='w-40 sm:w-52 md:w-60 lg:w-80 xl:w-[390px] 2xl:w-[427px]'
               imgClass='!h-52 sm:!h-[278px] md:!h-80 lg:!h-[400px] xl:!h-[480px] 2xl:!h-[570px]'
+              whitelist={whitelist}
             />
           ))}
         </div>
