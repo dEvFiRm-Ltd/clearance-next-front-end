@@ -1,4 +1,4 @@
-import DressCard from '@/components/common/DressCard';
+import DressCard, { dressType } from '@/components/common/DressCard';
 import Banner from '@/components/home/Banner';
 import FlashSale from '@/components/home/FlashSale';
 
@@ -7,6 +7,9 @@ import VerticalImage from '@/components/common/VerticalImage';
 import { env } from 'node:process';
 import FeatureProduct from '@/components/home/FeatureProduct';
 import SectionCard from '@/components/common/SectionCard';
+import BestSeller from '@/components/home/BestSeller';
+import DenimShop from '@/components/home/DenimShop';
+import { dressTwo } from '@/static';
 
 export default async function Home({
   params: { lang },
@@ -86,7 +89,7 @@ export default async function Home({
   const featureProductArr: Array<any> =
     featureProductResponse.data.featured_products || [];
 
-  /*  const supermarketDealsApiCall = await fetch(
+  const supermarketDealsApiCall = await fetch(
     env.BASE_URL +
       'api/v10/web/home/products?category_slug=Supermarket-Deals_43&offset=1&limit=7',
     {
@@ -95,7 +98,8 @@ export default async function Home({
   );
   const supermarketDealsResponse = await supermarketDealsApiCall.json();
   const supermarketDealsArr: Array<any> =
-    supermarketDealsResponse.data.products || [];   const womenApiCall = await fetch(
+    supermarketDealsResponse.data.products || [];
+  const womenApiCall = await fetch(
     env.BASE_URL +
       'api/v10/web/home/products?category_slug=women_1&offset=1&limit=7',
     {
@@ -103,7 +107,7 @@ export default async function Home({
     }
   );
   const womenResponse = await womenApiCall.json();
-  const womenArr: Array<any> = womenResponse.data.products || []; 
+  const womenArr: Array<any> = womenResponse.data.products || [];
 
   const menApiCall = await fetch(
     env.BASE_URL +
@@ -154,17 +158,17 @@ export default async function Home({
     }
   );
   const wholeSaleResponse = await wholeSaleApiCall.json();
-  const wholeSaleArr: Array<any> = wholeSaleResponse.data.products || [];*/
+  const wholeSaleArr: Array<any> = wholeSaleResponse.data.products || [];
 
   return (
     <>
       <Banner imgArr={mainBannerArr} />
-      {/*  <div className='container w-full flex flex-row justify-center mt-2 md:mt-5 xl:gap-3 2xl:gap-5 flex-wrap'>
+      <div className='container w-full flex flex-row justify-center mt-2 md:mt-5 xl:gap-3 2xl:gap-5 flex-wrap'>
         {category?.map((item: any, index: number) => (
           <DressCard
-            key={item.id}
+            key={item?.id}
             image={item?.photo}
-            url={item.url}
+            url={item?.url}
             withClass={
               index === 0
                 ? 'w-[47%] mr-1'
@@ -175,57 +179,81 @@ export default async function Home({
             hightClass={index <= 1 ? 'aspect-[16/15]' : 'aspect-[40/53]'}
           />
         ))}
-      </div> 
+      </div>
       <SectionCard sectionArr={twoImage} />
-      <BestSeller imgArr={footerBannerArr} /> */}
+      <BestSeller imgArr={footerBannerArr} />
       <FlashSale flashSaleArr={flashDealsArr} />
-      {/* <DenimShop />
-      <div className="container flex flex-col items-center sm:flex-row sm:flex-wrap md:flex-nowrap justify-center gap-y-5 md:gap-y-0 sm:gap-x-3 lg:gap-x-4 2xl:gap-x-5 3xl:gap-x-[23px] mt-[30px] ">
+      <DenimShop />
+      <div className='container flex flex-col items-center sm:flex-row sm:flex-wrap md:flex-nowrap justify-center gap-y-5 md:gap-y-0 sm:gap-x-3 lg:gap-x-4 2xl:gap-x-5 3xl:gap-x-[23px] mt-[30px] '>
         {dressTwo.map((item: dressType, id: number) => (
           <DressCard
             key={id}
-            image={item.image}
-            heading={item.heading}
-            title={item.title}
-            hightClass="!h-[430px] sm:!h-[380px] md:!h-[350px] lg:!h-[420px] xl:!h-[520px] 2xl:!h-[640px] 3xl:!h-[703px]"
-            withClass="!w-[336px] sm:!w-[302px] md:!w-[240px] lg:!w-[322.67px] xl:!w-[405.33px] 2xl:!w-[485.33px] 3xl:!w-[580px]"
+            image={item?.image}
+            heading={item?.heading}
+            title={item?.title}
+            hightClass='!h-[430px] sm:!h-[380px] md:!h-[350px] lg:!h-[420px] xl:!h-[520px] 2xl:!h-[640px] 3xl:!h-[703px]'
+            withClass='!w-[336px] sm:!w-[302px] md:!w-[240px] lg:!w-[322.67px] xl:!w-[405.33px] 2xl:!w-[485.33px] 3xl:!w-[580px]'
           />
         ))}
-      </div> */}
+      </div>
       <div className='container flex flex-wrap flex-row justify-center gap-5 '>
         {footerBannerArr.map((item: any) => (
           <VerticalImage
-            key={item.id}
-            img={item.photo}
+            key={item?.id}
+            img={item?.photo}
             item={item}
             className='w-full bg-ash xl:w-[614px] 2xl:w-[738px] 3xl:w-[880px] aspect-[851/479] object-contain'
           />
         ))}
       </div>
-      {/* <div className="container flex flex-row flex-wrap justify-center gap-5 ">
+      <div className='container flex flex-row flex-wrap justify-center gap-5 '>
         {footerBannerArr.splice(0, 2).map((item: any) => (
           <VerticalImage
-            key={item.id}
-            img={item.photo}
+            key={item?.id}
+            img={item?.photo}
             item={item}
-            className="w-[336px] sm:w-[616px] md:w-[744px] lg:w-[1000px] xl:w-[614px] 2xl:w-[738px] 3xl:w-[880px] h-[170px] sm:h-[240px] md:h-[273px]"
-            objectClass="!object-cover"
+            className='w-[336px] sm:w-[616px] md:w-[744px] lg:w-[1000px] xl:w-[614px] 2xl:w-[738px] 3xl:w-[880px] h-[170px] sm:h-[240px] md:h-[273px]'
+            objectClass='!object-cover'
           />
         ))}
-      </div> */}
+      </div>
       <FeatureProduct
         featureProductArr={featureProductArr}
         titleAe='منتج مميز'
         titleEn='Feature Product'
       />
       {/* <Brands brandArr={brandsDataArr} /> */}
-      {/* <FeatureProduct featureProductArr={supermarketDealsArr} titleAe='عروض السوبر ماركت' titleEn="Supermarket Deals" />
-      <FeatureProduct featureProductArr={womenArr} titleAe='نحيف' titleEn="Women" />
-      <FeatureProduct featureProductArr={menArr} titleAe='رجال' titleEn="Man" />
-      <FeatureProduct featureProductArr={girlArr} titleAe='فتيات' titleEn="Girls" />
-      <FeatureProduct featureProductArr={boysArr} titleAe='أولاد' titleEn="Boys" />
-      <FeatureProduct featureProductArr={sportsOutdoorsArr} titleAe='الرياضة والهواء الطلق' titleEn="Sports outdoors" />
-      <FeatureProduct featureProductArr={wholeSaleArr} titleAe='بالجملة' titleEn="wholesale" /> */}
+      <FeatureProduct
+        featureProductArr={supermarketDealsArr}
+        titleAe='عروض السوبر ماركت'
+        titleEn='Supermarket Deals'
+      />
+      <FeatureProduct
+        featureProductArr={womenArr}
+        titleAe='نحيف'
+        titleEn='Women'
+      />
+      <FeatureProduct featureProductArr={menArr} titleAe='رجال' titleEn='Man' />
+      <FeatureProduct
+        featureProductArr={girlArr}
+        titleAe='فتيات'
+        titleEn='Girls'
+      />
+      <FeatureProduct
+        featureProductArr={boysArr}
+        titleAe='أولاد'
+        titleEn='Boys'
+      />
+      <FeatureProduct
+        featureProductArr={sportsOutdoorsArr}
+        titleAe='الرياضة والهواء الطلق'
+        titleEn='Sports outdoors'
+      />
+      <FeatureProduct
+        featureProductArr={wholeSaleArr}
+        titleAe='بالجملة'
+        titleEn='wholesale'
+      />
     </>
   );
 }
