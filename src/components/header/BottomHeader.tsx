@@ -10,7 +10,7 @@ const BottomHeader: FC<bottomHeaderProps> = ({ bottomHeaderArr }) => {
   const [subCategories, setSubCategories] = useState<Array<any>>([]);
   const [index, setIndex] = useState<number>(0);
   return (
-    <div className=' border-b relative lg:flex flex-row items-center justify-center text-[#000000] font-bold uppercase w-screen lg:gap-x-4 xl:gap-x-5 2xl:gap-x-8 3xl:gap-x-10 text-[13px] xl:text-sm 2xl:text-base 3xl:text-lg'>
+    <div className=' relative lg:flex flex-row items-center justify-center text-[#000000] font-bold uppercase w-screen lg:gap-x-4 xl:gap-x-5 2xl:gap-x-8 3xl:gap-x-10 text-[13px] xl:text-sm 2xl:text-base 3xl:text-lg'>
       <Swiper
         spaceBetween={30}
         loop={true}
@@ -40,7 +40,7 @@ const BottomHeader: FC<bottomHeaderProps> = ({ bottomHeaderArr }) => {
         ))}
       </Swiper>
       {subCategories.length ? (
-        <div className='absolute top-full border-t peer-hover:visible hover:visible invisible flex transition-all flex-row justify-center items-start gap-x-10 pt-10 pb-[52px] z-40 bg-white w-screen'>
+        <div className='absolute top-full border-t border-t-[#e7e7e7]/30 peer-hover:visible hover:visible invisible flex transition-all flex-row justify-center items-start gap-x-10 pt-10 pb-[52px] z-40 bg-white w-screen'>
           {subCategories.map((item: any, i: number) => (
             <SubCategory
               key={item.id}

@@ -1,21 +1,21 @@
-import React, { FC } from "react";
+import React, { FC } from 'react';
 
 type buttonProps = {
-  btnType?: "submit" | "reset" | "button";
+  btnType?: 'submit' | 'reset' | 'button';
   btnText?: string;
   btnClass?: string;
   icon?: string;
   suffixIcon?: string;
   prefixIcon?: string;
   disabled?: boolean;
-  variant?: "primary" | "outlined" | "naked" | "link";
+  variant?: 'primary' | 'outlined' | 'naked' | 'link';
 } & (
   | {
-      btnType?: "reset" | "button";
+      btnType?: 'reset' | 'button';
       actionCb: () => void;
     }
   | {
-      btnType?: "submit";
+      btnType?: 'submit';
       actionCb?: never;
     }
 );
@@ -26,10 +26,10 @@ const Button: FC<buttonProps> = ({
   suffixIcon,
   prefixIcon,
   disabled,
-  btnClass = "",
+  btnClass = '',
   actionCb,
-  btnType = "button",
-  variant = "primary",
+  btnType = 'button',
+  variant = 'primary',
 }) => {
   return (
     <button
@@ -37,20 +37,20 @@ const Button: FC<buttonProps> = ({
       type={btnType}
       onClick={actionCb}
       className={`w-full font-normal flex justify-center items-center baseBtnClass ${
-        icon ? "px-0 py-0" : ""
-      } ${suffixIcon ? "flex gap-x-2" : ""} ${
-        prefixIcon ? "flex gap-x-2" : ""
-      } ${btnText ? "text-sm text-center py-2.5 px-7" : ""} ${
-        variant === "primary"
-          ? "bg-black-primary text-white"
-          : variant === "outlined"
-          ? "bg-white text-black-primary border border-black-primary"
-          : variant === "naked"
-          ? "text-black-primary bg-white"
-          : variant === "link"
-          ? "text-black-primary bg-white underline"
-          : ""
-      } ${disabled ? "opacity-50" : ""} ${btnClass}`}
+        icon ? 'px-0 py-0' : ''
+      } ${suffixIcon ? 'flex gap-x-2' : ''} ${
+        prefixIcon ? 'flex gap-x-2' : ''
+      } ${btnText ? 'text-sm text-center py-2.5 px-7' : ''} ${
+        variant === 'primary'
+          ? 'bg-[#31353c] text-white'
+          : variant === 'outlined'
+          ? 'bg-white text-[#31353c] border border-[#31353c]'
+          : variant === 'naked'
+          ? 'text-[#31353c] bg-white'
+          : variant === 'link'
+          ? 'text-[#31353c] bg-white underline'
+          : ''
+      } ${btnClass}`}
     >
       {prefixIcon && <i className={`text-sm ${prefixIcon}`}></i>}
       {icon && <i className={`text-sm ${icon}`}></i>}
@@ -61,3 +61,4 @@ const Button: FC<buttonProps> = ({
 };
 
 export default Button;
+
