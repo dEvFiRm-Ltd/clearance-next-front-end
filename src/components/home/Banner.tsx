@@ -50,9 +50,16 @@ const Banner: FC<bannerPropsType> = ({ imgArr }) => {
                 : '/product-details' + item.url
             }
             key={item.id}
-            className=' w-full aspect-[40/17] bg-center bg-no-repeat relative z-10 flex justify-center items-center'
+            className=' w-full lg:aspect-[635/248] aspect-[39/37] bg-center bg-no-repeat relative z-10 flex justify-center items-center'
           >
-            <Image src={item.photo} alt='' fill className='object-contain' />
+            <Image
+              src={
+                'https://www.stylewe.com/image/catalog/activity/Rr14q7rSVW1695284127.webp'
+              }
+              alt=''
+              fill
+              className='object-contain'
+            />
           </Link>
         ))}
       </Slider>

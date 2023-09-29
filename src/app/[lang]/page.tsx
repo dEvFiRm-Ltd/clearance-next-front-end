@@ -163,24 +163,20 @@ export default async function Home({
   return (
     <>
       <Banner imgArr={mainBannerArr} />
-      <div className='container w-full flex flex-row justify-center mt-2 md:mt-5 xl:gap-3 2xl:gap-5 flex-wrap'>
+      <div className='container w-full flex flex-row justify-center mt-2 md:mt-[30px] flex-wrap'>
         {category?.map((item: any, index: number) => (
           <DressCard
             key={item?.id}
-            image={item?.photo}
-            url={item?.url}
-            withClass={
-              index === 0
-                ? 'w-[47%] mr-1'
-                : index === 1
-                ? 'w-[47%] ml-1'
-                : 'w-[25%]'
+            image={
+              'https://www.stylewe.com/image/catalog/activity/pO4x5Hy03S1695285465.webp'
             }
-            hightClass={index <= 1 ? 'aspect-[16/15]' : 'aspect-[40/53]'}
+            url={item?.url}
+            withClass={index <= 1 ? 'w-[50%] ' : 'w-[25%]'}
+            hightClass={index <= 1 ? 'aspect-[16/21]' : 'aspect-[40/53]'}
           />
         ))}
       </div>
-      <SectionCard sectionArr={twoImage} />
+      {/* <SectionCard sectionArr={twoImage} /> */}
       <BestSeller imgArr={footerBannerArr} />
       <FlashSale flashSaleArr={flashDealsArr} />
       <DenimShop />

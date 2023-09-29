@@ -14,7 +14,7 @@ const FlashSale: FC<flashSaleProps> = ({ flashSaleArr }) => {
   const [modals, setModals] = useState(false);
   const [modalData, setModalData] = useState<any>();
   return (
-    <section className='mx-auto container py-5'>
+    <section className='mx-auto container py-2 md:py-5'>
       <Title />
       <div className='w-full md:px-4 lg:px-6 2xl:px-8 3xl:px-10 flex justify-center items-center pt-3 relative'>
         <div className='w-full flex flex-row justify-center items-center'>
