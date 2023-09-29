@@ -65,6 +65,9 @@ body {
 .btnShadow {
   box-shadow: 0px 2px 12px rgb(0, 0, 0, 0.2);
 }
+.mobileBottomHeader{
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, .08);
+}
 .cartShadow {
   filter: drop-shadow(rgba(0, 0, 0, 0.1) 0 8px 24px);
 }

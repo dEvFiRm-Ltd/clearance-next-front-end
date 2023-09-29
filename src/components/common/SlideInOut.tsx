@@ -1,12 +1,12 @@
-'use client';
-import React, { useEffect, useState } from 'react';
-import { footerItems, silderBottomHeaderData } from '@/static';
-import { footerProps, linkType } from '@/utils/type';
-import Link from 'next/link';
-import ProductSubSlider, { subcategoryData } from './ProductSubSlider';
-import FooterPart from './FooterPart';
-import { langType, langs } from '../header/Select';
-import { usePathname, useRouter } from 'next/navigation';
+"use client";
+import React, { useEffect, useState } from "react";
+import { footerItems, silderBottomHeaderData } from "@/static";
+import { footerProps, linkType } from "@/utils/type";
+import Link from "next/link";
+import ProductSubSlider, { subcategoryData } from "./ProductSubSlider";
+import FooterPart from "./FooterPart";
+import { langType, langs } from "../header/Select";
+import { usePathname, useRouter } from "next/navigation";
 
 const SlideInOut = ({
   data,
@@ -18,15 +18,15 @@ const SlideInOut = ({
   const path = usePathname();
   const router = useRouter();
   const [view, setView] = useState(false);
-  const [language, setLanguage] = useState<string>('');
+  const [language, setLanguage] = useState<string>("");
   const [subCategories, setSubCategories] = useState<subcategoryData>({
     data: [],
-    title: '',
-    categoryUrl: '',
+    title: "",
+    categoryUrl: "",
     customActionCb: (e) => {},
   });
   useEffect(() => {
-    const locale = path.split('/')[1];
+    const locale = path.split("/")[1];
     const currentLang = langs.find((e) => e.value === locale);
     if (currentLang) {
       setLanguage(currentLang.name);
@@ -34,19 +34,19 @@ const SlideInOut = ({
   }, []);
 
   return (
-    <div className='w-full max-h-screen overflow-y-auto flex flex-col gap-y-2'>
+    <div className="w-full max-h-screen overflow-y-auto flex flex-col gap-y-2">
       <button
         onClick={closeActionCb}
-        type='button'
-        className='absolute -right-12 top-0 w-12 h-12 bg-[#000000] '
+        type="button"
+        className="absolute -right-12 top-0 w-12 h-12 bg-[#000000] "
       >
-        <i className=' text-white fa-solid fa-xmark'></i>
+        <i className=" text-white fa-solid fa-xmark"></i>
       </button>
-      <div className='bg-white pl-4 w-full flex flex-col justify-start items-start pb-8'>
+      <div className="bg-white pl-4 w-full flex flex-col justify-start items-start pb-8">
         {data.map((item: any, id: number) => (
           <button
             key={id}
-            type='button'
+            type="button"
             onClick={() => {
               setView(!view);
               setSubCategories({
@@ -54,26 +54,26 @@ const SlideInOut = ({
                 title: item.name,
                 categoryUrl: process.env.NEXT_PUBLIC_SITE_URL
                   ? `${process.env.NEXT_PUBLIC_SITE_URL}products?category=${item?.slug}&page=1`
-                  : '/',
+                  : "/",
                 customActionCb: (e) => {
                   window?.open(
                     `${process.env.NEXT_PUBLIC_SITE_URL}products?category=${item.name}-${e.slug}&page=1`,
-                    '_blank'
+                    "_blank"
                   );
                 },
               });
             }}
-            className='w-full flex flex-row justify-between items-center uppercase text-base text-black py-4 border-b last:border-0'
+            className="w-full flex flex-row justify-between items-center uppercase text-base text-black py-4 border-b last:border-0"
           >
             <span>{item?.name}</span>
-            <i className='fa-solid fa-chevron-right text-xs pr-4'></i>
+            <i className="fa-solid fa-chevron-right text-xs pr-4"></i>
           </button>
         ))}
       </div>
       {view && (
         <div
           className={`slideIn absolute w-full origin-right bg-white transition-all duration-1000 z-50 top-0 ${
-            view ? 'translate-x-0' : 'translate-x-full'
+            view ? "translate-x-0" : "translate-x-full"
           }`}
         >
           <ProductSubSlider
@@ -82,31 +82,31 @@ const SlideInOut = ({
           />
         </div>
       )}
-      <div className='bg-white'>
+      <div className="bg-white">
         <button
-          type='button'
+          type="button"
           onClick={() => {
             setView(!view);
             setSubCategories({
               data: langs,
-              title: 'Language',
+              title: "Language",
               customActionCb: (e: langType) => {
                 const selectedLocale = e.value;
-                const pathArr = path.split('/');
+                const pathArr = path.split("/");
                 pathArr[1] = selectedLocale;
-                const changedPath = pathArr.join('/');
+                const changedPath = pathArr.join("/");
                 router.push(changedPath);
               },
             });
           }}
-          className='w-full flex flex-row justify-between items-center capitalize text-base text-black py-4 border-b pl-4'
+          className="w-full flex flex-row justify-between items-center capitalize text-base text-black py-4 border-b pl-4"
         >
           <span>Language</span>
           <p>
-            <span className='text-right text-sm pl-3 pr-[18px] text-[#a1a5ab]'>
+            <span className="text-right text-sm pl-3 pr-[18px] text-[#a1a5ab]">
               {language}
             </span>
-            <i className='fa-solid fa-chevron-right text-xs pr-4'></i>
+            <i className="fa-solid fa-chevron-right text-xs pr-4"></i>
           </p>
         </button>
       </div>
@@ -128,7 +128,7 @@ const SlideInOut = ({
           </button>
         ))}
       </div> */}
-      <div className='px-4'>
+      <div className="px-4">
         {footerItems.map((item: footerProps, id: number) => (
           <FooterPart
             key={id}
@@ -151,9 +151,13 @@ const SlideInOut = ({
           ))}
         </div> */}
       {/* slider header  */}
-      <div className='w-full py-2.5 flex justify-between items-center gap-2.5 bg-white text-center absolute bottom-0'>
+      <div className="mobileBottomHeader w-full py-2.5 flex justify-between items-center gap-2.5 bg-white text-center sticky bottom-0">
         {silderBottomHeaderData.map((item: linkType, id: number) => (
-          <Link key={id} href={item.url} className='w-full'>
+          <Link
+            key={id}
+            href={item.url}
+            className="w-full text-xl md:text-2xl leading-7 text-[#8c8c8c]"
+          >
             <i className={`${item.icon}`}></i>
           </Link>
         ))}
@@ -163,4 +167,3 @@ const SlideInOut = ({
 };
 
 export default SlideInOut;
-
