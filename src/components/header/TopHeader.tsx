@@ -6,8 +6,8 @@ const TopHeader = () => {
   const path = usePathname();
   const local = path.split("/")[1];
   return (
-    <div className="bg-[#181818] py-3">
-      <div className="container mx-auto flex flex-row items-center justify-center gap-2 lg:gap-x-4 uppercase text-xs lg:text-xl 2xl:text-2xl font-normal">
+    <div className="bg-[#181818] py-3 lg:py-1">
+      <div className="container mx-auto flex flex-row items-center justify-center gap-2 lg:gap-x-4 uppercase text-xs md:text-lg lg:text-xl 2xl:text-2xl font-normal">
         <div className="flex flex-row gap-1.5 lg:gap-3 items-center justify-center flex-wrap">
           <p className=" text-white">
             <i className="fa-solid fa-gift text-base lg:text-2xl text-[#E6E3C4] mr-1.5 lg:mr-3"></i>
@@ -15,7 +15,7 @@ const TopHeader = () => {
               ? "Free Delivery on order"
               : "التوصيل مجاني عند الطلب"}
           </p>
-          <p className="font-bold text-[#E3D8C5] mt-1">
+          <p className="font-bold text-[#E3D8C5] mt-0.5">
             {local === "en" ? "above AED 150" : "فوق 150 درهم"}
           </p>
         </div>

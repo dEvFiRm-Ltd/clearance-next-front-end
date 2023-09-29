@@ -1,12 +1,12 @@
-'use client';
-import Image from 'next/image';
-import Link from 'next/link';
-import React, { FC, useEffect, useRef, useState } from 'react';
-import SlideInOut from '../common/SlideInOut';
-import Select from './Select';
-import { usePathname } from 'next/navigation';
-import SearchField from '../base/SearchField';
-import Button from '../base/Button';
+"use client";
+import Image from "next/image";
+import Link from "next/link";
+import React, { FC, useEffect, useRef, useState } from "react";
+import SlideInOut from "../common/SlideInOut";
+import Select from "./Select";
+import { usePathname } from "next/navigation";
+import SearchField from "../base/SearchField";
+import Button from "../base/Button";
 
 type MobileHeaderProp = {
   navArr: any[];
@@ -20,7 +20,7 @@ const MobileHeader: FC<MobileHeaderProp> = ({ navArr }) => {
   const searchButtonRef = useRef<HTMLDivElement>(null);
   const [language, setLanguage] = useState(false);
   const path = usePathname();
-  const local = path.split('/')[1];
+  const local = path.split("/")[1];
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -38,49 +38,47 @@ const MobileHeader: FC<MobileHeaderProp> = ({ navArr }) => {
       }
     }
 
-    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
 
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
   return (
     <>
-      <div className='sticky lg:hidden w-full flex flex-row justify-between items-center py-1.5 md:py-4 px-2 md:px-5 top-0 bg-white z-50'>
-        <div className='flex flex-row items-center gap-3'>
-          <button
-            type='button'
-            onClick={() => setShow(!show)}
-            className='group relative p-2 md:p-3 text-xl md:text-2xl'
-          >
-            <i className='fas fa-bars'></i>
-          </button>
-          <Link href={'/'} className='w-32 h-8 md:h-9 relative'>
-            <Image
-              src='https://backend-live.clearance.ae/storage/company/2023-02-06-63e08deba2852.png'
-              fill
-              alt='logo'
-            />
-          </Link>
-        </div>
-        <div className='flex flex-row items-center text-xl md:text-2xl'>
+      <div className="sticky lg:hidden w-full flex flex-row justify-between items-center px-3 md:px-[30px] top-0 bg-white z-50">
+        <button
+          type="button"
+          onClick={() => setShow(!show)}
+          className="group relative pl-0 p-2 md:pl-0 md:p-3 text-2xl"
+        >
+          <i className="fas fa-bars"></i>
+        </button>
+        <Link href={"/"} className="w-32 h-8 md:h-9 relative">
+          <Image
+            src="https://backend-live.clearance.ae/storage/company/2023-02-06-63e08deba2852.png"
+            fill
+            alt="logo"
+          />
+        </Link>
+        <div className="w-auto md:w-44 flex flex-row justify-between items-center gap-x-4 text-xl">
           <Link
-            target={process.env.NEXT_PUBLIC_SITE_URL ? '_blank' : ''}
+            target={process.env.NEXT_PUBLIC_SITE_URL ? "_blank" : ""}
             href={
               process.env.NEXT_PUBLIC_SITE_URL
-                ? process.env.NEXT_PUBLIC_SITE_URL + 'customer/auth/login'
+                ? process.env.NEXT_PUBLIC_SITE_URL + "customer/auth/login"
                 : `customer/auth/login`
             }
-            className='group relative m-2 md:m-3'
+            className="group relative "
           >
-            <i className='fa-regular fa-user'></i>
+            <i className="fa-regular fa-user"></i>
           </Link>
           <Button
             actionCb={() => setSearchVisible(!isSearchVisible)}
-            btnType='button'
-            variant='primary'
-            icon='fa-solid fa-magnifying-glass !text-base'
-            btnClass='!text-[#616368] !p-2 !bg-white !w-auto'
+            btnType="button"
+            variant="primary"
+            icon="fa-solid fa-magnifying-glass !text-xl"
+            btnClass="!text-[#616368] !bg-white !w-auto"
           />
           {/* <div ref={languageButtonRef} className='relative '>
             <button
@@ -102,15 +100,15 @@ const MobileHeader: FC<MobileHeaderProp> = ({ navArr }) => {
             )} 
           </div>*/}
           <a
-            target='_blank'
-            href='https://clearance.ae'
-            className='group relative p-2 md:p-3'
+            target="_blank"
+            href="https://clearance.ae"
+            className="group relative"
           >
-            <i className='fa-solid fa-bag-shopping'></i>
+            <i className="fa-solid fa-bag-shopping"></i>
           </a>
         </div>
         {isSearchVisible && (
-          <div ref={searchButtonRef} className='w-full absolute top-full z-10'>
+          <div ref={searchButtonRef} className="w-full absolute top-full z-10">
             <SearchField
               onFocus={() => setSearchDropdownVisible(true)}
               onBlur={() => setSearchDropdownVisible(false)}
@@ -120,12 +118,12 @@ const MobileHeader: FC<MobileHeaderProp> = ({ navArr }) => {
       </div>
       <div
         className={`w-full fixed h-screen top-0 transition-all duration-300 ${
-          show ? 'z-50 bg-white/50' : '-z-10 bg-transparent'
+          show ? "z-50 bg-white/50" : "-z-10 bg-transparent"
         } `}
       >
         <div
           className={`w-[80%] bg-[#f2f2f3] z-40 relative pb-10 transition-all duration-300 ${
-            show ? 'left-0' : '-left-full'
+            show ? "left-0" : "-left-full"
           } `}
         >
           <SlideInOut data={navArr} closeActionCb={() => setShow(false)} />
@@ -136,4 +134,3 @@ const MobileHeader: FC<MobileHeaderProp> = ({ navArr }) => {
 };
 
 export default MobileHeader;
-
