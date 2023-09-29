@@ -21,6 +21,7 @@ export type flashSaleCardProps = {
   actionCb?: () => void;
   variant?: object[];
   imgVariantSmall?: boolean;
+  whitelist?: boolean;
 };
 export type linkType = {
   icon?: string;
