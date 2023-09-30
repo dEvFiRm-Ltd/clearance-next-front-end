@@ -22,13 +22,13 @@ const FooterPart: FC<footerProps> = ({
   const local = path.split('/')[1];
   return (
     <div className={groupClass}>
-      <div className='lg:hidden w-full border-b '>
+      <div className='lg:hidden w-full border-b border-[#e0e1e3]'>
         <button
           type='button'
           onClick={() => setIsExpanded(!isExpanded)}
-          className={`w-full flex flex-row justify-between items-center uppercase text-base text-black py-4 ${headingClass}`}
+          className={`w-full flex flex-row justify-between items-center uppercase text-base text-black py-3 ${headingClass}`}
         >
-          <span>{local === 'en' ? headingEn : headingAe}</span>
+          <span className='font-bold'>{local === 'en' ? headingEn : headingAe}</span>
           <i className='fas fa-plus text-sm'></i>
         </button>
         <div className='pl-4 flex flex-col justify-start gap-y-1'>

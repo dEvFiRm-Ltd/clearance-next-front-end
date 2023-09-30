@@ -10,6 +10,7 @@ import SectionCard from "@/components/common/SectionCard";
 import BestSeller from "@/components/home/BestSeller";
 import DenimShop from "@/components/home/DenimShop";
 import { bestSellerData, dressTwo } from "@/static";
+import { TwoBanner } from "@/components/home/TwoBanner";
 
 export default async function Home({
   params: { lang },
@@ -214,11 +215,15 @@ export default async function Home({
           />
         ))}
       </div>
+
+      <TwoBanner />
+
       <FeatureProduct
         featureProductArr={featureProductArr}
         titleAe="منتج مميز"
         titleEn="Feature Product"
         whitelist={true}
+        variants={true}
       />
       {/* <Brands brandArr={brandsDataArr} /> */}
       <FeatureProduct

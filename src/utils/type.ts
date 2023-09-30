@@ -22,6 +22,10 @@ export type flashSaleCardProps = {
   variant?: object[];
   imgVariantSmall?: boolean;
   whitelist?: boolean;
+  addToCartIcon?: boolean;
+  variants?: boolean;
+  salePriceClass?:string;
+  priceClass?:string;
 };
 export type linkType = {
   icon?: string;
