@@ -150,7 +150,7 @@ const FlashSaleCard: FC<flashSaleCardProps> = ({
         )}
 
         {text2 && (
-          <span className="px-1 rounded-sm text-red-400 bg-[#FEF2F2] font-normal !font-[Helvetica] text-xs truncate w-full ">
+          <span className="inline-block px-1 rounded-sm text-red-400 bg-[#FEF2F2] font-normal !font-[Helvetica] text-xs truncate w-full">
             {text2}
           </span>
         )}

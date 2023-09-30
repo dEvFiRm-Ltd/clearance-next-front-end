@@ -26,7 +26,7 @@ const Footer = () => {
           ))}
         </div>
 
-        <div className="flex items-center flex-wrap px-4 mt-5">
+        <div className="flex items-center flex-wrap px-4 mt-5 !font-[Helvetica]">
           <div className="w-[16px] h-[16px] relative mx-[12.5px] mb-4">
             <Image
               fill
