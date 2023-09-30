@@ -226,7 +226,7 @@ export default async function Home({
         titleAe='منتج مميز'
         titleEn='Feature Product'
         whitelist={true}
-        imgVariantSmall={true}
+        variants={true}
       />
       {/* <Brands brandArr={brandsDataArr} /> */}
       <FeatureProduct

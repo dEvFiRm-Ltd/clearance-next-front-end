@@ -9,13 +9,15 @@ type featureProductProps = {
   titleAe: string;
   whitelist?:boolean;
   imgVariantSmall?:boolean;
+  variants?:boolean;
 };
 const FeatureProduct: FC<featureProductProps> = ({
   featureProductArr,
   titleEn,
   titleAe,
   whitelist,
-  imgVariantSmall
+  imgVariantSmall,
+  variants
 }) => {
   const [modals, setModals] = useState(false);
   const [modalData, setModalData] = useState<any>();
@@ -47,6 +49,7 @@ const FeatureProduct: FC<featureProductProps> = ({
               imgClass='!h-52 sm:!h-[278px] md:!h-80 lg:!h-[400px] xl:!h-[480px] 2xl:!h-[570px]'
               whitelist={whitelist}
               imgVariantSmall={imgVariantSmall}
+              variants={variants}
             />
           ))}
         </div>

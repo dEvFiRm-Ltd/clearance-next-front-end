@@ -23,10 +23,7 @@ const FlashSale: FC<flashSaleProps> = ({ flashSaleArr }) => {
             loop={true}
             slidesPerView='auto'
             navigation={true}
-            autoplay={{
-              delay: 2500,
-              disableOnInteraction: true,
-            }}
+            autoplay={false}
             modules={[Autoplay, Navigation]}
             className='flashSlider'
           >
@@ -39,12 +36,17 @@ const FlashSale: FC<flashSaleProps> = ({ flashSaleArr }) => {
                   price={item.price}
                   discount={item.discount}
                   url={item.slug}
-                  imgVariantSmall={true}
+                  imgVariantSmall={false}
+                  addToCartIcon={false}
                   actionCb={() => {
                     setModalData(item);
                     setModals(!modals);
                   }}
-                  groupClass='w-40 md:w-52 lg:w-60 3xl:w-[260px] p-2'
+                  // groupClass='w-40 md:w-52 lg:w-60 3xl:w-[260px] p-2'
+                  groupClass='w-40 w-[90px] h-full xl:h-[310px] xl:w-60 3xl:w-[260px] md:p-2'
+                  priceClass='!font-[400] !text-left !text-[10px]'
+                  salePriceClass='!font-[400] !text-[#dc2626] !text-left !text-[10px]'
+                  imgClass='min-w-[90px] !h-[120px] !rounded-lg xl:!w-full xl:!h-full'
                 />
               </SwiperSlide>
             ))}
