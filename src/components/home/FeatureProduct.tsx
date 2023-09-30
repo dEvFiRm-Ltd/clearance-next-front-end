@@ -36,7 +36,7 @@ const FeatureProduct: FC<featureProductProps> = ({
               salePrice={item.offer_price}
               price={item.price}
               text={item.name}
-              text2={item.text2}
+              text2={"Buy 2 get 3rd 50% off"}
               discount={item.discount}
               url={item.slug}
               actionCb={() => {
