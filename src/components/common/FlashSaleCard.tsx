@@ -6,6 +6,8 @@ import StarList from "./StarList";
 import SizeSelectDropDown from "./SizeSelectDropDown";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import addcart from "@/static/addcart.svg"
+
 
 const FlashSaleCard: FC<flashSaleCardProps> = ({
   img,
@@ -64,7 +66,7 @@ const FlashSaleCard: FC<flashSaleCardProps> = ({
           ? process.env.NEXT_PUBLIC_SITE_URL + "product/" + url
           : "/product-details" + url
       }
-      className={`boxShadow flex flex-col relative bg-white border border-ash ${groupClass}`}
+      className={`boxShadow flex flex-col relative bg-white hover:shadow-lg ${groupClass}`}
     >
       <div
         className={`w-full h-52 md:h-[278px] lg:h-80 3xl:h-[324px] overflow-hidden relative group ${imgClass}`}
@@ -79,7 +81,7 @@ const FlashSaleCard: FC<flashSaleCardProps> = ({
           alt="img"
           fill
           className={`group-hover:transform group-hover:scale-110 transition-transform duration-300 ${
-            imgVariantSmall ? "object-contain" : "object-cover"
+            imgVariantSmall ? "object-fill" : "object-cover"
           }`}
         />
         {discount && (
@@ -122,8 +124,27 @@ const FlashSaleCard: FC<flashSaleCardProps> = ({
               </span>
             )}
           </div>
-          <button className="w-[15%] text-[#000]/50"><i className="fa-solid fa-cart-plus lg:text-xl"/></button>
+          <button className="w-[15%] text-[#000] h-4 relative">
+            <Image src={addcart} alt="cartIcon" fill />
+          </button>
         </div>
+        {imgVariantSmall && (
+          <div className="w-full flex items-center space-x-1">
+            {[1, 2, 3].map((imgg: any, id: number) => (
+              <div key={id} className="h-[24px] w-[24px] rounded-full border border-[#e3e3e3] focus:border-[#222] flex items-center justify-center">
+                <div className="w-[18px] h-[18px] rounded-full relative">
+                  <Image
+                    src={selectedImg}
+                    fill
+                    alt=""
+                    className="rounded-full"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+
         {text2 && (
           <span className="px-1 rounded-sm text-red-400 bg-[#FEF2F2] font-normal !font-[Helvetica] text-xs">
             {text2}
