@@ -11,6 +11,11 @@ const nextConfig = {
       },
       {
         protocol: 'https',
+        hostname: 'www.stylewe.com',
+        port: '',
+      },
+      {
+        protocol: 'https',
         hostname: 'www.clearance.ae',
         port: '',
       },

@@ -6,8 +6,7 @@ import StarList from "./StarList";
 import SizeSelectDropDown from "./SizeSelectDropDown";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import addcart from "@/static/addcart.svg"
-
+import addcart from "@/static/addcart.svg";
 
 const FlashSaleCard: FC<flashSaleCardProps> = ({
   img,
@@ -118,24 +117,37 @@ const FlashSaleCard: FC<flashSaleCardProps> = ({
       <div className="flex w-full flex-col justify-start items-start self-stretch flex-1 gap-1.5 py-1.5 px-1">
         <p className="line-clamp-1 text-xs lg:text-sm">{text}</p>
         <div className="flex justify-between items-center gap-2 w-full">
-          <div className={`flex flex-wrap items-center space-x-1 ${addToCartIcon ? 'w-[85%]':'w-full'}`}>
-            <span className={`text-sm md:text-base xl:text-lg 3xl:text-xl text-red-400 font-bold ${salePriceClass}`}>
+          <div
+            className={`flex flex-wrap items-center space-x-1 ${
+              addToCartIcon ? "w-[85%]" : "w-full"
+            }`}
+          >
+            <span
+              className={`text-sm md:text-base xl:text-lg 3xl:text-xl text-red-400 font-bold ${salePriceClass}`}
+            >
               {salePrice} AED
             </span>
             {price && (
-              <span className={`text-xs lg:text-sm font-normal text-[#868C93] line-through ${priceClass}`}>
+              <span
+                className={`text-xs lg:text-sm font-normal text-[#868C93] line-through ${priceClass}`}
+              >
                 {price} AED
               </span>
             )}
           </div>
-          {addToCartIcon && <button className="w-[15%] text-[#000] h-4 relative">
-            <Image src={addcart} alt="cartIcon" fill />
-          </button>}
+          {addToCartIcon && (
+            <button className="w-[15%] text-[#000] h-4 relative">
+              <Image src={addcart} alt="cartIcon" fill />
+            </button>
+          )}
         </div>
         {variants && (
           <div className="w-full flex items-center space-x-1">
             {[1, 2, 3].map((imgg: any, id: number) => (
-              <div key={id} className="h-[24px] w-[24px] rounded-full border border-[#e3e3e3] focus:border-[#222] flex items-center justify-center">
+              <div
+                key={id}
+                className="h-[24px] w-[24px] rounded-full border border-[#e3e3e3] focus:border-[#222] flex items-center justify-center"
+              >
                 <div className="w-[18px] h-[18px] rounded-full relative">
                   <Image
                     src={selectedImg}
@@ -150,7 +162,7 @@ const FlashSaleCard: FC<flashSaleCardProps> = ({
         )}
 
         {text2 && (
-          <span className="inline-block px-1 rounded-sm text-red-400 bg-[#FEF2F2] font-normal !font-[Helvetica] text-xs truncate w-full">
+          <span className="inline-block px-1 rounded-sm text-red-400 bg-[#FEF2F2] font-normal !font-[Helvetica] text-xs truncate w-fit">
             {text2}
           </span>
         )}

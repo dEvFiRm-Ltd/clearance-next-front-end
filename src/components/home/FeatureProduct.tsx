@@ -1,15 +1,15 @@
-'use client';
-import React, { FC, useState } from 'react';
-import FlashSaleCard from '../common/FlashSaleCard';
-import CartModal from '../modal/CartModal';
-import { usePathname } from 'next/navigation';
+"use client";
+import React, { FC, useState } from "react";
+import FlashSaleCard from "../common/FlashSaleCard";
+import CartModal from "../modal/CartModal";
+import { usePathname } from "next/navigation";
 type featureProductProps = {
   featureProductArr: any[];
   titleEn: string;
   titleAe: string;
-  whitelist?:boolean;
-  imgVariantSmall?:boolean;
-  variants?:boolean;
+  whitelist?: boolean;
+  imgVariantSmall?: boolean;
+  variants?: boolean;
 };
 const FeatureProduct: FC<featureProductProps> = ({
   featureProductArr,
@@ -17,12 +17,12 @@ const FeatureProduct: FC<featureProductProps> = ({
   titleAe,
   whitelist,
   imgVariantSmall,
-  variants
+  variants,
 }) => {
   const [modals, setModals] = useState(false);
   const [modalData, setModalData] = useState<any>();
   const path = usePathname();
-  const local = path.split('/')[1];
+  const local = path.split("/")[1];
   return (
     <section className='py-5 container xl:w-[1280px] 2xl:w-[1416px]'>
       <div className='flex flex-col justify-start items-center gap-y-5'>
@@ -72,4 +72,3 @@ const FeatureProduct: FC<featureProductProps> = ({
 };
 
 export default FeatureProduct;
-
