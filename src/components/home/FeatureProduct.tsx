@@ -46,8 +46,8 @@ const FeatureProduct: FC<featureProductProps> = ({
                 setModals(!modals);
               }}
               // groupClass='w-40 sm:w-52 md:w-60 lg:w-80 xl:w-[390px] 2xl:w-[427px]'
-              groupClass="w-40 sm:w-52 md:w-[366px] md:min-h-[524px] lg:w-[492px] xl:w-[390px] 2xl:w-[427px]"
-              imgClass="!h-52 sm:!h-[278px] md:!h-[485px] lg:!h-[656px] xl:!h-[480px] 2xl:!h-[570px]"
+              groupClass="w-[45%] sm:w-52 md:!w-[31%] lg:!w-[22%] xl:!w-[23.7%] 2xl:w-[427px]"
+              imgClass="!h-52 sm:!h-[278px] md:!h-[280px] lg:!h-[300px] xl:!h-[320px] 2xl:!h-[570px]"
               whitelist={whitelist}
               imgVariantSmall={imgVariantSmall}
               variants={variants}
