@@ -14,7 +14,7 @@ const FlashSale: FC<flashSaleProps> = ({ flashSaleArr }) => {
   const [modals, setModals] = useState(false);
   const [modalData, setModalData] = useState<any>();
   return (
-    <section className='mx-auto container py-2 md:py-5'>
+    <section className='mx-auto container w-[360px] py-2 md:py-5 md:w-full xl:w-[1080px] 2xl:w-[1416px]'>
       <Title />
       <div className='w-full md:px-4 lg:px-6 2xl:px-8 3xl:px-10 flex justify-center items-center pt-3 relative'>
         <div className='w-full flex flex-row justify-center items-center'>
@@ -43,10 +43,10 @@ const FlashSale: FC<flashSaleProps> = ({ flashSaleArr }) => {
                     setModals(!modals);
                   }}
                   // groupClass='w-40 md:w-52 lg:w-60 3xl:w-[260px] p-2'
-                  groupClass='w-40 w-[90px] h-full xl:h-[310px] xl:w-60 3xl:w-[260px] md:p-2'
-                  priceClass='!font-[400] !text-left !text-[10px]'
-                  salePriceClass='!font-[400] !text-[#dc2626] !text-left !text-[10px]'
-                  imgClass='min-w-[90px] !h-[120px] !rounded-lg xl:!w-full xl:!h-full'
+                  groupClass='w-[90px] h-full xl:h-[310px] xl:w-[156px] 2xl:w-[198px] 3xl:w-[260px] md:p-2'
+                  priceClass='!font-[400] !text-left !text-[10px] xl:!text'
+                  salePriceClass='!font-[400] !text-[#dc2626] !text-left !text-[10px] xl:!text-[12px]'
+                  imgClass='min-w-[90px] !h-[120px] !rounded-lg xl:!w-full xl:!h-full 2xl:!h-[244px]'
                 />
               </SwiperSlide>
             ))}

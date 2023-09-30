@@ -4,7 +4,7 @@ import React from "react";
 
 export const TwoBanner = () => {
   return (
-    <div className="px-6 flex flex-col py-4 md:px-4 container xl:flex-row">
+    <div className="px-6 flex flex-col py-4 md:px-4 container xl:flex-row overflow-hidden">
       <Link href="/" className="p-[7.5px] w-full">
         <div className="min-w-full w-full h-[135px] relative md:w-full md:h-[282px] lg:w-[980px] lg:h-[383px] xl:w-full xl:h-full aspect-video">
           <Image

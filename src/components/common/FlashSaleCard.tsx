@@ -70,7 +70,7 @@ const FlashSaleCard: FC<flashSaleCardProps> = ({
           ? process.env.NEXT_PUBLIC_SITE_URL + "product/" + url
           : "/product-details" + url
       }
-      className={`boxShadow flex flex-col relative bg-white hover:shadow-lg ${groupClass}`}
+      className={`boxShadow flex flex-col relative bg-white hover:shadow-md ${groupClass}`}
     >
       <div
         className={`w-full h-52 md:h-[278px] lg:h-80 3xl:h-[324px] overflow-hidden relative group ${imgClass}`}
