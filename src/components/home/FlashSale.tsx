@@ -46,7 +46,7 @@ const FlashSale: FC<flashSaleProps> = ({ flashSaleArr }) => {
                   groupClass='w-[90px] h-full xl:h-[310px] xl:w-[156px] 2xl:w-[198px] 3xl:w-[260px] md:p-2'
                   priceClass='!font-[400] !text-left !text-[10px] xl:!text'
                   salePriceClass='!font-[400] !text-[#dc2626] !text-left !text-[10px] xl:!text-[12px]'
-                  imgClass='min-w-[90px] !h-[120px] !rounded-lg xl:!w-full xl:!h-full 2xl:!h-[244px]'
+                  imgClass='min-w-[90px] !h-[120px] !rounded-md xl:!w-full xl:!h-full 2xl:!h-[244px]'
                 />
               </SwiperSlide>
             ))}
