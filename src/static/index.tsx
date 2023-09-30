@@ -126,6 +126,16 @@ export const bannerImgArr: bannerProps[] = [
     url: "/",
   },
 ];
+export const bestSellerData = [
+  {
+    url: "",
+    img: "https://www.stylewe.com/image/catalog/activity/iRWzxvpXh21695285926.webp",
+  },
+  {
+    url: "",
+    img: "https://www.stylewe.com/image/catalog/activity/jyjV9rywX51695285926.webp",
+  },
+];
 export const bottomHeaderLinkItems: linkType[] = [
   {
     titleEn: "clothing",

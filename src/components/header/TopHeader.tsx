@@ -6,7 +6,7 @@ const TopHeader = () => {
   const path = usePathname();
   const local = path.split("/")[1];
   return (
-    <div className="bg-[#181818] py-3 lg:py-1">
+    <div className="bg-[#181818] py-3 lg:py-2.5">
       <div className="container mx-auto flex flex-row items-center justify-center gap-2 lg:gap-x-4 uppercase text-xs md:text-lg lg:text-xl 2xl:text-2xl font-normal">
         <div className="flex flex-row gap-1.5 lg:gap-3 items-center justify-center flex-wrap">
           <p className=" text-white">
