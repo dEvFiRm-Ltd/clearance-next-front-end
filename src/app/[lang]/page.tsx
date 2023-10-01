@@ -172,7 +172,7 @@ export default async function Home({
             }
             url={item?.url}
             withClass={
-              index <= 1 ? "w-[50%] lg:w-[16.6%] " : "w-[25%] w-[16.6%]"
+              index <= 1 ? "w-[50%] lg:w-[16.6%] " : "w-[25%] lg:w-[16.6%]"
             }
             hightClass={index <= 1 ? "aspect-[16/21]" : "aspect-[40/53]"}
           />

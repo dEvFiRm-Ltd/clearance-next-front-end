@@ -54,7 +54,7 @@ const Banner: FC<bannerPropsType> = ({ imgArr }) => {
           >
             <Image
               src={
-                "https://www.stylewe.com/image/catalog/activity/Rr14q7rSVW1695284127.webp"
+                "https://www.stylewe.com/image/catalog/activity/earW4RZY2D1695284126.webp"
               }
               alt=""
               fill
