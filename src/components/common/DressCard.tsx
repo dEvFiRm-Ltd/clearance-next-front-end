@@ -4,6 +4,7 @@ import React, { FC } from "react";
 
 export type dressType = {
   image: string;
+  image2?: string;
   title?: string;
   url?: string;
   heading?: string;

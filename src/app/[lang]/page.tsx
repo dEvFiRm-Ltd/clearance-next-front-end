@@ -182,11 +182,31 @@ export default async function Home({
       <BestSeller imgArr={bestSellerData} />
       <FlashSale flashSaleArr={flashDealsArr} />
       <DenimShop />
-      <div className="container flex items-center flex-row flex-wrap justify-center mt-[30px]">
+      {/* mobile  */}
+      <div className="container flex items-center flex-row flex-wrap justify-center mt-[30px] lg:!hidden">
         {dressTwo.map((item: dressType, id: number) => (
           <DressCard
             key={id}
             image={item?.image}
+            heading={item?.heading}
+            title={item?.title}
+            hightClass={
+              id === 0
+                ? "!aspect-[750/481] lg:!aspect-[583/793]"
+                : "!aspect-[375/374] lg:!aspect-[583/793]"
+            }
+            withClass={
+              id === 0 ? "!w-full lg:!w-[33.33%]" : "!w-1/2 lg:!w-[33.33%]"
+            }
+          />
+        ))}
+      </div>
+      {/* lg  */}
+      <div className="container items-center flex-row flex-wrap justify-center mt-[30px] !hidden lg:!flex">
+        {dressTwo.map((item: dressType, id: number) => (
+          <DressCard
+            key={id}
+            image={item?.image2 ? item.image2 : item.image}
             heading={item?.heading}
             title={item?.title}
             hightClass={

@@ -52,13 +52,23 @@ const Banner: FC<bannerPropsType> = ({ imgArr }) => {
             key={item.id}
             className=" w-full lg:aspect-[635/248] aspect-[39/37] bg-center bg-no-repeat relative z-10 flex justify-center items-center"
           >
+            {/* mobile  */}
+            <Image
+              src={
+                "https://www.stylewe.com/image/catalog/activity/Rr14q7rSVW1695284127.webp"
+              }
+              alt=""
+              fill
+              className="object-contain hidden lg:!hidden"
+            />
+            {/* lg */}
             <Image
               src={
                 "https://www.stylewe.com/image/catalog/activity/earW4RZY2D1695284126.webp"
               }
               alt=""
               fill
-              className="object-contain"
+              className="object-contain !hidden lg:!block"
             />
           </Link>
         ))}

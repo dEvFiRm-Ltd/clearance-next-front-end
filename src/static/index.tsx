@@ -1106,18 +1106,24 @@ export const relatedProductData: flashSaleCardProps[] = [
 export const dressTwo: dressType[] = [
   {
     image:
+      "https://www.stylewe.com/image/catalog/activity/bXVWRpp0Ur1695286654.webp",
+    image2:
       "https://www.stylewe.com/image/catalog/activity/xdQQUsx13c1695286654.webp",
     title: "shop now",
     heading: "2023 Trends",
   },
   {
     image:
+      "https://www.stylewe.com/image/catalog/activity/AkirePUWVN1695286654.webp",
+    image2:
       "https://www.stylewe.com/image/catalog/activity/5ETriBYeqH1695286654.webp",
     title: "shop now",
     heading: "Recommendation",
   },
   {
     image:
+      "https://www.stylewe.com/image/catalog/activity/Txo7dVh3oK1695286654.webp",
+    image2:
       "https://www.stylewe.com/image/catalog/activity/l3inI2UCeD1695286654.webp",
     title: "shop now",
     heading: "Spacial Events",
