@@ -6,7 +6,7 @@ type bestSellerPropsType = {
 };
 const BestSeller: FC<bestSellerPropsType> = ({ imgArr }) => {
   return (
-    <section className="container mt-[30px] w-full flex flex-row justify-center">
+    <section className="lg:px-[60px] mt-[30px] w-full flex flex-row justify-center">
       {imgArr.map((item: any, id: number) => (
         <Link
           href={item?.url}

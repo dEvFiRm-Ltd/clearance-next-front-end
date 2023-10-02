@@ -163,7 +163,7 @@ export default async function Home({
   return (
     <>
       <Banner imgArr={mainBannerArr} />
-      <div className="container w-full flex flex-row justify-center mt-2 md:mt-[30px] flex-wrap">
+      <div className="w-full flex flex-row justify-center mt-2 md:mt-[30px] flex-wrap lg:px-[60px]">
         {category?.map((item: any, index: number) => (
           <DressCard
             key={item?.id}
@@ -171,8 +171,14 @@ export default async function Home({
               "https://www.stylewe.com/image/catalog/activity/pO4x5Hy03S1695285465.webp"
             }
             url={item?.url}
-            withClass={index <= 1 ? "w-[50%] lg:w-1/6 " : "w-[25%] lg:w-1/6"}
-            hightClass={index <= 1 ? "aspect-[16/21]" : "aspect-[40/53]"}
+            withClass={
+              index <= 1 ? "!w-[50%] lg:!w-1/6 " : "!w-[25%] lg:!w-1/6"
+            }
+            hightClass={
+              index <= 1
+                ? "aspect-[16/21] lg:aspect-[292/383]"
+                : "aspect-[40/53] lg:aspect-[292/383]"
+            }
           />
         ))}
       </div>
@@ -181,7 +187,7 @@ export default async function Home({
       <FlashSale flashSaleArr={flashDealsArr} />
       <DenimShop />
       {/* mobile  */}
-      <div className="container flex items-center flex-row flex-wrap justify-center mt-[30px] lg:!hidden">
+      <div className="flex items-center flex-row flex-wrap justify-center mt-[30px] lg:!hidden">
         {dressTwo.map((item: dressType, id: number) => (
           <DressCard
             key={id}
@@ -200,7 +206,7 @@ export default async function Home({
         ))}
       </div>
       {/* lg  */}
-      <div className="container items-center flex-row flex-wrap justify-center mt-[30px] !hidden lg:!flex">
+      <div className="items-center flex-row flex-wrap justify-center mt-[30px] !hidden lg:px-[60px] lg:!flex">
         {dressTwo.map((item: dressType, id: number) => (
           <DressCard
             key={id}

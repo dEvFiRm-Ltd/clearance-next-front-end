@@ -24,12 +24,12 @@ const FeatureProduct: FC<featureProductProps> = ({
   const path = usePathname();
   const local = path.split("/")[1];
   return (
-    <section className='py-5  xl:w-full 2xl:w-full'>
-      <div className='flex flex-col justify-start items-center gap-y-5'>
-        <h3 className='text-base lg:text-lg 2xl:text-xl font-bold text-center text-black-primary uppercase '>
-          {local === 'en' ? titleEn : titleAe}
+    <section className="py-5 w-full ">
+      <div className="flex flex-col justify-start items-center gap-y-5">
+        <h3 className="text-base lg:text-lg 2xl:text-xl font-bold text-center text-black-primary uppercase ">
+          {local === "en" ? titleEn : titleAe}
         </h3>
-        <div className='flex flex-row px-2 justify-center gap-2.5 md:gap-4 lg:gap-4 flex-wrap !items-start xl:w-full'>
+        <div className="flex flex-row px-2 justify-center gap-2.5 md:gap-4 lg:gap-4 flex-wrap !items-start xl:w-full">
           {featureProductArr.map((item: any) => (
             <FlashSaleCard
               key={item.id}
@@ -46,12 +46,12 @@ const FeatureProduct: FC<featureProductProps> = ({
                 setModals(!modals);
               }}
               // groupClass='w-40 sm:w-52 md:w-60 lg:w-80 xl:w-[390px] 2xl:w-[427px]'
-              groupClass='w-[48%] sm:w-52 md:w-[364px] md:min-h-[524px] lg:w-[492px] xl:w-[308px] 2xl:w-[348px]'
-              imgClass='aspect-[3/4]'
+              groupClass="w-[48%] sm:w-52 md:w-[364px] lg:w-[208px] xl:w-[308px] 2xl:w-[348px] 3xl:w-[427px]"
+              imgClass="aspect-[3/4]"
               whitelist={whitelist}
               imgVariantSmall={imgVariantSmall}
               variants={variants}
-              salePriceClass={'2xl:text-xl'}
+              salePriceClass={"2xl:text-xl"}
               priceClass={"2xl:text-sm"}
             />
           ))}
@@ -72,8 +72,6 @@ const FeatureProduct: FC<featureProductProps> = ({
 };
 
 export default FeatureProduct;
-
-
 
 /*
 
