@@ -72,7 +72,7 @@ const FlashSaleCard: FC<flashSaleCardProps> = ({
       className={`boxShadow flex flex-col relative bg-white hover:shadow-md !font-[Helvetica] ${groupClass}`}
     >
       <div
-        className={`w-full h-52 md:h-[278px] lg:h-80 3xl:h-[324px] overflow-hidden relative group ${imgClass}`}
+        className={`w-full overflow-hidden relative group ${imgClass}`}
       >
         {whitelist && (
           <button className="absolute top-1 right-1 z-10 bg-white py-1 px-2 rounded-full text-slate-500">

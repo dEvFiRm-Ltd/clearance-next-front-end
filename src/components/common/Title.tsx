@@ -6,8 +6,8 @@ const Title = () => {
   const path = usePathname();
   const local = path.split('/')[1];
   return (
-    <div className='w-full flex flex-col justify-start gap-y-5 items-center px-10 mx-auto container py-5 pb-4'>
-      <h3 className='font-bold text-base lg:text-xl 2xl:text-2xl 3xl:text-[28px] capitalize'>
+    <div className='w-full flex flex-col xl:flex-row xl:justify-between xl:items-center justify-start gap-y-5 items-center px-10 mx-auto container py-5 pb-4'>
+      <h3 className='font-bold text-base lg:text-xl 2xl:text-2xl 3xl:text-[28px] capitalize '>
         {local === 'en' ? 'flash sale' : 'بيع مفاجئ'}
       </h3>
       <div className='flex flex-row justify-center'>
