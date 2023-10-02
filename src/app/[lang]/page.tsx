@@ -171,9 +171,7 @@ export default async function Home({
               "https://www.stylewe.com/image/catalog/activity/pO4x5Hy03S1695285465.webp"
             }
             url={item?.url}
-            withClass={
-              index <= 1 ? "w-[50%] lg:w-[16.6%] " : "w-[25%] lg:w-[16.6%]"
-            }
+            withClass={index <= 1 ? "w-[50%] lg:w-1/6 " : "w-[25%] lg:w-1/6"}
             hightClass={index <= 1 ? "aspect-[16/21]" : "aspect-[40/53]"}
           />
         ))}

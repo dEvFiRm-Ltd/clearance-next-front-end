@@ -69,11 +69,9 @@ const FlashSaleCard: FC<flashSaleCardProps> = ({
           ? process.env.NEXT_PUBLIC_SITE_URL + "product/" + url
           : "/product-details" + url
       }
-      className={`boxShadow flex flex-col relative bg-white hover:shadow-md !font-[Helvetica] ${groupClass}`}
+      className={`boxShadow flex flex-col relative bg-white !font-[Helvetica] ${groupClass}`}
     >
-      <div
-        className={`w-full overflow-hidden relative group ${imgClass}`}
-      >
+      <div className={`w-full overflow-hidden relative group ${imgClass}`}>
         {whitelist && (
           <button className="absolute top-1 right-1 z-10 bg-white py-1 px-2 rounded-full text-slate-500">
             <i className="fa-regular fa-heart" />
@@ -123,7 +121,7 @@ const FlashSaleCard: FC<flashSaleCardProps> = ({
             }`}
           >
             <span
-              className={`text-sm md:text-base xl:text-lg 3xl:text-xl text-red-400 font-bold ${salePriceClass}`}
+              className={`text-sm lg:text-base xl:text-lg 3xl:text-xl text-[#dc2626] font-bold ${salePriceClass}`}
             >
               {salePrice} AED
             </span>
